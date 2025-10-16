@@ -1,0 +1,250 @@
+      <chapter xml:id="ch-presentations"><title>Free Groups, Presentations (*)</title>
+
+        <introduction>
+          <p>
+            Coming soon!
+          </p>
+
+          <question><title>The What, Where, and Why of Group Presentations</title>
+            <statement>
+              <p>
+                Why are group presentations important? Where are they found? What are they used for?
+              </p>
+            </statement>
+
+            <answer>
+              <p>
+                <ul>
+                  <li><title>Understanding Module Presentations</title>
+                    <p>
+                      The study of group presentations helps understand the more general concept of presentations in algebraic structures, including modules.
+                      Presentations of modules are essential in the classification of finitely generated modules over an PID, which we will see CITEX. 
+                      Specifically, we can use Smith Normal Form, a process that simplifies the presentation of a module by transforming the relation matrix into a diagonal form, revealing the structure of the module in terms of its free and torsion parts.
+                    </p>
+                  </li>
+
+                  <li><title>Combinatorial Group Theory</title>
+                    <p>
+                      Group presentations are the cornerstone of combinatorial group theory, where groups are studied through their generators and relations.
+                      For example, the word problem asks whether two words (representing elements of the group) are equivalent under the relations given by the group presentation. 
+                      The difficulty of solving this problem depends on the complexity of the presentation.               
+                    </p>
+                  </li>
+
+                  <li><title>Geometric Group Theory</title>
+                    <p>
+                      The Cayley graph of a group is a graph that visually represents the group's structure in terms of its generators. 
+                      The group's presentation defines the edges of the graph, with each generator corresponding to an edge between vertices (group elements). 
+                      This graph-theoretic representation is central to many areas of geometric group theory, such as the study of word-hyperbolic groups.           
+                    </p>
+                  </li>
+
+                  <li><title>Algebraic Topology</title>
+                    <p>
+                      In algebraic topology, group presentations are used to describe the fundamental group <m>π_1(X)</m> of a topological space <m>X</m>, which encodes information about the loops in the space up to homotopy.
+                      For example, Given a CW complex (a type of topological space built from cells), the fundamental group of the space can be described using a group presentation. 
+                      The generators correspond to the <m>1</m>-cells (edges), and the relations come from the <m>2</m>-cells (faces), which describe how the edges are glued together.
+                    </p>
+                  </li>
+
+                  <li><title>Knot Theory</title>
+                    <p>
+                      The knot group of a knot <m>K</m> in <m>3</m>-dimensional space is the fundamental group of the knot complement (the space obtained by removing the knot from <m>\R^3</m>). 
+                      This group is often described using a group presentation.
+                    </p>
+                  </li>
+
+                  <li><title>Algebraic Geometry and Algebraic Groups</title>
+                    <p>
+                      The fundamental group of an algebraic variety can often be computed using a group presentation, especially for varieties with a well-understood topological structure (e.g., plane curves or higher-dimensional varieties).
+                    </p>
+                  </li>
+
+                  <li><title>Theoretical Computer Science</title>
+                    <p>
+                      Group presentations are connected to automata theory through the study of automatic groups, where the word problem can be solved efficiently. 
+                      Groups with certain types of presentations can be recognized by finite automata, and this has applications in both algebra and computer science.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </answer>
+          </question>
+        </introduction>
+
+        <section xml:id="subsec-free-groups"><title>Free Groups</title>
+          
+
+          <definition xml:id="def-free-group"><title>Free Group</title>
+            <statement>
+              <p>
+                Let <m>A</m> be a set. 
+                Consider a new set of symbols <m>A^{-1}=\{a^{-1} \mid a \in A\}</m>. 
+                The <em>free group</em> on <m>A</m>, denoted <m>F(A)</m>, is the set of all finite words written using symbols in <m>A\cup A^{-1}</m>, including the empty word, where two words are equal if one is obtained from the other by erasing a pair of consecutive symbols <m>aa^{-1}</m> or <m>a^{-1}a</m>. 
+                In symbols, 
+                <me>
+                  F(A)=\{a_1^{i_1}a_2^{i_2}\cdots a_m^{i_m} \mid m\geq 0, a_j\in A, i_j\in\{-1,1\}\}.
+                </me> 
+                The set <m>F(A)</m> is a group in which any two words are multiplied by concatenation.
+              </p>
+            </statement>
+          </definition>
+
+          <example>
+            <p>
+              The free group on a singleton set <m>A={x}</m> is the infinite cyclic group <m>C_\infty</m>. 
+              It is easy to visualize this since <m>C_\infty\cong \mathbb{Z}</m>.
+            </p>
+          </example>
+
+          <p>
+            It is already somewhat challenging to visualize the free group on two generators, <m>F({x,y})</m>. 
+            The best one can do to represent it is an infinite graph called the <em>Cayley graph</em> of this group. 
+            It is obtained by starting at the origin (the center of the picture below), then branching out in four directions by a length of 1, then branching out similarly by a length of 1/2, then by 1/4, then by 1/8, etc 
+            (I stopped there, to avoid cluttering the picture too much but to get the complete Cayley graph one continues infinitely obtaining a fractal kind of picture). 
+            Then every element of <m>F ({x, y})</m> corresponds in a rather natural way to exactly one dot in this diagram. 
+            Indeed, we can place the empty word at the center, and we can agree that every <m>x</m> in a word takes us one step to the right, every <m>x^{-1}</m> to the left, every <m>y</m> up, and every <m>y^{-1}</m> down. For example, the word <m>yx^{-1}yx</m> takes us here:
+          </p>
+
+          <theorem xml:id="thm-ump-free"><title>Universal Mapping Property for Free Groups</title>
+            <statement>
+              <p>
+                Let <m>A</m> be a set, let <m>F(A)</m> be the free group on <m>A</m>, let <m>H</m> be a group, and let <m>g:A \to H</m> be a function. 
+                Then there is a unique homomorphism <m>f:F(A) \to H</m> satisfying <m>f(a) = g(a)</m> for all <m>a \in A</m>.
+              </p>
+            </statement>
+
+            <proof>
+              <p>
+                Set <m>f:F(A) \to H</m> to be given by <m>f(a_1^{i_1}a_2^{i_2}\cdots a_m^{i_m})=g(a_1)^{i_1}g(a_2)^{i_2}\cdots g(a_m)^{a_m}</m> for any <m>m\geq 0, a_j\in A, i_j\in\{-1,1\}</m>. 
+                One checks that <m>f</m> is well defined by noting that 
+                <md>
+                  <mrow> f(a_1^{i_1}a_2^{i_2}\cdots aa^{-1}\cdots a_m^{i_m}) &amp; =g(a_1)^{i_1}g(a_2)^{i_2}\cdots g(a)g(a)^{-1}\cdots g(a_m)^{a_m}</mrow>
+                  <mrow> &amp;=f(a_1^{i_1}a_2^{i_2}\cdots a_m^{i_m})</mrow>
+                </md>
+                for any <m>a\in G</m> and similarly for inserting <m>a^{-1}a</m>. 
+                The fact that <m>f</m> is a group homomorphism and its uniqueness are left as an exercise.
+              </p>
+            </proof>
+          </theorem>
+        </section>
+
+        <section xml:id="sec-presentations"><title>Presentations</title>
+
+          <subsection xml:id="subsec-presentations"><title>What is a Presentation?</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  Megamind: Oh, you're a villain, alright, just not a super one.
+                </q>
+                <q>
+                  Tighten: Yeah? What's the difference?
+                </q>
+              </p>
+              <p>
+                <q>
+                  Megamind: Presentation!
+                </q>
+              </p>
+              <attribution>Megamind (2010)</attribution>
+            </blockquote>
+
+            <p>
+              A group presentation provides a concise way to describe a group in terms of generators and relations.
+            </p>
+
+            <definition xml:id="def-gen-normal-subgroup"><title>Generated Normal Subgroup</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group and let <m>R \subseteq G</m> be a set. 
+                  The <em>normal subgroup of <m>G</m> generated by <m>R</m></em>, denoted <m>\langle R \rangle ^N</m>, is the set of all products of conjugates of elements of <m>R</m> and inverses of elements of <m>R</m>. 
+                  In symbols, 
+                  <me>
+                    \langle R \rangle ^N= \{ g_1r_1^{i_1}g_1^{-1} \dots g_mr_m^{i_m}g_m^{-1} \mid m \geq 0, r_j \in R, g_j \in G, i_j \in \{1,-1\}, \forall 1\leq j\leq m\}.
+                  </me>
+                </p>
+              </statement>
+            </definition>
+  
+            <definition xml:id="def-presentation"><title>Presentation</title>
+              <statement>
+                <p>
+                  Let <m>A</m> be a set and let <m>R</m> be a subset of the free group <m>F(A)</m>. 
+                  The group with <em>presentation</em> <m>\langle A \mid  R \rangle = \langle A | \{r = e \mid r \in R\} \rangle</m> is defined to be the quotient group <m>F(A)/\langle R \rangle ^N</m>.
+                </p>
+              </statement>
+            </definition>
+  
+            <example>
+              <p>
+                For <m>A=\{x\}</m>, <m>R=\{x^n\}</m> we obtain the cyclic group of order <m>n</m>: 
+                <me>
+                  C_n=\langle x \mid x^n=e\rangle = \frac{F(\{x\})}{\langle x^n\rangle ^N}=C_\infty/\langle x^n \rangle.
+                </me>
+              </p>
+            </example>
+  
+            <example>
+              <p>
+                For <m>A=\{r,s\}</m>, <m>R=\{s^2,r^n,srsr\}</m> we obtain the usual presentation for <m>D_{2n}</m>: 
+                <me>
+                  D_{2n}=\langle r,s \mid s^2=e,r^n=e,srsr=e \rangle =\frac{F\left( \{r,s\}\right)}{\{s^2,r^n,srsr\}^N}.
+                </me>
+              </p>
+            </example>
+  
+            <theorem xml:id="thm-ump-presentation"><title>UMP of a Presentation</title>
+              <statement>
+                <p>
+                  Let <m>A</m> be a set, let <m>F(A)</m> be the free group on <m>A</m>, let <m>R</m> be a subset of <m>F(A)</m>, let <m>H</m> be a group, and let <m>g:A \to H</m> be a function satisfying the property that whenever <m>r = a_1^{i1} \cdots a_m^{i_m} \in R</m>, with each <m>a_j \in A, g_j \in G</m> and <m>i_j \in \{1,-1\}</m>, then <m>(g(a_1))^{i_1} \cdots (g(a_m))^{i_m} = e_H</m>. 
+                  Then there is a unique homomorphism <m>\overline{f}: \langle A | R \rangle \to H</m> satisfying <m>\overline{f}(a\langle R\rangle ^N) = g(a)</m> for all <m>a \in A</m>.
+                </p>
+              </statement>
+  
+              <proof>
+                <p>
+                  By the UMP of the free group there is a unique group homomorphism <m>\tilde f:F(A)\to H</m> such that <m>f(a)=g(a)</m> for all <m>a\in A</m>. 
+                  Then for <m>r = a_1^{i1} \cdots a_m^{i_m} \in R</m>, we have <m>f(r)=(g(a_1))^{i_1} \cdots (g(a_m))^{i_m} = e_H</m>, showing that <m>R\subseteq \operatorname{Ker}(f)</m>. 
+                  Since <m>\operatorname{Ker}(f)\mathrel{\unlhd}F(A)</m> and <m>\langle R\rangle ^N</m> is the smallest normal subgroup containing <m>R</m>, it follows that <m>\langle R\rangle ^N\subseteq \operatorname{Ker}(f)</m>. 
+                  By the UMP of the quotient, <m>f</m> induces a group homomorphism <m>\overline{f}: G/\langle R\rangle ^N\to H</m>. 
+                  Moreover, for each <m>a\in A</m> we have <m>g(a)=f(a)=\overline{f}(a\langle R\rangle ^N)</m>.
+                </p>
+              </proof>
+            </theorem>
+  
+            <remark>
+              <p>
+                The UMP of the presentation says that one can build a homomorphism from a group with a given presentation to any other group <m>H</m> as long as one is able to send the generators (elements of <m>A</m>) via some function <m>g</m> to some elements of <m>H</m> that satisfy the same relations in <m>H</m> as those given in the presentation.
+              </p>
+            </remark>
+  
+            <example>
+              <p>
+                To find a groups homomorphism <m>D_{2n}\to \operatorname{GL}_2({\mathbb{R}})</m> it suffices to find a map <m>g:\{r,s\}\to \operatorname{GL}_2({\mathbb{R}})</m>, say <m>r\mapsto R, s\mapsto S</m> and to verify that <m>S^2=I_2,R^n=I_2, SRSR=I_2</m>. 
+                As you have shown on homework, this does hold for the matrices 
+                <me>
+                  R=\begin{bmatrix} \cos\left(\frac{2\pi}{n}\right) &amp; -\sin\left(\frac{2\pi}{n}\right) \\ \sin\left(\frac{2\pi}{n}\right)&amp; \cos\left(\frac{2\pi}{n}\right)\end{bmatrix}, S=\begin{bmatrix}  0 &amp; 1 \\ 1&amp; 0\end{bmatrix}.
+                </me> 
+                By the UMP of the presentation there is a group homomorphism <m>f:D_{2n}\to \operatorname{GL}_2({\mathbb{R}})</m> that extends <m>g</m>; that is <m>f(r^is)=R^iS</m> for all <m>0\leq i&lt;n</m>.
+              </p>
+            </example>
+  
+            <p>
+              We can use the map above to understand the notions of isometry and orientation-preserving a little more rigorously.
+              Indeed, an invertible linear transformation, equivalently an element <m>M\in \operatorname{GL}_n({\mathbb{R}})</m> is an isometry if and only if <m>\det(M)=\pm 1</m>. 
+              An invertible linear transformation, equivalently an element <m>M\in \operatorname{GL}_n({\mathbb{R}})</m> is orientation-preserving if and only if <m>\det(M)&gt;0</m>. 
+              Thus the group of orientation-preserving isometries of <m>{\mathbb{R}}^n</m> can be identified with <m>\operatorname{SL}_n({\mathbb{R}})</m>.
+            </p>
+            
+          </subsection>
+
+          <subsection xml:id="subsec-pres-quotient"><title>Every Group is a Quotient of a Free Group</title>
+            <p>
+              
+            </p>
+          </subsection>
+          
+        </section>
+        
+      </chapter>

@@ -355,7 +355,7 @@
   <rename element="objectives">Reminders and Recollections</rename>
 
   <!-- Specify the default type of cross reference: -->
-  <!-- <cross-references text="type-global" /> -->
+  <cross-references text="type-global" />
 
 
 </docinfo>
