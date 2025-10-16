@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Generated Subgroups</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Modern Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="modern-algebra.html"><span class="title">Modern Algebra:</span> <span class="subtitle">Groups, Rings, Modules, Fields</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-cyclic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-cyclic.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-cyclic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\can}{can}
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\char}{char}
+\DeclareMathOperator{\cp}{CharPoly}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dim}{dim}
+\DeclareMathOperator{\edim}{embdim} 
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\eval}{eval}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\gcd}{gcd}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\max}{max}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\mp}{MinPoly}
+\DeclareMathOperator{\mSpec}{mSpec}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\ns}{nullspace}
+\DeclareMathOperator{\opp}{opp}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\pdim}{pdim}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\PtStab}{pStab}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\sStab}{SetStab}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\trdeg}{trdeg}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}[1]{#1-\mathbf{Mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\a{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\ff}{{\mathfrak f}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fh}{{\mathfrak h}}
+\newcommand{\fi}{{\mathfrak i}}
+\newcommand{\fj}{{\mathfrak j}}
+\newcommand{\fk}{{\mathfrak k}}
+\newcommand{\fl}{{\mathfrak l}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fn}{{\mathfrak n}}
+\newcommand{\fo}{{\mathfrak o}}
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fr}{{\mathfrak r}}
+\newcommand{\fs}{{\mathfrak s}}
+\newcommand{\ft}{{\mathfrak t}}
+\newcommand{\fu}{{\mathfrak u}}
+\newcommand{\fv}{{\mathfrak v}}
+\newcommand{\fw}{{\mathfrak w}}
+\newcommand{\fx}{{\mathfrak x}}
+\newcommand{\fy}{{\mathfrak y}}
+\newcommand{\fz}{{\mathfrak z}}
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\ddots{d_1, \dots, d_n} 
+\def\edots{e_1, \dots, e_n} 
+\def\fdots{f_1, \dots, f_n} 
+\def\gdots{g_1, \dots, g_n} 
+\def\udots{u_1, \dots, u_n} 
+\def\xdots{x_1, \dots, x_n} 
+
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd}
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-group.html" class="internal"><span class="codenumber">I</span> <span class="title">Group Theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-intro-groups.html" class="internal"><span class="codenumber">1</span> <span class="title">Intro to Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-group-basics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Group Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Binary Operations and the Definition of a Group</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-props" class="internal"><span class="codenumber">1.1.2</span> <span class="title">First Properties of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-abelian" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Abelian Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">First Examples of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups-units" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Groups of Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-misc" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Other Initial Examples and Properties</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-order-power.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Order and Power</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-power" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Power</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-order" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Order</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-symmetric.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutations and Symmetric Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-symmetric" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Symmetric Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-cycles-transpositions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Cycles and Transpositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-even-odd" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Even and Odd Permutations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-d2n.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Dihedral Groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-d2n.html#subsec-d2n" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Dihedral Groups</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gphoms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Group Homomorphisms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-homom" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Homomorphism? I Barely Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-isomorphisms" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Isomorphism? I Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-automorphisms" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Automorphism? I’m <em class="emphasis">Am</em> ’em!</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subgroups.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subgroups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-basics" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Subgroups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-lattice" class="internal"><span class="codenumber">1.6.2</span> <span class="title">The Subgroup Lattice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-center" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Stuck in the Middle</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-cyclic.html" class="internal"><span class="codenumber">2</span> <span class="title">Generators, Cyclic Groups</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-gp-generators.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Generated Subgroups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gp-generators.html#subsec-gp-gensub" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Generational Wealth</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cyclic.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cyclic Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-groups" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Definition and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-subgroups" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Subgroups of Cyclic Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-uniqueness" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Uniqueness of Cyclic Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-normal-quotient.html" class="internal"><span class="codenumber">3</span> <span class="title">Normal Subgroups, Quotient Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cosets.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Cosets and Lagrange’s Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cosets.html#subsec-cosets" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Cosets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cosets.html#subsec-indices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">The Index of a Subgroup</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-normal-subgroups.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Normal Subgroups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-subgroups.html#subsec-normal" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The New Normal</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-quotient-groups.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Quotient Groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-quotient-groups.html#subsec-quotients" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Quotient Groups</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-products-iso-thms.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Products and the Isomorphism Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-products-iso-thms.html#subsec-isomorphism-thms" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The First Isomorphism Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-products-iso-thms.html#subsec-hk" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Products</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-presentations.html" class="internal"><span class="codenumber">4</span> <span class="title">Free Groups, Presentations (*)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-free-groups.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Free Groups</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-presentations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Presentations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-presentations.html#subsec-presentations" class="internal"><span class="codenumber">4.2.1</span> <span class="title">What is a Presentation?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-presentations.html#subsec-pres-quotient" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Every Group is a Quotient of a Free Group</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-group-actions.html" class="internal"><span class="codenumber">5</span> <span class="title">Group Actions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="graction.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Group Actions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-actions" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Time to Act</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-perm-rep" class="internal"><span class="codenumber">5.1.2</span> <span class="title">The Permutation Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-faithful-transitive" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Faithful and Transitive Actions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-left-mult-conjugation.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Self Actions and Conjugacy</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-left-mult-conjugation.html#subsec-self-action" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Self Actions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-left-mult-conjugation.html#subsec-conjugacy" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Conjugacy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Orbits and Stabilizers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html#subsec-lois-orbit-stabilizer" class="internal"><span class="codenumber">5.3.1</span> <span class="title">In a Stable Orbit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html#subsec-class-eq" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Class Equation</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sylow.html" class="internal"><span class="codenumber">6</span> <span class="title">Simple, Solvable, Sylow</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sylow.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Sylow’s Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-p-groups" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Groups of Prime Order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-sylow" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Sylow Subgroups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-sylows-theorem" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Sylows-Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-simple-groups.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Simple Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-simple-groups.html#subsec-simple" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Keeping it Simple</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-simple-groups.html#subsec-simple-qual" class="internal"><span class="codenumber">6.2.2</span> <span class="title">A Wealth of Problems on Simple Groups</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solvable.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Solvable Groups (*)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solvable.html#subsec-composition-series" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Composition Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solvable.html#subsec-solvable" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solvable Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-group-products.html" class="internal"><span class="codenumber">7</span> <span class="title">Group Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dps.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Direct Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dps.html#subsec-external-dps-revisited" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Direct Products of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dps.html#subsec-internal-recognition" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Internal and External Direct Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-spds.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Semidirect Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-external-sdps" class="internal"><span class="codenumber">7.2.1</span> <span class="title">External Semidirect Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-internal-sdps" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Internal Semidirect Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-order-pq" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Groups of Order <span class="process-math">\(pq\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftfgag.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Finitely Generated Abelian Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-gp-generators"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Generated Subgroups</span>
+</h2>
+<section class="introduction" id="sec-gp-generators-2"><blockquote class="blockquote" id="sec-gp-generators-2-1">
+<div class="para" id="sec-gp-generators-2-1-1">“How often misused words generate misleading thoughts.”</div> <cite class="attribution">―Herbert Spencer</cite>
+</blockquote></section><section class="subsection" id="subsec-gp-gensub"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Generational Wealth</span>
+</h3>
+<article class="definition definition-like" id="def-gensubgroup"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Generated Subgroup.</span>
+</h4> <div class="para logical" id="def-gensubgroup-2-1">
+<div class="para">Given a group <span class="process-math">\(G\)</span> and a subset <span class="process-math">\(S\)</span> of <span class="process-math">\(G\text{,}\)</span> the <em class="emphasis">subgroup of <span class="process-math">\(G\)</span> generated by <span class="process-math">\(S\)</span></em>, written <span class="process-math">\(\langle S \rangle\text{,}\)</span> is the smallest subgroup of <span class="process-math">\(G\)</span> containing <span class="process-math">\(S\text{.}\)</span> In symbols,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle S \rangle := \bigcap_{H \leq G, S \subseteq H} H.
+\end{equation*}
+</div>
+<div class="para">The elements of <span class="process-math">\(S\)</span> are known as <em class="emphasis">generators</em>, and <span class="process-math">\(S\)</span> is called a <em class="emphasis">generating set</em>. </div>
+</div></article><aside class="aside aside-like" id="subsec-gp-gensub-3"><div class="para" id="subsec-gp-gensub-3-1">In <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>, <span class="process-math">\(\langle\)</span> is written using <code class="code-inline tex2jax_ignore">\langle</code> and <span class="process-math">\(\rangle\)</span> is written using <code class="code-inline tex2jax_ignore">\rangle</code>, though this text recommends the shortcut command <code class="code-inline tex2jax_ignore">\newcommand{\gen}[1]{\langle #1 \rangle}</code>
+</div></aside><article class="definition definition-like" id="def-fg-group"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Finitely Generated Group.</span>
+</h4> <div class="para" id="def-fg-group-2-1">A group <span class="process-math">\(G\)</span> is <em class="emphasis">finitely generated</em> provided that <span class="process-math">\(G=\langle S \rangle\text{,}\)</span> where <span class="process-math">\(S\)</span> is a finite set. </div></article><div class="para" id="subsec-gp-gensub-5">We can describe the elements of <span class="process-math">\(\langle S \rangle\)</span> explicitly.</div>
+<article class="lemma theorem-like" id="lem-gensubgp"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Elements of <span class="process-math">\(\igen S\)</span>.</span>
+</h4>
+<div class="para logical" id="lem-gensubgp-2-1">
+<div class="para">For a subset <span class="process-math">\(S\)</span> of <span class="process-math">\(G\text{,}\)</span> the elements of <span class="process-math">\(\langle S \rangle\)</span> can be described as:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle S \rangle = \left\{x_1^{j_1} \cdots x_m^{j_m} \mid m \geq 0, j_1, \dots, j_m \in \mathbb{Z}\text{ and }x_1, \dots, x_m \in S \right\}.
+\end{equation*}
+</div>
+</div></article><details id="lem-gensubgp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lem-gensubgp-3-1">
+<div class="para">For notational simplicity, let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+X= \left\{x_1^{j_1} \cdots x_m^{j_m} \mid m \geq 0, j_1, \dots, j_m \in \mathbb{Z}\text{ and }x_1, \dots, x_m \in S \right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">I claim <span class="process-math">\(X = \igen S\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="lem-gensubgp-3-2"><ol class="decimal">
+<li id="lem-gensubgp-3-2-1-1">
+<span class="heading"><span class="title"><span class="process-math">\((X\sse \igen S)\)</span>.</span></span><div class="para" id="lem-gensubgp-3-2-1-1-2">Let <span class="process-math">\(z\in X\text{.}\)</span> Thus <span class="process-math">\(z = x_1^{j_1} \cdots x_m^{j_m}\text{,}\)</span> where <span class="process-math">\(m \geq 0, j_1, \dots, j_m \in \mathbb{Z}\)</span> and <span class="process-math">\(x_1, \dots, x_m \in S\text{.}\)</span>
+</div>
+<div class="para" id="lem-gensubgp-3-2-1-1-3">Since <span class="process-math">\(\langle S \rangle\)</span> is a subgroup of <span class="process-math">\(G\)</span> containing <span class="process-math">\(S\text{,}\)</span> we see <span class="process-math">\(x_1, \dots, x_m\in \igen S\text{.}\)</span> Additionally, given the group group structure of <span class="process-math">\(\langle S \rangle\)</span> it is closed under products and inverses, and thus contains <span class="process-math">\(x_1^{j_1} \cdots x_m^{j_m}\text{.}\)</span> Hence <span class="process-math">\(z\in \igen S\)</span> and <span class="process-math">\(X\sse\igen S\)</span>
+</div>
+</li>
+<li id="lem-gensubgp-3-2-1-2">
+<span class="heading"><span class="title"><span class="process-math">\((\igen S\sse X)\)</span>.</span></span><div class="para" id="lem-gensubgp-3-2-1-2-2">I claim <span class="process-math">\(X\)</span> is a subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div>
+<div class="para" id="lem-gensubgp-3-2-1-2-3">First, notice <span class="process-math">\(S \ne \emptyset\text{,}\)</span> since we allow <span class="process-math">\(m = 0\)</span> and declare the empty product to be <span class="process-math">\(e_G\text{.}\)</span>
+</div>
+<div class="para logical" id="lem-gensubgp-3-2-1-2-4">
+<div class="para">Let <span class="process-math">\(x = x_1^{j_1} \cdots x_m^{j_m}\)</span> and <span class="process-math">\(y = y_1^{i_1} \cdots y_n^{i_m}\)</span> be arbitrary in <span class="process-math">\(X\text{.}\)</span> Thus <span class="process-math">\(x_j, y_i\in S\)</span> for all <span class="process-math">\(i,j\text{.}\)</span> By <a href="sec-group-basics.html#thm-group-inverses" class="xref" data-knowl="./knowl/xref/thm-group-inverses.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21: Properties of Inverses">Theorem 1.21</a> (2), we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-group-inverses.html ./knowl/xref/thm-one-step.html" id="lem-gensubgp-3-2-1-2-4-7">
+\begin{align*}
+x_1^{j_1} \cdots x_m^{j_m}(y_1^{i_1} \cdots y_n^{i_m})^{-1} &amp;= x_1^{j_1} \cdots x_m^{j_m} y_n^{-i_m} \cdots y_1^{-i_1}
+\end{align*}
+</div>
+<div class="para">As <span class="process-math">\(x_1^{j_1} \cdots x_m^{j_m} y_n^{-i_m} \cdots y_1^{-i_1}\in X\)</span> as well, we see <span class="process-math">\(X\leq G\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>.</div>
+</div>
+<div class="para" id="lem-gensubgp-3-2-1-2-5">Since <span class="process-math">\(\igen S\)</span> is defined to be the intersection of all subgroups of <span class="process-math">\(G\)</span> containing <span class="process-math">\(S\text{,}\)</span> we have <span class="process-math">\(\igen S\sse X\text{,}\)</span> completing the proof.</div>
+</li>
+</ol></div></article></details><div class="para" id="subsec-gp-gensub-7">Lets look at some examples for context.</div>
+<article class="example example-like" id="ex-group-gen"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Generated Groups.</span>
+</h4>
+<div class="para logical" id="ex-group-gen-2-1"><ol class="decimal">
+<li id="ex-group-gen-2-1-1-1"><div class="para" id="ex-group-gen-2-1-1-1-1">If <span class="process-math">\(G\)</span> is a group, then <span class="process-math">\(S=G\)</span> is a generating set of <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+<li id="ex-group-gen-2-1-1-2"><div class="para" id="ex-group-gen-2-1-1-2-1">The trivial group is generated by the empty set.</div></li>
+<li id="ex-group-gen-2-1-1-3"><div class="para" id="ex-group-gen-2-1-1-3-1">If <span class="process-math">\(S=\{x\}\)</span> is a set with one element then we write <span class="process-math">\(\langle S \rangle=\)</span> and we refer to this as the <em class="emphasis">cyclic subgroup generated by</em> <span class="process-math">\(x\text{.}\)</span> </div></li>
+<li id="ex-nz-generated"><div class="para" id="ex-nz-generated-1">
+<span class="process-math">\(n\Z=\igen n\)</span> for every <span class="process-math">\(n\in\Z\text{.}\)</span>
+</div></li>
+<li id="ex-d2n-rs"><div class="para" id="ex-d2n-rs-1"><span class="process-math">\(\displaystyle \igen{r,s}=D_{2n}\)</span></div></li>
+<li id="ex-generating-an"><div class="para logical" id="ex-generating-an-1">
+<div class="para">
+<span class="process-math">\(A_n\)</span> is the subgroup of <span class="process-math">\(S_n\)</span> generated by all produts of <span class="process-math">\(2\)</span>-cyclies (disjoint or not). In symbols,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_n=\langle (i \ j )(k \ l) \mid i,j,k,l \in \{1, \ldots, n\}\rangle.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><details id="exe-d2p" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Generating <span class="process-math">\(D_{2p}\)</span>.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exe-d2p-2-1">Let <span class="process-math">\(p\ge 3\)</span> be prime and <span class="process-math">\(r,r'\)</span> be any two distinct reflections in <span class="process-math">\(D_{2p}\text{.}\)</span> Then <span class="process-math">\(\igen{r,r'}=D_{2p}\text{.}\)</span>
+</div></article></details><details id="generating-gl" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Generating <span class="process-math">\(\GL_n(\R)\)</span>.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="generating-gl-2-1">For any integer <span class="process-math">\(n \geq 1\text{,}\)</span> the set of column vectors <span class="process-math">\(e_i\)</span> consisting of <span class="process-math">\(1\)</span> in the <span class="process-math">\(i\th\)</span> row and <span class="process-math">\(0\)</span> elsewhere generate <span class="process-math">\(\GL_n(\R)\text{.}\)</span> As you may recall from a linear algebra course, these are called the <em class="emphasis">elementary matrices</em>. (Bonus: what subgroup do the “type I” elementary matrices generate?)</div></article></details><div class="para" id="subsec-gp-gensub-11">We look now at generating <span class="process-math">\(S_n\text{;}\)</span> the following lemma will be helpful.</div>
+<article class="lemma theorem-like" id="lem-generating-sn"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="lem-generating-sn-1-1">
+<div class="para">For <span class="process-math">\(\sigma\in S_n\)</span> and distinct intgers <span class="process-math">\(i_1, \dots, i_p\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma(i_1 \, i_2 \, \cdots i_p) \sigma^{-1} = (\sigma(i_1) \, \cdots \, \sigma(i_p)).
+\end{equation*}
+</div>
+<div class="para">(Note that the right-hand cycle is a cycle since <span class="process-math">\(\sigma\)</span> is one-to-one.)</div>
+</div></article><details id="lem-generating-sn-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-generating-sn-2-1">To prove this, evaluate both sides at <span class="process-math">\(\sigma(i_t)\)</span> for any <span class="process-math">\(t\)</span> and observe that one gets <span class="process-math">\(\sigma(i_{t+1})\)</span> (with the supscript taken modulo <span class="process-math">\(p\)</span>) both times. This proves they agree on the set <span class="process-math">\(\sigma(\{i_1, \dots, i_p\})\text{.}\)</span> If <span class="process-math">\(j\)</span> is not in this set, then <span class="process-math">\((i_1 \, i_2 \, \cdots i_p)\)</span> fixes <span class="process-math">\(\sigma^{-1}(j)\)</span> so the left-hand side fixes <span class="process-math">\(j\text{.}\)</span> So does the right, since <span class="process-math">\(\sigma^{-1}(j) \notin \{\sigma(i_1), \dots, \sigma(i_p)\}\text{.}\)</span> Thus the two functions coincide on elements.</div></article></details><article class="theorem theorem-like" id="thm-generating-sn"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Generating <span class="process-math">\(S_n\)</span>.</span>
+</h4>
+<div class="para" id="thm-generating-sn-2-1">For <span class="process-math">\(n\ge 2\)</span> prove that <span class="process-math">\(S_n\)</span> is generated by <span class="process-math">\((12)\)</span> and the <span class="process-math">\(n\)</span>-cycle <span class="process-math">\((12\cdots n)\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-gp-gensub-14"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-gp-gensub-14-1">This theorem will prove surprisingly useful all the way down in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ch-galois" missing or not unique]</code>, saving us a lot of time with our proof of unsolvable quintic polyomials.</div></article><article class="remark remark-like" id="subsec-gp-gensub-15"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.10</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-gp-gensub-15-1">Note that in <a href="sec-symmetric.html#thm-cycledecomp" class="xref" data-knowl="./knowl/xref/thm-cycledecomp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.44: Cycle Decompostion">Theorem 1.44</a> we showed <span class="process-math">\(S_n\)</span> is generated by transpositions.</div></article><div class="para" id="subsec-gp-gensub-16">Lets look at another example.</div>
+<article class="example example-like" id="ex-commutator-subgroup"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Commutator Subgroup.</span>
+</h4> <div class="para" id="ex-commutator-subgroup-2">Let <span class="process-math">\(G\)</span> be a group, <span class="process-math">\(S=\{aba\inv b\inv|a,b\in G\}\text{,}\)</span> and <span class="process-math">\(G'=\igen S\text{.}\)</span> This is known as the <dfn class="terminology">commutator subgroup</dfn>  of <span class="process-math">\(G\text{.}\)</span> </div></article><article class="remark remark-like" id="subsec-gp-gensub-18"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.12</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-gp-gensub-18-1">Commutator subgroups prove invaluable when it comes to something called <em class="emphasis">abelianization</em>, which is, loosely speaking, a way of "modding out" the non-commutative part of <span class="process-math">\(G\)</span> to obtain a new group that is abelian. This is seen rigorously in <a href="sec-products-iso-thms.html#ex-abelianization" class="xref" data-knowl="./knowl/xref/ex-abelianization.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.42: Abelianization">Example 3.42</a>.</div></article><div class="para" id="subsec-gp-gensub-19">A nice property of a <a href="sec-gp-generators.html#def-gensubgroup" class="xref" data-knowl="./knowl/xref/def-gensubgroup.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.1: Generated Subgroup">Generated Subgroup</a> is that once you’ve located the generators, you’ve found the whole group:</div>
+<article class="proposition theorem-like" id="prop-generators-of-subgroup"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Generators of Subgroups.</span>
+</h4>
+<div class="para" id="prop-generators-of-subgroup-2-1">If <span class="process-math">\(H\)</span> is a subgroup of <span class="process-math">\(G\)</span> that contains <span class="process-math">\(S\text{,}\)</span> then <span class="process-math">\(\igen S\leq H\text{.}\)</span>
+</div></article><div class="para" id="subsec-gp-gensub-21">In this way, if we can understand something about the generators of a group, we can (for the most part) extend that knowledge to the group as a whole. This is something you may have seen in the form of a basis, either for a vector space or a topological space.</div></section><article class="outcomes goal-like" id="sec-gp-generators-4"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc">
+<li id="sec-gp-generators-4-1-1"><div class="para" id="sec-gp-generators-4-1-1-1">For a subset <span class="process-math">\(S\)</span> of a group, the <a href="sec-gp-generators.html#def-gensubgroup" class="xref" data-knowl="./knowl/xref/def-gensubgroup.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.1: Generated Subgroup">Generated Subgroup</a> of <span class="process-math">\(S\)</span> is the smallest subgroup containing <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+<li id="sec-gp-generators-4-1-2"><div class="para" id="sec-gp-generators-4-1-2-1">
+<span class="process-math">\(\langle S \rangle = \left\{x_1^{j_1} \cdots x_m^{j_m} \mid m \geq 0, j_1, \dots, j_m \in \mathbb{Z}\text{ and }x_1, \dots, x_m \in S \right\}\text{.}\)</span> <details class="ptx-footnote" aria-live="polite" id="sec-gp-generators-4-1-2-1-2"><summary class="ptx-footnote__number" title="Footnote 2.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec-gp-generators-4-1-2-1-2">See: <a href="sec-gp-generators.html#lem-gensubgp" class="xref" data-knowl="./knowl/xref/lem-gensubgp.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.3: Elements of \igen S">Lemma 2.3</a>.</div></details>
+</div></li>
+<li id="sec-gp-generators-4-1-3"><div class="para" id="sec-gp-generators-4-1-3-1">Two prominent examples are <span class="process-math">\(D_{2n}=\igen{r,s}\)</span> and <span class="process-math">\(A_n=\langle (i \ j )(k \ l) \mid i,j,k,l \in \{1, \ldots, n\}\rangle\text{.}\)</span>
+</div></li>
+</ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-cyclic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-cyclic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

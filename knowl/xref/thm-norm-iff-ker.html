@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.39</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Subgroup iff Kernel.</span>
+</h4>
+<div class="para">A subgroup <span class="process-math">\(N\)</span> of a group <span class="process-math">\(G\)</span> is normal in <span class="process-math">\(G\)</span> if and only if <span class="process-math">\(N\)</span> is the kernel of a homomorphism with domain <span class="process-math">\(G\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">First, suppose <span class="process-math">\(K\nsg G\text{.}\)</span> Let <span class="process-math">\(H=G/K\)</span> (which is a group since <span class="process-math">\(K\)</span> is normal in <span class="process-math">\(G\)</span>) and define <span class="process-math">\(\varphi: G\to G/K\)</span> such that <span class="process-math">\(\varphi(g)=gK\text{.}\)</span> Let <span class="process-math">\(k\in K\text{,}\)</span> and observe that <span class="process-math">\(\varphi(k)=kK=K\text{,}\)</span> and so <span class="process-math">\(k\in\ker(\varphi)\text{.}\)</span> Let <span class="process-math">\(g\in\ker(\varphi)\text{,}\)</span> meaning that <span class="process-math">\(\varphi(g)=K\text{,}\)</span> placing <span class="process-math">\(g\in K\text{.}\)</span> By <a href="sec-quotient-groups.html#prop-quotient-surj-hom" class="xref" data-knowl="./knowl/xref/prop-quotient-surj-hom.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.38: Quotient Map is Surjective Homomorphism">Proposition 3.38</a> this map is a homomorphism.</div> <div class="para logical">
+<div class="para">Next, suppose there exists a group <span class="process-math">\(H\)</span> and and a homomorphism <span class="process-math">\(\varphi : G\to H\)</span> such that <span class="process-math">\(K = \ker(\varphi)\text{.}\)</span> Let <span class="process-math">\(g\in G\)</span> and consider <span class="process-math">\(gKg\inv\text{.}\)</span> Observe</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(gKg\inv)=\varphi(g)\varphi(K)\varphi(g\inv)=0,
+\end{equation*}
+</div>
+<div class="para">given that <span class="process-math">\(\ker(\varphi)=K\text{.}\)</span> Thus <span class="process-math">\(gKg\inv\subseteq K\)</span> for all <span class="process-math">\(g\in G\text{,}\)</span> making <span class="process-math">\(K\)</span> a normal subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-quotient-groups.html#thm-norm-iff-ker">in-context</a></span>
+</body>
+</html>

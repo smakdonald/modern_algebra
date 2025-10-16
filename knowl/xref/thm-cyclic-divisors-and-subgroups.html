@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.26</span><span class="period">.</span><span class="space"> </span><span class="title">Subgroups of Cyclic Groups.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(G=\langle x\rangle\text{,}\)</span> where <span class="process-math">\(x\)</span> has finite order <span class="process-math">\(n\text{.}\)</span> Then there is a bijection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi : \{\text{divisors of } |G|\} \to \{\text{subgroups of } G\} \text{ given by } \Psi(d) = \langle x^{\frac{|G|}{d}}\rangle
+\end{equation*}
+</div>
+<div class="para">for each divisor <span class="process-math">\(d\)</span> of <span class="process-math">\(|G|\text{.}\)</span> Moreover, for each subgroup <span class="process-math">\(H\)</span> of <span class="process-math">\(G\text{,}\)</span> <span class="process-math">\(\Psi^{-1}(H) = |H|\text{.}\)</span> In particular, all subgroups of <span class="process-math">\(G\)</span> are cyclic and there is a unique subgroup of each order.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(\Psi : \{\text{divisors of } |G|\} \to \{\text{subgroups of } G\} \text{ given by } \Psi(d) = \langle x^{\frac{|G|}{d}}\rangle\)</span> and  <span class="process-math">\(\Phi:\{\text{subgroups of } G\} \to  \{\text{divisors of } |G|\}\)</span> be given by <span class="process-math">\(\Phi(H)=|H|\text{.}\)</span> I claim that for any divisor <span class="process-math">\(d\)</span> of <span class="process-math">\(|G|\text{,}\)</span> we have <span class="process-math">\((\Psi\circ\Phi)(d)=d\text{.}\)</span>
+</div> <div class="para">We have <span class="process-math">\((\Psi\circ\Phi)(d)=\left| \langle g^{\frac{|G|}{d}}\rangle\right|=\left| g^{\frac{|G|}{d}}\right|=\frac{|G|}{\operatorname{gcd}(|G|/d,|G|)}=\frac{|G|}{|G|/d}=d\text{.}\)</span>
+</div> <div class="para">For any subgroup <span class="process-math">\(H\)</span> of <span class="process-math">\(G\text{,}\)</span> we have <span class="process-math">\((\Phi\circ\Psi)(H)=H\text{.}\)</span>
+</div> <div class="para">By <a href="sec-cyclic.html#lem-cyclic-sub-gen" class="xref" data-knowl="./knowl/xref/lem-cyclic-sub-gen.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.25: Generating Subgroups of Cyclic Groups">Lemma 2.25</a> any <span class="process-math">\(H\leq G\)</span> is either <span class="process-math">\(H=\{e\}\text{,}\)</span> for which <span class="process-math">\((\Phi\circ\Psi)(\{e\})=\Phi(1)=\langle g^{|G|} \rangle=\{e\}\)</span> or is of the form <span class="process-math">\(H=\langle g^k \rangle\text{.}\)</span> In the latter case, setting <span class="process-math">\(|G|=n\)</span> we have <span class="process-math">\(|H|=|g^k|=\frac{n}{\operatorname{gcd}(n,k)}\)</span> and <span class="process-math">\((\Phi\circ\Psi)(H)=\langle g^{\frac{n}{n/\operatorname{gcd}(n,k)}} \rangle=\langle g^{\operatorname{gcd}(n,k)}\rangle.\text{.}\)</span> It remains to show that <span class="process-math">\(\langle g^{\operatorname{gcd}(n,k)}\rangle=\langle g^k\rangle=H\text{.}\)</span> By Bézout’s Identity, <span class="process-math">\(\operatorname{gcd}(n,k)=an+bk\)</span> for some integers <span class="process-math">\(a,b\text{.}\)</span> Since <span class="process-math">\(g^{\operatorname{gcd}(n,k)}=(g^n)^a(g^k)^b=e^a(g^k)^b=(g^k)^b\in \langle g^k \rangle\)</span> if follows that <span class="process-math">\(\langle g^{\operatorname{gcd}(n,k)}\rangle \subseteq \langle g^k \rangle\text{.}\)</span> On the other hand <span class="process-math">\(k\)</span> is a multiple of <span class="process-math">\(\operatorname{gcd}(n,k)\)</span> so <span class="process-math">\(g^k\in \langle g^{\operatorname{gcd}(n,k)}\rangle\)</span> and thus <span class="process-math">\(\langle g^k \rangle \subseteq \langle g^{\operatorname{gcd}(n,k)}\rangle\text{.}\)</span> Finally, we conclude that <span class="process-math">\((\Phi\circ\Psi)(\langle g^k \rangle)=\langle g^{\operatorname{gcd}(n,k)}\rangle=\langle g^k \rangle\)</span> for any <span class="process-math">\(k\in \mathbb{Z},k&gt;0\text{.}\)</span>
+</div> <div class="para">Thus <span class="process-math">\(\Phi\)</span> is a two sided inverse to <span class="process-math">\(\Phi\text{,}\)</span> making <span class="process-math">\(\Phi\)</span> a bijection.</div></article></details><span class="incontext"><a class="internal" href="sec-cyclic.html#thm-cyclic-divisors-and-subgroups">in-context</a></span>
+</body>
+</html>

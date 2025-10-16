@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.16</span><span class="period">.</span><span class="space"> </span><span class="title">Recognition Theorem for Internal Semidirect Products.</span>
+</h4>
+<div class="para logical">
+<div class="para">For a group <span class="process-math">\(G\text{,}\)</span> suppose we are given <span class="process-math">\(H\)</span> and <span class="process-math">\(K\)</span> so that</div>
+<ul class="disc">
+<li><div class="para"><span class="process-math">\(H \unlhd G\text{,}\)</span></div></li>
+<li><div class="para"><span class="process-math">\(K \leq G\text{,}\)</span></div></li>
+<li><div class="para">
+<span class="process-math">\(HK = G\text{,}\)</span> and</div></li>
+<li><div class="para"><span class="process-math">\(H \cap K = \{e\}\text{.}\)</span></div></li>
+</ul>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\rho: K \to \operatorname{Aut}(H)\)</span> be the permutation representation of the action of <span class="process-math">\(K\)</span> on <span class="process-math">\(H\)</span> via automorphisms given by <a href="graction.html#ex-conj" class="xref" data-knowl="./knowl/xref/ex-conj.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4: Conjugation">Conjugation</a> in <span class="process-math">\(G\text{.}\)</span> (This means that for any <span class="process-math">\(k\in K\)</span> <span class="process-math">\(\rho(k)=c_k\text{,}\)</span> where <span class="process-math">\(c_k\in \operatorname{Aut}(H)\)</span> is the function <span class="process-math">\(c_k(h)=khk^{-1}\)</span> for all <span class="process-math">\(h\in H\text{.}\)</span>) Then the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-conj.html ./knowl/xref/thm-sdp.html">
+\begin{equation*}
+\theta: H \rtimes_\rho K \to G
+\end{equation*}
+</div>
+<div class="para">defined by <span class="process-math">\(\theta(y,x) = yx\)</span> is an isomorphism of groups. Moreover, under this isomorphism, <span class="process-math">\(K\)</span> corresponds to <span class="process-math">\(K'\)</span> and <span class="process-math">\(H\)</span> corresponds to <span class="process-math">\(H'\)</span> (referring to the notation in <a href="sec-spds.html#thm-sdp" class="xref" data-knowl="./knowl/xref/thm-sdp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.15: Semidirect Products are Groups">Theorem 7.15</a> above).</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\theta((y_1, x_1) (y_2, x_2))  &amp; = 
+\theta(y_1 c_{x_1}(y_2), x_1 x_2) \\
+&amp; = y_1x_1y_2x_1^{-1} x_1 x_2 \\
+&amp; = y_1x_1y_2x_2 = \theta(y_1, x_1) \theta(y_2, x_2)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(\theta\)</span> is a homomorphism. It’s kernel is <span class="process-math">\(\{(y,x) \mid y = x^{-1}, y\in H, x\in K \}\text{,}\)</span> which is just <span class="process-math">\(\{e\}\)</span> since <span class="process-math">\(H \cap K = \{e\}\text{.}\)</span> The image of <span class="process-math">\(\theta\)</span> is clearly <span class="process-math">\(KH = G\text{.}\)</span> This proves <span class="process-math">\(\theta\)</span> is an isomorphism. It is obvious that <span class="process-math">\(\theta(K') = K\)</span> and <span class="process-math">\(\theta(H')= H\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-spds.html#thm-sdp-recognition">in-context</a></span>
+</body>
+</html>

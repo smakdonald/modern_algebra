@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.29</span><span class="period">.</span><span class="space"> </span><span class="title">The Length of the Orbit is the Index of the Stabilizer (LOIS).</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group that acts on a finite set <span class="process-math">\(S\)</span> via <span class="process-math">\(\cdot\text{.}\)</span> For any <span class="process-math">\(s \in S\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Orbit}_G(s)| = [G: \operatorname{Stab}_G(s)]
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\mathcal L\)</span> be the collection of left cosets of <span class="process-math">\(\operatorname{Stab}_G(s)\)</span> in <span class="process-math">\(G\text{.}\)</span> Define a function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha: \mathcal L\to \operatorname{Orbit}_G(s)
+\end{equation*}
+</div>
+<div class="para">by <span class="process-math">\(\alpha(x \operatorname{Stab}_G(s)) = x \cdot s\text{.}\)</span> This function is well defined and one-to-one:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x \operatorname{Stab}_G(s) = y \operatorname{Stab}_G(s)\iff x^{-1}y \in \operatorname{Stab}_G(s) \iff x^{-1}y \cdot s = s \iff y \cdot s = x \cdot s.
+\end{equation*}
+</div>
+<div class="para">The function <span class="process-math">\(\alpha\)</span> is onto by definition of <span class="process-math">\(\operatorname{Orbit}_G(s)\text{.}\)</span> Thus <span class="process-math">\(\alpha\)</span> is a bijection and it yields equalities</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[G: \operatorname{Stab}_G(s)]=|\mathcal L|=|\operatorname{Orbit}_G(s)|.
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-orbit-stab-class-eq.html#thm-LOIS">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.26</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Finitely Generated Abelian Groups (FTFGAG).</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(G\)</span> be a finitely generated abelian group. Then <span class="process-math">\(G\)</span> is a direct product of cyclic groups. More precisely</div>
+<ol class="decimal">
+<li><div class="para">There exist <span class="process-math">\(r,s \geq 0\text{,}\)</span> prime integers <span class="process-math">\(p_1&lt;\ldots&lt; p_s\)</span> and positive integers <span class="process-math">\(a_i \geq 1\)</span> such that: <span class="process-math">\(G \cong \mathbb{Z}^r\times Q_1 \times \dots \times Q_s\)</span> where <span class="process-math">\(|Q_i| = p_i^{a_i}\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">For each index <span class="process-math">\(1\leq i\leq s\text{,}\)</span> there is a partition <span class="process-math">\(a_i = a_{i,1} + \dots + a_{i,j_i}\)</span> with each <span class="process-math">\(a_{i,j} \geq 1\text{,}\)</span> such that <span class="process-math">\(Q_i \cong (\mathbb{Z}/p_i^{a_{i1}}) \times \dots \times (\mathbb{Z}/p_i^{a_{i,j_i}})\text{,}\)</span> thus overall we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+G \cong (\mathbb{Z}/p_1^{a_{11}}) \times \dots \times (\mathbb{Z}/p_i^{a_{1,j_1}})\times \cdots \times (\mathbb{Z}/p_s^{a_{s1}}) \times \dots \times (\mathbb{Z}/p_s^{a_{s,j_s}}).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">The <span class="process-math">\(r,p_i\)</span>’s, <span class="process-math">\(j_i\)</span>’s and <span class="process-math">\(a_{i,j}\)</span>’s are uniquely determined by <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+<li><div class="para">equivalently, there exist <span class="process-math">\(r \geq 0, t \geq 0\text{,}\)</span> and <span class="process-math">\(n_i \geq 2\)</span> for all <span class="process-math">\(1\leq i\leq t\text{,}\)</span> satisfying <span class="process-math">\(n_{i+1} \mid n_i\)</span> for all <span class="process-math">\(i\)</span> so that <span class="process-math">\(G \cong \mathbb{Z}^r \times (\mathbb{Z}/n_1) \times \dots \times (\mathbb{Z}/n_t)\text{.}\)</span>
+</div></li>
+<li><div class="para">The integers <span class="process-math">\(r,s,n_1,\ldots ,n_t\)</span> are uniquely determined by <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">It suffices prove that for a given group <span class="process-math">\(G\text{,}\)</span> we can recover its invariant factor form from its elementary divisor form, and vice versa. We will be a bit hand-wavey for this following the ideas from the above examples.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sunzi.html">
+\begin{equation*}
+G \cong  \mathbb{Z}^r \times \mathbb{Z}/p_1^{e_1} \times \cdots \times \mathbb{Z}/p_l^{e_l}.
+\end{equation*}
+</div>
+<div class="para">by applying <a href="sec-ftfgag.html#thm-sunzi" class="xref" data-knowl="./knowl/xref/thm-sunzi.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.24: Sunzi’s Remainder Theorem">Sunzi’s Remainder Theorem</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sunzi.html">
+\begin{equation*}
+G \cong \mathbb{Z}^r \times \mathbb{Z}/d_1 \times \cdots \times \mathbb{Z}/d_n
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(d_1\)</span> is the product of the elementary divisors of highest power for each <em class="emphasis">distinct</em> prime in the list <span class="process-math">\(p_1, \dots, p_l\text{,}\)</span> <span class="process-math">\(d_2\)</span> is the product of the next highest possible prime powers, and so on. We will have that <span class="process-math">\(d_2\mid d_1\)</span> and in general that <span class="process-math">\(d_{i+1}\mid d_i\)</span> since by definition the exponent of <span class="process-math">\(p_j\in d_i\)</span> is greater or equal to the exponent of <span class="process-math">\(p_j\in d_{i+1}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Conversely, given</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sunzi.html">
+\begin{equation*}
+G \cong \mathbb{Z}^r \times \mathbb{Z}/d_1 \times \cdots \times \mathbb{Z}/d_n
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(d_1 \mid d_2 \mid \cdots \mid d_n\text{,}\)</span> we may apply <a href="sec-ftfgag.html#thm-sunzi" class="xref" data-knowl="./knowl/xref/thm-sunzi.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.24: Sunzi’s Remainder Theorem">Sunzi’s Remainder Theorem</a> to each <span class="process-math">\(\mathbb{Z}/d_i\)</span> to find its elementary divisor form.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-ftfgag.html#thm-ftfgag">in-context</a></span>
+</body>
+</html>

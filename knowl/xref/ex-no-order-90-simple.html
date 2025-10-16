@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.21</span><span class="period">.</span><span class="space"> </span><span class="title">No Simple Groups of Order <span class="process-math">\(90\)</span> (Normalizers).</span>
+</h4>
+<div class="para">No group of order <span class="process-math">\(90\)</span> is simple.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">By way of contradiction suppose <span class="process-math">\(G\)</span> is a simple group of order <span class="process-math">\(90\text{.}\)</span> Since <span class="process-math">\(90 = 2 \cdot 3^2 \cdot 5\text{,}\)</span> we conclude from <a href="sec-sylow.html#thm-sylow" class="xref" data-knowl="./knowl/xref/thm-sylow.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.12: Sylow’s Theorems">Sylow’s Theorems</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sylow.html">
+\begin{equation*}
+|\operatorname{Syl}_2(G)| = 1  \text{ or }  3  \text{ or }  5  \text{ or }  15
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sylow.html">
+\begin{equation*}
+|\operatorname{Syl}_3(G)| = 1  \text{ or }  10
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-sylow.html">
+\begin{equation*}
+|\operatorname{Syl}_5(G)| = 1  \text{ or }  6.
+\end{equation*}
+</div>
+<div class="para">If any of these is <span class="process-math">\(1\text{,}\)</span> then the corresonding Sylow <span class="process-math">\(p\)</span>-subgroup is unique and hence normal, a contradiction.</div>
+</div> <div class="para">Although it is not actually needed here, let’s show <span class="process-math">\(|\operatorname{Syl}_2(G)|\)</span> cannot be <span class="process-math">\(3\)</span> or <span class="process-math">\(5\text{.}\)</span> For example, if it were <span class="process-math">\(5\text{,}\)</span> then the action of <span class="process-math">\(G\)</span> on <span class="process-math">\(\operatorname{Syl}_2(G)\)</span> (by conjugation) gives a homomorphism <span class="process-math">\(\rho: G \to S_5\text{.}\)</span> Since the action is transitive, this homomorphism cannot be the trivial map. Since <span class="process-math">\(90\)</span> does not divide <span class="process-math">\(120\text{,}\)</span> this map cannot be injective. Thus the kernel of <span class="process-math">\(\rho\)</span> is a non-trivial, proper normal subgroup, a contradiction. In a similar way one shows <span class="process-math">\(|\operatorname{Syl}_2(G)| \ne 3\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We have shown that the only possibility is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Syl}_2(G)| = 15, |\operatorname{Syl}_3(G)| = 10, { \text{ and } } |\operatorname{Syl}_5(G)| = 6.
+\end{equation*}
+</div>
+<div class="para">One is now tempted to count elements: we have <span class="process-math">\(15\)</span> elements of order <span class="process-math">\(2\)</span> and <span class="process-math">\(6 \cdot 4 = 24\)</span> elements of order <span class="process-math">\(5\text{.}\)</span> But elements of order <span class="process-math">\(3\)</span> are not so easy to count since the various Sylow <span class="process-math">\(3\)</span>-subgroups have nine elements each and might interect in subsets of order <span class="process-math">\(3\text{.}\)</span> The only obvious things is that there are at least <span class="process-math">\(9 + 9 -3 = 15\)</span> of them. This does not give enough elements to reach a contradiction.</div>
+</div> <div class="para">The action of <span class="process-math">\(G\)</span> on <span class="process-math">\(\operatorname{Syl}_g(5)\)</span> leads to a homomorphism <span class="process-math">\(G \to S_6\text{,}\)</span> but since <span class="process-math">\(90\)</span> does divide <span class="process-math">\(6!\text{,}\)</span> there is no contradiction lurking here either.</div> <div class="para logical">
+<div class="para">So, we must resort to something really sneaky: let <span class="process-math">\(P_1, \dots, P_{10}\)</span> be all of the Sylow <span class="process-math">\(3\)</span>-subgroups. Observe that <em class="emphasis">if</em> <span class="process-math">\(P_i \cap P_j = \{e\}\)</span> for all <span class="process-math">\(i \ne j\text{,}\)</span> then we would have <span class="process-math">\(10 \cdot 8 = 80\)</span> elements of order <span class="process-math">\(3\)</span> or <span class="process-math">\(9\text{.}\)</span> This would give at least <span class="process-math">\(80+ 15 + 24\)</span> elements, which is not possible. So, it must be the case that at least two intersect non-trivially. Without loss, let’s say <span class="process-math">\(H = P_1 \cap P_2\)</span> is such that <span class="process-math">\(|H|= 3\text{.}\)</span> We ponder <span class="process-math">\(N_G(H)\text{.}\)</span> Since <span class="process-math">\(P_1\)</span> is abelian and <span class="process-math">\(H \leq P_1\text{,}\)</span> <span class="process-math">\(P_1 \leq N_G(H)\text{,}\)</span> so that <span class="process-math">\(9 \mid |N_G(H)|\text{.}\)</span> Likewise, <span class="process-math">\(P_2 \leq N_G(H)\)</span> too, and since <span class="process-math">\(|(P_1 \cup P_2)| = 9 + 9 - 2 = 15\text{,}\)</span> we get <span class="process-math">\(15 \leq N_G(H)\text{.}\)</span> And of course <span class="process-math">\(|N_G(H)| \mid 90\text{.}\)</span> We get only three possibilities:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|N_G(H)| = 18, 45 \text{ or } 90.
+\end{equation*}
+</div>
+<div class="para">Let us show that each is impossible:</div>
+</div> <div class="para">If <span class="process-math">\(|N_G(H)| = 18\text{,}\)</span> then we have constructed a subgroup of <span class="process-math">\(G\)</span> of index <span class="process-math">\(5\text{.}\)</span> The action of <span class="process-math">\(G\)</span> on the left cosets gives a homomorphism <span class="process-math">\(G \to S_5\)</span> that cannot be the trivial map since the action is transitive. But it cannot be injective either, and this leads to a non-trivial nomal subgroup. The exact same reasoning shows <span class="process-math">\(|N_G(H)|\)</span> cannot be <span class="process-math">\(45\)</span> (or we could use that it has index <span class="process-math">\(2\)</span>). Finally, if <span class="process-math">\(|N_G(H)| = 90\text{,}\)</span> then <span class="process-math">\(H \unlhd G\text{,}\)</span> which is also impossible.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sec-simple-groups.html#ex-no-order-90-simple">in-context</a></span>
+</body>
+</html>
