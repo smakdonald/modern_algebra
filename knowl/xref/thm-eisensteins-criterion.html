@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.9</span><span class="period">.</span><span class="space"> </span><span class="title">Eisenstein’s Criterion.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(R\)</span> be a PID with field of fractions <span class="process-math">\(F\)</span> and assume <span class="process-math">\(f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in R[x]\)</span> is a polynomial. Suppose there is a prime element <span class="process-math">\(p \in R\)</span> such that <span class="process-math">\(p \nmid a_n\text{,}\)</span> <span class="process-math">\(p \mid a_i\)</span> for all <span class="process-math">\(0 \leq i \leq n-1\text{,}\)</span> and <span class="process-math">\(p^2 \nmid a_0\text{.}\)</span> Then <span class="process-math">\(f\)</span> is irreducible in <span class="process-math">\(F[x]\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We have <span class="process-math">\(f(x) = \cont(f) \cdot l(x)\)</span> with <span class="process-math">\(l(x) \in R[x]\)</span> and <span class="process-math">\(\cont(l) = 1\text{.}\)</span> Since <span class="process-math">\(p\)</span> does not divide the leading coefficient of <span class="process-math">\(f\text{,}\)</span> we have <span class="process-math">\(p \nmid \cont(f)\text{.}\)</span> It therefore follows that the three assumptions involving the coefficients of <span class="process-math">\(f(x)\)</span> are also satisfied by the coefficients <span class="process-math">\(l(x)\text{.}\)</span> Moreover, <span class="process-math">\(f\)</span> is irreducible in <span class="process-math">\(F[x]\)</span> if and only if <span class="process-math">\(l(x)\)</span> is irreducible in <span class="process-math">\(F[x]\text{.}\)</span> We may therefore assume without loss of generality that <span class="process-math">\(\cont(f) = 1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">By Gauss’s Lemma we just need to prove it is irreducible in <span class="process-math">\(R[x]\text{.}\)</span> Suppose <span class="process-math">\(f(x) = g(x)h(x)\)</span> with <span class="process-math">\(g(x), h(x) \in R[x]\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x) = b_m x^m + b_{m-1} x^{m-1} + \cdots + b_0
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(x) = c_l x^l + c_{l-1} x^{l-1} + \cdots + c_0
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(m+l = n\)</span> and <span class="process-math">\(b_m c_l = a_n\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Upon modding out by <span class="process-math">\(p\)</span> we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ov{f} = \ov{g} \ov{h} \in (R/p)[x].
+\end{equation*}
+</div>
+<div class="para">The assumptions on <span class="process-math">\(f\)</span> give that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ov{f} = \ov{a_n} x^n
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(\ov{a_n} \ne 0\text{.}\)</span> Since <span class="process-math">\(R/p\)</span> is a domain, it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\ov{g} = \ov{b_m} x^m \, \text{ and  } \, \ov{h} = \ov{c_l} x^l
+\end{equation*}
+</div>
+<div class="para">On the other hand, we also have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_0 = b_0c_0,
+\end{equation*}
+</div>
+<div class="para">and since <span class="process-math">\(p^2 \nmid a_0\text{,}\)</span> we have that <span class="process-math">\(p \nmid b_0\)</span> or <span class="process-math">\(p \nmid c_0\text{.}\)</span> So <span class="process-math">\(\ov{b_0} \ne 0\)</span> or <span class="process-math">\(\ov{c_0} \ne 0\text{.}\)</span> This can only occur if <span class="process-math">\(m = 0\)</span> or <span class="process-math">\(l = 0\text{.}\)</span>
+</div>
+</div> <div class="para">We have shown that if <span class="process-math">\(f\)</span> factors in <span class="process-math">\(R[x]\)</span> as <span class="process-math">\(f = g \cdot h\text{,}\)</span> then at least one of <span class="process-math">\(g\)</span> of <span class="process-math">\(h\)</span> must be a constant polynomial. Since <span class="process-math">\(\cont(f) = 1\text{,}\)</span> this factor must be a unit. So <span class="process-math">\(f\)</span> is irreducible in <span class="process-math">\(R[x]\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-irrpoly.html#thm-eisensteins-criterion">in-context</a></span>
+</body>
+</html>

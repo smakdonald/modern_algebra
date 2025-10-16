@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.71</span><span class="period">.</span><span class="space"> </span><span class="title">Similar CoB Matrices.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V, W\)</span> be finitely generated free modules over a commutative ring <span class="process-math">\(R\text{,}\)</span> let <span class="process-math">\(B\)</span> and <span class="process-math">\(B^{\prime}\)</span> be bases of <span class="process-math">\(V\text{,}\)</span> let <span class="process-math">\(C\)</span> and <span class="process-math">\(C^{\prime}\)</span> be bases of <span class="process-math">\(W\text{,}\)</span> and let <span class="process-math">\(f: V \rightarrow W\)</span> be a homomorphism. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[f]_{B^{\prime}}^{C^{\prime}}=\left[\mathrm{id}_{W}\right]_{C}^{C^{\prime}}[f]_{B}^{C}\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B}
+\end{equation*}
+</div>
+<div class="para">In particular, if <span class="process-math">\(g: V \rightarrow V\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism, then <span class="process-math">\([g]_{B}^{B}\)</span> and <span class="process-math">\([g]_{B^{\prime}}^{B^{\prime}}\)</span> are similar.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Since <span class="process-math">\(f=\mathrm{id}_{W} \circ f \circ \mathrm{id}_{V}\text{,}\)</span> by <a href="sec-cob.html#lem-cob-and-identity" class="xref" data-knowl="./knowl/xref/lem-cob-and-identity.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 13.68: CoB and Identity">Lemma 13.68</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-cob-and-identity.html">
+\begin{equation*}
+[f]_{B^{\prime}}^{C^{\prime}}=\left[\mathrm{id}_{W}\right]_{C}^{C^{\prime}}[f]_{B}^{C}\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B}
+\end{equation*}
+</div>
+<div class="para">Setting <span class="process-math">\(V=W, B=C, B^{\prime}=C^{\prime}\text{,}\)</span> and <span class="process-math">\(f=\mathrm{id}_{V}\)</span> we have <span class="process-math">\(\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B^{\prime}}=\left[\mathrm{id}_{V}\right]_{B}^{B^{\prime}}\left[\operatorname{id}_{V}\right]_{B}^{B}\left[\operatorname{id}_{V}\right]_{B^{\prime}}^{B}\text{.}\)</span> Notice that <span class="process-math">\(\left[\operatorname{id}_{V}\right]_{B}^{B}=\left[\operatorname{id}_{V}\right]_{B^{\prime}}^{B^{\prime}}=I\)</span> is the identity matrix, so the previous formula says that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-cob-and-identity.html">
+\begin{equation*}
+I=\left[\mathrm{id}_{V}\right]_{B}^{B^{\prime}} I\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B}
+\end{equation*}
+</div>
+<div class="para">Setting <span class="process-math">\(P=\left[\mathrm{id}_{V}\right]_{B}^{B^{\prime}}\text{,}\)</span> we notice that the previous identity gives <span class="process-math">\(P^{-1}=\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Now set <span class="process-math">\(V=W, B=C, B^{\prime}=C^{\prime}\)</span> and <span class="process-math">\(f=g\)</span> to obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[g]_{B^{\prime}}^{B^{\prime}}=\left[\mathrm{id}_{V}\right]_{B}^{B^{\prime}}[g]_{B}^{B}\left[\mathrm{id}_{V}\right]_{B^{\prime}}^{B}=P[g]_{B}^{B} P^{-1}.
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-cob.html#thm-similar-cob">in-context</a></span>
+</body>
+</html>

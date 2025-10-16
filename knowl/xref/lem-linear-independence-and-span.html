@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">13.38</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Independence and Span.</span>
+</h4>
+<div class="para">Suppose <span class="process-math">\(I\)</span> is a linearly independent subset of an <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\)</span> and <span class="process-math">\(v \in V \setminus \Span(I)\text{,}\)</span> then <span class="process-math">\(I \cup \{v\}\)</span> is also linearly independent. <details class="ptx-footnote" aria-live="polite" id="lem-linear-independence-and-span-2-1-6"><summary class="ptx-footnote__number" title="Footnote 13.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="lem-linear-independence-and-span-2-1-6">Stated in terms of modules: Let <span class="process-math">\(R\)</span> be a field. Suppose <span class="process-math">\(A\)</span> is a linearly independent subset of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> and <span class="process-math">\(m \in M \setminus RA\text{,}\)</span> then <span class="process-math">\(A \cup \{m\}\)</span> is also linearly independent.</div></details>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(w_1, \dots, w_n\)</span> be a list of distinct elements of <span class="process-math">\(I \cup \{v\}\)</span> and suppose</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_1w_1+\cdots+c_nw_n=0
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(c_i \in F\text{.}\)</span> If <span class="process-math">\(v \ne w_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(c_i = 0\)</span> for all <span class="process-math">\(i\text{,}\)</span> since <span class="process-math">\(I\)</span> is linearly independent. Thus <span class="process-math">\(v=w_i\)</span> for some <span class="process-math">\(i\leq n\text{.}\)</span> Without loss of generality, say <span class="process-math">\(w_1 = v\text{.}\)</span> If <span class="process-math">\(c_1 \ne 0\text{,}\)</span> then we may write</div>
+<div class="displaymath process-math">
+\begin{align*}
+0 &amp;= c_1w_1+\cdots+c_nw_n \\
+0 &amp;= c_1v+\cdots+c_nw_n \\
+-c_1v &amp;= c_1v+\cdots+c_nw_n \\
+v &amp;= (-c_1)\inv(c_1v+\cdots+c_nw_n) \\
+v &amp;= (-c_1)\inv c_1v+\cdots+(-c_1)\inv c_nw_n,
+\end{align*}
+</div>
+<div class="para">placing <span class="process-math">\(v\in\Span(I)\text{,}\)</span> contrary to the assumption. So we must have <span class="process-math">\(c_1 = 0\text{,}\)</span> yielding</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_2w_2+\cdots+c_nw_n=0.
+\end{equation*}
+</div>
+<div class="para">But then <span class="process-math">\(v \ne w_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> and thus we have <span class="process-math">\(c_i = 0\)</span> for all <span class="process-math">\(i \geq 2\)</span> by the same reasoning as in the first case (since <span class="process-math">\(I\)</span> is linearly independent). Thus <span class="process-math">\(A \cup \{m\}\)</span> is linearly independent.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-vecbasis.html#lem-linear-independence-and-span">in-context</a></span>
+</body>
+</html>

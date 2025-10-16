@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.13</span><span class="period">.</span><span class="space"> </span><span class="title">Rational Canonical Form.</span>
+</h4>
+<div class="para logical">
+<div class="para">Given a finite dimensional <span class="process-math">\(F\)</span>-vector space <span class="process-math">\(V\)</span> and an <span class="process-math">\(F\)</span>-linear operator <span class="process-math">\(g: V \to V\text{,}\)</span> there is a basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\)</span> such that the matrix representing <span class="process-math">\(g\)</span> relative to <span class="process-math">\(B\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[g]_B^B = C(f_1) \oplus \cdots \oplus C(f_s)
+\end{equation*}
+</div>
+<div class="para">for monic polynomials <span class="process-math">\(f_1, \dots, f_s\)</span> of degree at least one such that <span class="process-math">\(f_1 | f_2 | \cdots | f_s\text{.}\)</span> Moreover, this matrix is unique, and is known as the <em class="emphasis">rational canonical form</em> of the operator <span class="process-math">\(g\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We know by the Fundamental Theorem of modules over <span class="process-math">\(F[x]\)</span> (i.e., Corollary ) that there is a <span class="process-math">\(F[x]\)</span>-module isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+V_{g} \cong F[x]/(f_1)\oplus \cdots \oplus F[x]/(f_s)
+\end{equation*}
+</div>
+<div class="para">for some unique list of monic, non-constant polynomials <span class="process-math">\(f_1, \cdots, f_s\)</span> with <span class="process-math">\(f_i \mid f_{i+1}\)</span> for all <span class="process-math">\(i\text{.}\)</span> Recall that the operator <span class="process-math">\(g\)</span> on <span class="process-math">\(V\)</span> is given as <span class="process-math">\(\l_x\)</span> (multiplication by <span class="process-math">\(x\)</span>) on <span class="process-math">\(V_g\text{.}\)</span> Since this is a <span class="process-math">\(F[x]\)</span>-module isomorphism, <span class="process-math">\(g\)</span> corresponds to multiplication by <span class="process-math">\(x\)</span> on each summand <span class="process-math">\(F[x]/(f_i)\text{.}\)</span> As we have seen before, for each <span class="process-math">\(i\text{,}\)</span> the matrix representing <span class="process-math">\(\l_x\)</span> on <span class="process-math">\(F[x]/f_i\)</span> relative to the basis <span class="process-math">\(B_i := \{1, x, x^2, \dots, x^{\deg(f_i)-1}\}\)</span> of <span class="process-math">\(F[x]/f_i\)</span> is the companion matrix <span class="process-math">\(C(f_i)\)</span> of <span class="process-math">\(f_i\text{.}\)</span> Let <span class="process-math">\(B\)</span> be the <span class="process-math">\(F\)</span>-basis of <span class="process-math">\(F[x]/(f_1)\oplus \cdots \oplus F[x]/(f_s)\)</span> given by tuples</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B = \{(b_1, 0, \dots, 0) \mid b_1 \in B_1\} \cup \{(0, b_2, 0, \dots, 0) \mid b_2 \in B_{2\} \cup}\cdots \cup \{(0, 0, \dots, 0, b_s) \mid b_s \in B_s\} 
+\end{equation*}
+</div>
+<div class="para">(in that order). Then the matrix of <span class="process-math">\(\l_x\)</span> on <span class="process-math">\(F[x]/(f_1)\oplus \cdots \oplus F[x]/(f_k)\)</span> for <span class="process-math">\(B\)</span> is <span class="process-math">\(C(f_1) \oplus \cdots \oplus C(f_s)\text{.}\)</span>
+</div>
+</div> <div class="para">This gives existence. Uniqueness is a consequence of the uniqueness of the list <span class="process-math">\(f_1, \dots, f_s\text{,}\)</span> but I will omit the details.</div></article></details><span class="incontext"><a class="internal" href="sec-rcf.html#thm-rcf">in-context</a></span>
+</body>
+</html>

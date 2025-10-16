@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.92</span><span class="period">.</span><span class="space"> </span><span class="title">Subgroup Tests.</span>
+</h4>
+<div class="para logical"><ol class="decimal">
+<li>
+<span class="heading"><span class="title">One Step Subgroup Test.</span></span><div class="para">If a subset <span class="process-math">\(H\)</span> of a group <span class="process-math">\(G\)</span> is nonempty and satisfies for all <span class="process-math">\(x,y \in H\text{,}\)</span> <span class="process-math">\(xy^{-1} \in H\text{,}\)</span> then <span class="process-math">\(H\)</span> is a subgroup.</div>
+</li>
+<li>
+<span class="heading"><span class="title">Two Step Subgroup Test.</span></span><div class="para">If a subset <span class="process-math">\(H\)</span> of a group <span class="process-math">\(G\)</span> is nonempty and closed under multiplication and inversion, then <span class="process-math">\(H\)</span> is a subgroup.</div>
+</li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para">Assume <span class="process-math">\(H\)</span> is non-empty and for all <span class="process-math">\(x,y \in H\text{,}\)</span> <span class="process-math">\(xy^{-1} \in H\text{.}\)</span>
+</div>
+<div class="para">First, we show associativity. Let <span class="process-math">\(x,y,z\in H\)</span> (not necessarily distinct, as <span class="process-math">\(H\)</span> might not have three distinct elements). As <span class="process-math">\(H\leq G\)</span> we have <span class="process-math">\(x,y,z\in G\text{.}\)</span> As <span class="process-math">\(G\)</span> is a group is satisfies the associative property, and thus <span class="process-math">\((xy)z=x(yz)\text{.}\)</span> Hence <span class="process-math">\(H\)</span> satisfies the associative property as well.</div>
+<div class="para logical">
+<div class="para">I claim that <span class="process-math">\(e_G\in H\text{,}\)</span> and further that <span class="process-math">\(e_G\)</span> is the identity element of <span class="process-math">\(H\text{.}\)</span> Since <span class="process-math">\(H\)</span> is non-empty, there exists some <span class="process-math">\(h \in H\text{.}\)</span> As <span class="process-math">\(xy^{-1} \in H\)</span> for all <span class="process-math">\(x,y \in H\text{,}\)</span> setting both <span class="process-math">\(x\)</span> and <span class="process-math">\(y=h\)</span> we see <span class="process-math">\(hh\inv\in H\)</span> Thus <span class="process-math">\(e_G\in H\text{.}\)</span> As <span class="process-math">\(H\sse G\text{,}\)</span> we see</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e_Gx=x=xe_G
+\end{equation*}
+</div>
+<div class="para">for any <span class="process-math">\(x\in H\text{,}\)</span> making <span class="process-math">\(e_G\)</span> the identity element of <span class="process-math">\(H\text{.}\)</span>
+</div>
+</div>
+<div class="para">Now I show each element of <span class="process-math">\(H\)</span> has an inverse in <span class="process-math">\(H\text{.}\)</span> Let <span class="process-math">\(h\in H\text{.}\)</span> By setting <span class="process-math">\(x=e_G\)</span> and <span class="process-math">\(y=h\text{,}\)</span> we see <span class="process-math">\(e_Gh\inv\in H\text{.}\)</span> As <span class="process-math">\(e_G\)</span> is the identity element of <span class="process-math">\(H\text{,}\)</span> we see <span class="process-math">\(e_Gh\inv = h\inv\text{,}\)</span> and thus <span class="process-math">\(h\inv\in H\text{.}\)</span> Hence every element of <span class="process-math">\(H\)</span> has an inverse contained in <span class="process-math">\(H\text{.}\)</span>
+</div>
+<div class="para">Finally, we must show that the restriction of the group operation of <span class="process-math">\(G\)</span> to <span class="process-math">\(H\)</span> is a well-defined group operation. In other words, given <span class="process-math">\(x,y\in H\text{,}\)</span> it must be the case that <span class="process-math">\(xy\in H\text{.}\)</span> Given <span class="process-math">\(x,y \in H\text{,}\)</span> from the previous paragraph we know <span class="process-math">\(y^{-1} \in H\text{.}\)</span> Thus <span class="process-math">\(xy = x(y^{-1})^{-1} \in H\text{,}\)</span> which is what we wanted. This means This operation is associative by the axioms for the group <span class="process-math">\(G\text{.}\)</span> The axioms of a group have now been established for <span class="process-math">\((H, \cdot)\text{.}\)</span>
+</div>
+</li>
+<li><div class="para">Assume <span class="process-math">\(H\)</span> is non-empty and closed under multiplication and inversion. Then, for <span class="process-math">\(x,y\in H\)</span> we have <span class="process-math">\(y^{-1}\in H\)</span> and <span class="process-math">\(xy^{-1}\in H\text{.}\)</span> Since the hypothesis of the one-step test is satisfied, <span class="process-math">\(H\)</span> is a subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-subgroups.html#thm-subgroup-test">in-context</a></span>
+</body>
+</html>

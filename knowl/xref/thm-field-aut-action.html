@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">17.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Aut\)</span> Acts on Roots.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(L\)</span> be the splitting field of a polynomial <span class="process-math">\(f \in F[x]\text{.}\)</span> Let <span class="process-math">\(S\)</span> be the set of distinct roots of <span class="process-math">\(f\)</span> in <span class="process-math">\(K\text{,}\)</span> and let <span class="process-math">\(n:=|S|\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">The group  <span class="process-math">\(\Aut(L / F)\)</span> acts faithfully on <span class="process-math">\(S\text{,}\)</span> via</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma \cdot b:=\sigma(b)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(\sigma \in \operatorname{Aut}(L / F)\)</span> and <span class="process-math">\(b \in S\text{,}\)</span> and hence <span class="process-math">\(\operatorname{Aut}(L / F)\)</span> is isomorphic to a subgroup of <span class="process-math">\(S_{n}\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para">If <span class="process-math">\(f \in F[x]\)</span> is an irreducible polynomial, then <span class="process-math">\(\operatorname{Aut}(L / F)\)</span> acts transitively on <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(G=\operatorname{Aut}(L / F)\text{.}\)</span> To see that the the action above is well-defined, notice that if <span class="process-math">\(b \in S\)</span> then <span class="process-math">\(\sigma(b) \in S\)</span> by Lemma 6.10. <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> Now we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{gathered}
+\sigma \cdot\left(\sigma^{\prime} \cdot b\right)=\sigma\left(\sigma^{\prime}(b)\right)=\left(\sigma \circ \sigma^{\prime}\right)(b) \quad \text { for all } \sigma, \sigma^{\prime} \in G, b \in S, \\
+1_{G} \cdot b=\operatorname{id}_{K}(b)=b \quad \text { for all } \sigma \in G \text { and } b \in S,
+\end{gathered}
+\end{equation*}
+</div>
+<div class="para">so the given formula does indeed define an action of <span class="process-math">\(G\)</span> on <span class="process-math">\(S\text{.}\)</span>
+</div>
+</div>
+<div class="para">This action is faithful: if <span class="process-math">\(\sigma\)</span> fixes all the roots <span class="process-math">\(\alpha_{1}, \ldots, \alpha_{n}\)</span> of <span class="process-math">\(f\text{,}\)</span> then it fixes every element of <span class="process-math">\(F\left(\alpha_{1}, \ldots, \alpha_{n}\right)=L\text{.}\)</span> Thus the corresponding group homomorphism <span class="process-math">\(\operatorname{Aut}(L / F) \rightarrow \operatorname{Aut}(S)\)</span> is injective. On the other hand, the group of automorphisms on a set of <span class="process-math">\(n\)</span> elements is isomorphic to <span class="process-math">\(S_{n}\text{,}\)</span> so we have an inclusion of <span class="process-math">\(\operatorname{Aut}(L / F)\)</span> into <span class="process-math">\(S_{n}\text{,}\)</span> and thus <span class="process-math">\(\operatorname{Aut}(L / F)\)</span> is isomorphic to a subgroup of <span class="process-math">\(S_{n}\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para">Let <span class="process-math">\(\alpha, \beta\)</span> be any two roots of <span class="process-math">\(f\text{.}\)</span> By Theorem 5.69, there is an isomorphism <span class="process-math">\(\theta: F(\alpha) \rightarrow F(\beta)\)</span> that fixes <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="para">Our polynomial factors both as <span class="process-math">\(f=(x-\alpha) g\)</span> and <span class="process-math">\(f=(x-\beta) h\text{.}\)</span> Since <span class="process-math">\(f^{\theta}=f\)</span> and <span class="process-math">\((x-\alpha)^{\theta}=x-\beta\text{,}\)</span> we must have <span class="process-math">\(g^{\theta}=h\text{.}\)</span> Theorem 5.69 applies, showing there is an automorphism <span class="process-math">\(\sigma: L \rightarrow L\)</span> that extends <span class="process-math">\(\theta\text{.}\)</span> In particular, <span class="process-math">\(\sigma\)</span> fixes <span class="process-math">\(F\text{,}\)</span> since <span class="process-math">\(\sigma\)</span> extends <span class="process-math">\(\theta\)</span> and <span class="process-math">\(\left.\theta\right|_{F}=\operatorname{id}_{F}\text{,}\)</span> so <span class="process-math">\(\sigma \in \operatorname{Aut}(L / F)\text{.}\)</span> Moreover, since <span class="process-math">\(\sigma\)</span> extends <span class="process-math">\(\theta\)</span> we have <span class="process-math">\(\sigma(\alpha)=\theta(\alpha)=\beta\text{.}\)</span> This proves the action is transitive on the set of roots of any irreducible polynomial.</div>
+</li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-galext.html#thm-field-aut-action">in-context</a></span>
+</body>
+</html>

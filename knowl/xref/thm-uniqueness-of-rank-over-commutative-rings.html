@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.33</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Rank over Commutative Rings.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring such that <span class="process-math">\(1 \ne 0\)</span> and let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with bases <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same rank, i.e. there exists a (non unique) bijection of sets joining them. </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(R\)</span> be a non-zero commutative ring and let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with two bases, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> with ranks <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively. Since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are finite, by <a href="sec-free-mod.html#ex-mcong-rn-as-r-modules" class="xref" data-knowl="./knowl/xref/ex-mcong-rn-as-r-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 13.30: M\cong R^n as R-modules">Example 13.30</a> we have <span class="process-math">\(A\cong R^m\)</span> and <span class="process-math">\(B\cong R^n\text{.}\)</span>
+</div> <div class="para">I will prove this statement by taking it as already known that it holds in the special case when <span class="process-math">\(R\)</span> is a field. (We will prove it for fields later in <a href="sec-vecbasis.html#thm-dimension" class="xref" data-knowl="./knowl/xref/thm-dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.49: Dimension Theorem">Theorem 13.49</a>.)</div> <div class="para">Since <span class="process-math">\(R\)</span> is not the zero ring, it contains at least one maximal ideal <span class="process-math">\(\fm\)</span> by <a href="sec-primemax-ideals.html#thm-all-ideals-contained-in-maximal-ideal" class="xref" data-knowl="./knowl/xref/thm-all-ideals-contained-in-maximal-ideal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.40: All Ideals Contained in Maximal Ideal">Theorem 9.40</a>. Recall that <span class="process-math">\(R/\fm\)</span> is a field by <a href="sec-primemax-ideals.html#thm-maximal-iff-field" class="xref" data-knowl="./knowl/xref/thm-maximal-iff-field.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.36: Maximal Ideal iff Quotient is a Field">Theorem 9.36</a>
+</div> <div class="para">Given an isomorphism <span class="process-math">\(f: R^n \xra{\cong} R^m\)</span> of <span class="process-math">\(R\)</span>-modules, by Lemma <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> we have an induced homomorphism of <span class="process-math">\(R/I\)</span>-module <span class="process-math">\(\ov{f}: R^n/IR^n \to R^m /IR^m\text{.}\)</span> Likewise, the inverse map <span class="process-math">\(f^{-1}: R^m \xra{\cong} R^n\)</span> induces a map <span class="process-math">\(\ov{f^{-1}}: R^m/IR^m \to R^n /IR^n\text{.}\)</span> Also by that Lemma <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> we have <span class="process-math">\(\ov{f} \circ \ov{f^{-1}} = \ov{f \circ f^{-1}} = \ov{\id} = \id\)</span> and similarly <span class="process-math">\(\ov{f^{-1}} \circ \ov{f}\)</span> is the identity. That is, we have an isomorphism <span class="process-math">\(R^n/IR^n \cong R^m /IR^m\)</span> of <span class="process-math">\(R/I\)</span>-modules.</div> <div class="para logical">
+<div class="para">Next, I claim that there is an isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+R^n/IR^n \cong (R/I)^n
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R/I\)</span>-modules. Define <span class="process-math">\(R^n \to (R/I)^n\)</span> in the evident way (modding out by <span class="process-math">\(I\)</span> entry-wise). It is a surjective map of <span class="process-math">\(R\)</span>-modules with kernel <span class="process-math">\(I R^n\)</span> and thus, by the <a href="sec-modhom.html#fit-module" class="xref" data-knowl="./knowl/xref/fit-module.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: First Isomorphism Theorem for Modules">First Isomorphism Theorem for Modules</a>, it induces an isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+g: R^n/I R^n \xra{\cong} (R/I)^n
+\end{equation*}
+</div>
+<div class="para">given by <span class="process-math">\(g((r_1, \dots, r_n)^\tau + IR^n) = (r_1 + I, \dots, r_n + I)^\tau\)</span> (where <span class="process-math">\(\tau\)</span> denotes taking the transpose). Now, what we have said so far only shows that <span class="process-math">\(g\)</span> is isomorphism of <span class="process-math">\(R\)</span>-modules, but it is easy to see that <span class="process-math">\(g\)</span> is in fact <span class="process-math">\(R/I\)</span>-linear (I’ll leave that to you) and thus it is an isomorphism of <span class="process-math">\(R/I\)</span>-modules.</div>
+</div> <div class="para">Putting the results proven so far together, we conclude that <span class="process-math">\((R/I)^n\)</span> and <span class="process-math">\((R/I)^m\)</span> are isomorphic as <span class="process-math">\(R/I\)</span>-modules. Since <span class="process-math">\(R/I\)</span> is a field and since we are assuming the result holds for fields, we deduce that <span class="process-math">\(n = m\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-free-mod.html#thm-uniqueness-of-rank-over-commutative-rings">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.64</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(R\)</span>-map Bewteen Free Modules is Matrix Multiplication.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a commutative ring with <span class="process-math">\(1 \neq 0\text{.}\)</span> Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be finitely generated free <span class="process-math">\(R\)</span>-modules of ranks <span class="process-math">\(n\)</span> and <span class="process-math">\(m\)</span> respectively. Fixing ordered bases <span class="process-math">\(B\)</span> for <span class="process-math">\(V\)</span> and <span class="process-math">\(C\)</span> for <span class="process-math">\(W\)</span> gives an isomorphism of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{Hom}_{R}(V, W) \cong \mathrm{M}_{m, n}(R) \quad f \mapsto[f]_{B}^{C}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(V=W\text{,}\)</span> so that in particular <span class="process-math">\(m=n\text{,}\)</span> and <span class="process-math">\(B=C\text{,}\)</span> then the above map is an <span class="process-math">\(R\)</span>-algebra isomorphism <span class="process-math">\(\operatorname{End}_{R}(V) \cong \mathrm{M}_{n}(R)\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi: \operatorname{Hom}_{R}(V, W) \rightarrow \mathrm{M}_{m, n}(R)\)</span> be defined by <span class="process-math">\(\varphi(f)=[f]_{B}^{C}\text{.}\)</span> We need to check that <span class="process-math">\(\varphi\)</span> is a homomorphism of <span class="process-math">\(R\)</span>-modules, which translates into <span class="process-math">\([f+g]_{B}^{C}=[f]_{B}^{C}+[g]_{B}^{C}\)</span> and <span class="process-math">\([\lambda f]_{B}^{C}=\lambda[f]_{B}^{C}\)</span> for any <span class="process-math">\(f, g \in \operatorname{Hom}_{R}(V, W)\)</span> and <span class="process-math">\(\lambda \in R\text{.}\)</span> Let <span class="process-math">\(A=[f]_{B}^{C}\)</span> and <span class="process-math">\(A^{\prime}=[g]_{B}^{C}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f+g)\left(b_{i}\right)=f\left(b_{i}\right)+g\left(b_{i}\right)=\sum_{j} a_{j, i} c_{j}+\sum_{j} a_{j, i}^{\prime} c_{j}=\sum_{j}\left(a_{j, i}+a_{i, j}^{\prime}\right) c_{j}
+\end{equation*}
+</div>
+<div class="para">gives <span class="process-math">\([f+g]_{B}^{C}=A+A^{\prime}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\lambda f)\left(b_{i}\right)=\lambda\left(\sum_{j} a_{j, i} c_{j}\right)=\sum_{j}\left(\lambda a_{j, i}\right) c_{j}
+\end{equation*}
+</div>
+<div class="para">gives <span class="process-math">\([\lambda f]_{B}^{C}=\lambda A\text{.}\)</span>
+</div>
+</div> <div class="para">Finally, the argument described in Example 2.31 also works for any ring <span class="process-math">\(R\text{,}\)</span> and it can be adapted for any two chosen basis <span class="process-math">\(B\)</span> and <span class="process-math">\(C\text{,}\)</span> showing that <span class="process-math">\(\varphi\)</span> is a bijection.</div></article></details><span class="incontext"><a class="internal" href="sec-cob.html#thm-r-map-matrix-mult">in-context</a></span>
+</body>
+</html>

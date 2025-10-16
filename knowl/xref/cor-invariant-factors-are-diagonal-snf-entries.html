@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="corollary theorem-like"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">15.21</span><span class="period">.</span><span class="space"> </span><span class="title">Invariant Factors are Diagonal SNF Entries.</span>
+</h4>
+<div class="para">The invariant factors of a matrix <span class="process-math">\(A\)</span> are the non-zero, non-unit diagonal entries of the SNF of <span class="process-math">\(xI_n - A\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(S\)</span> be the Smith Normal Form of <span class="process-math">\(xI_n - A\)</span> and let <span class="process-math">\(d_1, \dots, d_n\)</span> be its diagonal entries. As proven before, the matrix <span class="process-math">\(xI_n - A\)</span> and <span class="process-math">\(S\)</span> present isomorphic <span class="process-math">\(F[x]\)</span>-modules, and thus the Theorem gives an isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^n_A \cong F[x]/(d_1) \oplus \cdots \oplus F[x]/(d_n).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\dim_F F^n_A &lt; \infty\text{,}\)</span> none of the <span class="process-math">\(d_i\)</span>’s can be zero. So, each <span class="process-math">\(d_i\)</span> is monic and <span class="process-math">\(d_1 \mid \cdots \mid d_n\text{.}\)</span> Now some of the <span class="process-math">\(d_i\)</span> might be non-zero constants, in which case <span class="process-math">\(d_i\)</span> is a unit and <span class="process-math">\(F[x]/(d_i) = 0\text{.}\)</span> Upon tossing those out, we are left with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F^n_A \cong F[x]/(f_1) \oplus \cdots \oplus F[x]/(f_k)
+\end{equation*}
+</div>
+<div class="para">with each <span class="process-math">\(f_i\)</span> monic of positive degree and <span class="process-math">\(f_1 \mid \cdots \mid f_k\text{.}\)</span> These are, by definition, the invariant factors of <span class="process-math">\(A\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-rcf.html#cor-invariant-factors-are-diagonal-snf-entries">in-context</a></span>
+</body>
+</html>

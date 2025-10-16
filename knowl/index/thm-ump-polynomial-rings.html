@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.60</span><span class="period">.</span><span class="space"> </span><span class="title">UMP for Polynomial Rings.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> be commutative rings, <span class="process-math">\(\phi: R \to S\)</span> is a ring homomorphism and <span class="process-math">\(s_1, \dots, s_n\)</span> arbitrary elements of <span class="process-math">\(S\text{.}\)</span> Then there exists a unique ring homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{\phi}: R[x_1, \dots, x_n] \to S
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(\tilde{\phi}|_R = \phi\)</span> and <span class="process-math">\(\tilde{\phi}(x_i) = s_i\)</span> for all <span class="process-math">\(i\text{,}\)</span> namely</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{\phi}\left(\sum_{e_1, \dots, e_n \geq 0} r_{e_1, \dots, e_n} x_1^{e_1} \cdots x_n^{e_n}\right) =\sum_{e_1, \dots, e_n \geq 0} \phi(r_{e_1, \dots, e_n}) s_1^{e_1} \cdots s_n^{e_n}
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let’s observe first that if such a map exists it is unique. For if <span class="process-math">\(\tilde\phi: R[x_1, \dots, x_n] \to S\)</span> is a ring map extending <span class="process-math">\(\phi\)</span> and sending <span class="process-math">\(x_i\)</span> to <span class="process-math">\(s_i\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned*}
+\tilde\phi(\sum_{e_1, \dots, e_n \geq 0} r_{e_1, \dots, e_n} x_1^{e_1} \cdots x_n^{e_n}) &amp;=
+\sum_{e_1, \dots, e_n \geq 0} \phi(r_{e_1, \dots, e_n}) \phi(x_1)^{e_1} \cdots \phi(x_n)^{e_n} \\
+&amp;=
+\sum_{e_1, \dots, e_n \geq 0} \phi(r_{e_1, \dots, e_n}) s_1^{e_1} \cdots s_n^{e_n},
+\end{aligned*}
+\end{equation*}
+</div>
+<div class="para">using that <span class="process-math">\(\tilde\phi\)</span> preserves <span class="process-math">\(+\)</span> and <span class="process-math">\(\cdot\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">For existence, let’s assume <span class="process-math">\(n = 1\)</span> at first. Given <span class="process-math">\(\phi: R \to S\)</span> and <span class="process-math">\(s \in S\text{,}\)</span> define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{\phi}: R[x] \to S
+\end{equation*}
+</div>
+<div class="para">by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{\phi}(\sum_i r_i x^i) = \sum_i \phi(r_i) s^i.
+\end{equation*}
+</div>
+<div class="para">It is elementary (but tedious) to check <span class="process-math">\(\tilde{\phi}\)</span> really is a ring homomorphism. The fact that it restricts to <span class="process-math">\(\phi\)</span> is clear, however.</div>
+</div> <div class="para logical">
+<div class="para">For the general case, we proceed by induction on the number of variables <span class="process-math">\(n\text{.}\)</span> The induction hypothesis shows that there is a ring homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\psi: R[x_1, \dots, x_{n-1}] \to S
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(\psi|_R = \phi\)</span> and <span class="process-math">\(\psi(x_i) = s_i\text{,}\)</span> <span class="process-math">\(i = 1, \dots, n-1\text{.}\)</span> Applying the <span class="process-math">\(n=1\)</span> case to <span class="process-math">\(\psi\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tilde{\psi}: (R[x_1, \dots, x_{n-1}])[x_n] \to S
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(\tilde\psi|_{R[x_1, \dots, x_{n-1}]} = \psi\)</span> and <span class="process-math">\(\tilde{\psi}(x_n) = s_n\text{.}\)</span> Setting <span class="process-math">\(\tilde\phi=\tilde\psi\)</span> gives a map <span class="process-math">\(\tilde{\phi}\)</span> with the needed properties.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-sub-poly.html#thm-ump-polynomial-rings">in-context</a></span>
+</body>
+</html>

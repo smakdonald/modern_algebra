@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Recognition Theorem for Direct Products.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(G\)</span> is a group with normal subgroups <span class="process-math">\(H\mathrel{\unlhd}G\)</span> and <span class="process-math">\(K\mathrel{\unlhd}G\)</span> such that <span class="process-math">\(H\cap K=\{e\}\text{.}\)</span> Then the following hold:</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(HK\cong H\times K\)</span> via the isomorphism of groups <span class="process-math">\(\theta: H \times K \to HK\)</span> defined by <span class="process-math">\(\theta(h,k) = hk\text{.}\)</span>
+</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle H\cong \theta^{-1}(H)=\{(h,e)\mid h\in H\}\leq H\times K\)</span></div></li>
+<li><div class="para"><span class="process-math">\(K\cong \theta^{-1}(K)=\{(e,k)\mid k\in K\}\leq H\times K\text{.}\)</span></div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Notice that the hypothesis implies <span class="process-math">\(HK\leq G\text{.}\)</span> Furthermore <span class="process-math">\(H\mathrel{\unlhd}G, K\mathrel{\unlhd}G\)</span> and <span class="process-math">\(H\cap K=\{e\}\)</span> imply that the elements of <span class="process-math">\(H\)</span> commute with the elements of <span class="process-math">\(K\text{.}\)</span> Indeed, consider <span class="process-math">\(h\in H,k\in K\text{.}\)</span> Then since <span class="process-math">\(H\mathrel{\unlhd}G\text{,}\)</span> <span class="process-math">\(khk^{-1} \in H\text{,}\)</span> so also <span class="process-math">\([k,h]=khk^{-1}h^{-1}\in H\text{.}\)</span> Similarly it follows that <span class="process-math">\([k,h]\in K\text{,}\)</span> but since <span class="process-math">\(H \cap K = \{e\}\)</span> it follows that <span class="process-math">\([k,h]= e\text{,}\)</span> i.e. <span class="process-math">\(hk = kh\)</span> for any <span class="process-math">\(h\in H, k\in K\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Using the above we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\theta((h_1, k_1) (h_2, k_2))  
+&amp; = \theta(h_1h_2, k_1k_2) \\
+&amp; = h_1h_2k_1k_2 \\
+&amp; = h_1k_1h_2k_2 = \theta(h_1, k_1) \theta(h_2, k_2)
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(\theta\)</span> is a homomorphism. It’s kernel is <span class="process-math">\(\{(k,h) \mid k = h^{-1} \}\text{,}\)</span> which is just <span class="process-math">\(\{e\}\)</span> since <span class="process-math">\(H \cap K = \{e\}\text{.}\)</span> The image of <span class="process-math">\(\theta\)</span> is clearly <span class="process-math">\(HK\text{.}\)</span> This proves <span class="process-math">\(\theta\)</span> is an isomorphism.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-dps.html#thm-dp-recognition">in-context</a></span>
+</body>
+</html>

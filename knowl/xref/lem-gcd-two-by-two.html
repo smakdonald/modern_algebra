@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">14.21</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix GCD of Ring Elements.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a PID and <span class="process-math">\(x, y \in R\text{.}\)</span> There exists an invertible <span class="process-math">\(2 \times 2\)</span> matrix <span class="process-math">\(P \in \mathrm{M}_{2}(R)\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]=\left[\begin{array}{c}
+\operatorname{gcd}(x, y) \\
+0
+\end{array}\right] .
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">By definition of greatest common divisor, <span class="process-math">\((x, y)=(\operatorname{gcd}(x, y))\text{,}\)</span> so there exist <span class="process-math">\(a, b \in R\)</span> such that <span class="process-math">\(a x+b y=\operatorname{gcd}(x, y)\text{.}\)</span> Write <span class="process-math">\(g:=\operatorname{gcd}(x, y)\)</span> and <span class="process-math">\(h=\operatorname{gcd}(a, b)\text{.}\)</span> Then <span class="process-math">\(a x+b y\)</span> is a multiple of <span class="process-math">\(g h\text{,}\)</span> but since <span class="process-math">\(a x+b y=g\)</span> and <span class="process-math">\(R\)</span> is a domain, we conclude that <span class="process-math">\(h\)</span> must be a unit, and <span class="process-math">\((a, b)=(h)=(1)\text{.}\)</span> In particular, we can find <span class="process-math">\(c, d \in R\)</span> such that <span class="process-math">\(a d-b c=1\text{.}\)</span> Finally, <span class="process-math">\(b x+c y \in(x, y)=(g)\text{,}\)</span> so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ll} a &amp; b \\ c &amp; d \end{array}\right]
+\left[\begin{array}{l} x \\ y \end{array}\right]
+=\left[\begin{array}{c} g \\ e g \end{array}\right]
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Now we can apply the row operation that adds <span class="process-math">\(-e\)</span> times the first row to the second row: by setting</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P:=
+\left[\begin{array}{cc} 1 &amp; 0 \\ -e &amp; 1 \end{array}\right]
+\left[\begin{array}{ll} a &amp; b \\ c &amp; d \end{array}\right]
+=\left[\begin{array}{cc} a &amp; b \\ c-e a &amp; b-d e \end{array}\right] .
+\end{equation*}
+</div>
+<div class="para">we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P\left[\begin{array}{l} x \\ y \end{array}\right]
+=\left[\begin{array}{l} g \\ 0 \end{array}\right]
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Finally, one can easily check that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P^{-1}=\left[\begin{array}{cc} d &amp; -b \\ -c &amp; a \end{array}\right]
+\left[\begin{array}{ll} 1 &amp; 0 \\ e &amp; 1 \end{array}\right]
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-snf.html#lem-gcd-two-by-two">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">17.24</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Galois Theory.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(F \subseteq L\)</span> is a (finite) Galois field extension. Then the functions</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi:\left\{\text{intermediate fields $E$, with $F\subseteq E \subseteq L$}\right\} \to\left\{\text{subgroups $H$ of $\Gal(L/F)$}\right\}
+\end{equation*}
+</div>
+<div class="para">given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi(E)=\Gal(L/E)
+\end{equation*}
+</div>
+<div class="para">is a bijection whose inverse</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi^{-1}:
+\left\{\text{subgroups $H$ of $\Gal(L/F)$}\right\} \to
+\left\{\text{intermediate fields $E$, with $F \subseteq E \subseteq L$}\right\}
+\end{equation*}
+</div>
+<div class="para">is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi^{-1}(H)=L^H.
+\end{equation*}
+</div>
+<div class="para">Moreover, this bijective correspondence enjoys the following properties:</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(\Psi\)</span> and <span class="process-math">\(\Psi^{-1}\)</span> each reverse the order of inclusions.</div></li>
+<li><div class="para logical">
+<div class="para">
+<span class="process-math">\(\Psi\)</span> and <span class="process-math">\(\Psi^{-1}\)</span> convert degrees of extensions to indices of subgroups:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\([\Gal(L/F) : H] = [L^H:F]\)</span> or, equivalently,</div></li>
+<li><div class="para"><span class="process-math">\([\Gal(L/F) : \Gal(L/E)] = [E:F]\text{.}\)</span></div></li>
+</ul>
+</div></li>
+<li><div class="para logical">
+<div class="para">Normal subgroups correspond to intermediate fields that are Galois over <span class="process-math">\(F\text{:}\)</span>
+</div>
+<ul class="disc">
+<li><div class="para">If <span class="process-math">\(N \nsg G\)</span> then <span class="process-math">\(L^N/F\)</span> is Galois.</div></li>
+<li><div class="para">If <span class="process-math">\(E/F\)</span> is Galois, then <span class="process-math">\(\Gal(L/E) \nsg \Gal(L/F)\text{.}\)</span>
+</div></li>
+</ul>
+</div></li>
+<li><div class="para">If <span class="process-math">\(E = L^N\)</span> for a normal subgroup <span class="process-math">\(N \nsg \Gal(L/F)\text{,}\)</span> then <span class="process-math">\(\Gal(E/F) \cong \Gal(L/F)/N\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(H_1, H_2\)</span> are subgroups of <span class="process-math">\(G\)</span> with corresponding fixed subfields <span class="process-math">\(E_1=L^{H_1}\)</span> and <span class="process-math">\(E_2=L^{H_2}\text{,}\)</span> then</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(E_1\cap E_2=L^{&lt;H_1,H_2&gt;}\)</span> and <span class="process-math">\(\Gal(L/E_1\cap E_2)=\langle H_1,H_2\rangle\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(E_1 E_2=L^{H_1\cap H_2}\)</span> and <span class="process-math">\(\Gal(L/E_1E_2)=H_1\cap H_2\text{.}\)</span>
+</div></li>
+</ul>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">First, we need to check that both functions are well-defined. For each intermediary field <span class="process-math">\(E\text{,}\)</span> we know from Corollary 6.31 that <span class="process-math">\(L / E\)</span> is also Galois, and hence it makes sense to write <span class="process-math">\(\operatorname{Gal}(L / E)\text{;}\)</span> moreover, any <span class="process-math">\(\sigma \in \operatorname{Gal}(L / E)\)</span> is an automorphism of <span class="process-math">\(L\)</span> that fixes <span class="process-math">\(E\text{,}\)</span> and thus <span class="process-math">\(F \subseteq E\text{,}\)</span> so <span class="process-math">\(\sigma \in \operatorname{Gal}(L / F)\text{.}\)</span> This shows that <span class="process-math">\(\Psi\)</span> is well-defined. Conversely, given a subgroup <span class="process-math">\(H\)</span> of <span class="process-math">\(\operatorname{Gal}(L / F), L^{H}\)</span> is a subfield of <span class="process-math">\(L\)</span> by Exercise 18.</div> <div class="para logical">
+<div class="para">Next, we need to check that <span class="process-math">\(\Psi\)</span> and <span class="process-math">\(\Psi^{-1}\)</span> are indeed inverse functions. Given a subgroup <span class="process-math">\(H\)</span> of <span class="process-math">\(\operatorname{Gal}(L / F)\text{,}\)</span> we have <span class="process-math">\(\operatorname{Gal}\left(L / L^{H}\right)=H\)</span> by Artin’s Theorem. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi \circ \Psi^{-1}(H)=\Psi\left(L^{H}\right)=\operatorname{Gal}\left(L / L^{H}\right)=H .
+\end{equation*}
+</div>
+<div class="para">Conversely, given an intermediate field <span class="process-math">\(E, L / E\)</span> is Galois by Corollary 6.31, and hence <span class="process-math">\(L^{\operatorname{Gal}(L / E)}=E\)</span> by Corollary 6.24. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi^{-1} \circ \Psi(E)=\Psi(\operatorname{Gal}(L / E))=L^{\operatorname{Gal}(L / E)}=E .
+\end{equation*}
+</div>
+<div class="para">This establishes the fact that <span class="process-math">\(\Psi\)</span> is indeed a bijective correspondence.</div>
+</div> <div class="para logical">
+<div class="para">Now we check that <span class="process-math">\(\Psi\)</span> satisfies the given list of properties. For brevity, set <span class="process-math">\(G:=\operatorname{Gal}(L / F)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">The fact that the correspondence is order reversing follows from the definitions. Given intermediate fields <span class="process-math">\(E_{1} \subseteq E_{2}\text{,}\)</span> any automorphism of <span class="process-math">\(L\)</span> that preserves <span class="process-math">\(E_{2}\)</span> must also preserve <span class="process-math">\(E_{1}\text{,}\)</span> thus <span class="process-math">\(\operatorname{Gal}\left(L / E_{2}\right) \supseteq \operatorname{Gal}\left(L / E_{1}\right)\text{.}\)</span> Conversely, if <span class="process-math">\(H_{1} \leq H_{2} \leq \operatorname{Gal}(L / E)\text{,}\)</span> then every <span class="process-math">\(x \in L\)</span> that is fixed by every <span class="process-math">\(\sigma \in H_{2}\)</span> must also be fixed in particular by every element of <span class="process-math">\(H_{1}\text{,}\)</span> so <span class="process-math">\(L^{H_{2}} \supseteq L^{H_{1}}\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">By definition of Galois extension, <span class="process-math">\([L: F]=|G|\text{.}\)</span> By Artin’s Theorem, for any subgroup <span class="process-math">\(H \leq G\)</span> the extension <span class="process-math">\(L^{H} \subseteq L\)</span> is also Galois, and thus by definition <span class="process-math">\(\left[L: L^{H}\right]=|H|\text{.}\)</span> Using the Degree Formula, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[L^{H}: F\right]=\frac{[L: F]}{\left[L: L^{H}\right]}=\frac{|G|}{|H|}=[G: H] .
+\end{equation*}
+</div>
+<div class="para">So if <span class="process-math">\(H=\Psi(E)=\operatorname{Gal}(E / F)\text{,}\)</span> then <span class="process-math">\(L^{H}=E\)</span> and the formula above can be rewritten as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[\operatorname{Gal}(L / F): \operatorname{Gal}(L / E)]=[E: F] .
+\end{equation*}
+</div>
+</div></li>
+<li>
+<div class="para">Suppose <span class="process-math">\(E\)</span> is an intermediate field that is Galois over <span class="process-math">\(F\text{.}\)</span> Fix <span class="process-math">\(\sigma \in G\)</span> and <span class="process-math">\(\alpha \in E\text{.}\)</span> Since <span class="process-math">\(E / F\)</span> is Galois, by Corollary 6.26 the polynomial <span class="process-math">\(m_{\alpha, F}\)</span> is separable and all of its roots are in <span class="process-math">\(E\text{.}\)</span> By Lemma <span class="process-math">\(6.10, \sigma(\alpha)\)</span> is also a root of <span class="process-math">\(m_{\alpha, F}\text{,}\)</span> and thus <span class="process-math">\(\sigma(\alpha) \in E\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(\tau \in \operatorname{Gal}(L / E)\text{.}\)</span> For any <span class="process-math">\(\alpha \in E\)</span> we have <span class="process-math">\(\sigma(\alpha) \in E\text{,}\)</span> so <span class="process-math">\(\tau(\sigma(\alpha))=\sigma(\alpha)\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma^{-1}\left(\tau(\sigma(\alpha))=\sigma^{-1}(\sigma(\alpha))=\alpha\right).
+\end{equation*}
+</div>
+</div>
+<div class="para">This proves that <span class="process-math">\(\sigma^{-1} \tau \sigma \in \operatorname{Gal}(L / E)\)</span> and hence that <span class="process-math">\(\operatorname{Gal}(L / E) \unlhd G\text{.}\)</span> We have shown that if <span class="process-math">\(E\)</span> is Galois over <span class="process-math">\(F\text{,}\)</span> then the corresponding subgroup <span class="process-math">\(\operatorname{Gal}(L / E)\)</span> of <span class="process-math">\(G\)</span> is normal.</div>
+<div class="para">For the converse, consider a normal subgroup <span class="process-math">\(N \unlhd G\)</span> and the corresponding intermediate field <span class="process-math">\(E=L^{N}\text{,}\)</span> so that <span class="process-math">\(N=\operatorname{Gal}(L / E)\text{.}\)</span> We will show that <span class="process-math">\(E\)</span> is the splitting field over <span class="process-math">\(F\)</span> of a separable polynomial in <span class="process-math">\(F[x]\text{,}\)</span> and hence is Galois over <span class="process-math">\(F\)</span> by Corollary 6.18.</div>
+<div class="para logical">
+<div class="para">Pick any <span class="process-math">\(\alpha \in E\)</span> and set <span class="process-math">\(m:=m_{\alpha, F}\text{.}\)</span> By Corollary 6.26, <span class="process-math">\(m\)</span> is separable and all of its roots belong to <span class="process-math">\(L\text{.}\)</span> We claim that all the roots must in fact belong to <span class="process-math">\(E\text{.}\)</span> Since <span class="process-math">\(m\)</span> is irreducible and <span class="process-math">\(L / F\)</span> is Galois, by Corollary <span class="process-math">\(6.26 G\)</span> acts transitively on the set of roots of <span class="process-math">\(m\text{.}\)</span> Thus, given be any other root <span class="process-math">\(\beta \in L\)</span> of <span class="process-math">\(m\text{,}\)</span> there is a <span class="process-math">\(\sigma \in G\)</span> with <span class="process-math">\(\sigma(\alpha)=\beta\text{.}\)</span> Since <span class="process-math">\(N\)</span> is normal, for any <span class="process-math">\(\tau \in N\)</span> we have <span class="process-math">\(\sigma \tau^{\prime}=\tau \sigma\)</span> for some <span class="process-math">\(\tau^{\prime} \in N\text{.}\)</span> But <span class="process-math">\(\tau^{\prime} \in N\)</span> fixes <span class="process-math">\(E\text{,}\)</span> so <span class="process-math">\(\tau^{\prime}(\alpha)=\alpha\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta=\sigma(\alpha)=\sigma \tau^{\prime}(\alpha)=\tau \sigma(\alpha)=\tau(\beta)
+\end{equation*}
+</div>
+<div class="para">which shows that <span class="process-math">\(\beta\)</span> is also fixed by <span class="process-math">\(N\text{.}\)</span> But then <span class="process-math">\(\beta \in L^{N}=E\text{.}\)</span> Therefore, <span class="process-math">\(E\)</span> contains all the roots of <span class="process-math">\(m_{\alpha, F}\text{,}\)</span> and thus <span class="process-math">\(E\)</span> must contain the splitting field of <span class="process-math">\(m_{\alpha, F}\text{.}\)</span>
+</div>
+</div>
+<div class="para">We have <span class="process-math">\(E=F\left(\alpha_{1}, \ldots, \alpha_{l}\right)\)</span> for some <span class="process-math">\(\alpha_{1}, \ldots, \alpha_{l} \in E\text{.}\)</span> If <span class="process-math">\(m_{1}, \ldots, m_{n}\)</span> are the distinct polynomials among <span class="process-math">\(m_{\alpha_{1}, F}, \ldots, m_{\alpha_{l}, F}\text{,}\)</span> then <span class="process-math">\(E\)</span> is the splitting field of the separable polynomial <span class="process-math">\(m_{1} \cdots m_{n}\text{.}\)</span> By Corollary 6.28, <span class="process-math">\(E\)</span> is Galois over <span class="process-math">\(F\text{.}\)</span>
+</div>
+<div class="para">If <span class="process-math">\(E=L^{N}\)</span> for a normal subgroup <span class="process-math">\(N \unlhd \operatorname{Gal}(L / F)\text{,}\)</span> then <span class="process-math">\(\operatorname{Gal}(E / F) \cong \operatorname{Gal}(L / F) / N\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para">Let <span class="process-math">\(E=L^{N}\)</span> for a normal subgroup <span class="process-math">\(N\)</span> of <span class="process-math">\(G\text{.}\)</span> We want to show that <span class="process-math">\(\operatorname{Gal}(E / F)\)</span> is isomorphic to <span class="process-math">\(G / N\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">For each <span class="process-math">\(\sigma \in G\text{,}\)</span> we claim that <span class="process-math">\(\sigma(E) \subseteq E\text{.}\)</span> By Lemma 6.10, for all <span class="process-math">\(\alpha \in E\)</span> the element <span class="process-math">\(\sigma(\alpha)\)</span> is also a root of <span class="process-math">\(m_{\alpha, F}\text{.}\)</span> But since <span class="process-math">\(E / F\)</span> is Galois, it must contain all of the roots of <span class="process-math">\(m_{\alpha, F}\text{,}\)</span> by Corollary 6.26, so <span class="process-math">\(\sigma(\alpha) \in E\text{.}\)</span> Thus <span class="process-math">\(\sigma(E) \subseteq E\text{,}\)</span> so the restriction of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(E\)</span> determines an injective field homomorphism <span class="process-math">\(\left.\sigma\right|_{E}: E \rightarrow E\text{.}\)</span> Since <span class="process-math">\(\left.\sigma\right|_{F}=\mathrm{id}_{F}\text{,}\)</span> this map is also a linear transformation of vector spaces over <span class="process-math">\(F\text{.}\)</span> But <span class="process-math">\(E\)</span> is a finite vector space over <span class="process-math">\(F\text{,}\)</span> and any injective linear transformation <span class="process-math">\(E \rightarrow E\)</span> must be bijective. We conclude that <span class="process-math">\(\left.\sigma\right|_{E}\)</span> is an automorphism of <span class="process-math">\(E\text{.}\)</span> We thus have a well-defined function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{gathered}
+\phi: G \longrightarrow \operatorname{Gal}(E / F) \\
+\sigma \longmapsto \phi(\sigma)=\left.\sigma\right|_{E} .
+\end{gathered}
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Moreover, this map is a group homomorphism by construction. The kernel is the subgroup of <span class="process-math">\(G\)</span> of automorphisms that restrict to the identity on <span class="process-math">\(E\text{,}\)</span> which is precisely <span class="process-math">\(N\text{.}\)</span> Hence we have an induced injective group homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bar{\phi}: G / N \rightarrow \operatorname{Gal}(E / F) .
+\end{equation*}
+</div>
+<div class="para">But <span class="process-math">\(|N|=|\operatorname{Gal}(E / F)|&lt;\infty\text{,}\)</span> so this map <span class="process-math">\(\bar{\phi}\)</span> must be an isomorphism.</div>
+</div>
+</li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-ftgt.html#thm-ftgt">in-context</a></span>
+</body>
+</html>

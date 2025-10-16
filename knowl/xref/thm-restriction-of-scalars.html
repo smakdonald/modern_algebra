@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.14</span><span class="period">.</span><span class="space"> </span><span class="title">Restriction of Scalars.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\phi: R \to S\)</span> be a ring homomorphism. Any left <span class="process-math">\(S\)</span>-module <span class="process-math">\(M\)</span> may be regarded via <em class="emphasis">restriction of scalars</em> as a left <span class="process-math">\(R\)</span>-module with the following structure:</div>
+<ul class="disc">
+<li><div class="para">the rule for addition <span class="process-math">\(+\)</span> on <span class="process-math">\(M\)</span> is the same as in the original structure and</div></li>
+<li><div class="para logical">
+<div class="para">the rule for scaling by elements of <span class="process-math">\(R\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r \cdot m := \phi(r)m \text{ for any }r \in R \text{ and }m\in M.
+\end{equation*}
+</div>
+</div></li>
+</ul>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(x,y \in R\)</span> and <span class="process-math">\(m,n \in M\text{.}\)</span> One checks that the properties in the definition of module hold for the given action using properties of ring homomorphisms. In detail,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(x+y)m =\phi(x + y)m= (\phi(x)+\phi(y))m=\phi(x)m + \phi(y)m=xm+ym,
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\phi\)</span> preserves addition,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x(ym)=\phi(x) (\phi(y)m) = (\phi(x) \phi(y)) m = \phi(xy) m = (xy) m,
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\phi\)</span> preserves multiplication, and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1 \cdot m = \phi(1) m = 1_S m = m
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\phi\)</span> preserves multiplicative identities. This gives three of the axioms. The final also holds:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x(m + n) = \phi(x) (m+n) = \phi(x)m + \phi(x)n = xm + xn.
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-defmod.html#thm-restriction-of-scalars">in-context</a></span>
+</body>
+</html>

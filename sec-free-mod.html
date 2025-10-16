@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Free Modules</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Modern Algebra">
+<meta property="book:author" content="Sam Macdonald">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="modern-algebra.html"><span class="title">Modern Algebra:</span> <span class="subtitle">Groups, Rings, Modules, Fields</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="index.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-ind-gen.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-bases.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-vecbasis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\can}{can}
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\char}{char}
+\DeclareMathOperator{\cp}{CharPoly}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dim}{dim}
+\DeclareMathOperator{\edim}{embdim} 
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\eval}{eval}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\gcd}{gcd}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\max}{max}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\mp}{MinPoly}
+\DeclareMathOperator{\mSpec}{mSpec}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\ns}{nullspace}
+\DeclareMathOperator{\opp}{opp}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\pdim}{pdim}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\PtStab}{pStab}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\sStab}{SetStab}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\trdeg}{trdeg}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}[1]{#1-\mathbf{Mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\a{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\ff}{{\mathfrak f}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fh}{{\mathfrak h}}
+\newcommand{\fi}{{\mathfrak i}}
+\newcommand{\fj}{{\mathfrak j}}
+\newcommand{\fk}{{\mathfrak k}}
+\newcommand{\fl}{{\mathfrak l}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fn}{{\mathfrak n}}
+\newcommand{\fo}{{\mathfrak o}}
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fr}{{\mathfrak r}}
+\newcommand{\fs}{{\mathfrak s}}
+\newcommand{\ft}{{\mathfrak t}}
+\newcommand{\fu}{{\mathfrak u}}
+\newcommand{\fv}{{\mathfrak v}}
+\newcommand{\fw}{{\mathfrak w}}
+\newcommand{\fx}{{\mathfrak x}}
+\newcommand{\fy}{{\mathfrak y}}
+\newcommand{\fz}{{\mathfrak z}}
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\ddots{d_1, \dots, d_n} 
+\def\edots{e_1, \dots, e_n} 
+\def\fdots{f_1, \dots, f_n} 
+\def\gdots{g_1, \dots, g_n} 
+\def\udots{u_1, \dots, u_n} 
+\def\xdots{x_1, \dots, x_n} 
+
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd}
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-group.html" class="internal"><span class="codenumber">I</span> <span class="title">Group Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-intro-groups.html" class="internal"><span class="codenumber">1</span> <span class="title">Intro to Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-group-basics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Group Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Binary Operations and the Definition of a Group</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-props" class="internal"><span class="codenumber">1.1.2</span> <span class="title">First Properties of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-abelian" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Abelian Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">First Examples of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups-units" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Groups of Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-misc" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Other Initial Examples and Properties</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-order-power.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Order and Power</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-power" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Power</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-order" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Order</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-symmetric.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutations and Symmetric Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-symmetric" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Symmetric Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-cycles-transpositions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Cycles and Transpositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-even-odd" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Even and Odd Permutations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-d2n.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Dihedral Groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-d2n.html#subsec-d2n" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Dihedral Groups</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gphoms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Group Homomorphisms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-homom" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Homomorphism? I Barely Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-isomorphisms" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Isomorphism? I Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-automorphisms" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Automorphism? I’m <em class="emphasis">Am</em> ’em!</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subgroups.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subgroups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-basics" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Subgroups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-lattice" class="internal"><span class="codenumber">1.6.2</span> <span class="title">The Subgroup Lattice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-center" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Stuck in the Middle</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-cyclic.html" class="internal"><span class="codenumber">2</span> <span class="title">Generators, Cyclic Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gp-generators.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Generated Subgroups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gp-generators.html#subsec-gp-gensub" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Generational Wealth</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cyclic.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Cyclic Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-groups" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Definition and First Properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-subgroups" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Subgroups of Cyclic Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cyclic.html#subsec-cyclic-uniqueness" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Uniqueness of Cyclic Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-normal-quotient.html" class="internal"><span class="codenumber">3</span> <span class="title">Normal Subgroups, Quotient Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cosets.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Cosets and Lagrange’s Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cosets.html#subsec-cosets" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Cosets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cosets.html#subsec-indices" class="internal"><span class="codenumber">3.1.2</span> <span class="title">The Index of a Subgroup</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-normal-subgroups.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Normal Subgroups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-normal-subgroups.html#subsec-normal" class="internal"><span class="codenumber">3.2.1</span> <span class="title">The New Normal</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-quotient-groups.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Quotient Groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-quotient-groups.html#subsec-quotients" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Quotient Groups</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-products-iso-thms.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Products and the Isomorphism Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-products-iso-thms.html#subsec-isomorphism-thms" class="internal"><span class="codenumber">3.4.1</span> <span class="title">The First Isomorphism Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-products-iso-thms.html#subsec-hk" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Products</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-presentations.html" class="internal"><span class="codenumber">4</span> <span class="title">Free Groups, Presentations (*)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-free-groups.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Free Groups</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-presentations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Presentations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-presentations.html#subsec-presentations" class="internal"><span class="codenumber">4.2.1</span> <span class="title">What is a Presentation?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-presentations.html#subsec-pres-quotient" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Every Group is a Quotient of a Free Group</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-group-actions.html" class="internal"><span class="codenumber">5</span> <span class="title">Group Actions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="graction.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Group Actions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-actions" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Time to Act</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-perm-rep" class="internal"><span class="codenumber">5.1.2</span> <span class="title">The Permutation Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="graction.html#subsec-faithful-transitive" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Faithful and Transitive Actions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-left-mult-conjugation.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Self Actions and Conjugacy</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-left-mult-conjugation.html#subsec-self-action" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Self Actions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-left-mult-conjugation.html#subsec-conjugacy" class="internal"><span class="codenumber">5.2.2</span> <span class="title">Conjugacy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Orbits and Stabilizers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html#subsec-lois-orbit-stabilizer" class="internal"><span class="codenumber">5.3.1</span> <span class="title">In a Stable Orbit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-orbit-stab-class-eq.html#subsec-class-eq" class="internal"><span class="codenumber">5.3.2</span> <span class="title">The Class Equation</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-sylow.html" class="internal"><span class="codenumber">6</span> <span class="title">Simple, Solvable, Sylow</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sylow.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Sylow’s Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-p-groups" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Groups of Prime Order</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-sylow" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Sylow Subgroups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sylow.html#subsec-sylows-theorem" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Sylows-Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-simple-groups.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Simple Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-simple-groups.html#subsec-simple" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Keeping it Simple</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-simple-groups.html#subsec-simple-qual" class="internal"><span class="codenumber">6.2.2</span> <span class="title">A Wealth of Problems on Simple Groups</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solvable.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Solvable Groups (*)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solvable.html#subsec-composition-series" class="internal"><span class="codenumber">6.3.1</span> <span class="title">Composition Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solvable.html#subsec-solvable" class="internal"><span class="codenumber">6.3.2</span> <span class="title">Solvable Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-group-products.html" class="internal"><span class="codenumber">7</span> <span class="title">Group Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-dps.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Direct Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dps.html#subsec-external-dps-revisited" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Direct Products of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-dps.html#subsec-internal-recognition" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Internal and External Direct Products</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-spds.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Semidirect Products</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-external-sdps" class="internal"><span class="codenumber">7.2.1</span> <span class="title">External Semidirect Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-internal-sdps" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Internal Semidirect Products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-spds.html#subsec-order-pq" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Groups of Order <span class="process-math">\(pq\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ftfgag.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Finitely Generated Abelian Groups</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-rings.html" class="internal"><span class="codenumber">II</span> <span class="title">Ring Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-rings.html" class="internal"><span class="codenumber">8</span> <span class="title">Intro to Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-defn-ex.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Rings, Subrings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defn-ex.html#subsec-rings" class="internal"><span class="codenumber">8.1.1</span> <span class="title">From Rings to Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defn-ex.html#subsec-subrings" class="internal"><span class="codenumber">8.1.2</span> <span class="title">Subrings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-units.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Units, Zerodivisors, Integral Domains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-units.html#subsec-units" class="internal"><span class="codenumber">8.2.1</span> <span class="title">Absolute Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-units.html#subsec-zerodivisors" class="internal"><span class="codenumber">8.2.2</span> <span class="title">A Zero Divided Cannot Stand</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-poly.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Group Rings, Polynomial Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-poly.html#subsec-group-ring" class="internal"><span class="codenumber">8.3.1</span> <span class="title">What is a Group Ring?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-poly.html#subsec-polynomial-rings" class="internal"><span class="codenumber">8.3.2</span> <span class="title">What is a Polynomial Ring?</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sub-poly.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Homomorphisms, Polynomial Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sub-poly.html#sec-ring-hom" class="internal"><span class="codenumber">8.4.1</span> <span class="title">Homomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sub-poly.html#subsec-polyrings" class="internal"><span class="codenumber">8.4.2</span> <span class="title">Polynomial Rings</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-idealquot.html" class="internal"><span class="codenumber">9</span> <span class="title">Ideals and Quotient Rings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ideals.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ideals.html#subsec-ideal-def" class="internal"><span class="codenumber">9.1.1</span> <span class="title">Ideal or No Deal</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ideals.html#subsec-generated-ideals" class="internal"><span class="codenumber">9.1.2</span> <span class="title">Generated Ideals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ring-quotients.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Quotient Rings, the Ring Isomorphism Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ring-quotients.html#subsec-quotient-rings" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Quotient Rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ring-quotients.html#subsec-ring-iso-thms" class="internal"><span class="codenumber">9.2.2</span> <span class="title">The Ring Isomorphism Theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-primemax-ideals.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Prime and Maximal Ideals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-primemax-ideals.html#subsec-prime-ideals" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Prime Ideals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-primemax-ideals.html#subsec-maximal-ideals" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Maximal Ideals</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-domains.html" class="internal"><span class="codenumber">10</span> <span class="title">Domains</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-eds.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Euclidean Domains (EDs)</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-pids.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Principal Ideal Domains (PIDs)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pids.html#subsec-principal-ideals" class="internal"><span class="codenumber">10.2.1</span> <span class="title">Principal Ideals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-pids.html#subsec-pids" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Principal Ideal Domains</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-ufds.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Unique Factorization Domains (UFDs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-noeth.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Noetherian Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-fof-poly-ufd.html" class="internal"><span class="codenumber">11</span> <span class="title">Fields of Fractions, Localization</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-field-of-fractions.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fields of Fractions</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-modules.html" class="internal"><span class="codenumber">III</span> <span class="title">Module Theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-mod.html" class="internal"><span class="codenumber">12</span> <span class="title">Intro to Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-defmod.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Modules and Algebras</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defmod.html#subsec-modules" class="internal"><span class="codenumber">12.1.1</span> <span class="title">Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-defmod.html#subsec-restriction" class="internal"><span class="codenumber">12.1.2</span> <span class="title">Restriction of Scalars and Algebras</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-modhom.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Module Homomorphisms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modhom.html#subsec-hom-iso" class="internal"><span class="codenumber">12.2.1</span> <span class="title">Homomorphisms and Isomorphisms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modhom.html#subsec-hom" class="internal"><span class="codenumber">12.2.2</span> <span class="title"><span class="process-math">\(\Hom\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modhom.html#subsec-quotient-modules" class="internal"><span class="codenumber">12.2.3</span> <span class="title">Quotient Modules</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-bases.html" class="internal"><span class="codenumber">13</span> <span class="title">Bases, Free Modules, Vector Spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-ind-gen.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Generated Modules and Linear Independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-ind-gen.html#subsec-generated-modules" class="internal"><span class="codenumber">13.1.1</span> <span class="title">Generated Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-linear-ind-gen.html#subsec-lin-ind" class="internal"><span class="codenumber">13.1.2</span> <span class="title">Linear Independence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-free-mod.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Free Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-free-mod.html#subsec-bases" class="internal"><span class="codenumber">13.2.1</span> <span class="title">Bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-free-mod.html#subsec-rank" class="internal"><span class="codenumber">13.2.2</span> <span class="title">Rank</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vecbasis.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Vector Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vecbasis.html#subsec-vector-basis" class="internal"><span class="codenumber">13.3.1</span> <span class="title">Every Vector Space has a Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vecbasis.html#subsec-vector-dimension" class="internal"><span class="codenumber">13.3.2</span> <span class="title">Every Basis of a Vector Space has the Same Dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vecbasis.html#subsec-rank-nullity" class="internal"><span class="codenumber">13.3.3</span> <span class="title">Classification Theorem and Rank-Nullity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cob.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Matrices and Change of Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cob.html#sec-transforms" class="internal"><span class="codenumber">13.4.1</span> <span class="title">Matrices of Linear Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cob.html#subsec-cob" class="internal"><span class="codenumber">13.4.2</span> <span class="title">Change of Basis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cob.html#subsec-elementary-basis-change" class="internal"><span class="codenumber">13.4.3</span> <span class="title">Elementary Basis Operations</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-modgen.html" class="internal"><span class="codenumber">14</span> <span class="title">Finitely Generated Modules over PIDs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-modpres.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Finitely Presented Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modpres.html#subsec-fp-modules" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Module Presentations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modpres.html#subsec-noetherian-module" class="internal"><span class="codenumber">14.1.2</span> <span class="title">When Modules are Finitely Presented: Noetherian Rings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-snf.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Smith Normal Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-snf.html#subsec-snf-statement" class="internal"><span class="codenumber">14.2.1</span> <span class="title">Stating and Finding the Smith Normal Form of a Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-snf.html#subsec-proving-snl" class="internal"><span class="codenumber">14.2.2</span> <span class="title">Proof and Uniqueness of Smith Normal Form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-modclass.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Classifications</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modclass.html#subsec-invariant-factors" class="internal"><span class="codenumber">14.3.1</span> <span class="title">Invariant Factors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-modclass.html#subsec-elementary-divisors" class="internal"><span class="codenumber">14.3.2</span> <span class="title">Elementary Divisors</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-canform.html" class="internal"><span class="codenumber">15</span> <span class="title">Canonical Forms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-rcf.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Rational Canonical Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rcf.html#subsec-fx" class="internal"><span class="codenumber">15.1.1</span> <span class="title">Making Transformations into Modules</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-rcf.html#subsec-rcf" class="internal"><span class="codenumber">15.1.2</span> <span class="title">Rational Heads Prevail</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cayley-hamilton.html" class="internal"><span class="codenumber">15.2</span> <span class="title">The Cayley-Hamilton Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-jcf.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Jordan Canonical Form</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-fields.html" class="internal"><span class="codenumber">IV</span> <span class="title">Field Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-extensions.html" class="internal"><span class="codenumber">16</span> <span class="title">Field Extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-irrpoly.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Irredicuble Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-irrpoly.html#subsec-irrpoly" class="internal"><span class="codenumber">16.1.1</span> <span class="title">Basic Irreducibility Tests</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-irrpoly.html#subsec-eisenstein" class="internal"><span class="codenumber">16.1.2</span> <span class="title">Eisenstein’s Criterion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="field-extension-basics.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Field Extension Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="field-extension-basics.html#subsec-field-extensions" class="internal"><span class="codenumber">16.2.1</span> <span class="title">Welcome to Field Extensions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="field-extension-basics.html#subsec-field-ext-degree" class="internal"><span class="codenumber">16.2.2</span> <span class="title">Degree of a Field Extension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="field-extension-basics.html#subsec-simple-gen-ext" class="internal"><span class="codenumber">16.2.3</span> <span class="title">Simple and Generated Extensions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="field-extension-basics.html#subsec-unique-ext" class="internal"><span class="codenumber">16.2.4</span> <span class="title">Uniqueness of Simple Extensions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-algebraic.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Algebraic Extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-algebraic.html#subsec-algebraic-elements" class="internal"><span class="codenumber">16.3.1</span> <span class="title">Algebraic Elements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-algebraic.html#subsec-algebraic-extension" class="internal"><span class="codenumber">16.3.2</span> <span class="title">Algebraic Field Extensions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-closure.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Algebraic Closures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-closure.html#subsec-closures" class="internal"><span class="codenumber">16.4.1</span> <span class="title">Clooooosing Time</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-splitting.html" class="internal"><span class="codenumber">16.5</span> <span class="title">Splitting Fields</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-splitting.html#subsec-splitting" class="internal"><span class="codenumber">16.5.1</span> <span class="title">Split Up and Look For Clues</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-separable.html" class="internal"><span class="codenumber">16.6</span> <span class="title">Separability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable.html#subsec-characteristic" class="internal"><span class="codenumber">16.6.1</span> <span class="title">Ring Characteristic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable.html#subsec-sep-poly" class="internal"><span class="codenumber">16.6.2</span> <span class="title">Separable Polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable.html#subsec-sep-field" class="internal"><span class="codenumber">16.6.3</span> <span class="title">Separable Field Extensions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-galois.html" class="internal"><span class="codenumber">17</span> <span class="title">Galois Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-galext.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Galois Extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-galext.html#subsec-actions-aut" class="internal"><span class="codenumber">17.1.1</span> <span class="title">Group Actions and Automorphism Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-galext.html#subsec-galois-group" class="internal"><span class="codenumber">17.1.2</span> <span class="title">Finite Extensions and Galois Groups</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-ftgt.html" class="internal"><span class="codenumber">17.2</span> <span class="title">The Fundamental Theorem of Galois Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ftgt.html#subsec-ftgt" class="internal"><span class="codenumber">17.2.1</span> <span class="title">The Fundamental Theorem: Statement and Uses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-ftgt.html#subsec-proving-galois" class="internal"><span class="codenumber">17.2.2</span> <span class="title">The Fundamental Theorem: Proof and Artin’s Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-foundations.html" class="internal"><span class="codenumber">A</span> <span class="title">Foundational Knowledge</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sets-functions.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Sets, Functions, Constructions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets-functions.html#subsec-sets" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sets-functions.html#subsec-functions" class="internal"><span class="codenumber">A.1.2</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-sets-functions.html#subsec-set-constructions" class="internal"><span class="codenumber">A.1.3</span> <span class="title">Set Constructions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-sets-functions.html#subsubsec-quotient-sets" class="internal"><span class="codenumber">A.1.3.1</span> <span class="title">Equivalence Relations and Modular Arithmetic</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numbers-and-cardinality.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Numbers, Counting, Cardinality</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numbers-and-cardinality.html#subsec-number-systems" class="internal"><span class="codenumber">A.2.1</span> <span class="title">Number Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numbers-and-cardinality.html#subsec-counting" class="internal"><span class="codenumber">A.2.2</span> <span class="title">Counting (*)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numbers-and-cardinality.html#subsec-cardinality" class="internal"><span class="codenumber">A.2.3</span> <span class="title">Cardinality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-poset-lattice.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Posets, Lattices, Chains (*)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-poset-lattice.html#subsec-ordered-sets" class="internal"><span class="codenumber">A.3.1</span> <span class="title">Orderings and Ordered Sets</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="app-computation.html" class="internal"><span class="codenumber">B</span> <span class="title">Computational Tools: Sage</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-sage-group.html" class="internal"><span class="codenumber">B.1</span> <span class="title">Sage and Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sage-group.html#subsubsec-sage-group" class="internal"><span class="codenumber">B.1.1</span> <span class="title">Sage and Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-sage-group.html#subsec-sage-presentation" class="internal"><span class="codenumber">B.1.2</span> <span class="title">Sage and Finitely Presented Groups</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gap.html" class="internal"><span class="codenumber">B.2</span> <span class="title">GAP</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gap.html#subsec-what-gap" class="internal"><span class="codenumber">B.2.1</span> <span class="title">What is GAP?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gap.html#subsec-gap-commands" class="internal"><span class="codenumber">B.2.2</span> <span class="title">Commands in GAP</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-macaulay2.html" class="internal"><span class="codenumber">B.3</span> <span class="title">Macaulay2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-macaulay2.html#subsec-what-mac2" class="internal"><span class="codenumber">B.3.1</span> <span class="title">What is Macaulay2?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-macaulay2.html#subsec-mac2-commands" class="internal"><span class="codenumber">B.3.2</span> <span class="title">Commands in Macaulay2</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-quals.html" class="internal"><span class="codenumber">C</span> <span class="title">Qualifying Exams</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-qual.html" class="internal"><span class="codenumber">C.1</span> <span class="title">Syllabus and Problems</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-3.html" class="internal"><span class="codenumber">C.2</span> <span class="title">June 2023</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-3.html#appendix-quals-3-2" class="internal"><span class="codenumber">C.2.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-3.html#appendix-quals-3-3" class="internal"><span class="codenumber">C.2.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-3.html#appendix-quals-3-4" class="internal"><span class="codenumber">C.2.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-4.html" class="internal"><span class="codenumber">C.3</span> <span class="title">January 2023</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-4.html#appendix-quals-4-2" class="internal"><span class="codenumber">C.3.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-4.html#appendix-quals-4-3" class="internal"><span class="codenumber">C.3.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-4.html#appendix-quals-4-4" class="internal"><span class="codenumber">C.3.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-5.html" class="internal"><span class="codenumber">C.4</span> <span class="title">May 2022</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-5.html#appendix-quals-5-2" class="internal"><span class="codenumber">C.4.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-5.html#appendix-quals-5-3" class="internal"><span class="codenumber">C.4.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-5.html#appendix-quals-5-4" class="internal"><span class="codenumber">C.4.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-6.html" class="internal"><span class="codenumber">C.5</span> <span class="title">January 2022</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-6.html#appendix-quals-6-2" class="internal"><span class="codenumber">C.5.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-6.html#appendix-quals-6-3" class="internal"><span class="codenumber">C.5.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-6.html#appendix-quals-6-4" class="internal"><span class="codenumber">C.5.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-7.html" class="internal"><span class="codenumber">C.6</span> <span class="title">May 2021</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-7.html#appendix-quals-7-2" class="internal"><span class="codenumber">C.6.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-7.html#appendix-quals-7-3" class="internal"><span class="codenumber">C.6.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-7.html#appendix-quals-7-4" class="internal"><span class="codenumber">C.6.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-8.html" class="internal"><span class="codenumber">C.7</span> <span class="title">January 2021</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-8.html#appendix-quals-8-2" class="internal"><span class="codenumber">C.7.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-8.html#appendix-quals-8-3" class="internal"><span class="codenumber">C.7.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-8.html#appendix-quals-8-4" class="internal"><span class="codenumber">C.7.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-9.html" class="internal"><span class="codenumber">C.8</span> <span class="title">June 2020</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-9.html#appendix-quals-9-2" class="internal"><span class="codenumber">C.8.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-9.html#appendix-quals-9-3" class="internal"><span class="codenumber">C.8.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-9.html#appendix-quals-9-4" class="internal"><span class="codenumber">C.8.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-10.html" class="internal"><span class="codenumber">C.9</span> <span class="title">January 2020</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-10.html#appendix-quals-10-2" class="internal"><span class="codenumber">C.9.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-10.html#appendix-quals-10-3" class="internal"><span class="codenumber">C.9.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-10.html#appendix-quals-10-4" class="internal"><span class="codenumber">C.9.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-11.html" class="internal"><span class="codenumber">C.10</span> <span class="title">May 2019</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-11.html#appendix-quals-11-2" class="internal"><span class="codenumber">C.10.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-11.html#appendix-quals-11-3" class="internal"><span class="codenumber">C.10.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-11.html#appendix-quals-11-4" class="internal"><span class="codenumber">C.10.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-12.html" class="internal"><span class="codenumber">C.11</span> <span class="title">January 2019</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-12.html#appendix-quals-12-2" class="internal"><span class="codenumber">C.11.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-12.html#appendix-quals-12-3" class="internal"><span class="codenumber">C.11.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-12.html#appendix-quals-12-4" class="internal"><span class="codenumber">C.11.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-13.html" class="internal"><span class="codenumber">C.12</span> <span class="title">May 2018</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-13.html#appendix-quals-13-2" class="internal"><span class="codenumber">C.12.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-13.html#appendix-quals-13-3" class="internal"><span class="codenumber">C.12.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-13.html#appendix-quals-13-4" class="internal"><span class="codenumber">C.12.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-14.html" class="internal"><span class="codenumber">C.13</span> <span class="title">May 2017</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-14.html#appendix-quals-14-2" class="internal"><span class="codenumber">C.13.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-14.html#appendix-quals-14-3" class="internal"><span class="codenumber">C.13.2</span> <span class="title">Section II: Rings, Modules, and Linear Algebra</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-14.html#appendix-quals-14-4" class="internal"><span class="codenumber">C.13.3</span> <span class="title">Section III: Fields and Galois Theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-15.html" class="internal"><span class="codenumber">C.14</span> <span class="title">January 2017</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-15.html#appendix-quals-15-2" class="internal"><span class="codenumber">C.14.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-15.html#appendix-quals-15-3" class="internal"><span class="codenumber">C.14.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-15.html#appendix-quals-15-4" class="internal"><span class="codenumber">C.14.3</span> <span class="title">Section</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-16.html" class="internal"><span class="codenumber">C.15</span> <span class="title">May 2016</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-16.html#appendix-quals-16-2" class="internal"><span class="codenumber">C.15.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-16.html#appendix-quals-16-3" class="internal"><span class="codenumber">C.15.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-16.html#appendix-quals-16-4" class="internal"><span class="codenumber">C.15.3</span> <span class="title">Section</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-17.html" class="internal"><span class="codenumber">C.16</span> <span class="title">January 2016</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-17.html#appendix-quals-17-2" class="internal"><span class="codenumber">C.16.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-17.html#appendix-quals-17-3" class="internal"><span class="codenumber">C.16.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-17.html#appendix-quals-17-4" class="internal"><span class="codenumber">C.16.3</span> <span class="title">Section</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-18.html" class="internal"><span class="codenumber">C.17</span> <span class="title">January 2015</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-18.html#appendix-quals-18-2" class="internal"><span class="codenumber">C.17.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-18.html#appendix-quals-18-3" class="internal"><span class="codenumber">C.17.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-18.html#appendix-quals-18-4" class="internal"><span class="codenumber">C.17.3</span> <span class="title">Section</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-19.html" class="internal"><span class="codenumber">C.18</span> <span class="title">June 2014</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-19.html#appendix-quals-19-2" class="internal"><span class="codenumber">C.18.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-19.html#appendix-quals-19-3" class="internal"><span class="codenumber">C.18.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-19.html#appendix-quals-19-4" class="internal"><span class="codenumber">C.18.3</span> <span class="title">Section III: Linear Algebra and Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-20.html" class="internal"><span class="codenumber">C.19</span> <span class="title">January 2014</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-20.html#appendix-quals-20-2" class="internal"><span class="codenumber">C.19.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-20.html#appendix-quals-20-3" class="internal"><span class="codenumber">C.19.2</span> <span class="title">Section II: Field Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-20.html#appendix-quals-20-4" class="internal"><span class="codenumber">C.19.3</span> <span class="title">Section III: Rings, Modules, and Linear Algebra</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-21.html" class="internal"><span class="codenumber">C.20</span> <span class="title">June 2012</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-21.html#appendix-quals-21-2" class="internal"><span class="codenumber">C.20.1</span> <span class="title">Section I: Group Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-21.html#appendix-quals-21-3" class="internal"><span class="codenumber">C.20.2</span> <span class="title">Section</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-21.html#appendix-quals-21-4" class="internal"><span class="codenumber">C.20.3</span> <span class="title">Section</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-22.html" class="internal"><span class="codenumber">C.21</span> <span class="title">January 2012</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-22.html#appendix-quals-22-2" class="internal"><span class="codenumber">C.21.1</span> <span class="title">Section I: Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-22.html#appendix-quals-22-3" class="internal"><span class="codenumber">C.21.2</span> <span class="title">Section II: Rings and Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-22.html#appendix-quals-22-4" class="internal"><span class="codenumber">C.21.3</span> <span class="title">Section III: Linear Algebra and Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-23.html" class="internal"><span class="codenumber">C.22</span> <span class="title">June 2011</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-23.html#appendix-quals-23-2" class="internal"><span class="codenumber">C.22.1</span> <span class="title">Section I: Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-23.html#appendix-quals-23-3" class="internal"><span class="codenumber">C.22.2</span> <span class="title">Section II: Rings and Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-23.html#appendix-quals-23-4" class="internal"><span class="codenumber">C.22.3</span> <span class="title">Section III: Linear Algebra and Modules</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="appendix-quals-24.html" class="internal"><span class="codenumber">C.23</span> <span class="title">June 2010</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-24.html#appendix-quals-24-2" class="internal"><span class="codenumber">C.23.1</span> <span class="title">Section I: Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-24.html#appendix-quals-24-3" class="internal"><span class="codenumber">C.23.2</span> <span class="title">Section II: Rings and Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="appendix-quals-24.html#appendix-quals-24-4" class="internal"><span class="codenumber">C.23.3</span> <span class="title">Section III: Linear Algebra and Modules</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="index.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-free-mod"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">13.2</span><span class="space"> </span><span class="title">Free Modules</span>
+</h2>
+<section class="subsection" id="subsec-bases"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.2.1</span><span class="space"> </span><span class="title">Bases</span>
+</h3>
+<blockquote class="blockquote" id="subsec-bases-2">
+<div class="para" id="subsec-bases-2-1">“The basis of all good human behavior is kindness.”</div> <cite class="attribution">―Eleanor Roosevelt</cite>
+</blockquote>
+<article class="definition definition-like" id="def-basis-free-mod"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.15</span><span class="period">.</span><span class="space"> </span><span class="title">Basis and Free Module.</span>
+</h4> <div class="para" id="def-basis-free-mod-2-1">A subset <span class="process-math">\(A\)</span> of an <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is a <em class="emphasis">basis</em> of <span class="process-math">\(M\text{,}\)</span> if the set <span class="process-math">\(A\)</span> generates <span class="process-math">\(M\)</span> and is linearly independent. An <span class="process-math">\(R\)</span>-module M is a <em class="emphasis">free</em> <span class="process-math">\(R\)</span>-module if <span class="process-math">\(M\)</span> admits at least one a basis. </div></article><div class="para" id="subsec-bases-4">As we will see in this section, the basis of an <span class="process-math">\(R\)</span>-module is like a set of building blocks that can be used to construct every possible vector in that space in a unique way.</div>
+<article class="example example-like" id="ex-free-modules"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.16</span><span class="period">.</span><span class="space"> </span><span class="title">Free Modules.</span>
+</h4> <div class="para logical" id="ex-free-modules-2"><ol class="decimal">
+<li id="ex-free-modules-2-1-1"><div class="para" id="ex-free-modules-2-1-1-1">The zero module is free with <span class="process-math">\(\emptyset\)</span> as its (only) basis. This holds since the empty set is vacuously linearly independent and it generates <span class="process-math">\(\{0\}\text{.}\)</span>
+</div></li>
+<li id="ex-free-modules-2-1-2"><div class="para" id="ex-free-modules-2-1-2-1">
+<span class="process-math">\(R\)</span> is free since <span class="process-math">\(\{1\}\)</span> is a basis for <span class="process-math">\(R\text{.}\)</span> It generates and if <span class="process-math">\(r \cdot 1 = 0\)</span> then <span class="process-math">\(r = 0\text{,}\)</span> so it is linearly independent.</div></li>
+<li id="ex-rn-free"><div class="para" id="ex-rn-free-1">More generally, <span class="process-math">\(R^n\)</span> is free since <span class="process-math">\(e_1, \dots, e_n\)</span> is a basis. This is called the <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(R^n\text{.}\)</span> We’ve already seen that <span class="process-math">\(e_1, \dots, e_n\)</span> generates <span class="process-math">\(R^n\)</span> as an <span class="process-math">\(R\)</span>-module. Suppose <span class="process-math">\(\sum r_i e_i = 0\text{.}\)</span> Then <span class="process-math">\(\begin{bmatrix} r_1 \\ \vdots \\ r_n \end{bmatrix} = \begin{bmatrix} 0 \\ \vdots \\ 0 \end{bmatrix}\)</span> and hence <span class="process-math">\(r_i = 0\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div></li>
+<li id="ex-free-modules-2-1-4"><div class="para" id="ex-free-modules-2-1-4-1">For any ring <span class="process-math">\(R\text{,}\)</span> if <span class="process-math">\(I\)</span> is a (two-sided) ideal such that <span class="process-math">\(I \ne 0\)</span> and <span class="process-math">\(I \ne R\text{,}\)</span> then <span class="process-math">\(M = R/I\)</span> is not free. Since <span class="process-math">\(I \ne R\text{,}\)</span> <span class="process-math">\(R/I\)</span> is not the zero module and hence the empty set isn’t a basis. Let <span class="process-math">\(A\)</span> be any non-empty subset. Then since <span class="process-math">\(I \ne 0\text{,}\)</span> as shown above <span class="process-math">\(A\)</span> is linearly dependent. We conclude that no subset of <span class="process-math">\(M\)</span> is a basis.</div></li>
+</ol></div></article><details id="subsec-bases-6" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">13.17</span><span class="period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsec-bases-6-1-1">Direct sums of free modules are free.</div></article></details><div class="para" id="subsec-bases-7">Bases of free modules are rarely unique.</div>
+<article class="example example-like" id="ex-bases-are-not-unique"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.18</span><span class="period">.</span><span class="space"> </span><span class="title">Bases are not Unique.</span>
+</h4> <div class="para logical" id="ex-bases-are-not-unique-2"><ol class="decimal">
+<li id="ex-bases-are-not-unique-2-1-1"><div class="para" id="ex-bases-are-not-unique-2-1-1-1">If <span class="process-math">\(R\)</span> is any ring, then any single unit forms a basis for <span class="process-math">\(R\)</span> as a module over itself.</div></li>
+<li id="ex-bases-are-not-unique-2-1-2"><div class="para logical" id="ex-bases-are-not-unique-2-1-2-1">
+<div class="para">For any ring <span class="process-math">\(R\)</span> and any fixed element <span class="process-math">\(r \in R\text{,}\)</span> the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\{ \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \begin{bmatrix} r \\ 1 \end{bmatrix} \right \}
+\end{equation*}
+</div>
+<div class="para">forms a basis for the free <span class="process-math">\(R\)</span>-module <span class="process-math">\(R^2\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article><details id="subsec-bases-9" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">13.19</span><span class="period">.</span><span class="space"> </span><span class="title">Every Module over a Field is Free.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="subsec-bases-9-2-1">Let <span class="process-math">\(R\)</span> be a commutative ring with <span class="process-math">\(1 \neq 0\text{.}\)</span> Show that if every <span class="process-math">\(R\)</span>-module is free then <span class="process-math">\(R\)</span> is a field.</div></article></details><article class="remark remark-like" id="subsec-bases-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">13.20</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-bases-10-1">A key difference between free modules over rings that are not fields and vector spaces is that not every linearly independent subset of a free module can be extended to a basis. For example, <span class="process-math">\(\{3\}\)</span> is a linearly independent subset of <span class="process-math">\(\Z\text{,}\)</span> but it cannot be extended to a basis. Indeed, any set of the form <span class="process-math">\(\{3, n \}\)</span> with <span class="process-math">\(n \ne 3\)</span> is linearly dependent since <span class="process-math">\(n \cdot 3 + (-3) \cdot n = 0\text{.}\)</span>
+</div> <div class="para" id="subsec-bases-10-2">Likewise, over arbitrary rings, not every subset that generates a free module necessarily contains a basis. For instance, <span class="process-math">\(\{3,5\}\)</span> generated <span class="process-math">\(\Z\)</span> as a module over itself, but no subset of it is a basis.</div> <div class="para" id="subsec-bases-10-3">(Note that <span class="process-math">\(\Z\)</span> has precisely two bases as a module over itself: <span class="process-math">\(\{1\}\)</span> and <span class="process-math">\(\{-1\}\text{.}\)</span> )</div></article><article class="lemma theorem-like" id="lem-elements-uniquely-expressible-in-free-modules"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">13.21</span><span class="period">.</span><span class="space"> </span><span class="title">Elements Uniquely Expressible in Free Modules.</span>
+</h4>
+<div class="para" id="lem-elements-uniquely-expressible-in-free-modules-2-1">Suppose <span class="process-math">\(M\)</span> is a free <span class="process-math">\(R\)</span>-module and <span class="process-math">\(A\)</span> is a basis of <span class="process-math">\(M\text{.}\)</span> Then every element of <span class="process-math">\(M\)</span> is uniquely expressible as an <span class="process-math">\(R\)</span>-linear combination of elements of <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="lem-elements-uniquely-expressible-in-free-modules-2-2">More precisely, for each <span class="process-math">\(m\)</span> there is unique family of elements <span class="process-math">\((r_a)_{a \in A}\text{,}\)</span> with <span class="process-math">\(r_a \in R\)</span> for all <span class="process-math">\(a\text{,}\)</span> such that <span class="process-math">\(r_a = 0\)</span> for all but a finite number of indices <span class="process-math">\(a \in A\)</span> and <span class="process-math">\(m = \sum_{a \in A} r_a a\text{.}\)</span>
+</div></article><details id="lem-elements-uniquely-expressible-in-free-modules-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-elements-uniquely-expressible-in-free-modules-3-1">Let <span class="process-math">\(m\in M\text{.}\)</span> As <span class="process-math">\(A\)</span> is a basis of <span class="process-math">\(M\)</span> it generates <span class="process-math">\(M\)</span> as an <span class="process-math">\(R\)</span>-module, and thus there exists <span class="process-math">\(r_1,\dots,\r_n\in R\)</span> and <span class="process-math">\(a_1,\dots,a_n\in A\)</span> such that <span class="process-math">\(m=r_1a_1+\dots+r_na_n\text{.}\)</span>
+</div> <div class="para logical" id="lem-elements-uniquely-expressible-in-free-modules-3-2">
+<div class="para">Suppose there also exists <span class="process-math">\(s_1,\dots,\s_n\in R\)</span> such that <span class="process-math">\(m=s_1a_1+\dots+s_na_n\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 = m-m = r_1a_1+\dots+r_na_n - s_1a_1+\dots+s_na_n = \sum_{i=1}^n a_i(r_i - s_i).
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(A\)</span> is a basis of <span class="process-math">\(M\)</span> it is linearly independent, and thus <span class="process-math">\(r_i - s_i = 0\)</span> for all <span class="process-math">\(i\text{.}\)</span>
+</div>
+</div></article></details><article class="theorem theorem-like" id="thm-ump-for-free-modules"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.22</span><span class="period">.</span><span class="space"> </span><span class="title">UMP for Free <span class="process-math">\(R\)</span>-Modules.</span>
+</h4>
+<div class="para" id="thm-ump-for-free-modules-2-1">Let <span class="process-math">\(R\)</span> be a ring, let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with basis <span class="process-math">\(B\text{,}\)</span> let <span class="process-math">\(N\)</span> be an <span class="process-math">\(R\)</span>-module, and let <span class="process-math">\(j: B \to N\)</span> be any function. Then there is a unique <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\varphi: M \to N\)</span> such that <span class="process-math">\(\varphi(b) = \varphi(b)\)</span> for all <span class="process-math">\(b \in B\text{.}\)</span> </div></article><details id="thm-ump-for-free-modules-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-ump-for-free-modules-3-1">
+<div class="para">Given a function <span class="process-math">\(j: B \to N\text{,}\)</span> define <span class="process-math">\(\varphi: M\to N\)</span> as follows: Given <span class="process-math">\(m \in M\text{,}\)</span> by <a href="sec-free-mod.html#lem-elements-uniquely-expressible-in-free-modules" class="xref" data-knowl="./knowl/xref/lem-elements-uniquely-expressible-in-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 13.21: Elements Uniquely Expressible in Free Modules">Lemma 13.21</a> <span class="process-math">\(m\)</span> can be written uniquely as a finite sum <span class="process-math">\(m = \sum_{b \in B} r_b b\text{.}\)</span> We set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-elements-uniquely-expressible-in-free-modules.html">
+\begin{equation*}
+\varphi(m) = \sum_{b \in B} r_b j(b).
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(\varphi\)</span> is a well-defined function by the uniqueness of the equation <span class="process-math">\(m = \sum_{b \in B} r_b b\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="thm-ump-for-free-modules-3-2">
+<div class="para">We need to prove <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism. I’ll just show it preserves scaling — the proof for addition is similar. Given <span class="process-math">\(x \in R\)</span> and <span class="process-math">\(m \in M\text{,}\)</span> we have <span class="process-math">\(m = \sum_{b \in B} r_b b\)</span> for some <span class="process-math">\(r_b \in R\text{,}\)</span> and hence <span class="process-math">\(xm = \sum_b (xr_b) b\text{.}\)</span> By definition of <span class="process-math">\(f\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(xm) = \sum_b (xr_b) j(b) = x \sum_b r_b j(b) = x \varphi(m).
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-ump-for-free-modules-3-3">Finally, for any <span class="process-math">\(y \in B\)</span> we have <span class="process-math">\(y = \sum_{b \in B} r_b b\)</span> where <span class="process-math">\(r_b = 1\)</span> if <span class="process-math">\(b = y\)</span> and <span class="process-math">\(r_b = 0\)</span> if <span class="process-math">\(b \ne y\text{.}\)</span> So <span class="process-math">\(f(y) = j(y)\)</span> by construction. This proves existence.</div> <div class="para logical" id="thm-ump-for-free-modules-3-4">
+<div class="para">Let <span class="process-math">\(\phi:M\to N\)</span> be another <span class="process-math">\(R\)</span>-module homomorphism such that <span class="process-math">\(\phi(b)=\phi(b)\)</span> for each <span class="process-math">\(b \in B\text{.}\)</span> Given <span class="process-math">\(m \in M\)</span> we have <span class="process-math">\(m = \sum_{b \in B} r_b b\)</span> and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(m) = \sum_b \phi(r_b (b))= \sum_b r_b \phi(b) =\sum_b r_b j(b) = \varphi(m).
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(\phi = \varphi\text{.}\)</span>
+</div>
+</div></article></details><article class="remark remark-like" id="subsec-bases-13"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">13.23</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-bases-13-1">The uniqueness only uses that <span class="process-math">\(B\)</span> generates <span class="process-math">\(M\)</span> as an <span class="process-math">\(R\)</span>-module.</div></article><article class="remark remark-like" id="subsec-bases-14"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">13.24</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="subsec-bases-14-1">
+<div class="para">Another way of stating <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">Theorem 13.22</a> is that there is a bijection of sets</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ump-for-free-modules.html">
+\begin{equation*}
+\Hom_R(M,N) \leftrightarrow\Fun(B, N)
+\end{equation*}
+</div>
+<div class="para">given by sending a homomorphisms <span class="process-math">\(f: M \to N\)</span> to its restriction <span class="process-math">\(f|_B:B \to N\)</span> to <span class="process-math">\(B\text{.}\)</span> (Here, <span class="process-math">\(\Hom_R(M,N)\)</span> is the set of all <span class="process-math">\(R\)</span>-module homomorphisms from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\)</span> and <span class="process-math">\(\Fun(B, N)\)</span> is the set of all functions from <span class="process-math">\(B\)</span> to <span class="process-math">\(N\text{.}\)</span>)</div>
+</div></article><div class="para" id="subsec-bases-15">What <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">Theorem 13.22</a> tells us is that to create a map between <span class="process-math">\(M\)</span> and any other module, all we must do is specify where the basis elements are sent.</div>
+<article class="theorem theorem-like" id="thm-free-quotient"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.25</span><span class="period">.</span><span class="space"> </span><span class="title">Every <span class="process-math">\(R\)</span>-module is the Quotient of a Free Module.</span>
+</h4>
+<div class="para" id="thm-free-quotient-2-1">Every <span class="process-math">\(R\)</span>-module is the quotient of a free module. Thus for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> there exists a free module <span class="process-math">\(F\)</span> that surjects onto <span class="process-math">\(M\text{.}\)</span>
+</div></article><details id="thm-free-quotient-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-free-quotient-3-1">
+<div class="para">Given a module <span class="process-math">\(M\text{,}\)</span> first take a generating set for <span class="process-math">\(M\text{,}\)</span> say <span class="process-math">\(\Gamma=\left\{m_{i}\right\}_{i \in \Lambda}\text{.}\)</span> Notice that a generating set always exists: for example, we can take <span class="process-math">\(\Gamma=M\text{,}\)</span> though of course that is a bit of an overkill, since it’s quite likely that some elements can be obtained from linear combinations of others. Next, we construct a free module on the set <span class="process-math">\(\Lambda\text{;}\)</span> more precisely, we take a free module on as many generators as generators for <span class="process-math">\(M\)</span> that we picked. Now the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \bigoplus_{i \in \Lambda} R \stackrel{\pi}{\longrightarrow} M \\
+&amp; \left(r_{i}\right) \longmapsto \sum_{i \in \Lambda} r_{i} m_{i} .
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para" id="thm-free-quotient-3-2">Notice this map actually makes sense: the tuples <span class="process-math">\(\left(r_{i}\right)\)</span> have only finitely many nonzero entries, and thus <span class="process-math">\(\sum_{i \in \Lambda} r_{i} m_{i}\)</span> is a (finite) linear combination of our chosen generators. Moreover, since we chose the <span class="process-math">\(m_{i}\)</span> to be generators for <span class="process-math">\(M\text{,}\)</span> this map <span class="process-math">\(\pi\)</span> is surjective. It is also easy to check that it is an <span class="process-math">\(R\)</span>-module homomorphism: in fact, this is the <span class="process-math">\(R\)</span>-module homomorphism we would get from the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a> by setting <span class="process-math">\(e_{i} \mapsto m_{i}\text{.}\)</span>
+</div> <div class="para logical" id="thm-free-quotient-3-3">
+<div class="para">By the <a href="sec-modhom.html#fit-module" class="xref" data-knowl="./knowl/xref/fit-module.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: First Isomorphism Theorem for Modules">First Isomorphism Theorem for Modules</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+M \cong \bigoplus_{i \in \Lambda} R / \operatorname{ker} \pi
+\end{equation*}
+</div>
+</div></article></details></section><section class="subsection" id="subsec-rank"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">13.2.2</span><span class="space"> </span><span class="title">Rank</span>
+</h3>
+<article class="definition definition-like" id="def-rank-module"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.26</span><span class="period">.</span><span class="space"> </span><span class="title">Module Rank.</span>
+</h4> <div class="para" id="def-rank-module-2-1">Let <span class="process-math">\(R\)</span> be a non-zero commutative ring and let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module. The cardinality of any basis of <span class="process-math">\(M\)</span> is called the <em class="emphasis">rank</em> of <span class="process-math">\(M\text{.}\)</span> </div></article><div class="para" id="subsec-rank-3">But what about if two bases have different ranks? As it turns out, any two bases of the same free module will have the same cardinality, as we will prove in <a href="sec-free-mod.html#thm-uniqueness-of-rank-over-commutative-rings" class="xref" data-knowl="./knowl/xref/thm-uniqueness-of-rank-over-commutative-rings.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.33: Uniqueness of Rank over Commutative Rings">Theorem 13.33</a>. <details class="ptx-footnote" aria-live="polite" id="subsec-rank-3-2"><summary class="ptx-footnote__number" title="Footnote 13.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-rank-3-2">Mostly. The rest is proved in <a href="sec-vecbasis.html#thm-dimension" class="xref" data-knowl="./knowl/xref/thm-dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.49: Dimension Theorem">Theorem 13.49</a>.</div></details>
+</div>
+<article class="example example-like" id="subsec-rank-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.27</span><span class="period">.</span><span class="space"> </span><span class="title">Rank of <span class="process-math">\(R^n\)</span>.</span>
+</h4> <div class="para" id="subsec-rank-4-2">The <span class="process-math">\(R\)</span>-module <span class="process-math">\(R^n\)</span> has rank <span class="process-math">\(n\text{.}\)</span> Thus <span class="process-math">\(R\)</span> has rank <span class="process-math">\(1\)</span> as a module over itself, as this is the case when <span class="process-math">\(n=1\text{.}\)</span>
+</div></article><div class="para" id="subsec-rank-5">Bases need not be finite.</div>
+<article class="example example-like" id="ex-module-with-infinite-basis"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.28</span><span class="period">.</span><span class="space"> </span><span class="title">Module with Infinite Basis.</span>
+</h4> <div class="para" id="ex-module-with-infinite-basis-2">Let <span class="process-math">\(R\)</span> be any ring and <span class="process-math">\(M = R[x]\)</span> (which, recall, is an <span class="process-math">\(R\)</span>-module due to the evident ring map <span class="process-math">\(R \to R[x]\)</span>). Then the countably infinite set <span class="process-math">\(\{1,x,x^2,\dots, x^n,\dots\}\)</span> is a basis. The fact that this set is a basis is essentially part of the definition of <span class="process-math">\(R[x]\text{.}\)</span> <a href="sec-free-mod.html#lem-elements-uniquely-expressible-in-free-modules" class="xref" data-knowl="./knowl/xref/lem-elements-uniquely-expressible-in-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 13.21: Elements Uniquely Expressible in Free Modules">Lemma 13.21</a> says that every polynomial is uniquely expressible as an <span class="process-math">\(R\)</span>-linear combination of (a finite subset of) <span class="process-math">\(1,x,x^2,\dots\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor-free-modules-with-equal-basis-elements-isomorphic"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">13.29</span><span class="period">.</span><span class="space"> </span><span class="title">Free Modules with Equal Basis Elements Isomorphic.</span>
+</h4>
+<div class="para" id="cor-free-modules-with-equal-basis-elements-isomorphic-2-1">If <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are free <span class="process-math">\(R\)</span>-modules having bases of the same cardinality, then <span class="process-math">\(M\)</span> and <span class="process-math">\(N\)</span> are isomorphic <span class="process-math">\(R\)</span>-modules.</div> </article><details id="cor-free-modules-with-equal-basis-elements-isomorphic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-free-modules-with-equal-basis-elements-isomorphic-3-1">Let <span class="process-math">\(A\)</span> be a basis of <span class="process-math">\(M\)</span> and <span class="process-math">\(B\)</span> be a basis of <span class="process-math">\(N\)</span> such that <span class="process-math">\(|A|=|B|\text{.}\)</span> Thus there exists a bijection <span class="process-math">\(j:M\to N\)</span> with inverse <span class="process-math">\(j\inv:N\to M\text{.}\)</span> We invoke the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a> to build <span class="process-math">\(R\)</span>-module homomorphisms <span class="process-math">\(\varphi:M\to N\)</span> and <span class="process-math">\(\phi:N\to M\)</span> such that <span class="process-math">\(\varphi = j(a)\)</span> for all <span class="process-math">\(a\in A\)</span> and <span class="process-math">\(\phi = j\inv(b)\)</span> for all <span class="process-math">\(b\in B\text{.}\)</span>
+</div> <div class="para" id="cor-free-modules-with-equal-basis-elements-isomorphic-3-2">We’ll show that <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\phi\)</span> are mutual inverses. For this note that <span class="process-math">\(\phi\circ \varphi:N\to N\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism and <span class="process-math">\((\phi\circ \varphi)(b)=\phi(j(b))=j^{-1}(j(b))=b\)</span> for every <span class="process-math">\(b\in B\text{.}\)</span> Since the identity map <span class="process-math">\(\id_N\)</span> is also an <span class="process-math">\(R\)</span>-module homomorphism such that <span class="process-math">\(id_N(b)=b\)</span> for every <span class="process-math">\(b\in B\text{,}\)</span> by the uniqueness clause in the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a>, we have <span class="process-math">\(\phi\circ \varphi=\id_n\text{.}\)</span> Similarly <span class="process-math">\(\varphi\circ \phi=\id_M\text{.}\)</span>
+</div></article></details><article class="example example-like" id="ex-mcong-rn-as-r-modules"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.30</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(M\cong R^n\)</span> as <span class="process-math">\(R\)</span>-modules.</span>
+</h4> <div class="para" id="ex-mcong-rn-as-r-modules-2">If <span class="process-math">\(M\)</span> is a free <span class="process-math">\(R\)</span>-module that has a basis of cardinality <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(M \cong R^n\)</span> as <span class="process-math">\(R\)</span>-modules. This is because <span class="process-math">\(R^n\)</span> is a free <span class="process-math">\(R\)</span> module of rank <span class="process-math">\(n\text{,}\)</span> and thus <span class="process-math">\(M \cong R^n\)</span> by <a href="sec-free-mod.html#cor-free-modules-with-equal-basis-elements-isomorphic" class="xref" data-knowl="./knowl/xref/cor-free-modules-with-equal-basis-elements-isomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 13.29: Free Modules with Equal Basis Elements Isomorphic">Corollary 13.29</a>.</div> </article><article class="remark remark-like" id="subsec-rank-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">13.31</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-rank-9-1">Beware that the cardinality of a basis of a free modules is not an isomorphism invariant in general! There exist rings <span class="process-math">\(S\)</span> such that <span class="process-math">\(S^n\)</span> and <span class="process-math">\(S^m\)</span> are isomorphic <span class="process-math">\(S\)</span>-modules for all positive integers <span class="process-math">\(n\)</span> and <span class="process-math">\(m\text{.}\)</span>
+</div></article><article class="lemma theorem-like" id="lem-ri-mod-isos"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">13.32</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(R^n/IR^n\cong(R/I)^n\)</span>.</span>
+</h4>
+<div class="para" id="lem-ri-mod-isos-2-1">Let <span class="process-math">\(R\)</span> be a commutative ring with <span class="process-math">\(1\ne 0\text{.}\)</span> For any ideal <span class="process-math">\(I\)</span> of <span class="process-math">\(R\text{,}\)</span> <span class="process-math">\(R^n/IR^n\cong(R/I)^n\)</span> as <span class="process-math">\(R/I\)</span>-modules.</div></article><details id="lem-ri-mod-isos-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-ri-mod-isos-3-1">https://eloisagrifo.github.io/Teaching/818/PSet3solutions.pdf</div></article></details><article class="theorem theorem-like" id="thm-uniqueness-of-rank-over-commutative-rings"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.33</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Rank over Commutative Rings.</span>
+</h4>
+<div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-2-1">Let <span class="process-math">\(R\)</span> be a commutative ring such that <span class="process-math">\(1 \ne 0\)</span> and let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with bases <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> Then <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same rank, i.e. there exists a (non unique) bijection of sets joining them. </div></article><details id="thm-uniqueness-of-rank-over-commutative-rings-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-3-1">Let <span class="process-math">\(R\)</span> be a non-zero commutative ring and let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with two bases, <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> with ranks <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively. Since <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are finite, by <a href="sec-free-mod.html#ex-mcong-rn-as-r-modules" class="xref" data-knowl="./knowl/xref/ex-mcong-rn-as-r-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 13.30: M\cong R^n as R-modules">Example 13.30</a> we have <span class="process-math">\(A\cong R^m\)</span> and <span class="process-math">\(B\cong R^n\text{.}\)</span>
+</div> <div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-3-2">I will prove this statement by taking it as already known that it holds in the special case when <span class="process-math">\(R\)</span> is a field. (We will prove it for fields later in <a href="sec-vecbasis.html#thm-dimension" class="xref" data-knowl="./knowl/xref/thm-dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.49: Dimension Theorem">Theorem 13.49</a>.)</div> <div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-3-3">Since <span class="process-math">\(R\)</span> is not the zero ring, it contains at least one maximal ideal <span class="process-math">\(\fm\)</span> by <a href="sec-primemax-ideals.html#thm-all-ideals-contained-in-maximal-ideal" class="xref" data-knowl="./knowl/xref/thm-all-ideals-contained-in-maximal-ideal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.40: All Ideals Contained in Maximal Ideal">Theorem 9.40</a>. Recall that <span class="process-math">\(R/\fm\)</span> is a field by <a href="sec-primemax-ideals.html#thm-maximal-iff-field" class="xref" data-knowl="./knowl/xref/thm-maximal-iff-field.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.36: Maximal Ideal iff Quotient is a Field">Theorem 9.36</a>
+</div> <div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-3-4">Given an isomorphism <span class="process-math">\(f: R^n \xra{\cong} R^m\)</span> of <span class="process-math">\(R\)</span>-modules, by Lemma <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> we have an induced homomorphism of <span class="process-math">\(R/I\)</span>-module <span class="process-math">\(\ov{f}: R^n/IR^n \to R^m /IR^m\text{.}\)</span> Likewise, the inverse map <span class="process-math">\(f^{-1}: R^m \xra{\cong} R^n\)</span> induces a map <span class="process-math">\(\ov{f^{-1}}: R^m/IR^m \to R^n /IR^n\text{.}\)</span> Also by that Lemma <code class="code-inline tex2jax_ignore">[provisional cross-reference: cite]</code> we have <span class="process-math">\(\ov{f} \circ \ov{f^{-1}} = \ov{f \circ f^{-1}} = \ov{\id} = \id\)</span> and similarly <span class="process-math">\(\ov{f^{-1}} \circ \ov{f}\)</span> is the identity. That is, we have an isomorphism <span class="process-math">\(R^n/IR^n \cong R^m /IR^m\)</span> of <span class="process-math">\(R/I\)</span>-modules.</div> <div class="para logical" id="thm-uniqueness-of-rank-over-commutative-rings-3-5">
+<div class="para">Next, I claim that there is an isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+R^n/IR^n \cong (R/I)^n
+\end{equation*}
+</div>
+<div class="para">of <span class="process-math">\(R/I\)</span>-modules. Define <span class="process-math">\(R^n \to (R/I)^n\)</span> in the evident way (modding out by <span class="process-math">\(I\)</span> entry-wise). It is a surjective map of <span class="process-math">\(R\)</span>-modules with kernel <span class="process-math">\(I R^n\)</span> and thus, by the <a href="sec-modhom.html#fit-module" class="xref" data-knowl="./knowl/xref/fit-module.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: First Isomorphism Theorem for Modules">First Isomorphism Theorem for Modules</a>, it induces an isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+g: R^n/I R^n \xra{\cong} (R/I)^n
+\end{equation*}
+</div>
+<div class="para">given by <span class="process-math">\(g((r_1, \dots, r_n)^\tau + IR^n) = (r_1 + I, \dots, r_n + I)^\tau\)</span> (where <span class="process-math">\(\tau\)</span> denotes taking the transpose). Now, what we have said so far only shows that <span class="process-math">\(g\)</span> is isomorphism of <span class="process-math">\(R\)</span>-modules, but it is easy to see that <span class="process-math">\(g\)</span> is in fact <span class="process-math">\(R/I\)</span>-linear (I’ll leave that to you) and thus it is an isomorphism of <span class="process-math">\(R/I\)</span>-modules.</div>
+</div> <div class="para" id="thm-uniqueness-of-rank-over-commutative-rings-3-6">Putting the results proven so far together, we conclude that <span class="process-math">\((R/I)^n\)</span> and <span class="process-math">\((R/I)^m\)</span> are isomorphic as <span class="process-math">\(R/I\)</span>-modules. Since <span class="process-math">\(R/I\)</span> is a field and since we are assuming the result holds for fields, we deduce that <span class="process-math">\(n = m\text{.}\)</span>
+</div></article></details><article class="remark remark-like" id="subsec-rank-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">13.34</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-rank-12-1">Checking the definition carefully, we see that both the empty set and the set <span class="process-math">\(\{0\}\)</span> form bases for the zero module over the <span class="process-math">\(0\)</span> ring. This gives an example of a module with two bases of different cardinalities, justifying why the suppostion that <span class="process-math">\(1\ne 0\)</span> was used in <a href="sec-free-mod.html#thm-uniqueness-of-rank-over-commutative-rings" class="xref" data-knowl="./knowl/xref/thm-uniqueness-of-rank-over-commutative-rings.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.33: Uniqueness of Rank over Commutative Rings">Theorem 13.33</a>.</div></article><details id="prop-bases-of-ideals-in-commutative-rings" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">13.35</span><span class="period">.</span><span class="space"> </span><span class="title">Bases of ideals in commutative rings.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="prop-bases-of-ideals-in-commutative-rings-2-1"><ol class="decimal">
+<li id="prop-bases-of-ideals-in-commutative-rings-2-1-1-1"><div class="para" id="prop-bases-of-ideals-in-commutative-rings-2-1-1-1-1">Assume <span class="process-math">\(R\)</span> is a non-zero, commutative ring and <span class="process-math">\(I\)</span> is a non-zero ideal. Prove <span class="process-math">\(I\)</span> is free as an <span class="process-math">\(R\)</span>-module if and only if <span class="process-math">\(I = R \cdot a\)</span> for a non-zerodivisor <span class="process-math">\(a\text{.}\)</span> (Recall that an element <span class="process-math">\(a\)</span> is a non-zerodivisor in <span class="process-math">\(R\)</span> provided <span class="process-math">\(a \ne 0\)</span> and <span class="process-math">\(xa = 0\)</span> implies <span class="process-math">\(x = 0\)</span> for all <span class="process-math">\(x \in R\text{.}\)</span> )</div></li>
+<li id="prop-bases-of-ideals-in-commutative-rings-2-1-1-2"><div class="para" id="prop-bases-of-ideals-in-commutative-rings-2-1-1-2-1">Let <span class="process-math">\(F\)</span> be a field and <span class="process-math">\(R = F[x,y]\text{.}\)</span> Let <span class="process-math">\(I = R \cdot \{x, y\}\text{,}\)</span> the ideal consisting of all polynomials with <span class="process-math">\(0\)</span> constant term. Prove <span class="process-math">\(I\)</span> is not free as an <span class="process-math">\(R\)</span>-module.</div></li>
+</ol></div></article></details></section><article class="outcomes goal-like" id="sec-free-mod-4"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc">
+<li id="sec-free-mod-4-1-1"><div class="para" id="sec-free-mod-4-1-1-1">An <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> is free if it is generated by a linearly independent set, which is called a basis of <span class="process-math">\(M\text{.}\)</span>
+</div></li>
+<li id="sec-free-mod-4-1-2"><div class="para" id="sec-free-mod-4-1-2-1">Given a free module <span class="process-math">\(M\text{,}\)</span> the number of elements in a basis is called the rank of <span class="process-math">\(M\text{,}\)</span> as any two bases of <span class="process-math">\(M\)</span> must have the same rank. Specifically, any free <span class="process-math">\(R\)</span>-module of rank <span class="process-math">\(n\)</span> is isomorphic to <span class="process-math">\(R^n\text{.}\)</span>
+</div></li>
+<li id="sec-free-mod-4-1-3"><div class="para" id="sec-free-mod-4-1-3-1">In a free module <span class="process-math">\(M\)</span> with basis <span class="process-math">\(A\text{,}\)</span> every element of <span class="process-math">\(M\)</span> can be expressed uniquely as an <span class="process-math">\(R\)</span>-linear combination of elements in <span class="process-math">\(A\text{.}\)</span>
+</div></li>
+<li id="sec-free-mod-4-1-4"><div class="para" id="sec-free-mod-4-1-4-1">If <span class="process-math">\(M\)</span> is a free module, the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">Theorem 13.22</a> tells us that a function from a basis of <span class="process-math">\(M\)</span> to some <span class="process-math">\(R\)</span>-module <span class="process-math">\(N\)</span> can be extended to a homomorphism from <span class="process-math">\(M\)</span> to <span class="process-math">\(N\text{.}\)</span>
+</div></li>
+<li id="sec-free-mod-4-1-5"><div class="para" id="sec-free-mod-4-1-5-1">Every <span class="process-math">\(R\)</span>-module is the quotient of a free module.</div></li>
+</ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-linear-ind-gen.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-vecbasis.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

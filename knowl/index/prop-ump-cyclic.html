@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.28</span><span class="period">.</span><span class="space"> </span><span class="title">Universal Mapping Property for Cyclic Groups.</span>
+</h4>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(G = \langle x \rangle\)</span> and let <span class="process-math">\(H\)</span> be any group. If <span class="process-math">\(|x| = n &lt; \infty\text{,}\)</span> then for each <span class="process-math">\(y \in H\)</span> such that <span class="process-math">\(y^n = e\text{,}\)</span> there is a unique group homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi: G \to H
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(\varphi(x) = y\text{.}\)</span> If <span class="process-math">\(|x| = \infty\text{,}\)</span> then for each <span class="process-math">\(y \in H\text{,}\)</span> there is a unique group homomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi: G \to H
+\end{equation*}
+</div>
+<div class="para">such that <span class="process-math">\(\varphi(x) = y\text{.}\)</span> In both cases this unique group homomorphism is given by <span class="process-math">\(\varphi(x^i)=y^i\)</span> for any <span class="process-math">\(i\text{.}\)</span> </div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Recall that either <span class="process-math">\(G = \{e,x,x^2, \dots, x^{n-1}\}\)</span> (with no repetitions) if <span class="process-math">\(|x| = n\)</span> or <span class="process-math">\(G = \{ \cdots, x^{-2}, x^{-1}, e, x, x^e, \dots \}\)</span> (with no repetitions) if <span class="process-math">\(|x| = \infty\text{.}\)</span>
+</div> <div class="para">
+<em class="emphasis">Uniqueness:</em> We show that if <span class="process-math">\(\varphi:G\to H\)</span> is a group homomorphism, then <span class="process-math">\(\varphi(x^i)=y^i\)</span> for all <span class="process-math">\(i\in \mathbb{Z}\text{.}\)</span>
+</div> <div class="para logical"><ul class="disc">
+<li><div class="para">if <span class="process-math">\(i=0\)</span> then <span class="process-math">\(\varphi(x^0)=\varphi(e_G)=e_H=y^0\)</span>
+</div></li>
+<li><div class="para">if <span class="process-math">\(i&gt;0\)</span> then <span class="process-math">\(\varphi(x^i)=\varphi(\underbrace{x\cdots x}_{i \text{ times}})=\underbrace{\varphi(x)\cdots \varphi(x)}_{i \text{ times}}=y^i\)</span>
+</div></li>
+<li><div class="para">if <span class="process-math">\(i&lt;0\)</span> then <span class="process-math">\(\varphi(x^i)=\varphi\left((x^{-i})^{-1}\right)=\varphi\left((x^{-i})\right)^{-1}=(y^{-i})^{-1}=y^i\text{,}\)</span> using the formula above for <span class="process-math">\(-i&gt;0\)</span>
+</div></li>
+</ul></div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Existence:</em> In either case, define <span class="process-math">\(\varphi(x^i) = y^i\)</span> for all relevant <span class="process-math">\(i\)</span> (i.e., in the first case, for <span class="process-math">\(0 \leq i \leq n-1\)</span> and in the second for all <span class="process-math">\(i \in\mathbb{Z}\)</span>). We need to show this function is a well-defined group homomorphism. To see that <span class="process-math">\(\varphi\)</span> is well defined, suppose <span class="process-math">\(x^i=x^j\)</span> for some <span class="process-math">\(i,j\in \mathbb{Z}\text{.}\)</span> Then, since <span class="process-math">\(x^{i-j}=e_G\text{,}\)</span> using <code class="code-inline tex2jax_ignore">[provisional cross-reference: prop96]</code> or the definition for order we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{cases}
+n\mid i-j &amp; \text{ if } |x|=n\\
+i-j=0 &amp; \text{ if } |x|=\infty\\
+\end{cases}
+\Rightarrow
+\begin{cases}
+y^ {i-j}=y^{nk} &amp; \text{ if } |x|=n\\
+y^{i-j}=y^0 &amp; \text{ if } |x|=\infty\\
+\end{cases}
+\Rightarrow y^ {i-j}=e_H
+\Rightarrow y^ i=y^j.
+\end{equation*}
+</div>
+<div class="para">Thus, if <span class="process-math">\(x^i=x^j\)</span> then <span class="process-math">\(\varphi(x^i)=y^i=y^j=\varphi(x^j)\text{.}\)</span>
+</div>
+</div> <div class="para">The homomorphism property is immediate: <span class="process-math">\(\varphi(x^ix^j)=\varphi(x^{i+j})=y^{i+j}=y^iy^j=\varphi(x^i)\varphi(x^j)\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-cyclic.html#prop-ump-cyclic">in-context</a></span>
+</body>
+</html>

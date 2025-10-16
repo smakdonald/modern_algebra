@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.52</span><span class="period">.</span><span class="space"> </span><span class="title">Classification of Finite Dimensional Vector Spaces.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field.</div>
+<ol class="decimal">
+<li><div class="para">Every finite dimensional vector space <span class="process-math">\(V\)</span> over <span class="process-math">\(F\)</span> is isomorphic to <span class="process-math">\(F^{n}\)</span> for <span class="process-math">\(n=\operatorname{dim}_{F}(V)\text{.}\)</span>
+</div></li>
+<li><div class="para">For any <span class="process-math">\(m, n \in \mathbb{Z}_{\geqslant 0}, F^{m} \cong F^{n}\)</span> if and only if <span class="process-math">\(m=n\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para">Let <span class="process-math">\(V\)</span> be a finite dimensional <span class="process-math">\(F\)</span>-vector space. Then <span class="process-math">\(F\)</span> has a finite spanning set <span class="process-math">\(S\)</span> and by <a href="sec-vecbasis.html#thm-finding-intermediate-bases" class="xref" data-knowl="./knowl/xref/thm-finding-intermediate-bases.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.40: Finding Intermediate Bases">Theorem 13.40</a> there is a basis <span class="process-math">\(B \subseteq S\)</span> for <span class="process-math">\(V\text{.}\)</span> Notice that <span class="process-math">\(B\)</span> is necessarily finite and <span class="process-math">\(V=F B\text{.}\)</span> Set <span class="process-math">\(|B|=n\)</span> and <span class="process-math">\(B=\left\{b_{1}, \ldots, b_{n}\right\}\text{.}\)</span> By the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a>, there is a linear transformation <span class="process-math">\(f: F^{n} \rightarrow V\)</span> such that <span class="process-math">\(f\left(e_{i}\right)=b_{i}\)</span> as well as a linear transformation <span class="process-math">\(g: V \rightarrow F^{n}\)</span> such that <span class="process-math">\(g\left(b_{i}\right)=e_{i}\text{.}\)</span> Then both <span class="process-math">\(f \circ g: V \rightarrow V\)</span> and <span class="process-math">\(g \circ f: F^{n} \rightarrow F^{n}\)</span> are linear transformation which agree with the identity map on a basis. Hence by the uniqueness part of <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a> we have <span class="process-math">\(f \circ g=\mathrm{id}_{V}\)</span> and <span class="process-math">\(g \circ f=\mathrm{id}_{F^{n}}\text{.}\)</span> Therefore, these maps are the desired isomorphisms.</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi: F^{m} \cong F^{n}\)</span> be a vector space isomorphism and let <span class="process-math">\(B\)</span> be a basis of <span class="process-math">\(F^{m}\text{.}\)</span> We claim that <span class="process-math">\(\varphi(B)\)</span> is a basis for <span class="process-math">\(F^{n}\text{.}\)</span> Indeed, if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-dimension.html">
+\begin{equation*}
+\sum_{i=1}^{m} c_{i} \varphi\left(b_{i}\right)=0 \quad \text { then } \varphi\left(\sum_{i=1}^{m} c_{i} b_{i}\right)=0, \quad \text { so } \quad \sum_{i=1}^{m} c_{i} b_{i}=0
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(\varphi\)</span> is injective. But <span class="process-math">\(B\)</span> is linearly independent, so we must have <span class="process-math">\(c_{i}=0\)</span> for all <span class="process-math">\(1 \leqslant i \leqslant m\text{.}\)</span> If <span class="process-math">\(v \in F^{n}\text{,}\)</span> then since <span class="process-math">\(B\)</span> spans <span class="process-math">\(F^{m}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-dimension.html">
+\begin{equation*}
+\varphi^{-1}(v)=\sum_{i=1}^{m} c_{i} b_{i}
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(c_{i}\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-dimension.html">
+\begin{equation*}
+v=\sum_{i=1}^{m} c_{i} \varphi\left(b_{i}\right)
+\end{equation*}
+</div>
+<div class="para">which shows <span class="process-math">\(\varphi(B)\)</span> spans <span class="process-math">\(F^{n}\text{.}\)</span> By the <a href="sec-vecbasis.html#thm-dimension" class="xref" data-knowl="./knowl/xref/thm-dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.49: Dimension Theorem">Dimension Theorem</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-dimension.html">
+\begin{equation*}
+\operatorname{dim}_{F}\left(F^{n}\right)=n=|\varphi(B)|=|B|=m.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-vecbasis.html#thm-fg-vs-classification">in-context</a></span>
+</body>
+</html>

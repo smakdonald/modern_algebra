@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8.25</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian Units.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\Z[i] = \{a + bi \mid a,b \in \Z\}\)</span> be the ring of Gaussian integers. Define a function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N:\Z[i]\to\Z, N(a+bi)=a^2+b^2.
+\end{equation*}
+</div>
+<ol class="decimal">
+<li><div class="para">Prove that <span class="process-math">\(N(\a\b)=N(\a)N(\b)\)</span> for any <span class="process-math">\(\a,\b\in \Z[i]\text{.}\)</span>
+</div></li>
+<li><div class="para">Use the function <span class="process-math">\(N\)</span> to determine the units of <span class="process-math">\(\Z[i]\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\alpha,\beta\in\Z[i]\)</span> and behold</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+N(\alpha\beta)&amp;=N((a+bi)(c+di))\\
+&amp;=N(ac-bd+adi+bci)\\
+&amp;=(ac-bd)^2+(ad+bc)^2\\
+&amp;=((ac)^2-2acbd+(bd)^2)+((ad)^2+2abcd+(bc^2))\\
+&amp;=a^2c^2+b^2d^2+a^2d^2+b^2c^2\\
+&amp;=(a^2c^2+a^2d^2)+(b^2c^2+b^2d^2)\\
+&amp;=a^2(c^2+d^2)+b^2(c^2+d^2)\\
+N(\alpha)N(\beta)&amp;=(a^2+b^2)(c^2+d^2).
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">So there’s that done.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Suppose <span class="process-math">\(\alpha\beta=1\text{.}\)</span> Then by Part (1) we know</div>
+<div class="displaymath process-math">
+\begin{equation*}
+N(\alpha)N(\beta)=N(\alpha\beta)=N(1)=1,
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\((a^2+b^2)(c^2+d^2)=1\text{,}\)</span> with <span class="process-math">\(a,b,c,d\in\Z\text{.}\)</span> Thus we have <span class="process-math">\(a^2+b^2=1=c^2+d^2\text{.}\)</span> So the units of <span class="process-math">\(\Z[i]\)</span> are <span class="process-math">\(\{\pm 1,\pm i\}\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="sec-units.html#exe-gaussian-units">in-context</a></span>
+</body>
+</html>

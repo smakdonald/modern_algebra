@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.51</span><span class="period">.</span><span class="space"> </span><span class="title">The Degree Formula.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(F \subseteq L \subseteq K\)</span> are field extensions. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[K:F] = [K:L] [L:F].
+\end{equation*}
+</div>
+<div class="para">In particular, the composition of two finite extensions of fields is again a finite extension.</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(A \subseteq K\)</span> be a basis for <span class="process-math">\(K\)</span> as an <span class="process-math">\(L\)</span>-vector space and let <span class="process-math">\(B \subseteq L\)</span> be a basis for <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space. Let <span class="process-math">\(AB\)</span> denote the subset <span class="process-math">\(\{ab \mid a \in A, b \in B\}\)</span> of <span class="process-math">\(K\text{.}\)</span> The Theorem follows from the following two facts:</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(AB\)</span> is a basis of <span class="process-math">\(K\)</span> as an <span class="process-math">\(F\)</span>-vector space and</div></li>
+<li><div class="para">the function <span class="process-math">\(A \times B \to AB, (a,b) \mapsto ab\)</span> is bijective (so that the cardinality of <span class="process-math">\(AB\)</span> is <span class="process-math">\(|A| \cdot |B|\)</span>).</div></li>
+</ol>
+<div class="para">Concerning (a), for <span class="process-math">\(\a \in K\text{,}\)</span> we have <span class="process-math">\(\a = \sum_i l_i a_i\)</span> for some <span class="process-math">\(a_1, \dots, a_m \in A\)</span> and <span class="process-math">\(l_1, \dots, l_m \in L\text{.}\)</span> For each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(l_i\)</span> is an <span class="process-math">\(F\)</span>-linear combination of a finite set of elements of <span class="process-math">\(B\text{.}\)</span> Combining these gives that <span class="process-math">\(\a\)</span> is in the <span class="process-math">\(F\)</span>-span of <span class="process-math">\(AB\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">To prove linear independence, it suffices to prove that if <span class="process-math">\(a_1, \dots, a_m\)</span> and <span class="process-math">\(b_1, \dots, b_n\)</span> be distinct elements of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> respectively, then the set <span class="process-math">\(\{a_ib_j\}\)</span> is linearly independent. Suppose <span class="process-math">\(\sum_{i,j} f_{i,j} a_i b_j = 0\)</span> for some <span class="process-math">\(f_{i,j} \in F\text{.}\)</span> Since the <span class="process-math">\(b_j\)</span>’s are <span class="process-math">\(L\)</span>-linearly independent and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i,j} f_{i,j} a_i b_j = \sum_j (\sum_i f_{i,j} a_i) b_j
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(f_{i,j} a_i \in L\text{,}\)</span> we get that, for each <span class="process-math">\(j\text{,}\)</span> <span class="process-math">\(\sum_i f_{i,j} a_i = 0\text{.}\)</span> Using now that the <span class="process-math">\(a_i\)</span>’s are <span class="process-math">\(F\)</span>-linearly independent, we have that for all <span class="process-math">\(j\)</span> and all <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(f_{i,j} = 0\text{.}\)</span> This proves <span class="process-math">\(\{a_i b_j \mid i = 1, \dots, m, j = 1, \dots, n\}\)</span> is linearly independent over <span class="process-math">\(F\text{,}\)</span> and hence <span class="process-math">\(AB\)</span> is linearly independent over <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div> <div class="para">Concerning (b), if <span class="process-math">\(ab = a'b'\)</span> for some <span class="process-math">\(a,a' \in A, b, b' \in B\text{,}\)</span> then <span class="process-math">\(ab - a'b' = 0\text{,}\)</span> and since the <span class="process-math">\(b\)</span>’s are <span class="process-math">\(L\)</span>-linearly independent, we must have <span class="process-math">\(b = b'\)</span> and hence <span class="process-math">\(a = a'\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-algebraic.html#thm-degree-formula">in-context</a></span>
+</body>
+</html>

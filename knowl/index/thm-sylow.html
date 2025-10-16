@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Sylow’s Theorems.</span>
+</h4>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(G\)</span> is a group of order <span class="process-math">\(p^e m\)</span> where <span class="process-math">\(p\)</span> is prime, <span class="process-math">\(e \geq 0\text{,}\)</span> and <span class="process-math">\(\operatorname{gcd}(p,m) = 1\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(\operatorname{Syl}_p(G) \ne \emptyset\)</span> (there exists at least one Sylow <span class="process-math">\(p\)</span>-subgroup of <span class="process-math">\(G\)</span>).</div></li>
+<li><div class="para">If <span class="process-math">\(P\)</span> is a Sylow <span class="process-math">\(p\)</span>-subgroup of <span class="process-math">\(G\)</span> and <span class="process-math">\(Q \leq G\)</span> is any <span class="process-math">\(p\)</span>-subgroup of <span class="process-math">\(G\)</span> (i.e., a subgroup whose order is some power of <span class="process-math">\(p\)</span>), then there is a <span class="process-math">\(g\)</span> such that <span class="process-math">\(Q \leq gPg^{-1}\text{.}\)</span> In particular, the action of <span class="process-math">\(G\)</span> on <span class="process-math">\(\operatorname{Syl}_p(G)\)</span> by <a href="graction.html#ex-conj" class="xref" data-knowl="./knowl/xref/ex-conj.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4: Conjugation">Conjugation</a> is transitive — i.e., any two Sylow <span class="process-math">\(p\)</span>-subgroups are conjugate.</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Syl}_p(G)| \equiv 1 \mod{p}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">For any <span class="process-math">\(P \in \operatorname{Syl}_p(G)\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Syl}_p(G)| = [G: N_G(P)],
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Syl}_p(G)| \mid m.
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para">Recall that we write <span class="process-math">\(|G| = p^em\)</span> where <span class="process-math">\(p \nmid m\text{.}\)</span> We need to prove <span class="process-math">\(G\)</span> contains a subgroup of order <span class="process-math">\(p^e\text{,}\)</span> and we proceed by induction on <span class="process-math">\(|G|\text{.}\)</span>
+</div>
+<div class="para">If <span class="process-math">\(|G| = 1\)</span> or, more generally, if <span class="process-math">\(p \nmid |G|\text{,}\)</span> then <span class="process-math">\(\{e\}\)</span> is a Sylow <span class="process-math">\(p\)</span>-subgroup. We may thus assume <span class="process-math">\(p \mid |G|\text{.}\)</span> We proceed by considering two cases, depending on whether or not <span class="process-math">\(p\)</span> divides <span class="process-math">\(|Z(G)|\text{.}\)</span>
+</div>
+<div class="para">If <span class="process-math">\(p \mid |Z(G)|\text{,}\)</span> then by <a href="sec-sylow.html#thm-cauchy" class="xref" data-knowl="./knowl/xref/thm-cauchy.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4: Cauchy’s Theorem">Cauchy’s Theorem</a>, there is an element <span class="process-math">\(z \in Z(G)\)</span> of order <span class="process-math">\(p\text{.}\)</span> Set <span class="process-math">\(N = \langle z \rangle\text{.}\)</span> Since <span class="process-math">\(z \in Z(G)\text{,}\)</span> we have <span class="process-math">\(N \unlhd G\text{.}\)</span> Since <span class="process-math">\(|G/N| = p^{e-1}m\text{,}\)</span> by induction <span class="process-math">\(G/N\)</span> has a subgroup of order <span class="process-math">\(p^{e-1}\)</span> (i.e. of index <span class="process-math">\(m\)</span>). By <a href="sec-products-iso-thms.html#thm-lit-group" class="xref" data-knowl="./knowl/xref/thm-lit-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.56: Lattice Isomorphism Theorem for Groups">Lattice Isomorphism Theorem for Groups</a>, this subgroup corresponds to a subgroup of <span class="process-math">\(G\)</span> of index <span class="process-math">\(m\text{,}\)</span> hence of order <span class="process-math">\(p^e\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">For the second case, assume <span class="process-math">\(p \nmid |Z(G)|\)</span> and consider the <a href="sec-orbit-stab-class-eq.html#thm-class-eq" class="xref" data-knowl="./knowl/xref/thm-class-eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.42: Class Equation">Class Equation</a> for <span class="process-math">\(G\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-class-eq.html">
+\begin{equation*}
+|G| = |Z(G)| + \sum_{i=1}^k [G: C_G(g_i)]
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(g_1, \dots, g_k\)</span> are a complete and non-redundant list of non-central conjugacy class representatives. Since <span class="process-math">\(p \nmid |Z(G)|\)</span> and <span class="process-math">\(p \mid |G|\text{,}\)</span> we must have <span class="process-math">\(p \nmid [G:C_G(g_i)]\)</span> for at least one <span class="process-math">\(i\text{.}\)</span> For this <span class="process-math">\(i\text{,}\)</span> we have <span class="process-math">\(|C_G(g_i)|= p^e j\)</span> where <span class="process-math">\(p \nmid j\text{.}\)</span> Since <span class="process-math">\(g_i\)</span> is not central, <span class="process-math">\(|C_G(g_i)| &lt; |G|\)</span> and hence, by induction, <span class="process-math">\(C_G(g_i)\)</span> contains a subgroup of order <span class="process-math">\(p^e\text{.}\)</span> But this subgroup is also a subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(P\)</span> be a Sylow <span class="process-math">\(p\)</span>-subgroup and let <span class="process-math">\(Q\)</span> be any <span class="process-math">\(p\)</span>-subgroup. Let <span class="process-math">\(\mathcal S_P\)</span> denote the collection of all conjugates of <span class="process-math">\(P\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/E1030.html ./knowl/xref/E1030b.html">
+\begin{equation*}
+\mathcal S_P = \{ gPg^{-1} \mid g \in G\}.
+\end{equation*}
+</div>
+<div class="para">Part (3) tells us the <span class="process-math">\(\mathcal S_P\)</span> consists of all Sylow <span class="process-math">\(p\)</span>-subgroups of <span class="process-math">\(G\text{,}\)</span> but we don’t yet know this. Nonetheless, <span class="process-math">\(G\)</span> acts (transitively) on <span class="process-math">\(\mathcal S_P\)</span> by conjugation, and thus <span class="process-math">\(Q\)</span> also acts on <span class="process-math">\(\mathcal S_P\)</span> (not necessarily transitively). The key to proving parts (2) and (3) of the Sylow Theorem is to analyse the action of <span class="process-math">\(Q\)</span> on <span class="process-math">\(\mathcal S_P\)</span> to establish <a href="sec-sylow.html#thm-sylow-4-1-1-2-2-8" class="xref" data-knowl="./knowl/xref/E1030.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a> and <a href="sec-sylow.html#thm-sylow-4-1-1-2-3-9" class="xref" data-knowl="./knowl/xref/E1030b.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a> below.</div>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(O_1, \dots, O_s\)</span> be the orbits of the action of <span class="process-math">\(Q\)</span> on <span class="process-math">\(\mathcal S_P\text{,}\)</span> and for each <span class="process-math">\(i\)</span> pick a representative <span class="process-math">\(P_i \in O_i\text{.}\)</span> We have <span class="process-math">\(\operatorname{stab}_Q(P_i) = \{q \in Q \mid qP_iq^{-1} = P_i\} = Q \cap N_G(P_i) = Q \cap P_i\text{,}\)</span> where the last equation uses the Lemma. By LOIS, we thus have <span class="process-math">\(|O_i| = [Q: Q \cap P_i]\)</span> and hence</div>
+<div class="displaymath process-math">
+\begin{gather*}
+|\mathcal S_P |= \sum_{i=1}^s [Q: Q \cap P_i]
+\end{gather*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">This equation holds for any <span class="process-math">\(p\)</span>-subgroup <span class="process-math">\(Q\)</span> of <span class="process-math">\(G\text{.}\)</span> In particular, we can take <span class="process-math">\(Q = P_1\text{.}\)</span> In this case the first term is <span class="process-math">\(1\)</span> and, since <span class="process-math">\(Q \cap P_i = P_1 \cap P_i &lt; P_1 = Q\)</span> for all <span class="process-math">\(i \ne 1\text{,}\)</span> the remaining terms are divisible by <span class="process-math">\(p\text{.}\)</span> This gives</div>
+<div class="displaymath process-math">
+\begin{gather*}
+|\mathcal S_P| \equiv 1 \pmod{p}.
+\end{gather*}
+</div>
+<div class="para">(This does not yet prove part (3) since we don’t yet know that <span class="process-math">\(\mathcal S_P\)</span> consists of all Sylow <span class="process-math">\(p\)</span>-subgroups.)</div>
+</div>
+<div class="para">We can now prove part (2): By way of contradiction, suppose <span class="process-math">\(Q\)</span> is a <span class="process-math">\(p\)</span>-subgroup of <span class="process-math">\(G\)</span> such that <span class="process-math">\(Q\)</span> is not contained in any of the subgroups belonging to <span class="process-math">\(\mathcal S_P\text{.}\)</span> Then <span class="process-math">\(Q \cap P_i &lt; Q\)</span> for all <span class="process-math">\(i\)</span> and thus every term on the right-hand side of <a href="sec-sylow.html#thm-sylow-4-1-1-2-2-8" class="xref" data-knowl="./knowl/xref/E1030.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a> is divisble by <span class="process-math">\(p\text{,}\)</span> contrary to <a href="sec-sylow.html#thm-sylow-4-1-1-2-3-9" class="xref" data-knowl="./knowl/xref/E1030b.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a>. The second assertion in (2) follows by taking <span class="process-math">\(Q\)</span> to be a Sylow <span class="process-math">\(p\)</span>-subgroup.</div>
+<div class="para">This proves, in particular, that <span class="process-math">\(\mathcal S_P\)</span> in fact does consist of all Sylow <span class="process-math">\(p\)</span>-subgroups.</div>
+</li>
+<li><div class="para">Part (3) thus follows from <a href="sec-sylow.html#thm-sylow-4-1-1-2-3-9" class="xref" data-knowl="./knowl/xref/E1030b.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a>.</div></li>
+<li><div class="para logical">
+<div class="para">For any <span class="process-math">\(P \in \operatorname{Syl}_p(G)\text{,}\)</span> the stabilizer of <span class="process-math">\(P\)</span> for the action of <span class="process-math">\(G\)</span> on <span class="process-math">\(\operatorname{Syl}_p(G)\)</span> by conjugation is <span class="process-math">\(N_G(P)\text{.}\)</span> Since we now know the action is transitive,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|\operatorname{Syl}_p(G)| = [G: N_G(P)].
+\end{equation*}
+</div>
+<div class="para">Moreover, since <span class="process-math">\(P \leq N_G(P)\)</span> and <span class="process-math">\(|P| = p^e\text{,}\)</span> it follows that <span class="process-math">\([G: N_G(P)]\mid m\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-sylow.html#thm-sylow">in-context</a></span>
+</body>
+</html>

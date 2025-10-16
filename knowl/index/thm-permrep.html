@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Permutation Representation.</span>
+</h4>
+<div class="para">Assume <span class="process-math">\((G, \cdot)\)</span> is a group and <span class="process-math">\(S\)</span> is a set.</div> <div class="para logical"><ol class="decimal">
+<li><div class="para">If <span class="process-math">\(\cdot\)</span> is an action of <span class="process-math">\(G\)</span> on <span class="process-math">\(S\text{,}\)</span> then the function <span class="process-math">\(\rho: G \to \operatorname{Perm}(S)\)</span> defined as <span class="process-math">\(\rho(g) = \sigma_g\text{,}\)</span> where <span class="process-math">\(\sigma_g:S\to S\)</span> is the function given by <span class="process-math">\(\sigma_g(s)=g \cdot s\text{,}\)</span> is a well defined homomorphism of groups.</div></li>
+<li><div class="para">Conversely, if <span class="process-math">\(\rho: G \to \operatorname{Perm}(S)\)</span> is a group homomorphism, the rule <span class="process-math">\(g \cdot s := \rho(g)(s)\)</span> defines an action of <span class="process-math">\(G\)</span> on <span class="process-math">\(S\text{.}\)</span>
+</div></li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+(\sigma_g\circ\sigma_{g^{-1}})(s) &amp;=\sigma_g(\sigma_{g^{-1}}(s)) &amp; \text{ (def of composition)}\\
+&amp;=g\cdot (g^{-1} \cdot s) &amp; (\text{ def for } \sigma_g \text{ and } \sigma_{g^{-1}})\\
+&amp;=(gg^{-1})\cdot s &amp; \text{ (first property of a group action)}\\
+&amp;=e_G\cdot s &amp; \text{ (group axiom)}\\
+&amp;= s &amp;\text{ (second property of a group action)}
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">thus <span class="process-math">\(\sigma_g\circ\sigma_{g^{-1}}=\text{id}_S\)</span> and a similar argument shows that <span class="process-math">\(\sigma_{g^{-1}}\circ\sigma_{g}=\text{id}_S\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Finally, we wish to show <span class="process-math">\(\rho(gg')=\rho(g) \circ \rho(g')\text{,}\)</span> equivalently <span class="process-math">\(\sigma_{gg'}=\sigma_g\circ\sigma_{g'}\text{.}\)</span> Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_{gg'}(s) = (gg')\cdot s = g\cdot(g'\cdots) =\sigma_g\left(\sigma_{g'}(s)\right) = (\sigma_g\circ\sigma_{g'})(s),
+\end{equation*}
+</div>
+<div class="para">holds for all <span class="process-math">\(s\text{,}\)</span> this proves <span class="process-math">\(\rho\)</span> is a homomorphism.</div>
+</div> <div class="para">Given a homomorphism <span class="process-math">\(\rho\text{,}\)</span> the function <span class="process-math">\(G \times S \to S\)</span> defined as <span class="process-math">\(g \cdot s = \rho(g)(s)\)</span> is an action because <span class="process-math">\(g'(gs) = \rho(g')(\rho(g)(s)) = (\rho(g') \circ\rho(g))(s) = \rho(gg')(s) = (gg')s\text{,}\)</span> and <span class="process-math">\(e_G s = \rho(e_G)(s) = \text{id}(s) = s\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="graction.html#thm-permrep">in-context</a></span>
+</body>
+</html>

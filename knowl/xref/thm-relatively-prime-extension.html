@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.66</span><span class="period">.</span><span class="space"> </span><span class="title">Relatively Prime Degrees and Irreducibility.</span>
+</h4>
+<div class="para">Assume that <span class="process-math">\(F \sse K\)</span> is a finite extension of fields of degree <span class="process-math">\(n = [K : F ]\text{.}\)</span> If <span class="process-math">\(f \in F [x]\)</span> is irreducible of degree <span class="process-math">\(d\)</span> and <span class="process-math">\(\gcd(d, n) = 1\)</span> then <span class="process-math">\(f\)</span> remains irreducible when regarded as an element of the ring <span class="process-math">\(K[x]\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(F \subseteq K\)</span> be a finite extension of fields of degree <span class="process-math">\(n = [K : F ]\text{.}\)</span>
+</div> <div class="para">Suppose that <span class="process-math">\(f \in F[x]\)</span> is irreducible of degree <span class="process-math">\(d\)</span> and <span class="process-math">\(\gcd(d, n) = 1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">First, note that if <span class="process-math">\(d=1\)</span> then <span class="process-math">\(f(x)\)</span> will remain irreducible in <span class="process-math">\(K[x]\)</span> <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. Suppose then that <span class="process-math">\(d&gt;1\text{.}\)</span> There exists an algebraically closed extension <span class="process-math">\(\widetilde F\)</span> such that <span class="process-math">\(f\)</span> has a root <span class="process-math">\(r\)</span> <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. Consider <span class="process-math">\(K(r)\text{.}\)</span> As <span class="process-math">\(r\)</span> is algebraic in <span class="process-math">\(K(r)\)</span> we know there exists some unique irreducible minimum polynomial <span class="process-math">\(g\)</span> of degree <span class="process-math">\(q\text{,}\)</span> and thus that <span class="process-math">\([K(r):K]=q\)</span> <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. Using the <a href="sec-algebraic.html#thm-degree-formula" class="xref" data-knowl="./knowl/xref/thm-degree-formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 16.51: The Degree Formula">The Degree Formula</a> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="   ./knowl/xref/thm-degree-formula.html">
+\begin{equation*}
+[K(r):F]=[K(r):K][K:F]=qn.
+\end{equation*}
+</div>
+<div class="para">However, <span class="process-math">\([K(r):F]=[K(r):F(r)][F(r):F]\)</span> and so <span class="process-math">\(qn=md\)</span> for some <span class="process-math">\(m\in\Z\text{,}\)</span> so <span class="process-math">\(d|qn\text{.}\)</span> As <span class="process-math">\(\gcd(n,d)=1\)</span> we must have <span class="process-math">\(d|q\text{.}\)</span> But <span class="process-math">\(q\)</span> was defined to be the degree of <span class="process-math">\(g\text{,}\)</span> which divides <span class="process-math">\(f\text{.}\)</span> As <span class="process-math">\(d|q\)</span> and <span class="process-math">\(q\leq d\text{,}\)</span> we see that <span class="process-math">\(d=q\text{,}\)</span> so <span class="process-math">\(f=kg\)</span> for some <span class="process-math">\(k\in F\text{.}\)</span> As irreducible polynomials multiplied by a constant are still irreducible, we see that <span class="process-math">\(f\)</span> is indeed irreducible in <span class="process-math">\(K[x]\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-closure.html#thm-relatively-prime-extension">in-context</a></span>
+</body>
+</html>

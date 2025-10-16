@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">14.20</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix GCDs in PIDs.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(R\)</span> is a PID. Let <span class="process-math">\(A \in \mathrm{M}_{m, n}(R)\)</span> be any matrix and let <span class="process-math">\(P \in \mathrm{M}_{m}(R)\)</span> and <span class="process-math">\(Q \in \mathrm{M}_{n}(R)\)</span> be invertible matrices. Then <span class="process-math">\(\operatorname{gcd}(A)=\operatorname{gcd}(P A)=\operatorname{gcd}(Q A)\text{.}\)</span> In particular, if <span class="process-math">\(B \in \mathrm{M}_{m, n}(R)\)</span> and <span class="process-math">\(B\)</span> is obtained from <span class="process-math">\(A\)</span> by a finite sequence of elementary row and column operations, then <span class="process-math">\(\operatorname{gcd}(A)=\operatorname{gcd}(B)\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">First, suppose that <span class="process-math">\(n=1\text{,}\)</span> meaning that <span class="process-math">\(A\)</span> is a column, say</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{c} a_{1} \\ \vdots \\ a_{m} \end{array}\right] 
+\text { and let } 
+P A=\left[\begin{array}{c} b_{1} \\ \vdots \\ b_{m} \end{array}\right]
+\end{equation*}
+</div>
+<div class="para">We need to show that <span class="process-math">\(\left(a_{1}, \ldots, a_{m}\right)=\left(b_{1}, \ldots, b_{m}\right)\text{.}\)</span> On the one hand, each <span class="process-math">\(b_{i}\)</span> is a linear combination of the <span class="process-math">\(a_{j}\text{,}\)</span> so <span class="process-math">\(\left(b_{1}, \ldots, b_{m}\right) \subseteq\left(a_{1}, \ldots, a_{m}\right)\text{.}\)</span> On the other hand,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{c} a_{1} \\ \vdots \\ a_{m} \end{array}\right]
+=P^{-1}(P A)=P^{-1}
+\left[\begin{array}{c} b_{1} \\ \vdots \\ b_{m} \end{array}\right]
+\end{equation*}
+</div>
+<div class="para">so each <span class="process-math">\(a_{j}\)</span> is a combination of the <span class="process-math">\(b_{i}\text{,}\)</span> and <span class="process-math">\(a_{j} \in\left(b_{1}, \ldots, b_{m}\right)\text{.}\)</span> We conclude that we have an equality of ideals <span class="process-math">\(\left(a_{1}, \ldots, a_{m}\right)=\left(b_{1}, \ldots, b_{m}\right)\text{,}\)</span> and thus multiplying a column vector by an invertible matrix does not change the greatest common divisor of the entries.</div>
+</div> <div class="para logical">
+<div class="para">Now given <span class="process-math">\(A \in \mathrm{M}_{m, n}(R)\text{,}\)</span> if we denote the <span class="process-math">\(i\)</span> th column of <span class="process-math">\(A\)</span> by <span class="process-math">\(A_{i}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P A=\left[\begin{array}{lll}
+P A_{1} &amp; \cdots &amp; P A_{m}
+\end{array}\right] .
+\end{equation*}
+</div>
+<div class="para">Since the gcd of each column remains the same, the gcd of all the entries does not change.</div>
+</div> <div class="para logical">
+<div class="para">To show that <span class="process-math">\(\operatorname{gcd}(A Q)=\operatorname{gcd}(A)\text{,}\)</span> note that transposing a matrix does not change its gcd nor the fact that its invertible, so we can apply what we have already shown:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{gcd}(A Q)=\operatorname{gcd}\left((A Q)^{T}\right)=\operatorname{gcd}\left(Q^{T} A^{T}\right)=\operatorname{gcd}\left(A^{T}\right)=\operatorname{gcd}(A)
+\end{equation*}
+</div>
+</div> <div class="para">Finally, applying elementary row and column operations corresponds to multiplying by an elementary matrix on the left or right, and elementary matrices are invertible.</div></article></details><span class="incontext"><a class="internal" href="sec-snf.html#lem-gcd-of-a-matrix-in-pid">in-context</a></span>
+</body>
+</html>

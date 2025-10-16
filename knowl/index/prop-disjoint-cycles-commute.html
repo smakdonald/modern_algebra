@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.42</span><span class="period">.</span><span class="space"> </span><span class="title">Disjoint Commutes.</span>
+</h4>
+<div class="para logical">
+<div class="para">Disjoint cycles commute, that is, if <span class="process-math">\(i_1 , i_2 \, \dots i_m, j_1 , j_2 \, \dots j_k\in [n]\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_1=(i_1 \, i_2 \, \dots i_m), \quad \sigma_2=(j_1 \, j_2 \, \dots j_k)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{i_1 , i_2 , \dots i_m\}\cap \{j_1 , j_2 , \dots j_k\}=\emptyset
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(\sigma_1 \circ \sigma_2=\sigma_2\circ \sigma_1\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let’s consider two disjoint cycles, denoted as <span class="process-math">\((a_1\;a_2\;\cdots\;a_m)\)</span> and <span class="process-math">\((b_1\;b_2\dots\;b_n)\text{,}\)</span> where <span class="process-math">\(a_i\)</span>’s and <span class="process-math">\(b_i\)</span>’s are distinct elements. Let’s analyze the composition <span class="process-math">\((a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)\text{:}\)</span> When we apply the composition to an element <span class="process-math">\(ai\text{,}\)</span> we have:</div>
+<div class="displaymath process-math">
+\begin{align*}
+(a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)(a_i) &amp;= (a_1\;a_2\;\cdots\;a_m)(b_1\;b_2\dots\;b_n(a_i))\\
+&amp;= (a_1\;a_2\;\cdots\;a_m)(a_i)\\
+&amp;= a_{i+1} (\text{ if } a_i \neq a_m) \text{ or }a_1 (\text{ if }a_i = a_m)
+\end{align*}
+</div>
+<div class="para">Similarly, when we apply the composition to an element <span class="process-math">\(b_j\text{,}\)</span> we have:</div>
+<div class="displaymath process-math">
+\begin{align*}
+(b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)(b_j) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(b_j))\\
+&amp;= (b_1\;b_2\dots\;b_n)(b_j)\\
+&amp;= b_{j+1} (\text{ if } b_j \neq b_n) \text{ or }b_1 (\text{ if } b_j = b_n)
+\end{align*}
+</div>
+<div class="para">From these calculations, we can observe that the composition <span class="process-math">\((a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)\)</span> maps each element <span class="process-math">\(a_i\)</span> to <span class="process-math">\(a_{i+1}\)</span> (if <span class="process-math">\(a_i \neq  a_m\)</span>), and it maps <span class="process-math">\(a_m\)</span> to <span class="process-math">\(a_1\text{.}\)</span> Similarly, the composition <span class="process-math">\((b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)\)</span> maps each element <span class="process-math">\(b_j\)</span> to <span class="process-math">\(b_{j+1}\)</span> (if <span class="process-math">\(b_j \neq b_n\)</span>), and it maps <span class="process-math">\(b_n\)</span> to <span class="process-math">\(b_1\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Now, let’s consider the composition <span class="process-math">\((b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)\)</span> and evaluate its effect on the elements <span class="process-math">\(a_i\)</span> and <span class="process-math">\(a_m\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+(b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)(a_i) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(a_i))\\
+&amp;= (b_1\;b_2\dots\;b_n)(a_i)\\
+&amp;= a_{i+1} (\text{ if } a_i \neq a_m) \text{ or } a_1 (\text{ if } a_i = a_m)
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{align*}
+(b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)(a_m) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(a_m))\\
+&amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m)\\
+&amp;= a_{m+1} (\text{ if } a_m \neq  a_1) \text{ or } a_2 (\text{ if } a_m = a_1)
+\end{align*}
+</div>
+<div class="para">Comparing these results with the previous composition, we see that the effects on <span class="process-math">\(a_i\)</span> and <span class="process-math">\(a_m\)</span> are the same in both compositions. This implies that the compositions <span class="process-math">\((a_1\;a_2\;\cdots\;a_m) \circ  (b_1\;b_2\dots\;b_n)\)</span> and <span class="process-math">\((b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)\)</span> are identical.</div>
+</div> <div class="para">Therefore, we have shown that disjoint cycles commute, meaning that the order in which they are composed does not affect the final result.</div></article></details><span class="incontext"><a class="internal" href="sec-symmetric.html#prop-disjoint-cycles-commute">in-context</a></span>
+</body>
+</html>

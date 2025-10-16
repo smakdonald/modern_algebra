@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.41</span><span class="period">.</span><span class="space"> </span><span class="title">UMP for Quotient Groups.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(N\)</span> a normal subgroup. If <span class="process-math">\(\varphi: G \to H\)</span> is a homomorphism of groups such that <span class="process-math">\(N \subseteq \operatorname{ker}(\varphi)\text{,}\)</span> then</div> <div class="para logical"><ol class="decimal">
+<li><div class="para">there exists a unique group homomorphism <span class="process-math">\(\overline{\varphi}: G/N \to H\)</span> such that the composition of <span class="process-math">\(\overline{\varphi}\)</span> and the quotient map <span class="process-math">\({\pi}: G\twoheadrightarrow G/N\)</span> is <span class="process-math">\(\varphi\text{.}\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(\varphi\)</span> is onto, then <span class="process-math">\(\overline{\varphi}\)</span> is onto.</div></li>
+<li><div class="para">Moreover, <span class="process-math">\(\operatorname{ker}(\overline{\varphi}) = \operatorname{ker}(\varphi)/N = \{ gN \mid \varphi(g) = e_H\}.\)</span>
+</div></li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">If such a <span class="process-math">\(\overline{\varphi}\)</span> exists, it is necessarily unique since <span class="process-math">\(G \twoheadrightarrow G/N\)</span> is onto. In fact, if <span class="process-math">\(\varphi=\pi\circ \overline{\varphi}\)</span> then <span class="process-math">\(\overline{\varphi}\)</span> has to be given by the formula</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{\varphi}(gN) = \varphi(g).
+\end{equation*}
+</div>
+<div class="para">We now need to show that this formula determines a well-defined homomorphism: if <span class="process-math">\(xN = yN\text{,}\)</span> then <span class="process-math">\(y^{-1}x \in N \subseteq \operatorname{ker}(\varphi)\)</span> and so <span class="process-math">\(\varphi(y)^{-1} \varphi(x) = e\text{,}\)</span> whence <span class="process-math">\(\varphi(y) = \varphi(x)\text{.}\)</span> For any <span class="process-math">\(x,y\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{\varphi}(xNyN) = \overline{\varphi}(xyN) = \varphi(xy) = \varphi(x)\varphi(y) =\overline{\varphi}(xN) \overline{\varphi}(yN).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">The formula for <span class="process-math">\(\overline{\varphi}\)</span> given above ensures that <span class="process-math">\(\operatorname{im}\varphi=\operatorname{im}\overline{\varphi}\)</span> hence <span class="process-math">\(\varphi\)</span> is surjective if and only if <span class="process-math">\(\overline{\varphi}\)</span> is surjective.</div></li>
+<li><div class="para">We have <span class="process-math">\(\overline{\varphi}(xN) = e_H\)</span> iff <span class="process-math">\(\varphi(x) = e_H\)</span> iff <span class="process-math">\(x \in \operatorname{ker}(\varphi)\)</span> iff <span class="process-math">\(xN \in  \operatorname{ker}(\varphi)/N\text{.}\)</span> If <span class="process-math">\(xN \in \operatorname{ker}(\varphi)/N\)</span> for some <span class="process-math">\(x \in G\text{,}\)</span> then <span class="process-math">\(xN = yN\)</span> for some <span class="process-math">\(y \in \operatorname{ker}(\varphi)\)</span> and hence <span class="process-math">\(x = yz\)</span> for some <span class="process-math">\(z \in N\text{.}\)</span> Since <span class="process-math">\(N \subseteq \operatorname{ker}(\varphi)\text{,}\)</span> we have <span class="process-math">\(x \in \operatorname{ker}(\varphi)\text{.}\)</span>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-products-iso-thms.html#thm-ump-quotient">in-context</a></span>
+</body>
+</html>

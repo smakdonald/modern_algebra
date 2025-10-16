@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.25</span><span class="period">.</span><span class="space"> </span><span class="title">Every <span class="process-math">\(R\)</span>-module is the Quotient of a Free Module.</span>
+</h4>
+<div class="para">Every <span class="process-math">\(R\)</span>-module is the quotient of a free module. Thus for every <span class="process-math">\(R\)</span>-module <span class="process-math">\(M\)</span> there exists a free module <span class="process-math">\(F\)</span> that surjects onto <span class="process-math">\(M\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given a module <span class="process-math">\(M\text{,}\)</span> first take a generating set for <span class="process-math">\(M\text{,}\)</span> say <span class="process-math">\(\Gamma=\left\{m_{i}\right\}_{i \in \Lambda}\text{.}\)</span> Notice that a generating set always exists: for example, we can take <span class="process-math">\(\Gamma=M\text{,}\)</span> though of course that is a bit of an overkill, since it’s quite likely that some elements can be obtained from linear combinations of others. Next, we construct a free module on the set <span class="process-math">\(\Lambda\text{;}\)</span> more precisely, we take a free module on as many generators as generators for <span class="process-math">\(M\)</span> that we picked. Now the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+&amp; \bigoplus_{i \in \Lambda} R \stackrel{\pi}{\longrightarrow} M \\
+&amp; \left(r_{i}\right) \longmapsto \sum_{i \in \Lambda} r_{i} m_{i} .
+\end{aligned}
+\end{equation*}
+</div>
+</div> <div class="para">Notice this map actually makes sense: the tuples <span class="process-math">\(\left(r_{i}\right)\)</span> have only finitely many nonzero entries, and thus <span class="process-math">\(\sum_{i \in \Lambda} r_{i} m_{i}\)</span> is a (finite) linear combination of our chosen generators. Moreover, since we chose the <span class="process-math">\(m_{i}\)</span> to be generators for <span class="process-math">\(M\text{,}\)</span> this map <span class="process-math">\(\pi\)</span> is surjective. It is also easy to check that it is an <span class="process-math">\(R\)</span>-module homomorphism: in fact, this is the <span class="process-math">\(R\)</span>-module homomorphism we would get from the <a href="sec-free-mod.html#thm-ump-for-free-modules" class="xref" data-knowl="./knowl/xref/thm-ump-for-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.22: UMP for Free R-Modules">UMP for Free <span class="process-math">\(R\)</span>-Modules</a> by setting <span class="process-math">\(e_{i} \mapsto m_{i}\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">By the <a href="sec-modhom.html#fit-module" class="xref" data-knowl="./knowl/xref/fit-module.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: First Isomorphism Theorem for Modules">First Isomorphism Theorem for Modules</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fit-module.html">
+\begin{equation*}
+M \cong \bigoplus_{i \in \Lambda} R / \operatorname{ker} \pi
+\end{equation*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-free-mod.html#thm-free-quotient">in-context</a></span>
+</body>
+</html>

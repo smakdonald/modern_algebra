@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.24</span><span class="period">.</span><span class="space"> </span><span class="title">Sunzi’s Remainder Theorem.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(m = p_1^{e_1} \cdots p_l^{e_l}\)</span> for distinct primes <span class="process-math">\(p_1, \dots, p_l\text{.}\)</span> Then there is an isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi: \mathbb{Z}/m \xrightarrow{\cong} \mathbb{Z}/(p_1^{e_1}) \times \cdots \times \mathbb{Z}/(p_l^{e_l})
+\end{equation*}
+</div>
+<div class="para">given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi([j]_m) = ([j]_{{p_1}^{e_1}}, \cdots, [j]_{{p_l}^{e_l}})
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\([j]_b\)</span> denote the class of an integer <span class="process-math">\(j\)</span> in <span class="process-math">\(\mathbb{Z}/b\text{.}\)</span> </div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Using <a href="sec-cyclic.html#prop-ump-cyclic" class="xref" data-knowl="./knowl/xref/prop-ump-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.28: Universal Mapping Property for Cyclic Groups">Proposition 2.28</a>, we let <span class="process-math">\(\psi: \mathbb{Z}\to \mathbb{Z}/(p_1^{e_1}) \times \cdots \times \mathbb{Z}/(p_l^{e_l})\)</span> be the unique homomorhism that sends <span class="process-math">\(1\)</span> to <span class="process-math">\(([1]_{{p_1}^{e_1}}, \cdots, [1]_{{p_l}^{e_l}})\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-ump-cyclic.html ./knowl/xref/thm-fit-group.html">
+\begin{equation*}
+\psi(j) = ([j]_{{p_1}^{e_1}}, \cdots, [j]_{{p_l}^{e_l}}).
+\end{equation*}
+</div>
+<div class="para">We see <span class="process-math">\(m \in \operatorname{ker}(\psi)\)</span> and so <span class="process-math">\(\langle m \rangle \subseteq \operatorname{Ker}(\psi)\text{.}\)</span> Conversely, if <span class="process-math">\(\psi(n) = 0\text{,}\)</span> then <span class="process-math">\(p_i^{e_i} \mid n\)</span> for all <span class="process-math">\(i\)</span> and since <span class="process-math">\(p_1^{e_1}, \dots, p_l^{e_l}\)</span> are pairwise relatively prime, it follows that <span class="process-math">\(m \mid n\text{.}\)</span> This proves <span class="process-math">\(\operatorname{ker}(\psi) = \langle m \rangle\text{.}\)</span> The claim follows by the <a href="sec-products-iso-thms.html#thm-fit-group" class="xref" data-knowl="./knowl/xref/thm-fit-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.43: First Isomorphism Theorem for Groups">First Isomorphism Theorem for Groups</a>.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-ftfgag.html#thm-sunzi">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">14.32</span><span class="period">.</span><span class="space"> </span><span class="title">Sunzi’s Remainder Theorem (Rings).</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(I\)</span> and <span class="process-math">\(J\)</span> are ideals in a commutative ring <span class="process-math">\(R\)</span> such that <span class="process-math">\(I + J = R\text{.}\)</span> Then <span class="process-math">\(I \cap J = I \cdot J\)</span> (where <span class="process-math">\(I \cdot J\)</span> is defined as the set of all sums of products of the form <span class="process-math">\(ab\)</span> with <span class="process-math">\(a \in I\)</span> and <span class="process-math">\(b \in J\)</span>) and there is an isomorphism of <span class="process-math">\(R\)</span>-modules</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R/(I J) \cong R/I \oplus R/J.
+\end{equation*}
+</div>
+<div class="para">In particular, if <span class="process-math">\(R\)</span> is a UFD and <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are relatively prime elements of <span class="process-math">\(R\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R/(xy) \cong R/x \oplus R/y.
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Note that <span class="process-math">\(I \cdot J \subseteq I \cap J\)</span> holds in general for any pair of ideals. If <span class="process-math">\(I + J = R\)</span> then <span class="process-math">\(a + b = 1\)</span> for some <span class="process-math">\(a \in I\)</span> and <span class="process-math">\(b \in J\text{.}\)</span> Given <span class="process-math">\(x \in I \cap J\)</span> we have <span class="process-math">\(xa + xb = x\)</span> with <span class="process-math">\(xa \in I \cdot J\)</span> and <span class="process-math">\(xb \in I \cdot J\text{,}\)</span> which proves <span class="process-math">\(x \in I \cdot J\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For the second assertion define <span class="process-math">\(g: R \to R/I \oplus R/J\)</span> to be the <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(g(r) = (r +I, r + J)\text{.}\)</span> Note that the kernel of <span class="process-math">\(g\)</span> is <span class="process-math">\(I \cap J\)</span> which equals <span class="process-math">\(I\cdot J\)</span> by the first assertion. I claim <span class="process-math">\(g\)</span> is onto: Pick <span class="process-math">\((x + I, y +J) \in R/I \oplus R/J\text{.}\)</span> With <span class="process-math">\(a,b\)</span> chosen as above, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(xb + ya) = (xb + ya + I, xb + ya + J) = (xb + I, ya + J) = (x + I, y +J).
+\end{equation*}
+</div>
+<div class="para">The last equation holds since <span class="process-math">\(xa + xb = x\)</span> and thus <span class="process-math">\(xb + I = xb + xa + I = x + I\)</span> and similarly <span class="process-math">\(ya + J = y + J\text{.}\)</span>
+</div>
+</div> <div class="para">For the final assertion, recall that when <span class="process-math">\(R\)</span> is a UFD, two principle ideals <span class="process-math">\(Rx\)</span> and <span class="process-math">\(Ry\)</span> satisfy <span class="process-math">\(Rx + Ry = R\)</span> if and only if <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are relatively prime. Also, for <span class="process-math">\(I = Rx\)</span> and <span class="process-math">\(J = Ry\text{,}\)</span> we have <span class="process-math">\(I\cdot J = R(xy)\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-modclass.html#thm-sunzis-remainder-theorem-rings">in-context</a></span>
+</body>
+</html>

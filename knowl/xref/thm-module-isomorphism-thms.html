@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.40</span><span class="period">.</span><span class="space"> </span><span class="title">Module Isomorphism Theorems.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, and let <span class="process-math">\(M\)</span> be a <span class="process-math">\(R\)</span>-module.</div>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">UMP for Quotient Modules.</span></span><div class="para">Let <span class="process-math">\(N\)</span> be a submodule of <span class="process-math">\(M\text{,}\)</span> let <span class="process-math">\(T\)</span> be an <span class="process-math">\(R\)</span>-module, and let <span class="process-math">\(f: M \to T\)</span> be an <span class="process-math">\(R\)</span>-module homomorphism. If <span class="process-math">\(f(M) = 0\)</span> (i.e., if <span class="process-math">\(N \subseteq \ker(f)\)</span>) then the function <span class="process-math">\(\ov{f}: M/N \to T\)</span> given by <span class="process-math">\(\ov{f}(m + N) = f(m)\)</span> is a well-defined, <span class="process-math">\(R\)</span>-module homomorphism. In fact, <span class="process-math">\(\ov{f}: M/N \to T\)</span> is the unique <span class="process-math">\(R\)</span>-module homomorphism such that <span class="process-math">\(\ov{f}\circ \pi = f\)</span> where <span class="process-math">\(\pi\)</span> denotes the canonical surjection <span class="process-math">\(M \onto M/N\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">First Isomorphism Theorem for Modules.</span></span><div class="para">Let <span class="process-math">\(T\)</span> be an <span class="process-math">\(R\)</span>-module and let <span class="process-math">\(\varphi: M \to T\)</span> be an <span class="process-math">\(R\)</span>-module homomorphism. Then <span class="process-math">\(\ker(\varphi)\)</span> is a submodule of <span class="process-math">\(M\)</span> and there is an <span class="process-math">\(R\)</span>-module isomorphism <span class="process-math">\(M/\ker(\varphi) \cong \im(\varphi)\)</span> given by <span class="process-math">\(m + \ker(\varphi) \mapsto \varphi(m)\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">Second Isomorphism Theorem for Modules.</span></span><div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be submodules of <span class="process-math">\(M\text{,}\)</span> and define <span class="process-math">\(A + B = \{a+b \mid a \in A, b \in B\}\text{.}\)</span> Then <span class="process-math">\(A + B\)</span> is a submodule of <span class="process-math">\(M\text{,}\)</span> <span class="process-math">\(A \cap B\)</span> is a submodule of <span class="process-math">\(A\text{,}\)</span> and there is an <span class="process-math">\(R\)</span>-module isomorphism <span class="process-math">\((A + B)/B \cong A/(A \cap B)\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">Third Isomorphism Theorem for Modules.</span></span><div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be submodules of <span class="process-math">\(M\)</span> with <span class="process-math">\(A \subseteq B\text{.}\)</span> Then <span class="process-math">\(B/A\)</span> is a submodule of <span class="process-math">\(M/A\)</span> and there is an <span class="process-math">\(R\)</span>-module isomorphism <span class="process-math">\((M/A)/(B/A) \cong M/B\)</span> given by sending <span class="process-math">\((m + A) + B/A\)</span> to <span class="process-math">\(m + B\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">Lattice Isomorphism Theorem for Modules.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, let <span class="process-math">\(N\)</span> be a R-submodule of <span class="process-math">\(M\text{,}\)</span> and let <span class="process-math">\(\pi: M \to M/N\)</span> be the canonical quotient map. Then the function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Psi : \{R-\text{submodules of } M \text{ containing }N\} \to \{R-\text{submodules of }M/N\}
+\end{equation*}
+</div>
+<div class="para">defined by <span class="process-math">\(\Psi(K) = K/N\)</span> is a bijection, with inverse given by <span class="process-math">\(\Psi^{-1}(T) = \pi^{-1}(T)\)</span> for each <span class="process-math">\(R\)</span> submodule <span class="process-math">\(T\)</span> of <span class="process-math">\(M/N\text{.}\)</span> Moreover, <span class="process-math">\(\Psi\)</span> and <span class="process-math">\(\Psi^{-1}\)</span> preserve sums and intersections. </div>
+</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Ignoring the rules for scaling by <span class="process-math">\(R\text{,}\)</span> we know each of the first four results holds for abelian groups (and the maps are the same). So, we merely need to prove that the rules for scaling are respected in each case. In more detail:</div>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">UMP.</span></span><div class="para logical">
+<div class="para">From the <a href="sec-products-iso-thms.html#thm-ump-quotient" class="xref" data-knowl="./knowl/xref/thm-ump-quotient.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.41: UMP for Quotient Groups">UMP for Quotient Groups</a>, we already know that <span class="process-math">\(\ov{f}\)</span> is a well-defined homomorphism of groups under <span class="process-math">\(+\)</span> and that it is the unique one such that <span class="process-math">\(\ov{f} \circ \pi = f\text{.}\)</span> It remains only to show <span class="process-math">\(\ov{f}\)</span> preserves scaling:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ump-quotient.html">
+\begin{equation*}
+\ov{f}(r (m +N)) = \ov{f} (rm + N) = f(rm) = r f(m) = r \ov{f}(m + N).
+\end{equation*}
+</div>
+<div class="para">where the third equation uses that <span class="process-math">\(f\)</span> preserves scaling.</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">First Isomorphism Theorem.</span></span><div class="para logical">
+<div class="para">From <a href="sec-products-iso-thms.html#thm-fit-group" class="xref" data-knowl="./knowl/xref/thm-fit-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.43: First Isomorphism Theorem for Groups">First Isomorphism Theorem for Groups</a> we already know that there is an isomorphism of abelian groups under <span class="process-math">\(+\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-fit-group.html">
+\begin{equation*}
+\ov{\varphi}: M/\ker(\varphi) \xra{\cong} \im(\varphi),
+\end{equation*}
+</div>
+<div class="para">given by <span class="process-math">\(\ov{\varphi}(m + \ker(\varphi)) = \varphi(m)\text{,}\)</span> and it remains only to show this map preserves scaling. This is a special case of what we proved in part (0).</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Second Isomorphism Theorem.</span></span><div class="para logical">
+<div class="para">First, note from <a href="sec-defmod.html#thm-mod-closure" class="xref" data-knowl="./knowl/xref/thm-mod-closure.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 12.9: Closure Properties of Modules">Exercise 12.9</a> that <span class="process-math">\(A+B\)</span> and <span class="process-math">\(A \cap B\)</span> are indeed submodules. The <a href="sec-products-iso-thms.html#thm-sit-group" class="xref" data-knowl="./knowl/xref/thm-sit-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.54: Second Isomorphism Theorem for Groups">Second Isomorphism Theorem for Groups</a> yields an isomorphism of abelian groups <span class="process-math">\(\varphi: A/(A \cap B) \xra{\cong} (A+B)/B\)</span> given by <span class="process-math">\(\varphi(a + (A\cap B)) = a + B\text{.}\)</span> It remains only to show <span class="process-math">\(\varphi\)</span> preserves scaling:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-mod-closure.html ./knowl/xref/thm-sit-group.html">
+\begin{equation*}
+\begin{aligned}\varphi(r(a+(A \cap B))) 
+&amp;= \varphi(ra + A \cap B)\\
+&amp;=ra + B \\
+&amp;=r(a +B) \\
+&amp;=r\varphi(a + (A \cap B))
+\end{aligned}
+\end{equation*}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Third Isomorphism Theorem.</span></span><div class="para logical">
+<div class="para">For the third, we already know (from 817) that <span class="process-math">\(B/A\)</span> is a subgroup of <span class="process-math">\(M/A\)</span> under <span class="process-math">\(+\text{.}\)</span> Given <span class="process-math">\(r \in R\)</span> and <span class="process-math">\(b +A \in B/A\)</span> we have <span class="process-math">\(r(b+A) = rb + A\)</span> which belongs to <span class="process-math">\(B/A\)</span> since <span class="process-math">\(rb \in B\text{.}\)</span> This proves <span class="process-math">\(B/A\)</span> is a submodule of <span class="process-math">\(M/A\text{.}\)</span> Also from 817 we know there is an isomorphism of abelian groups <span class="process-math">\(\varphi: (M/A)/(B/A) \to M/B\)</span> given by <span class="process-math">\(\varphi((m+A) + B/A) = m + B\)</span> and it remains only to show it is <span class="process-math">\(R\)</span>-linear:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}\varphi(r((m+A) + B/A)) 
+&amp;= \varphi(r(m+A) + B/A)\\
+&amp;=\varphi((rm + A) + B/A) \\
+&amp;=rm + B \\
+&amp;=r(m +B) \\
+&amp;=r \varphi((m+A) + B/A)
+\end{aligned}
+\end{equation*}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Lattice Isomorphism Theorem.</span></span><div class="para">The Lattice Theorem is the most complicaed to gerenlize. From 817 we know thre is a bijection between the set of subgroups of <span class="process-math">\(M\)</span> and that contain <span class="process-math">\(N\)</span> and subgroups of the quotient group <span class="process-math">\(M/N\text{,}\)</span> and the maps are the same as given in the statment. We just need to prove that these maps send submodules to submodules. If <span class="process-math">\(K\)</span> is a submodule of <span class="process-math">\(M\)</span> containing <span class="process-math">\(N\text{,}\)</span> then by part (3) we know <span class="process-math">\(K/N\)</span> is a submodule of <span class="process-math">\(M/N\text{.}\)</span>
+</div>
+<div class="para">If <span class="process-math">\(T\)</span> is a submodule of <span class="process-math">\(M/N\text{,}\)</span> then <span class="process-math">\(\pi^{-1}(T)\)</span> is an abelian group. For <span class="process-math">\(r \in R\)</span> adn <span class="process-math">\(m \in \pi^{-1}(T)\)</span> we have <span class="process-math">\(\pi(m) \in T\)</span> and hence <span class="process-math">\(\pi(rm) = r\pi(m) \in T\)</span> too, since <span class="process-math">\(T\)</span> is a submodule. This proves <span class="process-math">\(\pi^{-1}(T)\)</span> is a submodule.</div>
+</li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-modhom.html#thm-module-isomorphism-thms">in-context</a></span>
+</body>
+</html>

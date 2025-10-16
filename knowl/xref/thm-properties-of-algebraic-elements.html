@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">16.46</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Algebraic Elements.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(F \subseteq L\)</span> is a field extension and <span class="process-math">\(\a \in L\text{.}\)</span> Define</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I := \{f(x) \in F[x] \mid f(\a) = 0\},
+\end{equation*}
+</div>
+<div class="para">a subset of <span class="process-math">\(F[x]\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">The subset <span class="process-math">\(I\)</span> is an ideal of <span class="process-math">\(F[x]\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(I = 0\)</span> if and only if <span class="process-math">\(\a\)</span> is transcendental over <span class="process-math">\(F\text{;}\)</span> so <span class="process-math">\(I\neq 0\)</span> if and only if <span class="process-math">\(\a\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\a\)</span><span class="process-math">\(F\text{.}\)</span><ul class="disc">
+<li><div class="para">The unique monic generator of <span class="process-math">\(I\text{,}\)</span> which we will write as <span class="process-math">\(m_{\a, F}(x)\text{,}\)</span> is irreducible (and hence <span class="process-math">\(I\)</span> is a prime ideal).</div></li>
+<li><div class="para">There is a unique isomorphism of fields<div class="displaymath process-math">
+\begin{equation*}
+F[x]/(m_{\a, F}(x)) \cong F(\a)
+\end{equation*}
+</div>sending <span class="process-math">\(F\)</span> identically to <span class="process-math">\(F\)</span> and sending <span class="process-math">\(x\)</span> to <span class="process-math">\(\a\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(F[\a] = F(\a)\)</span> and in particular <span class="process-math">\(F[\a]\)</span> is a field.</div></li>
+</ul>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\a\)</span> is algebraic over <span class="process-math">\(F\)</span> if and only if <span class="process-math">\([F(\a): F] &lt; \infty\text{.}\)</span> In this case,<div class="displaymath process-math">
+\begin{equation*}
+[F(\a): F] = \deg(m_{\a, F}(x)).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\a\)</span> is transcendental over <span class="process-math">\(F\)</span> if and only if <span class="process-math">\([F(\a): F] = \infty\text{.}\)</span> In this case, there is a unique isomorphism of fields<div class="displaymath process-math">
+\begin{equation*}
+(x) \cong F(\a)
+\end{equation*}
+</div>sending <span class="process-math">\(F\)</span> identically to <span class="process-math">\(F\)</span> and sending <span class="process-math">\(x\)</span> to <span class="process-math">\(\a\text{.}\)</span> (Here, <span class="process-math">\(F(x)=\left\{\frac{g(x)}{f(x)}\mid g\neq 0\right\}\)</span> is the field of fractions of <span class="process-math">\(F[x]\text{.}\)</span>)</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">All parts use the following construction:</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\phi: F[x] \to L\)</span> be the evaluation homomorphism, given by sending <span class="process-math">\(f(x)\)</span> to <span class="process-math">\(f(\a)\)</span> <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. Note that <span class="process-math">\(\phi\)</span> satisfies <span class="process-math">\(\phi|_F = \id_F\)</span> and <span class="process-math">\(\phi(x) = \alpha\text{.}\)</span> We have <span class="process-math">\(\im(\phi) = F[\a]\)</span> by definition of the latter. The <a href="sec-ring-quotients.html#thm-ring-fit" class="xref" data-knowl="./knowl/xref/thm-ring-fit.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.23: First Isomorphism Theorem for Rings">First Isomorphism Theorem for Rings</a> thus gives that <span class="process-math">\(\phi\)</span> induces a ring isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/thm-ring-fit.html  ">
+\begin{equation*}
+\ov{\phi}: \frac{F[x]}{I} \xra{\cong} F[\a]
+\end{equation*}
+</div>
+<div class="para">given by <span class="process-math">\(\ov{\phi}(f(x)+(p(x)))={\phi}(f(x))=f(\a)\text{.}\)</span> In particular, since <span class="process-math">\(F[\a]\)</span> is a subring of <span class="process-math">\(L\text{,}\)</span> it is an integral domain, <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code> and hence <span class="process-math">\(I\)</span> must be a prime ideal (possibly the <span class="process-math">\(0\)</span> ideal). <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>
+</div>
+</div> <div class="para">Let us now prove the various parts:</div> <div class="para logical"><ol class="decimal">
+<li><div class="para">holds because <span class="process-math">\(I\)</span> is the kernel of the ring map <span class="process-math">\(\phi\text{.}\)</span>
+</div></li>
+<li><div class="para">is by definition.</div></li>
+</ol></div> <div class="para">For (3) assume <span class="process-math">\(\a\)</span> is algebraic. Then <span class="process-math">\(I \ne 0\)</span> and hence it has a unique monic generator, which we write <span class="process-math">\(m_{\a, F}(x)\text{.}\)</span> Since <span class="process-math">\(I\)</span> is prime, <span class="process-math">\(m_{\a, F}(x)\)</span> is irreducible <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>; this proves (3a). Also, this shows that <span class="process-math">\(\frac{F[x]}{(m_{\a,F}(x))}\)</span> is a field <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code> and hence so is <span class="process-math">\(F[\a]\text{.}\)</span> Since <span class="process-math">\(F[\a] \subseteq F(\a)\text{,}\)</span> <span class="process-math">\(F[\a]\)</span> contains <span class="process-math">\(F\)</span> and <span class="process-math">\(\a\text{,}\)</span> and <span class="process-math">\(F[\a]\)</span> is a field, we must have <span class="process-math">\(F[\a] = F(\a)\text{.}\)</span> This proves (3b) and (3c).</div> <div class="para">For (4), if <span class="process-math">\(\a\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> then <span class="process-math">\([F(\a):F] = \deg(m_{\a, F}(x)) &lt; \infty\)</span> by (3b) and Proposition <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. For the converse, if <span class="process-math">\([F(\a): F] &lt; \infty\text{,}\)</span> then the infinite list <span class="process-math">\(1, \a, \a^2, \dots\)</span> of elements of <span class="process-math">\(F(\a)\)</span> cannot be <span class="process-math">\(F\)</span>-linearly independent <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>. So, <span class="process-math">\(a_0 + a_1 \a + \cdots a_n \a^n = 0\)</span> for some <span class="process-math">\(n\)</span> and some <span class="process-math">\(a_0, \dots, a_n \in F\)</span> not all of which are <span class="process-math">\(0\text{.}\)</span> This shows <span class="process-math">\(\a\)</span> is the root of a non-zero polynomial.</div> <div class="para logical">
+<div class="para">For (5), if <span class="process-math">\(\a\)</span> is transcendental, then <span class="process-math">\(I = 0\)</span> and so <span class="process-math">\(\phi: F[x] \into L\)</span> is injective. Since <span class="process-math">\(L\)</span> is a field, <span class="process-math">\(F[x]\)</span> is a domain <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>, and <span class="process-math">\(\phi\)</span> is injective <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>, it can be extended to the field of fractions <span class="process-math">\(F(x)\)</span> of <span class="process-math">\(F[x]\text{,}\)</span> i.e. there is a ring homomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="  ">
+\begin{equation*}
+\tilde{\phi}: F(x) \to L
+\end{equation*}
+</div>
+<div class="para">given by <span class="process-math">\(\tilde{\phi} \left(\frac{f(x)}{g(x)}\right) = \frac{f(\a)}{g(\a)}\)</span> for all <span class="process-math">\(f(x), g(x) \in F[x]\)</span> with <span class="process-math">\(g(x) \ne 0\text{.}\)</span> The image of <span class="process-math">\(\tilde{\phi}\)</span> is precisely <span class="process-math">\(F(\a)\text{.}\)</span> The map <span class="process-math">\(\tilde{\phi}\)</span> is injective since it is a ring homomorphism whose source is a field. <code class="code-inline tex2jax_ignore">[provisional cross-reference: empty]</code>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-algebraic.html#thm-properties-of-algebraic-elements">in-context</a></span>
+</body>
+</html>

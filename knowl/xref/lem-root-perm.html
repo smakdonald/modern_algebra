@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">17.5</span><span class="period">.</span><span class="space"> </span><span class="title">Root Permutations.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(K / F\)</span> be a field extension, <span class="process-math">\(\sigma \in \operatorname{Aut}(K / F)\text{,}\)</span> and <span class="process-math">\(q \in F[x]\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">For all <span class="process-math">\(c \in K\text{,}\)</span> we have <span class="process-math">\(\sigma(q(c))=q(\sigma(c))\text{.}\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(\alpha \in K\)</span> is a root of <span class="process-math">\(q\text{,}\)</span> then <span class="process-math">\(\sigma(\alpha)\)</span> also is a root of <span class="process-math">\(q\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(L\)</span> be a field and let <span class="process-math">\(\sigma \in \operatorname{Aut}(L)\text{.}\)</span> Then the <a href="sec-sub-poly.html#thm-ump-polynomial-rings" class="xref" data-knowl="./knowl/xref/thm-ump-polynomial-rings.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.60: UMP for Polynomial Rings">Theorem 8.60</a> gives that there is an induced ring homomorphism <span class="process-math">\((-)^{\sigma}: L[x] \rightarrow L[x]\)</span> such that for each <span class="process-math">\(q=a_{n} x^{n}+\cdots+a_{0} \in K[x]\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-ump-polynomial-rings.html">
+\begin{equation*}
+q^{\sigma}(x)=\sigma\left(a_{n}\right) x^{n}+\cdots+\sigma\left(a_{0}\right).
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\sigma \in \operatorname{Aut}(L / K)\)</span> and <span class="process-math">\(q \in K[x]\text{,}\)</span> then <span class="process-math">\(q^{\sigma}=q\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">By assumption, <span class="process-math">\(\sigma\)</span> is a homomorphism and it restricts to the identity on <span class="process-math">\(F\text{.}\)</span> Thus for any polynomial <span class="process-math">\(q=a_{n} x^{n}+\cdots+a_{0} \in F[x]\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma(q(c))=\sigma\left(a_{n} c^{n}+\cdots+a_{0}\right)=\sigma\left(a_{n}\right) \sigma(c)^{n}+\cdots+\sigma\left(a_{0}\right)=a_{n} \sigma(c)^{n}+\cdots+a_{0}=q(\sigma(c)).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(\alpha\)</span> is a root of <span class="process-math">\(f\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+0=\sigma(0) &amp; =\sigma(q(\alpha)) \\
+&amp; =q(\sigma(\alpha)) \quad \text { by a })
+\end{aligned}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(\sigma(\alpha)\)</span> is also a root of <span class="process-math">\(q\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-galext.html#lem-root-perm">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">13.22</span><span class="period">.</span><span class="space"> </span><span class="title">UMP for Free <span class="process-math">\(R\)</span>-Modules.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(R\)</span> be a ring, let <span class="process-math">\(M\)</span> be a free <span class="process-math">\(R\)</span>-module with basis <span class="process-math">\(B\text{,}\)</span> let <span class="process-math">\(N\)</span> be an <span class="process-math">\(R\)</span>-module, and let <span class="process-math">\(j: B \to N\)</span> be any function. Then there is a unique <span class="process-math">\(R\)</span>-module homomorphism <span class="process-math">\(\varphi: M \to N\)</span> such that <span class="process-math">\(\varphi(b) = \varphi(b)\)</span> for all <span class="process-math">\(b \in B\text{.}\)</span> </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given a function <span class="process-math">\(j: B \to N\text{,}\)</span> define <span class="process-math">\(\varphi: M\to N\)</span> as follows: Given <span class="process-math">\(m \in M\text{,}\)</span> by <a href="sec-free-mod.html#lem-elements-uniquely-expressible-in-free-modules" class="xref" data-knowl="./knowl/xref/lem-elements-uniquely-expressible-in-free-modules.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 13.21: Elements Uniquely Expressible in Free Modules">Lemma 13.21</a> <span class="process-math">\(m\)</span> can be written uniquely as a finite sum <span class="process-math">\(m = \sum_{b \in B} r_b b\text{.}\)</span> We set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-elements-uniquely-expressible-in-free-modules.html">
+\begin{equation*}
+\varphi(m) = \sum_{b \in B} r_b j(b).
+\end{equation*}
+</div>
+<div class="para">Note that <span class="process-math">\(\varphi\)</span> is a well-defined function by the uniqueness of the equation <span class="process-math">\(m = \sum_{b \in B} r_b b\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We need to prove <span class="process-math">\(f\)</span> is an <span class="process-math">\(R\)</span>-module homomorphism. I’ll just show it preserves scaling — the proof for addition is similar. Given <span class="process-math">\(x \in R\)</span> and <span class="process-math">\(m \in M\text{,}\)</span> we have <span class="process-math">\(m = \sum_{b \in B} r_b b\)</span> for some <span class="process-math">\(r_b \in R\text{,}\)</span> and hence <span class="process-math">\(xm = \sum_b (xr_b) b\text{.}\)</span> By definition of <span class="process-math">\(f\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\varphi(xm) = \sum_b (xr_b) j(b) = x \sum_b r_b j(b) = x \varphi(m).
+\end{equation*}
+</div>
+</div> <div class="para">Finally, for any <span class="process-math">\(y \in B\)</span> we have <span class="process-math">\(y = \sum_{b \in B} r_b b\)</span> where <span class="process-math">\(r_b = 1\)</span> if <span class="process-math">\(b = y\)</span> and <span class="process-math">\(r_b = 0\)</span> if <span class="process-math">\(b \ne y\text{.}\)</span> So <span class="process-math">\(f(y) = j(y)\)</span> by construction. This proves existence.</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\phi:M\to N\)</span> be another <span class="process-math">\(R\)</span>-module homomorphism such that <span class="process-math">\(\phi(b)=\phi(b)\)</span> for each <span class="process-math">\(b \in B\text{.}\)</span> Given <span class="process-math">\(m \in M\)</span> we have <span class="process-math">\(m = \sum_{b \in B} r_b b\)</span> and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(m) = \sum_b \phi(r_b (b))= \sum_b r_b \phi(b) =\sum_b r_b j(b) = \varphi(m).
+\end{equation*}
+</div>
+<div class="para">and hence <span class="process-math">\(\phi = \varphi\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-free-mod.html#thm-ump-for-free-modules">in-context</a></span>
+</body>
+</html>
