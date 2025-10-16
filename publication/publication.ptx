@@ -9,14 +9,14 @@
 <publication>
   <common>
     <!-- Level at which are html files generated (chapter/section/etc): -->
-    <chunking level="2" />
+    <chunking level="3" />
     <!-- Depth for table of contents.  0 means no TOC -->
-    <tableofcontents level="2" />
+    <tableofcontents level="3" />
     <!-- Visibility of exercise components where they first appear.          -->
     <!-- There are four components (statement/hint/answer/solution) for each -->
     <!-- of five exercise types (inline/divisional/worksheet/reading/        -->
     <!-- project). Some examples:                                            -->
-    <exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
+    <exercise-inline statement="yes" hint="yes" answer="no" solution="yes" />
     <exercise-divisional statement="yes" hint="yes" />
     <!-- Style of fill-in-the-blanks: -->
     <fillin textstyle="underline" mathstyle="shade" />
@@ -53,7 +53,7 @@
     <blocks level="2" />
     <projects level="2" />
     <equations level="2" />
-    <footnotes level="2" />
+    <footnotes level="3" />
   </numbering>
 
   <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
@@ -82,9 +82,9 @@
       theorem="no"
       proof="yes"
       definition="no"
-      example="yes"
+      example="no"
       example-solution="yes"
-      project="no"
+      project="yes"
       task="no"
       remark="no"
       objectives="no"
@@ -105,7 +105,7 @@
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <css
         style="default"
-        colors="blue_red"
+        colors="bluegreen_grey"
         knowls="default"
         toc="default"
         banner="default"

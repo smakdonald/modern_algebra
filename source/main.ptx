@@ -10,6 +10,3358 @@
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
+    
+    <part xml:id="part-groups"><title>Group Theory</title>
+
+      <chapter xml:id="ch-intro-groups"><title>Intro to Groups</title>
+
+        <introduction><title>Motivation: The What, Where, and Why of Groups</title>
+
+          <p>
+            Group theory is the branch of mathematics that answers the question, "What is symmetry?"         
+          </p>
+
+          <insight>
+            <p>
+              There are several ways of thinking about groups, all relying or various levels of rigor and assumptions of prior experience.
+              Here are several:
+              <ol>
+                <li><title>Symmetric</title>
+                  <p>
+                    A group can be thought of as a collection of symmetries or transformations that can be combined in a consistent way.
+                    Common examples of symmetries include moves on a Rubik's Cube, addition and subtraction of integers, and rotations and flips of polygons.
+                  </p>
+                </li>
+  
+                <li><title>Set Theoretical</title>
+                  <p>
+                    A group is a set of elements together with a rule (function) for combining any two elements to get a third element in the set.
+                  </p>
+                </li>
+  
+                <li><title>Abstractions of Abstractions</title>
+                  <p>
+                    Groups can also be thought of as abstractions of rings, which can in turn be thought of as abstractions of common number systems, such as the integers.
+                    Rings are algebraic objects with two operations (commonly addition and multiplication), whereas groups only require one operation.
+                    Thus all rings can be thought of as containing groups inside them.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </insight>
+
+          <p>
+            Common first questions in most math settings are the staples <term>"Why are these useful?"</term> and <term>"Where are these found?"</term>.
+            Despite what some mathematicians might insist, these are reasonable and often essential questions to ask when encountering a new mathematical concept.
+            Questions should always be encouraged; anyone who tells you differently is either unprepared or underpaid.
+          </p>
+
+          <question>
+            <statement>
+              <p>
+                Why are groups important? Where are they found?
+              </p>
+            </statement>
+
+            <answer>
+              <p>
+                The short answer is almost everywhere.
+                In many fields of mathematics, groups provide the abstract framework upon which large portions of the discipline are built. 
+                Listed below is a thorough but nowhere near comprehensive list of fields of mathematics (and beyond) where groups make an appearence. 
+                <ol>
+                  <li><title>Number Theory and Cryptography</title>
+                    <p>
+                      As it turns out, much of elementary group theory is actually group theory in disguise: specifically, the study of <xref ref="modular-integer-group" text="custom"> modular arithmetic groups </xref> and <xref ref="subsec-groups-units" text="custom"> multiplicative groups of units </xref>. 
+                      Thus many cryptographic protocols, such as RSA and elliptic curve cryptography, rely on the structure of groups for their security.
+                    </p>
+                  </li>
+                  <li><title>Linear Algebra</title>
+                    <p>
+                      A vector space is essentially a field and a group working together, with elements of the group acting as vectors and elements of the field acting as scalers.
+                      Additionally, the concept of eigenvalues and eigenvectors is deeply connected to group theory: the action of a linear transformation can be studied using its eigenvalues and eigenvectors, which form cyclic subgroups under repeated application of the transformation.
+                    </p>
+                  </li>
+                  <li><title>Commutative Algebra</title>
+                    <p>
+                      In many ways commutative algebra is the study of modules, which are essentially abstractions of vector spaces: where a field is required for a vector space, only a ring is needed for a module. 
+                      Thus groups are once again omnipresent, though they remain mostly hidden in the machinery of the module structure.
+                      <fn>This author can personally attest to the importance of this connection. As someone who struggled with modules for quite some time, it was expanding my understanding of groups that finally enabled me to grasp the inner workings of modules.</fn>
+                    </p>
+                  </li>
+                  <li><title>Topology</title>
+                    <p>
+                      An essential concept in topology is that of the fundamental group, which describes the set of loops in a topological space up to continuous deformation, providing insight into the space's structure.
+                    </p>
+                  </li>
+                  <li><title>Algebraic Geometry</title>
+                    <p>
+                      The set of points on an elliptic curve forms an abelian group, which is essential in number theory and cryptography.
+                    </p>
+                  </li>
+                  <li><title>Representation Theory</title>
+                    <p>
+                      Group representations are ways in which a group can act on vector spaces, providing yet another bridge between group theory and linear algebra.
+                    </p>
+                  </li>
+                  <li><title>Physics</title>
+                    <p>
+                      Groups describe symmetries in physical systems, such as the Lorentz group in special relativity and gauge groups in quantum field theory.
+                      In the realm of quantum mechanics, quantization of a classical system crucially involves understanding the Lie groups that act on the classical phase space and the unitary representations of these groups.
+                    </p>
+                  </li>
+                  <li><title>Analysis</title>
+                    <p>
+                      In functional analysis, groups of unitary or orthogonal matrices are crucial in studying linear operators on Hilbert spaces.
+                      In complex analysis, automorphism groups of Riemann surfaces are essential in studying the geometry of complex manifolds.
+                      Additionally, Möbius Transformations, the group of transformations of the complex plane that preserve angles and are used in the study of complex functions.
+                    </p>
+                  </li>
+                  <li><title>Knot Theory</title>
+                    <p>
+                      A fundamental concept in knot theory is the knot group, which is an invariant that can distinguish between different knots. 
+                      The knot group is defined as the fundamental group of the knot complement, and is used to derive powerful knot invariants, such as the Alexander Polynomial, the Jones Polynomial, and linking number.
+                    </p>
+                  </li>
+                  <li><title>Algebraic Topology</title>
+                    <p>
+                      Homology groups are used to study the topological features of a space, such as holes and voids, in a more algebraic manner.
+                    </p>
+                  </li>
+                  <li><title>Chemistry</title>
+                    <p>
+                      The set of operations associated with the symmetry elements of a molecule constitute a group.
+                      Indeed, the majority of all knowledge concerning atoms, molecules, and solids has been derived from applications of group theory.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </answer>
+          </question>
+
+          <list><title>Supplemental Group Theory Resources</title>
+
+            <introduction>
+              <p>
+                If you find yourself looking for additional material for learning group theory, I strongly recommend the following excellent resources:
+              </p>
+            </introduction>
+
+            <ul>
+              <li>
+                <p>
+                  Alexandra Seceleanu's <url href="https://github.com/aseceleanu/aseceleanu2.github.io/blob/main/teaching/817-818Notes.pdf" visual="">course notes</url>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <url href="https://web.osu.cz/~Zusmanovich/teach/books/visual-group-theory.pdf" visual=""><pubtitle>Visual Group Theory</pubtitle></url> by Nathan Carter.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <pubtitle>Abstract Algebra, 3rd Edition</pubtitle> by David S. Dummit and Richard M. Foote.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <pubtitle>Algebra: Chapter 0</pubtitle> by Paolo Aluffi.
+                </p>
+              </li>
+            </ul>
+
+          </list>
+          
+        </introduction>
+
+        <section xml:id="sec-group-basics"><title>Group Basics</title>
+
+          <introduction>
+            <blockquote>
+              <p>
+                <q>
+                  Most great learning happens in groups.
+                </q>
+              </p>
+              <attribution>Ken Robinson</attribution>
+            </blockquote>
+          </introduction>
+ 
+          <subsection xml:id="subsec-groups"><title>Binary Operations and the Definition of a Group</title>
+
+            <p>
+              <xref text="custom" ref="def-binop"/>
+            </p>
+           
+            <aside><title>A Brief Notational Aside</title>
+              <p>
+                At various points throughout this text, the author may use "mathcal" notation for definitions that do not normally require it (such as <m>\G</m> for a group, <m>\R</m> for a ring, etc.). 
+                In the realm of higher mathematics, this is what is known as a <term>typo</term>, and should be reported to the proper authorities as soon as possible.
+              </p>
+            </aside>
+
+            <p>
+              We begin, as all great volumes of mathematics are like to do, somewhere in the middle.
+              <fn>Though everything that you need from the beginning can be found in <xref ref="app-foundations"/>.</fn>
+            </p>
+
+            <definition xml:id="def-binop"><title>Binary Operation</title>
+              <statement>
+                <p>
+                  A <em>binary operation</em> on a set <m>S</m> is a <xref text="title" ref="def-function"/>
+                  <me>
+                    -*-:S\times S\to S,\text{ given by } (x,y)\mapsto x * y.
+                  </me>
+                  <idx><h>binary operation</h></idx>
+                  <idx><h><m>*</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              One of the nice things about binary operations is that they have <em>properties.</em>
+            </p>
+
+            <definition xml:id="def-binary-properties"><title>Properties of Binary Operations</title> 
+              <statement>
+                <p>
+                  Let <m>-*-</m> be a binary operation on a set <m>S</m>.
+                  <ol>
+                    <li xml:id="associative-property">
+                      <p>
+                        An operation satisfies the <em>associative property</em> if, for all <m>x,y,z\in S</m>, we have <m>(x*y)*z=x*(y*z)</m>.
+                        <idx><h>associative property</h></idx>
+                      </p>
+                    </li>
+
+                    <li xml:id="identity-property">
+                      <p>
+                        An operation satisfies the <em>identity property</em> if there exists <m>e\in G</m> such that <m>e*g=g*e=g</m> for all <m>g\in G</m>.
+                        Such an element <m>e</m> is called an <em>identity element</em>.
+                        <idx><h><m>e</m></h></idx>
+                        <idx><h>identity property</h></idx>
+                      </p>
+                    </li>
+
+                    <li xml:id="inverse-property">
+                      <p>
+                        An operation satisfies the <em>inverse property</em> if, for each <m>x\in S</m>, there exists an element <m>y\in S</m> such that <m>x * y=e=y * x</m>, where <m>e</m> is an identity element of <m>S</m>.
+                        The element <m>y</m> is called an <em>inverse</em> of the element <m>x</m>.
+                        <idx><h>inverse property</h></idx>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </definition>
+
+            <definition xml:id="def-group"><title>Group</title>
+              <statement>
+                <p>
+                  A <em>group</em> is a pair <m>(G, *)</m>, where <m>G</m> is a set and <m>*</m> is a binary operation on <m>G</m> satisfying the <xref ref="associative-property" text="custom"> associative</xref>, <xref ref="identity-property" text="custom"> identity</xref>, and <xref ref="inverse-property" text="custom"> inverse</xref> properties.
+                  <idx><h>group</h></idx>
+                  <idx><h><m>(G,*)</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <aside>
+              <p>
+                Though a group is a pair, we will usually refer to the group by only naming the underlying set, <m>G</m>.
+              </p>
+            </aside>
+
+            <observation>
+                <p>
+                  We say that <q><m>S</m> is closed under the operation <m>*</m></q> when we want to emphasize that for any <m>x,y\in S</m> the result of the operation, <m>x*y</m>, is an element of <m>S</m>. 
+                  However note that closure is really part of the definition of a binary operation on a set, and it is implicitly assumed whenever we consider such an operation.
+                  <fn>This is the one and only "Mark". All following "Marks" will be "Remarks".</fn>
+                </p>
+            </observation>
+
+          </subsection>
+        
+          <subsection xml:id="subsec-group-props"><title>First Properties of Groups</title>
+              
+            <theorem xml:id="thm-properties-of-groups"><title>Properties of Groups</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group.
+                  <ol>
+                    <li xml:id="list-unique-group-identity"><title>Unique Identity</title>
+                      <p>
+                        The element <m>e\in G</m> satisfying the <xref ref="identity-property" text="custom"> identity property</xref> is unique, and we thus refer to it as the <em>identity element</em> of <m>G</m>.
+                        <idx><h>identity element (of a group)</h></idx>
+                      </p>
+                    </li>
+
+                    <li xml:id="list-unique-group-inverse"><title>Unique Inverses</title>
+                      <p>
+                        For each <m>x\in G</m>, the element satisfying <xref ref="inverse-property" text="custom"> inverse property</xref> is unique, and we thus refer to it as <em>the inverse</em> of <m>x</m>.
+                        <idx><h>inverse element</h></idx>
+                      </p>
+                    </li>
+      
+                    <li xml:id="list-cancellation"><title>Cancellation</title>
+                      <p>
+                        Suppose <m>x,y,z\in G</m>.
+                        If <m>xy = xz</m>, then <m>y=z</m>. 
+                      </p>
+                      <p>
+                        Similarly, if <m>yx = zx</m>, then <m>y = z</m>
+                        <idx><h>cancellation (in groups)</h></idx>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+      
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Suppose there exist two elements, <m>e</m> and <m>e'</m>, such that, for all <m>x\in G</m>, we have <m>ex = x = xe</m> and <m>e'x = x = xe'</m>. 
+                        As <m>e</m> is an identity element, by definition we have <m>e'e=e'</m>. 
+                        Similarly, as <m>e'</m> is an identity element, we have <m>e'e=e</m>. 
+                        Combining these two equations, we see
+                        <me>e = ee' = e'.</me>
+                        Thus <m>e=e'</m>, making the identity element unique.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        Suppose an element <m>x</m> has two inverses: <m>y</m> and <m>z</m>. 
+                        Thus <m>yx = xy = e</m> and <m>zx = xz = e</m>.
+                        Observe 
+                        <md>
+                          <mrow>z &amp;= ez &amp; &amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element </xref></mrow>
+                          <mrow>  &amp;= (yx)z &amp; &amp; \text{substituting } yx = e </mrow>
+                          <mrow>  &amp;= y(xz) &amp; &amp; <xref ref="associative-property" text="custom"> Associative Property </xref></mrow>
+                          <mrow>  &amp;= ye &amp; &amp; \text{substituting } xz = e</mrow>
+                          <mrow>  &amp;= y &amp; &amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element </xref></mrow>
+                        </md>
+                        Thus <m>y=z</m>, making inverses unique.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Suppose <m>xy = xz</m> for some <m>x,y,z\in G</m>. 
+                        By the <xref ref="inverse-property" text="custom"> inverse property </xref>, <m>x</m> has an inverse, <m>x\inv\in G</m> such that <m>xx\inv=e=x\inv x</m>. 
+                        Observe 
+                        <md>
+                          <mrow>xy &amp;= xz </mrow>
+                          <mrow>x\inv(xy) &amp;= x\inv(xz) &amp;&amp; \text{multiply on the left by }x\inv </mrow>
+                          <mrow>(x\inv x)y &amp;= (x\inv x)z &amp;&amp; <xref ref="associative-property" text="custom"> Associative Property </xref> </mrow>
+                          <mrow>(e)y &amp;= (e)z &amp;&amp; \text{substituting } x\inv x = e</mrow>
+                          <mrow>y &amp;= z &amp;&amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element </xref>.</mrow>
+                        </md>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <aside>
+              <p>
+                The inverse of an element <m>x</m> is often written <m>x\inv</m>, for reasons we will see in the next section.
+              </p>
+            </aside>
+
+          </subsection>
+
+          <subsection xml:id="subsec-abelian"><title>Abelian Groups</title>
+
+            <p>
+              Additionally, a binary operation can be <em>commutative</em>.
+            </p>
+           
+            <definition xml:id="commutative-property"><title>Commutative Property</title>
+              <statement>
+                <p>
+                  An operation satisfies the <em>commutative property</em> if <m>x * y = y * x</m> for all <m>x,y \in S</m>.
+                  <idx><h>commutative property</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              It is perhaps natural at this stage to wonder about groups whose binary operation satisfies the commutative property.
+              Some sort of <em>commutative group</em>, if you will. 
+              Surely such groups will be named accordingly. 
+              Right?
+            </p>
+
+            <definition xml:id="def-abelian"><title>Abelian Group</title>
+              <statement>
+                <p>
+                  An <em>abelian group</em> is a group that also satisfies commutative property.
+                  <idx><h>abelian group</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <convention><title>Additive vs. Multiplicative Notation</title>
+              <p>
+                When working with arbitrary groups, multiplicative notation is often used as the operation. 
+                Thus, groups are commonly written as <m>(G,\cdot)</m> and referred to as <em>multiplicative groups</em>.
+                However, when working with abelian groups, it is customary to use additive notation, writing the group as <m>(G,+)</m>.
+                Often, the letter <m>A</m> is used in place of <m>G</m> when referring to abelian groups.
+              </p>
+            </convention>
+
+          </subsection>
+
+          <subsection xml:id="subsec-group-ex"><title>First Examples of Groups</title>
+
+            <p>
+              All right. 
+              We've spent enough time wading around in the vagaries of abstraction. 
+              It's time to get our hands on some of these groups and see what all the fuss is about.
+            </p>
+
+            <example xml:id="ex-group-examples"><title>Group Examples</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li xml:id="trivial-group">
+                      <p>
+                        The <term>trivial group</term> is the group with a single element <m>\{e\}</m>.
+                        <idx><h>trivial group</h></idx>
+                        <idx><h><m>\{e\}</m></h></idx>
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        <m>(\Z,+), (\Q,+), (\R,+),</m> and <m>(\C,+)</m> each form an abelian group, where <m>+</m> denotes traditional addition.
+                        The axioms of arithmetic guarantee the validity of the group axioms as well as the commutativity of the group operation. 
+                        Thus all four groups are abelian.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        For any positive integer <m>n</m>, let 
+                        <me>\operatorname{GL}_n(\C)=\{ \text{invertible } n \times n \;\text{matrices with entries in}\; \C\}.</me> 
+                        Then <m>\operatorname{GL}_n(\C)</m> is a non-abelian group under matrix multiplication known as the <term>general linear group</term>.
+                        <idx><h>general linear group</h></idx>
+                        <idx><h><m>\GL</m></h></idx>
+                      </p>
+                    </li>
+      
+                    <li xml:id="modular-integer-group">
+                      <p>
+                        For any <m>n\in\N</m>, let <m>\Z/n</m> denote the <xref text="title" ref="def-integers-modulo"/>. 
+                        Then <m>(\Z/n,+)</m> forms an abelian group where <m>+</m> denotes addition modulo <m>n</m>.
+                      </p>
+                    </li>
+
+                    <li xml:id="def-quaternions">
+                      <p>
+                        The <term>quaternion group</term><idx><h>quaternion group</h></idx> <m>Q_8</m> is a set with <m>8</m> elements 
+                        <me>Q_8=\{ 1, -1, i, -i, j, -j, k, -k \}</me> 
+                        satisfying the following relations: <m>1</m> is the identity element, 
+                        <me>i^2 = -1, j^2 = -1, k^2 =-1, ij = k, jk = i, ki = j, \text{and}</me> 
+                        <me>(-1)i = -i, (-1)j = -j, (-1)k = -k, (-1)(-1) = 1.</me>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </example>
+
+            <remark><title>Specific General Linear Groups</title>
+              <p>
+                In general, <m>\GL_n(F)</m> is a group for any field <m>F</m> (whatever those are).
+                <fn>To jump ahead and discover what those are, see: <xref ref="def-ring"/>.</fn>
+              </p>
+            </remark>
+
+            <convention><title>Identity Theft</title>
+              <p>
+                In familiar groups of numbers, <q><m>1</m></q> is used for the identity element of a multiplicative group (and likewise <q><m>0</m></q> in additive groups). 
+                Often, <q><m>1</m></q> is used for the identity element <m>e</m> in arbitrary groups, though we will not do so here.
+              </p>
+            </convention>
+
+            <exercise><title>Not Quite Groups</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        The natural numbers <m>\N</m> do <em>not</em> form a group with respect to addition (as its underlying operation).
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        The rational numbers <m>\Q</m> do <em>not</em> form a group with respect to multiplication.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-groups-units"><title>Groups of Units</title>
+            
+            <p>
+              The following example illustrates a few important examples of something called a <xref text="title" ref="def-group-of-units"/>, which is defined explicitely in terms of rings (whatever those are) in the aptly named <xref text="title" ref="part-rings"/>.
+            </p>
+
+            <example xml:id="ex-group-of-units"><title>Groups of Units</title>
+              <idx><h>group of units</h></idx>
+              <idx><h><m>G^\times</m></h></idx>
+              <statement>
+                <p> 
+                  Each of the following subsets form an abelian group under multiplication.
+                  <ol>
+                    <li>
+                      <p>
+                        The subset <m>\Z^\times=\{-1,1\}</m> of <m>\Z</m>.
+                      </p>
+                    </li>
+                    
+                    <li>
+                      <p>
+                        <m>\Q^\times=\Q\setminus\{0\}</m>, <m>\R^\times=\R\setminus\{0\}</m>, and <m>\C^\times=\C\setminus\{0\}</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        For each <m>n\in\N</m>, the subset <m>\Z/n^\times=\{k\in\Z/n|\gcd(k,n)=1\}</m> of <m>\Z/n</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </example>
+
+            <aside>
+              <p>
+                In <latex />, <m>\times</m> is written using <c>\times</c>.
+              </p>
+            </aside>
+
+            <convention>
+              <p>
+                Some texts use the notation <q><m>^*</m></q> to denote groups of units.
+                For example, <m>\Q^\times</m> would be written <m>\Q^*</m>. 
+              </p>
+            </convention>
+
+            <remark>
+              <p>
+                <m>\Z/n^\times</m> will be integral to our constructions of semidirect products in <xref ref="sec-spds"/> and our classifications of certain groups up to isomorphism (whatever that means).
+                Though not strictly required for this text, knowing the structure of <m>\Z/n^\times</m> for various <m>n</m> can prove helpful in some niche situations (read: certain qualifying exam problems).
+              </p>
+            </remark>
+
+            <exercise xml:id="exe-group-of-units-in-zp"><title><m>\Z/p^\times</m></title>
+              <statement>
+                <p>
+                  Prove that <m>\Z/p^\times=\mathbb{Z}/p\setminus\{0\}</m>.
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-group-misc"><title>Other Initial Examples and Properties</title>
+
+            <exercise xml:id="exe-extra-groups"><title>Some Extra Groups</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li xml:id="exe-opposite-group">
+                      <p>
+                        Let <m>(G,*)</m> be a multiplicative group, and define the <em>opposite group</em>, <m>G^{op}</m>, to be the set <m>G</m> equipped with the operation <m>*^{op}</m>, where <m>x*^{op}y=y*x</m>.
+                        Then <m>G^{op}</m> is a group.
+                        <fn>Opposite groups are used in category theory to describe something called <q>duality</q> between algebraic structures.</fn> 
+                        <idx><h>opposite group</h></idx>
+                        <idx><h><m>G^{op}</m></h></idx>
+                      </p>
+                    </li>
+
+                    <li xml:id="ex-even-odd-groups">
+                      <p>
+                        Let <m>\E</m> denote the set of even integers and <m>\O</m> denote the set of odd integers. 
+                        Then <m>(\E,+)</m> is a group, whereas <m>(\O,+)</m> is not.
+                        <idx><h><m>\E</m></h></idx>
+                        <idx><h><m>\O</m></h></idx>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>G</m> be a group.
+                        <ul>
+                          <li><title>Associativity of <m>G^{op}</m></title>
+                            <p>
+                              Let <m>x, y, z</m> be any elements <m>G^{op}</m>.
+                              Observe
+                              <md>
+                                <mrow> (x*^{op}y)*^{op}z &amp;= (y*x)*^{op}z &amp; &amp; \text{substituting }x*^{op}y=y*x</mrow>
+                                <mrow> &amp;= z*(y*x) &amp; &amp; \text{substituting again} </mrow>
+                                <mrow> &amp;= (z*y)*x &amp; &amp; <xref ref="associative-property" text="custom"> Associative Property of <m>G</m> </xref></mrow>
+                                <mrow> &amp;= (y*^{op}z)*x &amp; &amp; \text{substituting }z*y = y*^{op}z</mrow>
+                                <mrow> &amp;= x*^{op}(y*^{op}z) &amp; &amp; \text{substituting again}</mrow>
+                              </md>
+                              Thus, associativity is satisfied in <m>G^{op}</m>.
+                            </p>
+                          </li>
+
+                          <li xml:id="g-op-identity"><title>Identity Element of <m>G^{op}</m></title>
+                            <p>
+                              As <m>G</m> is a group, it contains an identity element, <m>e</m>. 
+                              I claim that <m>e</m> is also the identity element of <m>G^{op}</m>.
+                              Let <m>x\in G^{op}</m>.
+                              <md>
+                                <mrow> e*^{op}x &amp;= x*e &amp; &amp; \text{substituting }e*^{op}x=x*e</mrow>
+                                <mrow> &amp;= x &amp; &amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element of <m>G</m> </xref> </mrow>
+                                <mrow> &amp;= e*x &amp; &amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element of <m>G</m> </xref></mrow>
+                                <mrow> &amp;= x*^{op}e&amp; &amp; \text{substituting }x*^{op}e=e*x</mrow>
+                              </md>
+                              Thus <m>e*^{op}x = x*^{op}e = x</m> for all <m>x\in G^{op}</m>
+                              Therefore, <m>e</m> is the identity element of <m>G^{op}</m>.
+                            </p>
+                          </li>
+
+                          <li><title>Inverses in <m>G^{op}</m></title>
+                            <p>
+                              Let <m>x</m> be an element in <m>G^{op}</m>. 
+                              Since <m>x</m> is also an element of the group <m>G</m>, by the <xref ref="inverse-property" text="custom"> inverse property </xref> there exists an inverse element <m>x\inv</m> in <m>G</m> such that <m>x*x\inv = x\inv*x = e</m>, where <m>e</m> is the identity element of <m>G</m>.
+                              Consider <m>x\inv*^{op}x</m>
+                              <md>
+                                <mrow> x\inv*^{op}x &amp;= x*x\inv &amp; &amp; \text{substituting }x\inv*^{op}x=x*x\inv</mrow>
+                                <mrow> &amp;= e &amp; &amp; \text{substituting }x\inv*x=e </mrow>
+                              </md>
+                              and <m>x*^{op}x\inv</m>
+                              <md>
+                                <mrow> x*^{op}x\inv &amp;= x\inv*x &amp; &amp; \text{substituting }x*^{op}x\inv=x\inv*x</mrow>
+                                <mrow> &amp;= e &amp; &amp; \text{substituting }x*x\inv=e </mrow>
+                              </md>
+                              From the <xref ref="g-op-identity" text="custom"> previous part </xref> we see that <m>e</m> is the identity element of <m>G^{op}</m>, making <m>x\inv</m> the inverse of <m>x</m> in <m>G^{op}</m>.
+                              Thus every element in <m>G^{op}</m> has an inverse in <m>G^{op}</m>, satisfying the inverse element property.
+                            </p>
+                          </li>
+                        </ul>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Integer addition is associative, which means that for any three integers <m>a, b</m>, and <m>c</m>, the expression <m>(a + b) + c</m> is equal to <m>a + (b + c)</m>. 
+                        Thus, associativity is satisfied for <m>\E</m>.
+                      </p>
+
+                      <p>
+                        The identity element for addition is <m>0</m>. 
+                        For any even integer <m>a</m>, adding <m>0</m> to it does not change its parity (evenness). 
+                        Hence, the identity element property is satisfied for <m>\E</m>.
+                      </p>
+
+                      <p>
+                        For every even integer <m>a</m>, there exists an inverse element denoted as <m>-a</m> such that <m>a + (-a) = (-a) + a = 0</m>. 
+                        The negative of an even integer is also an even integer. 
+                        Adding an even integer to its negative results in <m>0</m>, which is the identity element. 
+                        Therefore, the inverse element property is satisfied for <m>\E</m>.
+                      </p>
+
+                      <p>
+                        The identity element for addition is <m>0</m>. 
+                        However, <m>0</m> is not an odd integer, so the identity element property is not satisfied for <m>\O</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </solution>
+            </exercise>
+
+            <theorem xml:id="thm-group-inverses"><title>Properties of Inverses</title>
+              <statement>
+                <p>
+                  If <m>G</m> is a group and <m>x,y\in G</m>, then
+                  <ol>
+                    <li>
+                      <p>
+                        <m>(x^{-1})^{-1} = x</m> and
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>(xy)\inv=y\inv x\inv</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        The element <m>(x\inv)\inv</m> is defined to be the inverse of the element <m>x\inv</m>.
+                        I claim that <m>x</m> is also the inverse of <m>x\inv</m>.
+                      </p>
+                      <p>
+                        As <m>x\inv</m> is the inverse of <m>x</m>, by the <xref ref="inverse-property" text="custom"> inverse property</xref> we have <m>xx\inv=e</m> and <m>x\inv x=e</m>, making <m>x</m> the inverse of <m>x\inv</m>.
+                        Thus both <m>x</m> and <m>(x\inv)\inv</m> are inverses of the element <m>x\inv</m>.
+                        As <xref ref="list-unique-group-inverse" text="custom"> inverses are unique </xref>, we see <m>(x^{-1})^{-1} = x</m>.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        The element <m>(xy)\inv</m> is defined to be the inverse of the element <m>xy</m>.
+                        I claim that <m>y\inv x\inv</m> is also the inverse of <m>xy</m>.
+                        Observe
+                        <md>
+                          <mrow>(xy)(y\inv x\inv) &amp;= x(yy\inv)x\inv &amp;&amp; <xref ref="associative-property" text="custom"> Associative Property </xref> </mrow>
+                          <mrow> &amp;= x(e)x\inv &amp;&amp; y\inv \text{ is the inverse of } y </mrow>
+                          <mrow> &amp;= (xe)x\inv &amp;&amp; <xref ref="associative-property" text="custom"> Associative Property </xref> </mrow>
+                          <mrow> &amp;= xx\inv &amp;&amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element </xref></mrow>
+                          <mrow> &amp;= e &amp;&amp; x\inv \text{ is the inverse of } x.</mrow>
+                        </md>
+                        and 
+                        <md>
+                          <mrow>(y\inv x\inv)(xy) &amp;= y\inv(x\inv x)y &amp;&amp; <xref ref="associative-property" text="custom"> Associative Property </xref> </mrow>
+                          <mrow> &amp;= y\inv(e)y &amp;&amp; x\inv \text{ is the inverse of } x </mrow>
+                          <mrow> &amp;= (y\inv e)y &amp;&amp; <xref ref="associative-property" text="custom"> Associative Property </xref> </mrow>
+                          <mrow> &amp;= y\inv y &amp;&amp; <xref ref="identity-property" text="custom"> <m>e</m> is the identity element </xref></mrow>
+                          <mrow> &amp;= e &amp;&amp; y\inv \text{ is the inverse of } y.</mrow>
+                        </md>
+                        Thus both <m>(xy)\inv</m> and <m>y\inv x\inv</m> are inverses of <m>(xy)</m>, making them equal as <xref ref="list-unique-group-inverse" text="custom"> inverses are unique </xref>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <p>
+              The second portion of <xref ref="thm-group-inverses"/> can be generalized.
+            </p>
+
+            <exercise xml:id="exe-big-inverses"><title>Big 'Ole Inverses</title>
+              <statement>
+                <p>
+                  If <m>G</m> is a group and <m>x_1,\ldots,x_n \in G</m>, then <m>(x_1 \dots x_n)^{-1} = x_n^{-1} \dots x_1^{-1}</m>. 
+                </p>
+              </statement>
+            </exercise>
+
+            <exercise xml:id="exe-general-associativity"><title>Generalized Associative Law</title>
+              <idx><h>generalized associative law</h></idx>
+              <statement>
+                <p>
+                  If an element of a group is contructed from a sequence of elements <m>x_1,\dots,x_n</m> in this order by repeatedly inserting parenthesis and applying the operation, the element must equal 
+                  <me>(\cdots((x_1x_2)x_3)\cdots)x_n</me>
+                  and so is independent of the mode of bracketing.
+                </p>
+              </statement>
+
+              <!--
+              <solution>
+                <p>
+                   Certainly we may assume that <m>n &gt; 2</m>. 
+                   If <m>u</m> is an element constructed from <m>x_1, x_2 ,..., x_n</m> in the prescribed manner, we can write <m>u = vw</m> where <m>v</m> and <m>w</m> are constructed from <m>x_1 ,x_2 ,...,x_f</m> and <m>x_m , . . . , x_n</m> respectively <m>(1 &lt; i &lt; n)</m>. 
+                   If <m>w = x_n</m> , the result follows by induction on <m>n</m>. 
+                   Otherwise we can write <m>w = w'(x_n)</m> and <m>u = (vw')x_n</m> : once again the result follows by induction on n.
+                </p>
+              </solution>
+              -->
+            </exercise>
+
+            <p>
+              As a result of <xref ref="exe-general-associativity"/> any expression formed from the elements <m>x_1\dots,x_n</m> in that order can be written without parenthesis, which will save us oodles of time down the line.
+              <fn>This is usually a result that is simply taken for granted and left unstated; we include it here for the sake of completenes - and ~rigor~. Yes, oodles is the best word to go here and no, I will not be changing it.</fn>
+            </p>
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  A <xref text="title" ref="def-group"/> is a set equipped with a <xref text="title" ref="def-binop"/> that satisfies the <xref ref="associative-property" text="custom"> associative </xref>, <xref ref="identity-property" text="custom"> identity </xref>, and <xref ref="inverse-property" text="custom"> inverse </xref> properties.
+                  An <xref ref="def-abelian" text="custom"> abelian group </xref> is a group that also satisfies the <xref text="title" ref="commutative-property"/>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  The identity and inverse elements described in <xref ref="def-binary-properties"/> are <xref ref="thm-properties-of-groups" text="custom"> unique </xref>.
+                  For inverses, we have <m>(x^{-1})^{-1} = x</m> and <m>(xy)\inv=y\inv x\inv</m>.
+                  <fn>See: <xref ref="thm-group-inverses"/></fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>(\Z,+), (\Q,+), (\R,+),(\C,+)</m> and <m>(\Z/n,+)</m> are all additive abelian groups, and <xref text="title" ref="ex-group-of-units"/> form multiplicative abelian groups.
+                </p>
+              </li>
+            </ul>
+          </outcomes>  
+    
+        </section>
+
+        <section xml:id="sec-order-power"><title>Order and Power</title>
+
+          <introduction>
+            <blockquote>
+              <p>
+                <q>
+                  Good order is the foundation of all things.
+                </q>
+              </p>
+              <attribution>Edmund Burke</attribution>
+            </blockquote>
+          </introduction>
+
+          <subsection xml:id="subsec-power"><title>Power</title>
+
+            <p>
+              Though it might seem natural to write the product <m>x\cdot x</m> using the notation <m>x^2</m>, we have no notion of what that means in the world of groups. 
+              Do exponents behave the way we want them to in groups, or does something disasterous occur? 
+              Do exponents even exist? 
+              Do <em>I</em>? 
+              In this section, we attempt to answer as many of these questions as is philosophically feasible.
+            </p>
+
+            <definition xml:id="def-power"><title><m>n\th</m> power</title>
+              <statement>
+                <p>
+                  Let <m>x</m> be an element of a multiplicative group <m>G</m>. 
+                  For <m>n\in\Z</m>, the <m>n\th</m> <term>power</term> <m>x^n</m> of <m>x</m> is defined recursively as follows:
+                  <idx><h><m>n\th</m> power</h></idx>
+                  <ul>
+                    <li>
+                      <p>
+                        <m>x^0=e</m>, <m>x^1=x</m>, and <m>x\inv=x\inv</m>;
+                        <fn>Convenient notation, isn't it? Almost like we planned it.</fn>
+                      </p>
+                    </li>
+
+                    <li xml:id="power-plus-1">
+                      <p>
+                        <m>x^{n+1}=x^nx</m> when <m>n&gt;0</m>; and 
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>x^n=(x^{-n})\inv</m> when <m>n\neq0</m>.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+
+                <p>
+                  Note: If <m>G</m> was an additive group, then we would write <m>nx</m> intead of <m>x^n</m>. 
+                  This would be called a <term>multiple</term> of <m>x</m> instead of a power.
+                  <idx><h>multiple</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <theorem xml:id="thm-exponent-laws"><title>Laws of Exponents</title>
+              <statement>
+                <p>
+                  Let <m>n,m\in\Z</m> and <m>x</m> be an element of a group <m>G</m>. 
+                  Then 
+                  <ol>
+                    <li>
+                      <p>
+                        <m>x^nx^m=x^{n+m}=x^mx^n</m> and
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>(x^n)^m=x^{nm}=(x^m)^n</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        We proceed via cases:
+                        First, let <m>n &gt; 0</m> and <m>m &gt; 0</m>.
+                        We induct on <m>m</m>. 
+                        For the base case, let <m>m=1</m>.
+                        Thus we have <m>x^nx^1=x^{n+1}</m> by <xref ref="power-plus-1" text="custom"> definition </xref>.
+                        Additionally, using the <xref ref="exe-general-associativity"/> we see 
+                        <me>x^1x^n = x(\underbrace{x\cdots x}{n}) = (\underbrace{x\cdots x}{n})x = x^nx^1,</me>
+                        and thus <m>x^nx^1=x^1x^n</m>. 
+                        Hence <m>x^nx^1=x^{n+1}=x^1x^n</m>, satisfying the base case.
+                      </p>
+
+                      <p>
+                        Now we inductively assume <m>x^nx^m=x^{n+m}=x^mx^n</m> and consider <m>x^nx^{m+1}</m>
+                        Using <xref ref="def-power"/> we see <m>x^{m+1}=x^mx</m>. 
+                        Substituting, we have <m>x^nx^mx^1</m>. 
+                        By the inductive hypothesis, we have <m>x^nx^mx^1 = x^{n+m}x = x^{n+m+1}</m> and <m>x^nx^mx^1 = x^mx^nx</m>. 
+                        Using the <xref ref="exe-general-associativity"/> again, we have <m>x^{m+1}x^n</m>.
+                        Thus <m>x^nx^{m+1}=x^{n+m+1}=x^{m+1}x^n</m>, completing the induction.
+                        Hence, when <m>n &gt; 0</m> and <m>m &gt; 0</m> we have <m>x^nx^m=x^{n+m}=x^mx^n</m>.
+                      </p>
+                      
+                      <p>
+                        Now suppose <m>n &gt; 0</m> and <m>m &lt; 0</m>. 
+                        Thus <m>x^m = (x^{-m})\inv</m>, where <m>-m &gt; 0</m>.
+
+                        So <m>x^nx^{-m}=x^{n+(-m)}</m>
+                      </p>
+
+                      <p>
+                        <m>x^nx^m = (x^{-n})\inv(x^{-m})\inv = (x^{-m}x^{-n})\inv</m>
+                      </p>
+
+                      <p>
+                        Multiplying on both sides by <m>x^{-m}</m> we deduce that <m>x^n =x^{-m}x^{m+n}</m> and <m>x^m = x^{m + n} x^{-n}</m>. 
+                        Finally inversion of the equation <m>x^mx^n =x^{m + n}</m> yields <m>x^{-n}x^{-m} = x^{-m + (-n)}</m>. 
+                        Hence the law is established in all cases.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>n &gt; 0</m>, it follows from (1) that <m>(x^m)^n =x^{mn}</m>. 
+                        Now assume that <m>n &lt; 0</m>; then <m>(x^m)^n =((x^m)^{-n})\inv =(x^{-mn})\inv =x^{mn}</m> since <m>x^{-mn}x^{mn}=e</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-abelian-exponents"><title>Abelian Exponents</title>
+              <statement>
+                <p>
+                  Let <m>x,y\in G</m>. 
+                  The equation <m>(xy)^n=x^ny^n</m> holds for all <m>n\in\Z</m> if and only if <m>G</m> is abelian.
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-order"><title>Order</title>
+
+            <definition xml:id="def-order"><title>Order</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        In a group <m>G</m>, the <em>order of an element</em> <m>x</m> is the least positive integer <m>n</m> such that <m>x^n = e</m>. 
+                        If no such <m>n</m> exists, we say <m>x</m> has infinite order. 
+                        We write <m>|x|</m> for the order of <m>x</m>.
+                        <idx><h>order (of a group element)</h></idx>
+                        <idx><h><m>|x|</m> (group element)</h></idx>
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        The <em>order of a group</em> <m>G</m> is the <xref text="title" ref="def-cardinality"/> of the set <m>G</m>, denoted <m>|G|</m>.
+                        <idx><h>order (of a group)</h></idx>
+                        <idx><h><m>|G|</m> (group)</h></idx>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </definition>
+
+            <convention>
+              <p>
+                Some authors use the notation <m>\#G</m> or <m>o(G)</m> to refer to the order of a group.
+                We won't name names, but they know who they are.
+              </p>
+            </convention>
+      
+            <example xml:id="ex-order"><title>Order</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      <m>|e|=1</m> in every group <m>G</m>.
+                    </p>
+                  </li>
+      
+                  <li>
+                    <p>
+                      <m>|1|=n</m> in <m>\Z/n</m>
+                    </p>
+                  </li>
+      
+                  <li>
+                    <p>
+                      In the additive groups <m>\Z</m>, <m>\Q</m>, <m>\R</m>, and <m>\C</m> every nonzero (i.e., nonidentity) element has infinite order.
+                      <fn>Groups with this property are known as <em>torsion-free</em>, a concept explored in more advanced contexts.</fn>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      In the additve group <m>\Z/6</m>, the element <m>2</m> has order <m>3</m>, as <m>2+2=4</m> and <m>2+2+2=0</m>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>        
+
+            <exercise xml:id="exe-order-4-abelian"><title>Groups of Order <m>4</m></title>
+              <statement>
+                <p>
+                  Every group of order <m>4</m> is abelian.
+                </p>
+              </statement>
+        
+              <solution>
+                <p>
+                  Let <m>G</m> be a group with <m>4</m> elements, and suppose there are elements <m>a,b\in G</m> such that <m>ab\neq ba</m> for some elements <m>a, b\in G</m>. 
+                  Since <m>ab \neq ba</m>, we must have <m>a \neq b</m>, <m>a \neq e</m>, and <m>b\neq e</m>. 
+                  Since <m>G</m> has only <m>4</m> elements and <m>ab \neq ba</m>, either <m>ab \in \{e, a, b\}</m> or <m>ba \in\{e, a, b\}</m>. 
+                  Without loss, say the former occurs. 
+                  But <m>ab = e</m> implies <m>b=a\inv</m> and we know <m>a\inv</m> commutes with <m>a</m>, and hence this is not possible. 
+                  If <m>ab = a</m>, then <m>b = e</m> and if <m>ab = b</m> then <m>a = 1</m>, both of which are impossible. 
+                  Since <m>a, b</m> were arbitrary, <m>G</m> must be abelian.</p>
+              </solution>
+            </exercise>
+      
+            <theorem xml:id="thm-order-properties"><title>Properties of Order</title>          
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        An element <m>g</m> of a group <m>G</m> has order <m>1</m> if and only if <m>g=e</m>.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        <m>|g|=|g\inv|</m>
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        If <m>g^p=e</m> for <m>g\neq e</m> and <xref text="title" ref="def-prime-number"/> <m>p</m>, then <m>|g|=p</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>G</m> be a group and consider an element <m>a</m> in <m>G</m> with order <m>1</m>. 
+                        By definition, the order of an element is the smallest positive integer <m>n</m> such that <m>a^n = e</m>, where <m>e</m> is the identity element of <m>G</m>. 
+                        Since the order of <m>a</m> is <m>1</m>, we have <m>a^1 = a = e</m>. 
+                        This implies that <m>a</m> is equal to the identity element <m>e</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-every-element-order-2"><title><m>b</m> there or <m>b^2=e</m></title>
+              <statement>
+                <p>
+                  If <m>G</m> is a group such every non-identity element has order <m>2</m>, then <m>G</m> is abelian. 
+                </p>
+              </statement>
+            </exercise>
+        
+            <theorem xml:id="thm-element-order"><title>Element Order</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group and <m>x \in G</m> any element. 
+                    <ol>
+                      <li>
+                        <p>
+                          If <m>|x| = n</m>, then <m>e, x, \dots, x^{n-1}</m> are all distinct elements of <m>G</m>.
+                        </p>
+                      </li>
+                          
+                      <li>
+                        <p>
+                          If <m>|x| = \infty</m>, then <m>x^i \ne x^j</m> for all integers (positive or negative) <m>i,j</m> with <m>i \ne j</m>.
+                        </p>
+                      </li>
+        
+                      <li>
+                        <p>
+                          <m>|x| \leq |G|</m>.
+                        </p>
+                      </li>
+
+                      <li>
+                        <p>
+                          If <m>x^m = e</m> then <m>|x| \mid m</m>.
+                        </p>
+                      </li>
+                    </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>G</m> be a group and <m>x \in G</m> any element. 
+                  <ol>
+                    <li xml:id="order-finite">
+                      <p>
+                       Let <m>|x| = n</m>, and suppose by way of contradiction <m>x^j=x^k</m> for some <m>j,k</m> such that <m>0\leq j &lt; k\leq n </m>.
+                       Mutliplying <m>x^j=x^k</m> on both sides by <m>x^{-j}</m> yields <m>e=x^{k-j}</m>. 
+                       As <m>k-j &lt; n</m>, this contradicts the assumption <m>|x| = n</m>. 
+                      </p>
+                    </li>
+
+                    <li xml:id="order-inf">
+                      <p>
+                        If <m>x^i\neq x^j</m> for integers <m>i</m> and <m>j</m> with <m>i \neq j</m>, then <m>x^{j-i} = 0 = x^{i-j}</m>. 
+                        Since <m>i \neq j</m>, one of <m>j - i</m> and <m>i - j</m> must be strictly positive, contrary to the assumption ath <m>|x| = \infty</m>. 
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>|x| &lt; \infty</m>, then <xref ref="order-finite" text="custom"> part (1) </xref> shows that <m>G</m> has at least <m>|x|</m> elements; 
+                        if <m>|x| = \infty</m>, then <xref ref="order-inf" text="custom"> part (2) </xref> shows that <m>G</m> has infinitely many elements. 
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Let <m>n = |x|</m>. 
+                        We have <m>m = nq + r</m> for some <m>0 \leq r &lt; n</m> by the <xref text="title" ref="thm-division-algorithm"/>
+                        We have <m>x^r = (x^n)^qx^r = x^m = e</m> and so, by the definition of <q>order</q>, it must be that <m>r = 0</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>         
+      
+            <exercise xml:id="exe-order-and-gcd"><title>Order Hors d'oeuvre</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group. 
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>g \in G</m> be an element of finite order. 
+                        Show that <m>g^m</m> has finite order for any integer <m>m \geq 0</m>, and in fact 
+                        <me>
+                          |g^m| = \frac{\lcm(m,|g|)}{m} = \frac{|g|}{\gcd(m, |g|)}.
+                        </me> 
+                      </p>
+                    </li>
+                        
+                    <li>
+                      <p>
+                        Prove that for all <m>g, h</m> in <m>G</m>, <m>|gh| = |hg|</m> holds.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
+            <p>
+              The central theorem of group order, (perhaps the central theorem of finite group theory), <xref text="title" ref="thm-lagrange"/>, requires more machinery than we currently posess. 
+              We will get there evantually, but first, it would be useful to examine some more concrete groups and their interactions with what we have constructed thus far.
+            </p>
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  The <xref text="title" ref="thm-exponent-laws"/> hold in groups.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                 The <xref text="title" ref="def-order"/> of an element <m>x</m> is the smallest positive integer <m>n</m> such that <m>x^n=e</m>.
+                 The order of a group is its cardinality.
+                </p>
+              </li>
+            </ul>
+          </outcomes>  
+
+        </section>
+      
+        <section xml:id="sec-symmetric"><title>Permutations and Symmetric Groups</title>
+
+          <introduction>
+            <blockquote>
+              <p>
+                <q>
+                  Symmetry is overrated. Overrated is symmetry.
+                </q>
+              </p>
+              <attribution>Larry Wall</attribution>
+            </blockquote>
+          </introduction>
+      
+          <subsection xml:id="subsec-symmetric"><title>Symmetric Groups</title>
+
+            <p>
+              Let's introduce another very important example: symmetric groups.
+            </p>
+      
+            <definition xml:id="def-permutation"><title>Permutations</title>
+              <statement>
+                <p>
+                  A <em>permutation</em><idx><h>permutation</h></idx> of a set <m>S</m> is a bijective function <m>\sigma:S\to S</m>. 
+                  The set of all permutations of a set <m>S</m> is denoted <m>\Perm(S)</m>.
+                  <idx><h>permutation group</h></idx>
+                  <idx><h><m>\Perm(S)</m></h></idx>
+                  <idx><h><m>\sigma</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+      
+            <definition xml:id="def-symmetric-group"><title>Symmetric Group <m>S_n</m></title>
+              <statement>
+                <p>
+                  For any <m>n\in\N</m>, the <em>symmetric group</em><idx><h>symmetric group</h></idx> is the set <m>S_n=\Perm(\{1,\dots,n\})</m> equipped with the composition of functions as its binary operation.
+                  <idx><h><m>S_n</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <sage>
+              <input>
+                G = SymmetricGroup(6)  # Define the symmetric group S6
+                a = G("(1,2,3)")
+                b = G("(1,3,4)")
+                a * b
+              </input>
+            </sage>
+
+            <exercise xml:id="exe-sn-order"><title>Order of <m>S_n</m></title>
+              <statement> 
+                <p>
+                  Prove <m>|S_n|=n!</m>.
+                </p>
+              </statement>
+              <solution>
+                  <sage>
+                    <input>
+                      G = SymmetricGroup(n)  # Define the symmetric group, replace n with number you'd like to check
+                      G.order()
+                    </input>
+                  </sage>
+              </solution>
+
+              <!--
+
+              <solution>
+                <p>
+                  To count the number of permutations in <m>S_n</m>, we can consider the process of constructing a permutation step by step.
+                  <ul>
+                    <li>
+                      <p>
+                        For the first element, we have <m>n</m> choices. 
+                        We can choose any of the <m>n</m> elements as the image of the first element.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        For the second element, we have <m>(n-1)</m> choices. 
+                        After choosing the image of the first element, we have <m>(n-1)</m> remaining elements to choose from for the image of the second element.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Continuing this process, for the third element, we have <m>(n-2)</m> choices, for the fourth element we have <m>(n-3)</m> choices, and so on.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Finally, for the last element, we have only one choice remaining.
+                      </p>
+                    </li>
+                  </ul>
+                  The total number of permutations is obtained by multiplying the number of choices at each step. 
+                  Hence, the total number of permutations in <m>S_n</m> is given by <m>n \cdot (n-1) \cdot (n-2) \cdot \dots \cdot 3 \cdot 2 \cdot 1</m>, which is equal to <m>n!</m>.
+                  Therefore, the order of the symmetric group <m>S_n</m> is <m>n!</m>.
+                </p>
+              </solution>
+              -->
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-cycles-transpositions"><title>Cycles and Transpositions</title>
+     
+            <definition xml:id="def-cycle"><title>Cycles and Transpositions</title>
+              <statement>
+                <p>
+                  If <m>i_1, \dots, i_m</m> are distinct integers between <m>1</m> and <m>n</m>, then <m>\sigma=(i_1 \, i_2 \, \dots i_m)</m> denotes the element of <m>S_n</m> that satisfies 
+                  <me>
+                    \sigma(i_1)=i_2, \sigma(i_2)=i_3, \dots, \sigma(i_{m-1})=i_m, \sigma(i_m)=i_1 \text{ and } \sigma(k)=k
+                  </me> 
+                  for <m>k\in[n] \setminus \{i_1, \dots, i_m\}</m>.
+                  Such a permutation is called a <em>cycle</em> or an <m>m</m><em>-cycle</em> if we want to emphasize its length. 
+                  A <m>2</m>-cycle is often called a <em>transposition</em>.
+                  <idx><h>cycle</h></idx>
+                  <idx><h>transposition</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <aside><title><latex /> Cycle Notation</title>
+              <p>
+                In <latex />, <c>\,</c> is used to add spacing between the symbols in a cycle. 
+                The command <c>\;</c> can also be used for wider spacing.
+              </p>
+              
+            </aside>
+
+            <example xml:id="ex-cycle"><title>Cycle</title>
+              <p>
+                When regarded as an element of <m>S_{13}</m>, <m>(1 \, 3 \, 7)</m> sends <m>1</m> to <m>3</m>, <m>3</m> to <m>7</m> and <m>7</m> to <m>1</m>, and it fixes <m>2,4,5,7,8,9,10,11,12,13</m>. 
+                (Note that the value of <m>n</m> in cycle notation is sometimes ambiguous.)
+              </p>
+            </example>
+
+            <remark>
+              <p>
+                Note that distinct lists of integers represent the same cycle if they are cyclical rearrangements of each other, e.g., <m>(1 \, 2 \, 3) = (2 \, 3 \, 1)</m>. 
+                However, <m>(1 \, 2 \, 3) \neq (2 \, 1 \, 3)</m>.
+              </p>
+            </remark>
+
+            <p>
+              We compose cycles the same way we compose functions. 
+            </p>
+
+            <example xml:id="exe-composing-cycles"><title>Composing Cycles</title>
+              <p>
+                Consider
+                <me>
+                  (1 \, 3 \, 7) (2 \, 3 \, 5) = (1 \, 3 \, 5 \, 2 \,7).
+                </me> 
+                This equation might lead you to the false belief that every element of <m>S_n</m> is a cycle. 
+                This is not true — for example, the product <m>(1 \, 2) (3 \, 4)</m> cannot be written as a single cycle. 
+                What is true is that every element of <m>S_n</m> is uniquely (up to ordering) the product of disjoint cycles. 
+                We'll prove that soon in <xref ref="thm-cycledecomp"/>.
+              </p>
+            </example>
+           
+            <proposition xml:id="prop-disjoint-cycles-commute"><title>Disjoint Commutes</title>
+              <statement>
+                <p>
+                  Disjoint cycles commute,<idx><h>disjoint cycles</h></idx> that is, if <m>i_1 , i_2 \, \dots i_m, j_1 , j_2 \, \dots j_k\in [n]</m>, 
+                  <me>\sigma_1=(i_1 \, i_2 \, \dots i_m), \quad \sigma_2=(j_1 \, j_2 \, \dots j_k)</me> 
+                  and 
+                  <me>\{i_1 , i_2 , \dots i_m\}\cap \{j_1 , j_2 , \dots j_k\}=\emptyset</me> 
+                  then <m>\sigma_1 \circ \sigma_2=\sigma_2\circ \sigma_1</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let's consider two disjoint cycles, denoted as <m>(a_1\;a_2\;\cdots\;a_m)</m> and <m>(b_1\;b_2\dots\;b_n)</m>, where <m>a_i</m>'s and <m>b_i</m>'s are distinct elements.
+                  Let's analyze the composition <m>(a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)</m>:
+                  When we apply the composition to an element <m>ai</m>, we have:
+                  <md>
+                    <mrow>(a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)(a_i) &amp;= (a_1\;a_2\;\cdots\;a_m)(b_1\;b_2\dots\;b_n(a_i))</mrow>
+                    <mrow> &amp;= (a_1\;a_2\;\cdots\;a_m)(a_i)</mrow>
+                    <mrow> &amp;= a_{i+1} (\text{ if } a_i \neq a_m) \text{ or }a_1 (\text{ if }a_i = a_m)</mrow>
+                  </md>
+                  Similarly, when we apply the composition to an element <m>b_j</m>, we have:
+                  <md>
+                    <mrow>(b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)(b_j) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(b_j))</mrow>
+                    <mrow> &amp;= (b_1\;b_2\dots\;b_n)(b_j)</mrow>
+                    <mrow> &amp;= b_{j+1} (\text{ if } b_j \neq b_n) \text{ or }b_1 (\text{ if } b_j = b_n)</mrow>
+                  </md>
+                  From these calculations, we can observe that the composition <m>(a_1\;a_2\;\cdots\;a_m) \circ (b_1\;b_2\dots\;b_n)</m> maps each element <m>a_i</m> to <m>a_{i+1}</m> (if <m>a_i \neq  a_m</m>), and it maps <m>a_m</m> to <m>a_1</m>. 
+                  Similarly, the composition <m>(b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)</m> maps each element <m>b_j</m> to <m>b_{j+1}</m> (if <m>b_j \neq b_n</m>), and it maps <m>b_n</m> to <m>b_1</m>.
+                </p>
+                <p>
+                  Now, let's consider the composition <m>(b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)</m> and evaluate its effect on the elements <m>a_i</m> and <m>a_m</m>:
+                  <md>
+                    <mrow>(b_1\;b_2\dots\;b_n) \circ (a_1\;a_2\;\cdots\;a_m)(a_i) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(a_i))</mrow>
+                    <mrow> &amp;= (b_1\;b_2\dots\;b_n)(a_i)</mrow>
+                    <mrow> &amp;= a_{i+1} (\text{ if } a_i \neq a_m) \text{ or } a_1 (\text{ if } a_i = a_m)</mrow>
+                  </md>
+                  and 
+                  <md>
+                    <mrow>(b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)(a_m) &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m(a_m))</mrow>
+                    <mrow> &amp;= (b_1\;b_2\dots\;b_n)(a_1\;a_2\;\cdots\;a_m)</mrow>
+                    <mrow> &amp;= a_{m+1} (\text{ if } a_m \neq  a_1) \text{ or } a_2 (\text{ if } a_m = a_1)</mrow>
+                  </md>
+                  Comparing these results with the previous composition, we see that the effects on <m>a_i</m> and <m>a_m</m> are the same in both compositions. 
+                  This implies that the compositions <m>(a_1\;a_2\;\cdots\;a_m) \circ  (b_1\;b_2\dots\;b_n)</m> and <m>(b_1\;b_2\dots\;b_n) \circ  (a_1\;a_2\;\cdots\;a_m)</m> are identical.
+                </p>
+                <p>
+                  Therefore, we have shown that disjoint cycles commute, meaning that the order in which they are composed does not affect the final result.
+                </p>
+              </proof>
+            </proposition>
+
+            <p>
+              While sufficent, this is not a necessary condition.
+            </p>
+
+            <exercise xml:id="exe-non-disjoint-commutes"><title>Non-Disjoint Commutes</title>
+              <statement>
+                <p>
+                  Find elements <m>\s,\tau\in S_n</m> that commute but are not disjoint.
+                </p>
+              </statement>
+            </exercise>
+
+            <theorem xml:id="thm-cycledecomp"><title>Cycle Decompostion</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Each <m>\sigma\in S_n</m> can be written as a product (composition) of disjoint cycles<idx><h>cycle decompostion</h></idx>, and such a factorization is unique up to the ordering of the factors.
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        Each <m>\sigma\in S_n</m> can be written a product of transpositions.                  
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <!--
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        First, note that the identity element of <m>S_n</m> is the empty product of cycles.
+                      </p>
+
+                      <p>
+                        Fix <m>\sigma\in S_n</m> and let <m>G = \langle \sigma\rangle</m>. 
+                        The homomorphism given as the inclusion of <m>G</m> into <m>S_n</m> determines an action of <m>G</m> on the set <m>X := \{1, \dots, n\}</m>. 
+                        This action decomposes <m>X</m> into disjoint orbits. 
+                        Since <m>\sigma</m> generates <m>G</m>, <m>i, j</m> belong to the same orbit iff <m>\sigma^k(i) = j</m> for some <m>k \geq 0</m>. 
+                        Let <m>O</m> be any one of these orbits with size at least <m>2</m>. 
+                        Now pick any element <m>i \in O</m>. 
+                        Consider the sequence <me>i, \sigma(i), \sigma^2(i), \dots</me> of element of <m>O</m>. 
+                        The axioms of a group action gives us that the first time this sequence has a repitition occurs when <m>\sigma^p(i_1) = i_1</m>, where <m>p = |O|</m>. 
+                        Let <m>j_t =\sigma^{t+1}(i)</m> for <m>t = 1, \dots, p</m> and let <m>\tau_O</m> be the <m>p</m>-cycle <m>(j_1 \, \dots \, j_p)</m>. 
+                        Then <m>\sigma</m> and <m>\tau_O</m> <q>act the same</q> on <m>O</m>. 
+                        More formally, <me>\sigma\circ \tau_O^{-1}</me> fixes all elements of <m>O</m>. 
+                        Also, <m>\tau_O</m> fixes <m>\{1, \dots, n\} \setminus O</m>. 
+                        It follows that <me>\sigma= \prod_{O} \tau_O</me> where the product is taken over all orbits of size at least <m>2</m>. 
+                        This proves existense.
+                      </p>
+
+                      <p>
+                        For uniqueness, if <m>\sigma= \prod_i \gamma_i</m> is a product of disjoint cycles, then the orbits <m>X</m> under the action of <m>G</m> are the one-element orbits along with the orbits of each <m>\gamma_i</m>. 
+                        Moreover, if the orbit of <m>\gamma_i</m> is <m>O</m>, then <m>\gamma_i</m> and <m>\sigma</m> act the same on <m>O</m> and <m>\gamma_i</m> fixes <m>\{1, \dots, n\} \setminus O</m>. 
+                        It follows that <m>\gamma_i = \tau_O</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        It suffices to prove this for a single cycle and, by symmetry, for the cycle <m>(1 \, 2 \, \cdots \, p)</m>. 
+                        The equation <me>(1 \, 2 \, \cdots \, p) =  (1 \, 2) (2 \, 3) \cdots ((p-2) \, (p-1)) ((p-1) \, p)</me> is seen to hold by direct calculation.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+
+              -->
+            </theorem>
+      
+            <remark>
+              <p>
+                For the uniqueness part of statement (1) in <xref ref="thm-cycledecomp"/> one needs to establish a convention regarding <m>1</m>-cycles, that is one needs to stipulate either that the <m>1</m>-cycles will not be recorded (which gives the shortest such factorization) or that all the <m>1</m>-cycles will be recorded (which gives the longest such factorization, but also the only one that makes it clear what the number <m>n</m> is).
+              </p>
+            </remark>
+
+            <p>
+              Now that we know that every permutation can be written as a product of transpositions, we can utilize this to gain insight into many aspects of the group structure, such as the order of elements.
+            </p>
+           
+            <proposition xml:id="prop-permutation-order"><title>Permutation Order</title>
+              <statement>
+                <p>
+                  The order of a permutation is the least common multiple of the lengths of the cycles it is a product of.
+                  In particular, every transposition is its own inverse and the order of a <m>k</m>-cycle in <m>S_n</m> is <m>n</m>.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Coming soon!
+                </p>
+              </proof>
+            </proposition>
+
+          </subsection>
+
+          <subsection xml:id="subsec-even-odd"><title>Even and Odd Permutations</title>
+            
+            <p>
+              We can also categorize elements of permutation groups by the number of transpositions it is a product of.
+            </p>
+
+            <definition xml:id="def-even-odd-permutation"><title>Even and Odd Permutaitons</title>
+              <statement>
+                <p>
+                  A permutation <m>\s</m> is <em>even</em><idx><h>even permutation</h></idx> is if is the product of an even number of transpositions, otherwise it is <em>odd</em><idx><h>odd permutation</h></idx>.
+                </p>
+              </statement>
+            </definition>
+
+            <proposition xml:id="prop-even-odd-properties"><title>Even and Odd Properties</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        A <m>k</m>-cycle is even if and only if <m>k</m> is odd.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Products of even permutations are even, products of odd permutations are even, products of even and odd permutations are odd. 
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        The identity permutation in <m>S_n</m> is even, but not odd.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        No permutation in <m>S_n</m> is both even and odd.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </proposition>
+
+            <definition xml:id="def-alternating-group"><title>Alternating Group</title>
+                <statement>
+                  <p>
+                    The <em>alternating group</em><idx><h>alternating group</h></idx> <m>A_n</m> is the subset of all even cycles of <m>S_n</m>.
+                    <idx><h><m>A_n</m></h></idx> 
+                  </p>
+                </statement>
+            </definition>
+
+            <exercise xml:id="exe-an-order"><title>Order of <m>A_n</m></title>
+              <statement>
+                <p>
+                  Prove <m>|A_n|=\frac{n!}{2}</m>.
+                </p>
+              </statement>
+
+              <!--
+              <solution>
+                <p>
+                  For an element to be in <m>A_n</m>, it must be an even permutation. 
+                  This means it can be expressed as a product of an even number of transpositions. 
+                  Each transposition in the product swaps two elements. 
+                  There are <m>n</m> choices for the first element, and after fixing the first element, there are <m>(n-1)</m> choices for the second element. 
+                  This gives us <m>n * (n-1)</m> choices for the first transposition.
+                  For the second transposition, there are <m>(n-2)</m> choices for the first element and <m>(n-3)</m> choices for the second element. 
+                  Continuing this process, we have <m>(n-2) * (n-3) * ... * 2 * 1</m> choices for the remaining transpositions.
+                  In total, the number of even permutations (elements in <m>A_n</m>) is given by <m>n * (n-1) * (n-2) * ... * 2 * 1</m>, which is equal to <m>n!</m>.
+                  However, we have counted each even permutation twice because we can write a given even permutation as a product in different orders. 
+                  For example, <m>(1 2) * (3 4)</m> is the same as <m>(3 4) * (1 2)</m>.
+                  Therefore, we divide the total number of even permutations <m>(n!)</m> by <m>2</m> to remove the duplicate counting.
+                  Hence, the order of the alternating group <m>A_n</m> is <m>n!/2</m>.
+                </p>
+              </solution>
+              -->
+            </exercise>
+      
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  The <xref text="title" ref="def-d2n"/> is the group of reflections and rotations of a regular polygon. 
+                  Every element in <m>D_{2n}</m> can be written as a product of <em>rotations</em> and <em>reflections</em>.
+                  <fn>See: <xref ref="ex-d2n-elements"/> and <xref ref="thm-d2n-order"/>.</fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                 The <xref ref="def-symmetric-group"/> <m>S_n</m> is set of all <xref text="title" ref="def-permutation"/> of a set with <m>n</m> elements.
+                 The order of <m>S_n</m> is <m>n!</m>.
+                 <fn>See: <xref ref="exe-sn-order"/>.</fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Permutations are either even or odd; the <xref text="title" ref="def-alternating-group"/> is the set of even permutations.
+                  The order of <m>A_n</m> is <m>\frac{n!}{2}</m>.
+                  <fn>See: <xref ref="exe-an-order"/>.</fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <xref text="title" ref="def-cycle"/> are special permutations. 
+                  Every cycle can be written as a product of transpositions.
+                  <fn>See: <xref ref="thm-cycledecomp"/>, though we don't have the tools to prove this explicitly just yet.</fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  The <xref text="title" ref="def-quaternions"/> exist.
+                </p>
+              </li>
+            </ul>
+          </outcomes>  
+          
+        </section>
+
+        <section xml:id="sec-d2n"><title>Dihedral Groups</title>
+
+          <introduction>
+            <blockquote>
+              <p>
+                <q>
+                  Reflection is one of the most underused yet powerful tools for success.
+                </q>
+              </p>
+              <attribution>Richard Carlson</attribution>
+            </blockquote>
+          </introduction>
+
+          <subsection xml:id="subsec-d2n"><title>Dihedral Groups</title> 
+
+            <definition xml:id="def-iso-and-sym"><title>Isometry and Symmetry</title>
+              <statement>
+                <p>
+                  For any integer <m>n \geq 3</m>, let <m>P_n</m> denote a regular <m>n</m>-gon<idx><h>regular <m>n</m>-gon</h></idx>. 
+                  An <em>isometry</em><idx><h>isometry</h></idx> of the plane is a function <m>f: {\mathbb{R}}^2 \to {\mathbb{R}}^2</m> that is a bijection and preserves the Euclidean distance <m>(d(f(A),f(B))=d(A,B)</m> for any <m>A,B\in {\mathbb{R}}^2</m>). 
+                  A <em>symmetry</em><idx><h>symmetry</h></idx> of <m>P_n</m> is an isometry that maps <m>P_n</m> to itself.
+                </p>
+              </statement>
+            </definition>
+      
+            <remark>
+              <p>
+                By the latter I don't mean that <m>f</m> fixes each of the points of <m>P_n</m>, but rather that <m>f(P_n) = P_n</m>, that is every point of <m>P_n</m> is mapped to a (possibly different) point of <m>P_n</m> and every point of <m>P_n</m> is the image of some point in <m>P_n</m> via <m>f</m>.
+              </p>
+            </remark>
+
+            <p>
+              There are three natural types of isometry in <m>\R^2:</m>
+              <ol>
+                <li>
+                  <p>
+                    rotations about a point,
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    reflections in a line,
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    and translations: in the latter the point <m>(x, y)</m> is moved to <m>(x + a, y + b)</m> for some fixed <m>a, b</m>.
+                  </p>
+                </li>
+              </ol>
+              It can be shown that every isometry is a rotation, a translation, a reflection, or the product of a reflection and a translation.
+            </p>
+
+            <exercise xml:id="exe-symmetry-compostion"><title>Composition of Symmetries</title>
+              <statement>
+                <p>
+                  The <xref text="title" ref="def-composition"/> of two symmetries of <m>P_n</m> is again a symmetry of <m>P_n</m>.
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  Let <m>R = S \circ  T</m> be the composition of <m>S</m> and <m>T</m>, where <m>\circ </m> denotes composition. 
+                  Let's take an arbitrary point <m>P</m> on the object.
+                  When we apply the symmetry <m>S</m> to <m>P</m>, it is mapped to a new point, let's call it <m>P1</m>. 
+                  Since <m>S</m> is a symmetry, <m>P1</m> is still on the object.
+                  Next, when we apply the symmetry <m>T</m> to <m>P1</m>, it is mapped to a new point, let's call it <m>P2</m>. 
+                  Again, since <m>T</m> is a symmetry, <m>P2</m> is still on the object.
+                  Therefore, the composition <m>R = S \circ  T</m> maps the point <m>P</m> on the object to the point <m>P2</m>, which is also on the object.
+                  Hence, the composition of symmetries is again a symmetry.
+                </p>
+              </solution>
+            </exercise>
+      
+            <definition xml:id="def-d2n"><title>Dihedral Group</title>
+              <statement>
+                <p>
+                  The <em>dihedral group</em> <m>D_{2n}</m><idx><h>dihedral group</h></idx> is the set of symmetries of the regular <m>n</m>-gon <m>P_n</m> equipped with the binary operation given by composition.
+                  <idx><h><m>D_{2n}</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <example xml:id="ex-d2n-elements"><title>Rotations and Reflections</title>
+              <p>
+                Assume that the regular <m>n</m>-gon <m>P_n</m> is drawn in the plane with its center at the origin and one vertex on the <m>x</m> axis.        
+                <ol>
+                  <li>
+                    <p>
+                      If <m>r</m> denotes rotation about the origin by <m>\frac{2\pi}{n}</m> radians counter-clockwise, then <m>r \in D_{2n}</m>. 
+                      It's inverse is rotation by <m>\frac{2\pi}{n}</m> clock-wise. 
+                      <idx><h>rotation</h></idx>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      For another example, for any line of symmetry of <m>P_n</m>, reflection about that line gives an element of <m>D_{2n}</m>. 
+                      By our convention for how to draw <m>P_n</m>, the <m>x</m>-axis is a line of symmetry for <m>P_n</m>, and we let <m>s</m> denote reflection about the <m>x</m>-axis.
+                      <idx><h>reflection</h></idx>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+            <figure xml:id="figure-d4"><title>Elements of <m>D_4</m></title>
+              <caption>Elements of <m>D_4</m>. <url href="https://q.uiver.app/#q=WzAsNTYsWzAsMSwiQiJdLFswLDMsIkMiXSxbMiwxLCJBIl0sWzIsMywiRCJdLFs0LDEsIkMiXSxbNiwxLCJCIl0sWzYsMywiQSJdLFs0LDMsIkQiXSxbOCwxLCJEIl0sWzgsMywiQSJdLFsxMCwxLCJDIl0sWzEwLDMsIkIiXSxbMTIsMSwiQSJdLFsxNCwxLCJEIl0sWzE0LDMsIkMiXSxbMTIsMywiQiJdLFswLDUsIkEiXSxbMiw1LCJCIl0sWzAsNywiRCJdLFsyLDcsIkMiXSxbNCw1LCJDIl0sWzYsNSwiRCJdLFs0LDcsIkIiXSxbNiw3LCJBIl0sWzgsNSwiRCJdLFsxMCw1LCJBIl0sWzEwLDcsIkIiXSxbOCw3LCJDIl0sWzEyLDUsIkIiXSxbMTQsNywiRCJdLFsxMiw3LCJBIl0sWzE0LDUsIkMiXSxbNSwwLCI5MFxcZGVncmVlIl0sWzksMCwiMTgwXFxkZWdyZWUiXSxbMTMsMCwiMjcwXFxkZWdyZWUiXSxbNywyLCJcXGJ1bGxldCIsWzAsMCwxMDAsMV1dLFs5LDQsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzExLDIsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzE1LDIsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzEzLDQsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzEsOCwiXFxidWxsZXQiLFswLDAsMTAwLDFdXSxbMyw2LCJcXGJ1bGxldCIsWzAsMCwxMDAsMV1dLFs3LDYsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzExLDYsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzE1LDYsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzExLDQsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzE1LDgsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzExLDgsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzE1LDQsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzcsOCwiXFxidWxsZXQiLFswLDAsMTAwLDFdXSxbMSw0LCJmIixbMCwwLDEwMCwxXV0sWzEsMCwiZSJdLFs0LDgsIlxcYnVsbGV0IixbMCwwLDEwMCwxXV0sWzYsOCwiXFxidWxsZXQiLFswLDAsMTAwLDFdXSxbMCw4LCJmIixbMCwwLDEwMCwxXV0sWzIsOCwiXFxidWxsZXQiLFswLDAsMTAwLDFdXSxbMCwyLCIiLDAseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwzLCIiLDAseyJjb2xvdXIiOlsxMjAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMywiIiwyLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDIseyJjb2xvdXIiOlsyNzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDcsIiIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiIiwyLHsiY29sb3VyIjpbMjcwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCIiLDIseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw2LCIiLDAseyJjb2xvdXIiOlsxMjAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTAsIiIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsOSwiIiwyLHsiY29sb3VyIjpbMTIwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCwxMSwiIiwwLHsiY29sb3VyIjpbMjcwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOSwxMSwiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDE1LCIiLDIseyJjb2xvdXIiOlswLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsMTMsIiIsMCx7ImNvbG91ciI6WzEyMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTMsMTQsIiIsMCx7ImNvbG91ciI6WzE4MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE1LDE0LCIiLDIseyJjb2xvdXIiOlsyNzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNiwxNywiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE2LDE4LCIiLDAseyJjb2xvdXIiOlsxMjAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE3LDE5LCIiLDIseyJjb2xvdXIiOlsyNzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOCwxOSwiIiwwLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjAsMjIsIiIsMCx7ImNvbG91ciI6WzI3MCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIwLDIxLCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMSwyMywiIiwyLHsiY29sb3VyIjpbMTIwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwyMywiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzI0LDI1LCIiLDAseyJjb2xvdXIiOlsxMjAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzI0LDI3LCIiLDIseyJjb2xvdXIiOlsxODAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNSwyNiwiIiwwLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzI3LDI2LCIiLDIseyJjb2xvdXIiOlsyNzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyOCwzMCwiIiwyLHsiY29sb3VyIjpbMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzI4LDMxLCIiLDAseyJjb2xvdXIiOlsyNzAsNjAsNjBdLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszMSwyOSwiIiwwLHsiY29sb3VyIjpbMTgwLDYwLDYwXSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMzAsMjksIiIsMix7ImNvbG91ciI6WzEyMCw2MCw2MF0sInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMzIsMzUsInIiLDIseyJjdXJ2ZSI6LTN9XSxbMzMsMzcsIiIsMCx7ImN1cnZlIjotNH1dLFszNywzNiwiIiwwLHsiY3VydmUiOi00fV0sWzM0LDM4LCIiLDAseyJjdXJ2ZSI6LTR9XSxbMzgsMzksIiIsMCx7ImN1cnZlIjotNH1dLFszOSwzNywiIiwwLHsiY3VydmUiOi00fV0sWzQxLDQyLCJzIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzQ5LDQ1LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbNDYsNDUsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs1MCw0MCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzUyLDUzLCJcXHRleHR7SG9yaXpvbnRhbCBGbGlwfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1NCw1NSwiXFx0ZXh0e1ZlcnRpY2FsIEZsaXB9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d" visual="">Quiver</url></caption>
+              <image source="images/D4.png" width="100%"/>
+            </figure>
+
+            <remark>
+              <p>
+                We see <m>|r|=n</m> and <m>|s|=2</m>, which may make some intuitive sense. 
+                The fact that <m>sr</m> is a reflection and hence that <m>srsr=e_{{\mathbb{R}}^2}</m> may be slightly less aparent.
+              </p>
+            </remark>
+      
+            <proposition xml:id="thm-d2n-order"><title>Order of <m>D_{2n}</m></title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Every element in <m>D_{2n}</m> can be written as <m>r^j</m> or <m>r^js</m> for <m>0 \leq j \leq n-1</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>|D_{2n}|=2n</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  We will use some geometric notions freely without complete justification. 
+                  For example, we use that if an isometry of <m>{\mathbb{R}}^2</m> fixes two points <m>A</m> and <m>B</m>, then it is either the identity element or it is reflection about the line <m>AB</m>. 
+                  We also use that every element of <m>D_{2n}</m> maps the origin to itself (since the origin is the center of mass of <m>P_n</m>). 
+                  Finally, we use that every isometry of <m>{\mathbb{R}}^2</m> is either <em>orientation preserving</em> or <em>orientation reversing</em>.
+                </p>
+
+                <p>
+                  Label the vertices of <m>P_n</m> as <m>V_0, \dots, V_{n-1}</m>, with <m>V_0</m> being the vertex located on the positive <m>s</m>-axis, <m>V_1</m> being the vertex adjacent to <m>V_0</m> in the counter-clockwise direction, etc. 
+                  We have <m>r(V_0) = V_1</m>, <m>r(V_1) = V_2</m>, etc., and so <m>r^j(V_0) = V_{j \pmod{n}}</m>. 
+                  Moreover any isometry must send a vertex to a vertex because the vertices are the points on <m>P_n</m> at largest distance from the origin.
+                </p>
+        
+                <p>
+                  Let <m>\alpha</m> be an arbitrary symmetry of <m>P_n</m>. 
+                  Then <m>\alpha(V_0) =V_ j</m> for some <m>0 \leq j \leq n-1</m>. 
+                  Then the element <m>r^{-j}\alpha</m> fixes <m>V_0</m> and the origin, and hence either <m>r^{-j}\alpha= e</m> or <m>r^{-j}\alpha= s</m> from the discussion above. 
+                  We get that <m>\alpha= r^j</m> or <m>\alpha= r^js</m>, proving the first assertion.
+                </p>
+        
+                <p>
+                  Since <m>r^j(V_0) = V_{j \pmod{n}}</m>, we see that if <m>r^j = r^i</m> for <m>0 \leq i,j \leq n-1</m>, then <m>i=j</m>. 
+                  We have <m>r^js \ne r^i</m> for any <m>i,j</m> since the former is orientation reversing and the latter is orientation preserving. 
+                  If <m>r^is = r^js</m> for <m>0 \leq i,j \leq n-1</m>, then upon multiplying on the left of <m>s^{-1}</m> we get <m>i=j</m>.
+                </p>
+              </proof>
+            </proposition>
+      
+          </subsection>
+          
+        </section>
+
+        <section xml:id="sec-gphoms"><title>Group Homomorphisms</title>
+
+          <subsection xml:id="subsec-homom"><title>Homomorphism? I Barely Know 'em!</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  In the end, the character of a civilization is encased in its structures.
+                </q>
+              </p>
+              <attribution>Frank Gehry</attribution>
+            </blockquote>
+
+            <p>
+              The Greek roots "homo" and "morph" together mean "same shape".
+            </p>
+            
+            <definition xml:id="def-ghom"><title>Group Homomorphism</title>
+              <statement>
+                <p>
+                  If <m>G</m> and <m>H</m> are groups, a <em>homomorphism</em> from <m>G</m> is <m>H</m> is a function <m>\varphi: G \to H</m> such that 
+                  <me>
+                    \varphi(x *_G y) = \varphi(x) *_H \varphi(y)
+                  </me>, 
+                  where <m>*_G</m> and <m>*_H</m> denote the multiplication rules for <m>G</m> and <m>H</m>, respectively.
+                  <notation><usage><m>\varphi,\phi</m></usage><description>the common symbols we use to denote homomorphisms <m>\cdot</m></description></notation>      
+                  <idx><h>group homomorphism</h></idx>
+                  <idx><h>homomorphism of groups</h></idx>    
+                </p>
+              </statement>
+            </definition>
+
+            <aside><title><latex />:<m>\varphi</m></title>
+              <p>
+                In <latex />, <m>\varphi</m> is written using<c>\varphi</c>. 
+              </p>
+            </aside>
+
+            <convention><title>Homomorphism Notation: <m>\varphi</m> vs. <m>f</m></title>
+              <p>
+                We use <m>\varphi</m> to denote an arbitrary homomorphism instead of <m>f</m> to differentiate between homormorphisms and ordinary functions.
+              </p>
+              <p>
+                Some folk use <m>f</m> for homomorphisms as well as functions that are not homomorphisms. 
+                This is usually harmless, we avoid doing so here only to remove as much ambiguity as possible.
+              </p>
+            </convention>
+      
+            <p>
+              Intuitively, a group homomorphism preserves the algebraic structure of the group, while allowing us to compare and relate different groups. 
+              In this way, group homomorphisms allow us to study the properties of groups by comparing them to other groups that we already understand well.
+            </p>
+      
+            <example xml:id="ex-group-homom-examples"><title>Homormophism Examples</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        The <xref ref="ex-identity-map" text="custom"> identity map</xref> is a group homomorphism for any group <m>G</m>, this is known as the <em>trivial homomorphism</em>.
+                        <idx><h>trivial homomorphism</h></idx>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The <xref ref="ex-constant-map" text="custom"> zero map </xref> is a group homomorphism from <m>\C\to\C</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The <em>sign homomorphism</em> <m>\sign: S_n\to \{-1,1\}</m> that sends even permuations to <m>1</m> and odd permutations to <m>-1</m> is a homomorphism.
+                        <idx><h>sign homomorphism</h></idx>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <answer>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>x,y\in G</m>, and let <m>\id_G</m> denote the identity map on <m>G</m>.
+                        Then
+                        <md>
+                          <mrow> \id_G(xy) &amp;= xy &amp;&amp; \text{Definition of }\id_G \text{ on } xy</mrow> 
+                          <mrow>             &amp;= \id_G(x)\id_G(y) &amp;&amp; \id_G(x)=x \text{ and } x \id_G(y)=y</mrow>
+                        </md>
+                        Thus <m>\id_G</m> is operation preserving, making it a group homomorphism for any group <m>G</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Let <m>x,y\in \C</m>, and let <m>0_\C</m> denote the zero map.
+                        As <m>0_\C(xy) = 0 = 0_\C(x)0_\C(y)</m>, <m>0_\C</m> is indeed a group homomorphism.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        We begin by noting that <m>\{-1,1\}</m> is indeed a group, as <m>\{-1,1\}=\Z^\times</m>, as seen in <xref ref="ex-group-of-units"/>.
+                        Let <m>\sigma,\tau\in S_n</m>. 
+                        We proceed via cases. 
+                      </p>
+                      <p>
+                        First, suppose both <m>\sigma</m> and <m>\tau</m> are even permutations.
+                        Thus <m>\sigma\tau</m> is an even permutation by <xref ref="prop-even-odd-properties"/>, and hence 
+                        <me>\sign(\sigma)\sign(\tau) = (1)(1) = (1) = \sign(\sigma\tau).</me>
+                      </p>
+                      <p>
+                        Now suppose <m>\sigma</m> is even and <m>\tau</m> is odd.
+                        Thus <m>\sigma\tau</m> is an odd permutation by <xref ref="prop-even-odd-properties"/>, and hence 
+                        <me>\sign(\sigma)\sign(\tau) = (1)(-1) = (-1) = \sign(\sigma\tau).</me>
+                      </p>
+                      <p>
+                        Next, suppose <m>\sigma</m> is odd and <m>\tau</m> is even.
+                        Thus <m>\sigma\tau</m> is an odd permutation by <xref ref="prop-even-odd-properties"/>, and hence 
+                        <me>\sign(\sigma)\sign(\tau) = (-1)(1) = (-1) = \sign(\sigma\tau).</me>
+                      </p>
+                      <p>
+                        Finally, suppose both <m>\sigma</m> and <m>\tau</m> are odd permutations.
+                        Thus <m>\sigma\tau</m> is an even permutation by <xref ref="prop-even-odd-properties"/>, and hence 
+                        <me>\sign(\sigma)\sign(\tau) = (-1)(-1) = (1) = \sign(\sigma\tau).</me>
+                      </p>
+                      <p>
+                        This shows <m>\sign</m> is a homomorphism in all cases.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </answer>
+             
+            </example>
+
+            <exercise xml:id="exe-more-group-homs">
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        The exponential map<idx><h>exponential map</h></idx> <m>\exp: ({\mathbb{R}}, +) \to (\mathbb{R}^\times, \cdot)</m> is a homomorphism.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The natural log map <idx><h>natural log map</h></idx> <m>\ln: (\mathbb{R}^\times, \cdot) \to ({\mathbb{R}}, +)</m> is a homomorphism.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        For any positive integer <m>n</m>, the map determinant map <idx><h>determinant map</h></idx> <m>\det: \operatorname{GL}_n(\C) \to (\C^\times, \cdot)</m> is a group homomorphism.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+      
+            <p>
+              Specifically, homomorphisms will preserve the additive structure, such as the identity element and inverse elements.
+            </p>
+      
+            <theorem xml:id="thm-grphomom-preservations"><title>Homomorphism Preservations</title>
+              <statement>
+                <p>
+                  If <m>\varphi: G \to H</m> is a homomorphism of groups, then the following hold:
+                  <ol>
+                    <li xml:id="gp-ident-pres">
+                      <p>
+                        <m>\varphi(e_G) = e_H</m>
+                      </p>
+                    </li>
+      
+                    <li xml:id="gp-inv-pres">
+                      <p>
+                        <m>\varphi(x^{-1}) = \varphi(x)^{-1}</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>\varphi: G \to H</m> be a homomorphism of groups.
+                  <ol>
+                    <li>
+                      <p>
+                        Observe:
+                        <md>
+                          <mrow> \varphi(e_G)                 &amp;= \varphi(e_Ge_G)</mrow>
+                          <mrow>                              &amp;= \varphi(e_G)\varphi(e_G) &amp;&amp; <xref ref="def-ghom"/></mrow>
+                          <mrow> \varphi(e_G)\varphi(e_G)\inv &amp;= \varphi(e_G)\varphi(e_G)\varphi(e_G)\inv &amp;&amp;\text{multiply by }\varphi(e_G)\inv</mrow>
+                          <mrow> e_H                          &amp;= \varphi(e_G) </mrow>
+                        </md>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Let <m>x\in G</m>. 
+                        I claim that <m>\varphi(x\inv)</m> is the inverse of <m>\varphi(x)</m> in <m>H</m>:
+                        <md>
+                          <mrow> \varphi(x)\varphi(x\inv) &amp;= \varphi(xx\inv) &amp;&amp; <xref ref="def-ghom"/></mrow>
+                          <mrow> &amp;= \varphi(e_G)</mrow>
+                          <mrow> &amp;= e_H &amp;&amp; <xref ref="gp-ident-pres" text="custom"> Part 1</xref></mrow>
+                        </md>
+                        Thus <m>\varphi(x\inv)</m> and <m>\varphi(x)\inv</m> are both inverses of <m>\varphi(x)</m> in <m>H</m>, and so <m>\varphi(x^{-1}) = \varphi(x)\inv</m>, since <xref ref="list-unique-group-inverse" text="custom"> inverses are unique</xref>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-grp-hom-order-split">
+              <statement>
+                <p>
+                  Let <m>\varphi: G \to H</m> be a homomorphism of groups, and let <m>g\in G</m>.
+                  Then <m>\varphi(g^n)=\varphi(g)^n</m>.
+                </p>
+              </statement>
+            </exercise>
+
+            <theorem xml:id="thm-ghom-composition"><title>Compositions of Homomorphisms</title>
+              <statement>
+                <p>
+                  If <m>\varphi:G\to H</m> and <m>\phi:H\to K</m> are group homomorphisms, the composition <m>\phi\circ\varphi:G\to K</m> is a group homomorphism.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Suppose <m>\varphi:G\to H</m> and <m>\phi:H\to K</m> be group homomorphisms, and let <m>x,y\in G</m>.
+                  <md>
+                    <mrow>\phi\circ\varphi(xy) &amp;= \phi\circ\left(\varphi(x)\varphi(y)\right) &amp;&amp; <xref ref="def-ghom"/> \text{ applied to } \varphi </mrow>
+                    <mrow> &amp;= \phi\left(\varphi(x)\varphi(y)\right) &amp;&amp; <xref ref="def-composition"/> </mrow>
+                    <mrow> &amp;= \phi\left(\varphi(x)\right)\phi\left(\varphi(y)\right) &amp;&amp; <xref ref="def-ghom"/> \text{ applied to } \phi</mrow>
+                    <mrow> &amp;= \left(\phi\circ\varphi(x)\right)\left(\phi\circ\varphi(y)\right) &amp;&amp; <xref ref="def-composition"/></mrow>
+                  </md>
+                  Thus <m>\phi\circ\varphi:G\to K</m> is a group homomorphism.
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-group-hom"><title><m>\Hom</m> Sweet <m>\Hom</m></title>
+              <statement>
+                <p>
+                  Let <m>G</m> and <m>H</m> be abelian groups. 
+                  Then the set <m>\Hom_{Ab}(G,H)</m> of all group homomorphisms from <m>G</m> to <m>H</m> is itself an abelian group.
+                  <idx><h><m>\Hom_{AB}(G,H)</m></h></idx>
+                </p>
+              </statement>
+            </exercise>
+            
+            <definition xml:id="def-group-kernel"><title>Kernel</title>
+              <statement>
+                <p>
+                  Let <m>\varphi: G \to H</m> be a homomorphism of groups. 
+                  The <em>kernel</em> of <m>\varphi</m> is the set 
+                  <me>\ker(\varphi) := \{g\in G \mid \varphi(g)=e_H\}.</me>
+                  <idx><h><m>\ker(\varphi)</m> (groups)</h></idx> 
+                  <idx><h>kernel (of a group homomorphism)</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <theorem xml:id="thm-inj-surj-ghom"><title>Injective and Surjective Homomorphisms</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        A group homomorphism <m>\varphi: G \to H</m> is injective if and only if <m>\operatorname{ker}(\varphi) = \{e_G\}</m>.
+                        <fn>Such homomorphisms are called <em>monomorphisms</em></fn>
+                      </p>
+                    </li>
+      
+                    <li>
+                      <p>
+                        A group homomorphism <m>\varphi: G \to H</m> is surjective if and only if <m>\operatorname{im}(\varphi) = H</m>.
+                        <fn>Such homomorphisms are called <em>epimorphisms</em></fn>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        <m>(\Rightarrow)</m>
+                        Suppose <m>\varphi: G \to H</m> is injective.
+                        By <xref ref="thm-grphomom-preservations"/> we know <m>\varphi(e_G) = e_H</m>. 
+                        Thus <m>e_G\in\ker(\varphi)</m> and <m>\{e_G\}\sse\ker(\varphi)</m>.
+                      </p>
+                      <p>
+                        Let <m>x\in\ker(\varphi)</m>.
+                        Thus <m>\varphi(x)=e_H</m>. 
+                        As <m>\varphi</m> is injective, this means  <m>x=e_G</m>.
+                        Hence <m>\ker(\varphi)\sse\{e_G\}</m>, making the two sets equal.
+                      </p>
+                      <p>
+                        <m>(\Leftarrow)</m>
+                        Suppose <m>\operatorname{ker}(\varphi) = \{e_G\}</m>.
+                        Suppose further there exist <m>x,y\in G</m> such that <m>\varphi(x) = \varphi(y)</m>.
+                      </p>
+                      <p>
+                        I claim <m>x\inv</m> is the inverse of <m>y</m>.
+                        Observe 
+                        <md>
+                          <mrow>\varphi(x^{-1}y) &amp;= \varphi(x^{-1})\varphi(y) &amp;&amp; <xref ref="def-ghom"/></mrow>
+                          <mrow>                 &amp;= \varphi(x)^{-1}\varphi(y) &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                          <mrow>                 &amp;= \varphi(x)^{-1}\varphi(x) &amp;&amp; \varphi(x) = \varphi(y)</mrow>
+                          <mrow>                 &amp;= e_H</mrow>
+                        </md>
+                        Thus <m>x^{-1}y\in\ker(\varphi)=\{e_G}</m>, meaning <m>x^{-1}y=e_G</m>.
+                        Therefore, <m>x\inv</m> is the inverse of <m>y</m>, making <m>x=y</m> as <xref ref="list-unique-group-inverse" text="custom"> <m>e</m> inverses are unique</xref>.
+                        Hence, <m>\varphi</m> is injective.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        This proof is identical to that of <xref ref="surjective-iff-image"/>; the homomorphism aspect adds nothing of interest.
+                        <fn>Though one could argue that adding nothing of interest is interesting, causing it to add something of interest.</fn>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>   
+
+            <exercise xml:id="exe-order-preservation"><title>Homomorphisms and Order</title>
+              <statement>
+                <p>
+                  If <m>\varphi: G \to H</m> is a homomorphism of groups and <m>|g|</m> is finte, then <m>|\varphi(g)|\big||g|</m>.
+                </p>
+              </statement>  
+            </exercise>
+
+          </subsection>
+
+          <subsection xml:id="subsec-isomorphisms"><title>Isomorphism? I Know 'em!</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function.
+                </q>
+              </p>
+              <attribution>F. Scott Fitzgerald</attribution>
+            </blockquote>
+          
+            <definition xml:id="def-gpiso"><title>Group Ismorphism</title>
+              <statement>
+                <p>
+                  A homomorphism <m>\varphi: G \to H</m> is called an <em>isomorphism</em> if there exists a homomorphism <m>\phi: H \to G</m> such that <m>\varphi \circ \phi = \operatorname{id}_H</m> and <m>\phi \circ \varphi = \operatorname{id}_G</m>.
+                </p>
+      
+                <p>
+                  If <m>\varphi:G\to H</m> is an isomorphism, <m>G</m> and <m>H</m> are called <em>isomorphic</em>, written <m>G\cong H</m>.
+                  <notation><usage><m>\cong</m></usage><description>Isomorphic</description></notation> 
+                  <idx><h>isomorphism (of groups)</h></idx>
+                  <idx><h>isomorphic (as groups)</h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <aside><title><latex />:<m>\cong</m></title>
+              <p>
+                In <latex />, <m>\cong</m> is written using <c>\cong</c>. 
+              </p>
+            </aside>
+      
+            <p>
+              Intuitively, a group isomorphism establishes a one-to-one correspondence between the elements of two groups, such that they have exactly the same algebraic structure. 
+              This means that the groups are essentially the same, up to a relabeling of their elements.
+            </p>
+            
+            <theorem xml:id="thm-iso-def"><title>Equivalent Isomorphism Characterization</title>
+              <statement>
+                <p>
+                  Suppose <m>\varphi: G \to H</m> is a group homomorphism. 
+                  Then <m>\varphi</m> an isomorphism if and only if <m>\varphi</m> is bijective (one-to-one and onto).
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <m>(\Rightarrow)</m>
+                  Suppose <m>\varphi</m> an isomorphism. 
+                  Then there exists a homomorphism <m>\phi: H \to G</m> such that <m>\varphi \circ \phi = \operatorname{id}_H</m> and <m>\phi \circ \varphi = \operatorname{id}_G</m>.
+                  Thus <m>\varphi</m> is <xref ref="def-jectivity" text="custom"> invertible</xref>.
+                  By <xref ref="thm-compositions-and-jectivity"/> <m>\varphi</m> is bijective.
+                </p>
+                <p>
+                  (<m>\Leftarrow</m>)
+                  Suppose <m>\varphi</m> is bijective homomorphism.
+                  By <xref ref="thm-compositions-and-jectivity"/> <m>\varphi</m> is invertible, meaning there exists some <em>function</em> <m>f: H \to G</m>
+                  <fn>Notice we use <m>f</m>, not <m>\phi</m>! We are not able to assume <m>f</m> is a homomorphism, we must prove this!</fn>
+                  such that <m>\varphi \circ f = \operatorname{id}_H</m> and <m>f \circ \varphi = \operatorname{id}_G</m>.
+                </p>
+                <p>
+                  I claim <m>f</m> is actually a homomorphism:
+                  For <m>x,y \in H</m> we have 
+                  <md>
+                    <mrow>\varphi(f(xy)) &amp;= xy &amp;&amp; \varphi\circ f = \operatorname{id}_H</mrow>
+                    <mrow>               &amp;= \varphi(f(x))\varphi(f(y)) &amp;&amp; \varphi\circ f = \operatorname{id}_H</mrow>
+                    <mrow>               &amp;= \varphi(f(x)f(y)) &amp;&amp; \varphi \text{ is a } <xref ref="def-ghom" text="custom"> homomorphism</xref></mrow>
+                  </md>
+                  Thus <m>\varphi(f(xy))=\varphi(f(x)f(y))</m>
+                  Since <m>\varphi</m> is bijective it is injective, and thus <m>f(xy) = f(x)f(y)</m>, making <m>f</m> a homomorphism.
+			          </p>
+              </proof>
+            </theorem>
+      
+            <remark>
+              <p>
+                Moving forward, we will essentially treat <xref ref="thm-iso-def"/> as the de-facto definition of a group isomorphism. 
+                Rather than end every proof with a reference to <xref ref="thm-iso-def"/>, we will instead enshrine its monumental achievements of <xref ref="thm-iso-def"/> within this remark. 
+                To alleviate some of the corresponding guilt asociated with this decision I am referencing <xref ref="thm-iso-def"/> as many times as possible, as <xref ref="thm-iso-def"/> is important and <xref ref="thm-iso-def"/> should not be forgotten. 
+              </p>
+            </remark>
+      
+            <example xml:id="ex-group-iso-examples"><title>Isomorphism Examples</title>
+              <p>
+                <ol>
+                  <li xml:id="grp-identity-iso">
+                    <p>
+                      The identity map is a group isomomorphism for any group <m>G</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>S_3\cong D_6</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>(\Z,+)\cong(\E,+)</m>, where <m>(\E,+)</m> is as defined in <xref ref="exe-extra-groups"/>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+            
+            <exercise xml:id="exe-more-grp-isos"><title>More Isomorphisms</title>
+              <statement> 
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>G</m> be a group and <m>G^{op}</m> the <xref text="title" ref="exe-opposite-group"/> of <m>G</m>. 
+                        Then <m>G\cong G^{op}</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>(\R,+)\cong(\R^\times,\cdot)</m>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        The exponential and natural logarithm maps from <xref ref="exe-more-group-homs"/> are inverses, making them isomorphisms as well.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+              <!--
+              <solution>
+                <p>
+                  Coming soon!
+                </p>
+              </solution>
+              -->
+            </exercise>
+
+            <theorem xml:id="thm-iso-inv"><title>Isomorphism Invariants</title>
+              <statement>
+                <p>
+                  Let <m>G</m> and <m>H</m> be groups. 
+                  If <m>\varphi:G\to H</m> is an isomorphism, then the following hold:
+                  <idx><h>isomorphism invariant</h></idx>
+                </p>
+                <p>
+                  <ol> 
+                    <li>
+                      <p>
+                        <m>|G|=|H|</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>|g|=|\varphi(g)|</m> for all <m>g\in G</m> and <m>|h|=|\varphi\inv(h)|</m> for all <m>h\in H</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>G</m> is abelian if and only if <m>H</m> is abelian.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>\varphi:G\to H</m> be an isomorphism of groups with inverse <m>\varphi\inv</m>.
+                  <ol> 
+                    <li>
+                      <p>
+                        By <xref ref="thm-iso-def"/> <m>\varphi</m> is a bijective function between <m>G</m> and <m>H</m>.
+                        Thus <m>|G|=|H|</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Let <m>g\in G</m> and <m>h\in H</m>, and let <m>m,n</m> denote the orders of <m>g,h</m>, respectively.
+                        Thus
+                        <md>
+                          <mrow> \varphi(g)^m &amp;= \varphi(g^m) &amp;&amp; <xref ref="exe-grp-hom-order-split"/></mrow>
+                          <mrow>              &amp;= \varphi(e_G) &amp;&amp; m \text{ is the order of } g</mrow>
+                          <mrow>              &amp;= e_H          &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                        </md>
+                        and 
+                        <md>
+                          <mrow> \varphi\inv(h)^n &amp;= \varphi\inv(h^n) &amp;&amp; <xref ref="exe-grp-hom-order-split"/></mrow>
+                          <mrow>              &amp;= \varphi\inv(e_H)     &amp;&amp; n \text{ is the order of } h</mrow>
+                          <mrow>              &amp;= e_G                  &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                        </md>
+                        Thus <m>\varphi(g)^m=e_H</m> and <m>\varphi\inv(h)^n=e_G</m>.
+                      </p>
+                      <p>
+                        I claim <m>m</m> and <m>n</m> are the smallest positive integers where this holds.
+                        Suppose by way of contradiction there exist <m>m'&lt;m</m> and <m>n'&lt;n</m> such that <m>\varphi(g)^{m'}=e_H</m> and <m>\varphi\inv(h)^{n'}=e_G</m>.
+                        But then
+                        <md>
+                          <mrow> g^{m'} &amp;= \varphi\inv \varphi(g^{m'}) </mrow>
+                          <mrow>        &amp;= \varphi\inv (e_H)         &amp;&amp; \varphi(g)^{m'}=e_H</mrow>
+                          <mrow>        &amp;= e_G                      &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                        </md>
+                        and 
+                        <md>
+                          <mrow> h^{n'} &amp;= \varphi\varphi\inv(h^{n'}) </mrow>
+                          <mrow>        &amp;= \varphi(e_G)            &amp;&amp; \varphi\inv(h)^{n'}=e_G</mrow>
+                          <mrow>        &amp;= e_H                     &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                        </md>
+                        As <m>m'&lt;m</m> and <m>n'&lt;n</m>, this contradicts <m>|g|=m</m> and <m>|h|=n</m>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>(\Rightarrow)</m>
+                        Suppose <m>G</m> is abelian, and let <m>x,y\in H</m>.
+                        <md>
+                          <mrow> xy &amp;= \varphi\varphi\inv(xy)</mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(x)\varphi\inv(y) &amp;&amp; <xref ref="def-ghom"/> </mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(y)\varphi\inv(x) &amp;&amp; G \text{ abelian }, \varphi\inv(x), \varphi\inv(y)\in G, </mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(yx) &amp;&amp; <xref ref="def-ghom"/> </mrow>
+                          <mrow>    &amp;= yx</mrow>
+                        </md>
+                        Thus every element two elements in <m>H</m> commute, making <m>H</m> abelian.
+                      </p>
+                      <p>
+                        <m>(\Leftarrow)</m>
+                        Suppose <m>H</m> is abelian, and let <m>x,y\in G</m>.
+                        <md>
+                          <mrow> xy &amp;= \varphi\varphi\inv(xy)</mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(x)\varphi\inv(y) &amp;&amp; <xref ref="def-ghom"/> </mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(y)\varphi\inv(x) &amp;&amp; H \text{ abelian }, \varphi\inv(x), \varphi\inv(y)\in H, </mrow>
+                          <mrow>    &amp;= \varphi\varphi\inv(yx) &amp;&amp; <xref ref="def-ghom"/> </mrow>
+                          <mrow>    &amp;= yx</mrow>
+                        </md>
+                        Thus every element two elements in <m>G</m> commute, making <m>G</m> abelian.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+           
+            <exercise xml:id="exe-not-isomorphic"><title>Something's Missing</title>
+              <statement>
+                <p>
+                  Justify why the following pairs of groups are <em>not</em> isomorphic.
+                  <ol>
+                    <li>
+                      <p><m>Q_8</m> and <m>D_8</m></p>
+                    </li>
+
+                    <li>
+                      <p><m>\Z/6</m> and <m>S_3</m></p>
+                    </li>
+
+                    <li>
+                      <p><m>D_{24}</m> and <m>S_4</m></p>
+                    </li>
+
+                    <li>
+                      <p><m>\Q</m> and <m>\Q^\times</m></p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+              <!--
+              <solution>
+                <p>
+                  Coming soon!
+                </p>
+              </solution>
+              -->
+            </exercise>
+
+            <exercise><title>There Can Only Be One...</title>
+              <statement>
+                <p>
+                  All trivial groups are (canonically) isomorphic.
+                  Hence, we usually speak of <em>the</em> trivial group.
+                </p>
+              </statement>
+            </exercise>
+
+            <theorem xml:id="thm-iso-equivalence-relation"><title>Isomorphisms form <q>Equivalence</q> Relation</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        <m>G\cong G</m>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>G\cong H</m>, then <m>H\cong G</m>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>G\cong H</m> and <m>H\cong K</m>, then <m>G\cong K</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        The identity map from <m>G\to G</m> is an <xref ref="grp-identity-iso" text="custom"> isomorphism</xref>, making <m>G</m> isomorphic to <m>G</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Suppose <m>\varphi:G\to H</m> is an isomorphism.
+                        Then there exists a homomorphism <m>\phi: H \to G</m> such that <m>\varphi \circ \phi = \operatorname{id}_H</m> and <m>\phi \circ \varphi = \operatorname{id}_G</m>.
+                        Thus <m>\phi</m> is an isomorphism from <m>H</m> to <m>G</m>, and so <m>H\cong G</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Let <m>\varphi: G\to H</m> and <m>\phi: H\to K</m> be isomorphisms.
+                        From <xref ref="thm-ghom-composition"/> we see <m>\phi\circ\varphi</m> is a homomorphism of groups.
+                        As both <m>\varphi</m> and <m>\phi</m> are injective, <m>\phi\circ\varphi</m> is injective by <xref ref="thm-compositions-and-jectivity"/>.
+                        Similarly, as both <m>\varphi</m> and <m>\phi</m> are surjective, <m>\phi\circ\varphi</m> is surjective by <xref ref="thm-compositions-and-jectivity"/>.
+                        Thus <m>\phi\circ\varphi</m> is a bijective homomorphism from <m>G</m> to <m>K</m>, we see <m>G\cong K</m> by <xref ref="thm-iso-def"/>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <remark>
+              <p>
+                The quotation marks in the title of this result are important. 
+                Equivalence relations as we know them are only defined on <em>sets</em>, but there is no set of all groups, much as there is no set of all sets.
+                This dips into the realm of Russel's Paradox and higher category theory, which we will steer clear of for the time being.
+              </p>
+            </remark>
+            
+          </subsection>
+
+          <subsection xml:id="subsec-automorphisms"><title>Automorphism? I'm <em>Am</em> 'em!</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  Self preservation is the first law of nature.
+                </q>
+              </p>
+              <attribution>Samuel Butler</attribution></blockquote>
+            
+            <definition xml:id="def-gp-automorphism"><title>Group Automorphism</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group. 
+                  An isomorphism <m>\varphi:G\to G</m> is called an <em>automorphism</em>
+                  <idx><h>automorphism (of a group)</h></idx> of <m>G</m>. 
+                </p>
+              </statement>
+            </definition>
+
+            <example xml:id="ex-identity-automorphism">
+              <p>
+                In <xref ref="ex-group-iso-examples"/> we saw that the identity map is a group isomomorphism from a group to itself, making <m>\id</m> an automorphism.
+              </p>
+            </example>
+
+            <definition xml:id="def-gp-aut"><title>Automorphism Group</title>
+              <statement>
+                <p>
+                  The set of automorphisms of a group <m>G</m> is called the <term>automorphism group</term> of <m>G</m> and denoted <m>\Aut(G)</m>.
+                  <idx><h>automorphism group (of a group)</h></idx>
+                  <idx><h><m>\Aut(G)</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              Let's verify that this group is indeed what it claims to be.
+              <fn>The more pedantic reader might object to a group claiming anything, as it is an abstract concept. However, the more sassy author would politely tell them to keep it to themselves.</fn>
+            </p>
+
+            <proposition xml:id="prop-aut-is-group"><title>The Automorphism Group</title>
+              <statement>
+                <p>
+                  The set of automorphisms of <m>G</m>, denoted <m>\operatorname{Aut}(G)</m>, is a group under composition.
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  First, I show that operation is associative.
+                  Let <m>\varphi, \phi, \psi\in\Aut(G)</m>. 
+                  As <xref ref="thm-composition-associative" text="custom"> function composition is associative</xref>, we see <m>(\varphi\circ\phi)\circ\psi = \varphi\circ(\phi\circ\psi)</m>.
+                </p>
+
+                <p>
+                  I claim <m>\id</m> is the identity element of <m>\Aut(G)</m>.
+                  Recall from <xref ref="ex-identity-automorphism"/> that <m>\id:G\to G</m> is indeed an automorphism.
+                  Let <m>\varphi\in\Aut(G)</m>. 
+                  We will show <m>\varphi\circ \id=\varphi=\id\circ \varphi</m>. 
+                  As all functions share the same domain and co-domain, we need only show that the functions map elements equally, 
+                  Let <m>x \in G</m>, and observe:
+                  <md>
+                    <mrow> \varphi\circ \id(x) &amp;= \varphi(\id(x)) </mrow>
+                    <mrow>  &amp;= \varphi(x) </mrow>
+                    <mrow>  &amp;= \id(\varphi(x)) </mrow>
+                    <mrow>  &amp;= \id\circ\varphi(x) </mrow>
+                  </md>
+                  Thus <m>\id</m> is indeed the identity element in <m>\Aut(G)</m>.
+                </p>
+
+                <p>
+                  Finally, I show that every automorphism has an inverse, 
+                  Let <m>\varphi\in\Aut(G)</m>.
+                  As <m>\varphi</m> is an isomorphism, there exists a homomorphism <m>\phi: G \to G</m> such that <m>\varphi \circ \phi = \operatorname{id}</m> and <m>\phi \circ \varphi = \operatorname{id}</m>.
+                  Thus <m>\phi</m> is, itself, an automorphism of <m>G</m>, and so <m>\phi\in\Aut(G)</m>, making <m>\phi</m> the inverse of <m>\varphi</m>.
+                </p>
+              </proof>
+            </proposition>
+
+            <exercise xml:id="exe-complex-conjugation-automorphism"><title>Complex Conjugation Automorphism</title>
+              <statement>
+                <p>
+                  The function <m>\phi:\C\to\C</m> given by <m>\phi(a+bi)=a-bi</m> is an automorphism.
+                </p>
+              </statement>
+              <!--
+              <solution>
+                <p>
+                  Coming soon!
+                </p>
+              </solution>
+              -->
+            </exercise>
+
+            <exercise xml:id="ex-z-aut"><title><m>\Aut(\Z)</m></title>
+              <statement>
+                <p>
+                  <m>\Aut(\Z)\cong\Z/2</m>
+                </p>
+              </statement>
+              <!--
+              <solution>
+                <p>
+                  Coming soon!
+                </p>
+              </solution>
+              -->
+            </exercise>
+      
+            <remark>
+              <p>
+                Notice that we have already shown that the composition of automorphisms is an automorphism, both through <xref ref="thm-iso-equivalence-relation"/> (as automorphisms are isomorphisms) and <xref ref="prop-aut-is-group"/> (as groups are closed under their operation)
+              </p>
+            </remark>
+      
+            <definition xml:id="def-inner-automorphisms"><title>Inner Automorphism</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group and <m>x\in G</m>. 
+                  The function <m>\psi_x:G\to G</m> defined by <m>\psi_x(a)=xax^{-1}</m> is called the <em>inner automorphism</em><idx><h>inner automorphism</h></idx> of <m>G</m> induced by <m>x</m>.
+                  The set of <em>inner automorphisms</em><idx><h>inner automorphism group</h></idx> of <m>G</m> is denoted <m>\Inn(G)=\{\psi_x\mid x\in G\}</m>.
+                  <idx><h><m>\Inn(G)</m></h></idx>
+                </p>
+              </statement>
+            </definition>
+
+            <p>
+              Let's make sure this is indeed an automorphism to avoid any potential awkwardness down the line.
+            </p>
+
+            <proposition xml:id="prop-conjugation-automorphism"><title>Conjugation Automorphism</title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group and <m>x\in G</m>. 
+                  Then <m>\psi_g\in \operatorname{Aut}(G)</m> for all <m>g\in G</m>. 
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>G</m> be a group and <m>g\in G</m>. 
+                  For any <m>x,y\in G</m>, observe
+                  <md>
+                    <mrow> \psi_g(xy) &amp;= g(xy)g^{-1} &amp;&amp; <xref ref="def-inner-automorphisms"/></mrow>
+                    <mrow>  &amp;= gx(g^{-1} g)yg^{-1} </mrow>
+                    <mrow>  &amp;=  \psi_g(x) \psi_g(y) &amp;&amp; <xref ref="def-inner-automorphisms"/></mrow>
+                  </md>
+                  proving that <m>\psi_g</m> is a homomorhism from <m>G</m> to itself.
+                </p>
+
+                <p>
+                  I claim <m>\psi_g \circ \psi_h = \psi_{gh}</m> holds for any <m>g, h \in G</m>.
+                  Observe 
+                  <md>
+                    <mrow> \psi_g(\psi_h(x)) &amp;= \psi_g(hxh^{-1}) &amp;&amp; \text{apply }<xref ref="def-inner-automorphisms"/> \text{ for } \psi_h </mrow>
+                    <mrow>  &amp;= ghxh^{-1} g^{-1} &amp;&amp; \text{apply } <xref ref="def-inner-automorphisms"/> \text{ for } \psi_g </mrow>
+                    <mrow>  &amp;= ghx(gh)^{-1} &amp;&amp; <xref ref="thm-group-inverses"/></mrow>
+                    <mrow>  &amp;= \psi_{gh}(x) &amp;&amp; \text{apply }<xref ref="def-inner-automorphisms"/> \text{ for } \psi_{gh}</mrow>
+                  </md>
+                  Additionally, notice that <m>\psi_e(x) = exe = x</m> for all <m>x\in G</m>, and thus <m>\psi_e = \operatorname{id}_G</m>.
+                </p>
+                <p>
+                  As <m>\psi_g \circ \psi_h = \psi_{gh}</m>, it follows <m>\psi_g \circ \psi_{g^{-1}} = \operatorname{id}_G</m> and <m>\psi_{g^{-1}} \circ \psi_g = \operatorname{id}_G</m>. 
+                  This proves <m>\psi_g</m> has a two-sided inverse and hence is an isomorphism.
+                  <fn>In fact, it shows that <m>(\psi_g)^{-1} = \psi_{g^{-1}}</m>.</fn>
+                  Thus <m>\psi_g\in \operatorname{Aut}(G)</m> for all <m>g\in G</m>.                   
+			          </p>
+              </proof>
+            </proposition>
+
+            <convention>
+              <p>
+                In this text <m>\psi_g</m> is primarily reserved for conjugation automorphisms, where the subscript identifies which element is doing the conjugating.
+              </p>
+            </convention>
+
+            <remark>
+              <p>
+                There is a notion of <q>outer automorphisms</q> as well, though we currently lack the tools to define them rigorously.
+              </p>
+            </remark>
+
+            <!--
+            <table>
+              <title>Group Morphisms</title>
+              <tabular>
+                <row>
+                  <cell>Name</cell> <cell>Injective</cell> <cell>Surjective</cell> <cell>From Set to Itself</cell>
+                </row>
+                <row>
+                  <cell>Homomorphism</cell> <cell>No</cell> <cell>No</cell> <cell>No</cell>
+                </row>
+                <row>
+                  <cell>Monomorphism</cell> <cell>Yes</cell> <cell>No</cell> <cell>No</cell>
+                </row>
+                <row>
+                  <cell>Epimorphism</cell> <cell>No</cell> <cell>Yes</cell> <cell>No</cell>
+                </row>
+                <row>
+                  <cell>Isomorphism</cell> <cell>Yes</cell> <cell>Yes</cell> <cell>No</cell>
+                </row>
+                <row>
+                  <cell>Endomorphism</cell> <cell>No</cell> <cell>No</cell> <cell>Yes</cell>
+                </row>
+                <row>
+                  <cell>Automorphism</cell> <cell>Yes</cell> <cell>Yes</cell> <cell>Yes</cell>
+                </row>
+              </tabular>
+            </table>
+            -->
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                 A <xref text="title" ref="def-ghom"/> is a function between groups that preserves certain algebraic structures, such as the operation, identites, and inverses.
+                 <fn>For the first, see: <xref ref="def-ghom"/>. For the second and third, see: <xref ref="thm-grphomom-preservations"/></fn>
+                 The set of elements mapped to the identity by a homomorphism is known as its <xref text="title" ref="def-group-kernel"/>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  A <xref text="title" ref="def-gpiso"/> is a bijective homomorphism, and a <xref text="title" ref="def-gp-automorphism"/> is an isomorphism from a group to itself.
+                  The structures preserved by an isomorphism are known as <xref text="title" ref="thm-iso-inv"/>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                 The set of automorphisms of a group forms a group itself: the <xref text="title" ref= "def-gp-aut"/> of the group.
+                 <fn>See: <xref ref="prop-aut-is-group"/></fn>
+                 Specifically, the <xref text="title" ref="prop-conjugation-automorphism"/> will prove very important later.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Compositions of homomorphisms, isomorphisms, and automophisms are again homomorphisms, isomorphisms, and automophisms, respectively.
+                </p>
+              </li>
+            </ul>
+          </outcomes>  
+    
+        </section>
+
+        <section xml:id="sec-subgroups"><title>Subgroups</title>
+        
+          <subsection xml:id="subsec-subgroup-basics"><title>Subgroups</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  I have this fear of falling in front of large groups...that's why I tend not to wear heels.
+                </q>
+                <idx><h>Taylor Swift</h></idx></p>
+                <attribution>Taylor Swift</attribution>
+              </blockquote>
+      
+            <definition xml:id="def-subgroup"><title>Subgroup</title>
+              <statement>
+                <p>
+                  A nonempty subset <m>H</m> of a group <m>G</m> is called a <em>subgroup</em>, denoted <m>H\leq G</m>,  
+                  if and only if <m>H</m> is a group under the multiplication law of <m>G</m>.
+                  <idx><h><m>\leq</m> (groups)</h></idx>
+                  <idx><h>subgroup</h></idx>
+                </p>
+      
+                <p>
+                  A subgroup <m>H</m> of a group <m>G</m> is a called <em>proper</em> subgroup, denoted <m>H&lt;G</m>, if and only if <m>H\neq G</m>.
+                  <idx><h>proper subgroup</h></idx>
+                  <idx><h><m>&lt;</m> (groups)</h></idx>
+                </p>
+              </statement>
+            </definition>
+      
+            <theorem xml:id="thm-subgroup-test"><title>Subgroup Tests</title>
+              <idx><h>subgroup test</h></idx>
+              <statement>
+                <p>
+                  <ol>
+                    <li xml:id="thm-one-step"><title>One Step Subgroup Test</title>
+                      <p>
+                        If a subset <m>H</m> of a group <m>G</m> is nonempty and satisfies for all <m>x,y \in H</m>, <m>xy^{-1} \in H</m>, then <m>H</m> is a subgroup.
+                      </p>
+                    </li>
+
+                    <li><title>Two Step Subgroup Test</title>
+                      <p>
+                        If a subset <m>H</m> of a group <m>G</m> is nonempty and closed under multiplication and inversion, then <m>H</m> is a subgroup.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+      
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Assume <m>H</m> is non-empty and for all <m>x,y \in H</m>, <m>xy^{-1} \in H</m>. 
+                      </p>
+
+                      <p>
+                        First, we show associativity. 
+                        Let <m>x,y,z\in H</m> (not necessarily distinct, as <m>H</m> might not have three distinct elements).
+                        As <m>H\leq G</m> we have <m>x,y,z\in G</m>.
+                        As <m>G</m> is a group is satisfies the associative property, and thus <m>(xy)z=x(yz)</m>.
+                        Hence <m>H</m> satisfies the associative property as well.
+                      </p>
+
+                      <p>
+                        I claim that <m>e_G\in H</m>, and further that <m>e_G</m> is the identity element of <m>H</m>.
+                        Since <m>H</m> is non-empty, there exists some <m>h \in H</m>. 
+                        As <m>xy^{-1} \in H</m> for all <m>x,y \in H</m>, setting both <m>x</m> and <m>y=h</m> we see <m>hh\inv\in H</m>
+                        Thus <m>e_G\in H</m>.
+                        As <m>H\sse G</m>, we see 
+                        <me>
+                          e_Gx=x=xe_G
+                        </me> 
+                        for any <m>x\in H</m>, making <m>e_G</m> the identity element of <m>H</m>. 
+                      </p>
+
+                      <p>
+                        Now I show each element of <m>H</m> has an inverse in <m>H</m>.
+                        Let <m>h\in H</m>. 
+                        By setting <m>x=e_G</m> and <m>y=h</m>, we see <m>e_Gh\inv\in H</m>.
+                        As <m>e_G</m> is the identity element of <m>H</m>, we see <m>e_Gh\inv = h\inv</m>, and thus <m>h\inv\in H</m>.
+                        Hence every element of <m>H</m> has an inverse contained in <m>H</m>.
+                      </p> 
+
+                      <p>
+                        Finally, we must show that the restriction of the group operation of <m>G</m> to <m>H</m> is a well-defined group operation. 
+                        In other words, given <m>x,y\in H</m>, it must be the case that <m>xy\in H</m>.
+                        Given <m>x,y \in H</m>, from the previous paragraph we know <m>y^{-1} \in H</m>. 
+                        Thus <m>xy = x(y^{-1})^{-1} \in H</m>, which is what we wanted.
+                        This means 
+                        This operation is associative by the axioms for the group <m>G</m>. 
+                        The axioms of a group have now been established for <m>(H, \cdot)</m>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Assume <m>H</m> is non-empty and closed under multiplication and inversion. 
+                        Then, for <m>x,y\in H</m> we have <m>y^{-1}\in H</m> and <m>xy^{-1}\in H</m>. 
+                        Since the hypothesis of the one-step test is satisfied, <m>H</m> is a subgroup of <m>G</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <remark>
+              <p>
+                Note that in our proof of <xref ref="thm-subgroup-test"/> we actually proved something stronger along the way. 
+                As we showed <m>e_G</m> is the (unique) identity element of any subgroup <m>H</m>, it is impossible to have a subgroup with a different identity element than its parent group.
+              </p>
+            </remark>
+      
+            <example xml:id="ex-common-subgroups"><title>Common Subgroups</title>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      <m>\{e_G\}</m> and <m>G</m> are subroups of <m>G</m>, which we call the <term>trivial subgroups</term> of <m>G</m>.
+                    </p>
+                  </li>
+      
+                  <li>
+                    <p>
+                      <m>\Z\leq\Q\leq\R\leq\C</m>
+                    </p>
+                  </li>
+      
+                  <li>
+                    <p>
+                      <m>\Z^\times\leq\Q^\times\leq\R^\times\leq\C^\times</m>
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>A_n\leq S_n</m> for all <m>n\in\N</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>\Inn(G)\leq\operatorname{Aut}(G)</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      The set of all rotations is a subgroup of <m>D_{2n}</m>. 
+                      Similarly, the set of reflections is also a subgroup.
+                    </p>
+                  </li>
+      
+                  <li xml:id="ex-nz">
+                    <p>
+                      Let <m>n\in\N</m> and define <m>n\Z=\{x\in\Z|x=nk\;\text{for some}\;k\in\Z\}</m>. 
+                      Then <m>n\Z\leq\Z</m> for all <m>n</m>.
+                      <idx><h><m>n\Z</m></h></idx>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </example>
+
+            <p>
+              In fact, in the case of <xref ref="ex-nz"/>, these turn out to be the <em>only</em> subgroups of <m>\Z</m>.
+            </p>
+
+            <exercise xml:id="exe-subgroups-of-z"><title>Subgroups of <m>\Z</m></title>
+              <statement>
+                <p>
+                  The only subgroups of <m>\Z</m> are the sets <m>n\Z</m>.    
+                </p>
+              </statement>
+            </exercise>
+
+            <p>
+              Whilst perusing <xref ref="ex-common-subgroups"/>, you may have noticed the following:
+              <fn>If you didn't, don't worry. I won't tell anyeone.</fn>
+            </p>
+
+            <investigation xml:id="exe-torsion-subgroup"><title>Torsion Subgroups</title>    
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Let <m>G</m> be an abelian group. 
+                        Then the set of elements of finite order, which we denote <m>T</m>, is a subgroup of <m>G</m>, called the <em>torsion subgroup</em> of <m>G</m>.
+                        <idx><h>torision subgroup</h></idx>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Show that the torision subgroup may not in fact be a subgroup if <m>G</m> is not assumed to be abelian.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>  
+            </investigation>
+
+            <theorem xml:id="thm-properties-of-group-homoms"><title>Group Homomorphisms and Subgroups</title>    
+              <statement>
+                <p>
+                  <ol>
+                    <li><title>Images are Subgroups</title>
+                      <p>
+                        If <m>\varphi: G \to H</m> is a homomorphism of groups, then the <xref ref="def-image-preimage" text="custom"> image </xref> of <m>\varphi</m> is a subgroup of <m>H</m>.
+                      </p>
+                    </li>
+      
+                    <li><title>Kernels are Subgroups</title>
+                      <p>
+                        If <m>\varphi: G \to H</m> is a homomorphism of groups, then the kernel of <m>\varphi</m> is a subgroup of <m>G</m>.
+                      </p>
+                    </li>
+      
+                    <li><title>Preimages are Subgroups</title>
+                      <p>
+                        If <m>\varphi:G\to H</m> is a group homomorphism and <m>K\leq H</m> then the <xref ref="def-image-preimage" text="custom"> preimage </xref> of <m>K</m> is a subgroup of <m>G</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>\varphi: G \to H</m> be a homomorphism of groups.
+                  <ol>
+                    <li>
+                      <p>
+                        First, note that since <m>\varphi(e_G)=e_H</m> by <xref ref="thm-grphomom-preservations"/>, so we know <m>\im(\varphi) \ne \emptyset</m>.
+                      </p>
+                      <p>
+                        Let <m>x,y\in \im(\varphi)</m>.
+                        Thus <m>x = \varphi(a)</m> and <m>y = \varphi(b)</m> for some <m>a,b \in G</m>.
+                        Hence
+                        <md>
+                          <mrow>xy^{-1} &amp;= \varphi(a)\varphi(b)^{-1} &amp;&amp; \text{Substitution}</mrow>
+                          <mrow>        &amp;= \varphi(ab^{-1}) &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                        </md>
+                        As <m>xy^{-1}=\varphi(ab^{-1}) \in \im(\varphi)</m>, we see <m>\im(\varphi)\leq H</m> by the <xref ref="thm-one-step" text="custom"> one-step subgroup test</xref>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        First, note that since <m>\varphi(e_G)=e_H</m> by <xref ref="thm-grphomom-preservations"/>, so we know <m>\ker(\varphi) \ne \emptyset</m>.
+                      </p>
+                      <p>
+                        Let <m>x,y\in \ker(\varphi)</m>.
+                        Then <m>\varphi(x)=\varphi(y)=e_G</m>, and we have
+                        <md>
+                          <mrow>\varphi(xy^{-1}) &amp;= \varphi(x)\varphi(y^{-1}) &amp;&amp; <xref ref="def-ghom"/></mrow>
+                          <mrow>        &amp;= \varphi(x)\varphi(y)^{-1} &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                          <mrow>        &amp;= \varphi(y)\varphi(y)^{-1} &amp;&amp; \text{Substitution}</mrow>
+                          <mrow>        &amp;= e_H &amp;&amp;</mrow>
+                        </md>
+                        Thus, if <m>x,y\in \ker(\varphi)</m> then <m>xy^{-1}\in \ker(\varphi)</m>, making <m>\ker(\varphi)\leq H</m> by the <xref ref="thm-one-step" text="custom"> one-step subgroup test</xref>.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        First notice that <m>ke_H = k = e_Hk</m> for all <m>x\in K</m>, and thus <m>e_K = e_H</m>, as and identity elements are unique.
+                        As <m>e_H=\varphi(e_G)</m> by <xref ref="thm-grphomom-preservations"/>, we see <m>\varphi\inv(K) \ne \emptyset</m>.
+                      </p>
+                      <p>
+                        Let <m>x,y\in \varphi\inv(K)</m>.
+                        Thus <m>x,y\in G</m> and there exist <m>a,b\in K</m> such that <m>\varphi(x) = a</m> and <m>\varphi(y) = b</m>.
+                        Observe:
+                        <md>
+                          <mrow>\varphi(xy\inv) &amp;= \varphi(x)\varphi(y\inv) &amp;&amp; <xref ref="def-ghom"/></mrow>
+                          <mrow>                &amp;= \varphi(x)\varphi(y)\inv &amp;&amp; <xref ref="thm-grphomom-preservations"/></mrow>
+                          <mrow>                &amp;= ab\inv &amp;&amp; \text{Substitution}</mrow>
+                        </md>
+                        As <m>K\leq H</m>, we know <m>ab\inv\in K</m> by the <xref ref="thm-one-step" text="custom"> one-step subgroup test</xref>. 
+                        Thus <m>\varphi(xy\inv)=ab\inv\in K</m>, and so <m>xy\inv\in\varphi\inv(K)</m>. 
+                        Hence <m>\varphi\inv(K)\leq G</m> by the <xref ref="thm-one-step" text="custom"> one-step subgroup test</xref>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-group-inclusion-hom"><title>Inclusions are Homomorphisms</title>
+              <statement>
+                <p>
+                  If <m>H</m> is a subgroup of a group <m>G</m>, then the inclusion <m>H\into G</m> is a group homomorphism.
+                </p>
+              </statement>
+            </exercise>
+
+            <definition xml:id="def-special-linear-group"><title>Special Linear Group</title>
+              <statement>
+                <p>
+                  The <em>special linear group</em> with complex entries is defined
+                  <me>
+                    \SL_n(\C)=\{A \mid A = n\times n \;\text{matrix with entries in}\; \C, \det(A)=1\}.
+                  </me>
+                  <idx><h>special linear group</h></idx>
+                  <idx><h><m>\SL</m></h></idx>    
+                </p>
+              </statement>
+            </definition>
+      
+            <proposition xml:id="prop-slg-subgroup"><title><m>\SL_n(\C)\leq\GL_n(\C)</m></title>
+              <statement>
+                <p>
+                  The special linear group <m>\SL_n(\C)</m> is a subgroup of the general linear group <m>\GL_n(\C)</m>.
+                </p>
+              </statement>
+            </proposition>
+
+          </subsection>
+
+          <subsection xml:id="subsec-subgroup-lattice"><title>The Subgroup Lattice</title>
+      
+            <theorem xml:id="thm-subgroup-properties"><title>Properties of Subgroups</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li><title>Transitivity of Subgroups</title>
+                      <p>
+                        If <m>H\leq G</m> and <m>K\leq H</m>, then <m>K\leq G</m>.
+                      </p>
+                    </li>
+      
+                    <li><title>Intersections of Subgroups</title>
+                      <p>
+                        If <m>H_\alpha</m> is a subgroup of <m>G</m> for all <m>\alpha</m> in an index set <m>J</m>, then <m>H=\bigcap_{\alpha\in J} H_\alpha</m> is a subgroup of <m>G</m>.
+                      </p>
+                    </li>
+      
+                    <li><title>Unions of Subgroups</title>
+                      <p>
+                        Let <m>G</m> be a group and <m>H</m>, <m>H'</m> subgroups.
+                        The set <m>H\cup H'</m> is a subgroup of <m>G</m> if and only if <m>H\subseteq H'</m> or <m>H'\subseteq H</m>.
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        Suppose <m>H\leq G</m> and <m>K\leq H</m> for groups <m>G,H</m>, and <m>K</m>.
+                        As <m>K\leq H</m> we know it is non-empty. 
+                        For any <m>x,y\in K</m> we know that <m>xy\inv\in K</m>, as <m>K\leq H</m>.
+                        As <m>K\sse G</m> as sets, <m>K\leq G</m> by the <xref ref="thm-one-step" text="title"/>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Let <m>J</m> denote any indexing set.
+                        For each <m>\a \in J</m>, let <m>H_\a</m> be a subgroup of <m>G</m>. 
+                        I claim 
+                        <me>
+                          H := \bigcap_{\a \in J} H_\a
+                        </me>
+                        is a subgroup of <m>G</m>. 
+                      </p>
+
+                      <p>
+                        First, notice <m>H</m> is nonempty, as <m>e_G \in H_j</m> for all <m>i</m>. 
+                        Let <m>x,y\in H</m>.
+                        Then for each <m>\a</m> we have <m>x,y \in H_\a</m>. 
+                        As <m>H_\a\leq G</m> for each <m>\a\in J</m>, we have <m>xy^{-1} \in H</m>. 
+                        Thus <m>H</m> a subgroup by the <xref ref="thm-one-step" text="title"/>.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        Coming soon!
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </proof>
+            </theorem>
+
+            <exercise xml:id="exe-no-proper-unions"><title>No Proper Unions</title>
+              <statement>
+                <p>
+                  No finite group can be expressed as the union of two proper subgroups.
+                </p>
+              </statement>
+  
+              <hint>
+                <p>
+                  Part (3) of <xref ref="thm-subgroup-properties"/> may prove useful!
+                </p>
+              </hint>
+            </exercise>
+
+            <exercise xml:id="exe-subgroup-not-symmetric"><title>Subgroups not Symmetric</title>   
+              <statement>
+                <p>
+                  In <xref ref="thm-subgroup-properties"/> we showed that subgroups form a transitve relation. 
+                  Prove that the relation is reflexive (it can be one sentence) but <em>not</em> symmetric, and thus not an equivalence relation.
+                </p>
+              </statement>
+            </exercise>
+
+            <theorem xml:id="thm-cayley"><title>Cayley's Theorem</title>
+              <idx><h>Cayley's theorem</h></idx>
+              <statement>
+                <p>
+                  Every group is isomorphic to a subgroup of <m>S_n</m>.
+                </p>
+              </statement>
+            </theorem>
+
+            <remark>
+              <p>
+                This is a nearly useless theorem.
+              </p>
+            </remark>
+          </subsection>
+      
+          <subsection xml:id="subsec-center"><title>Stuck in the Middle</title>
+
+            <blockquote>
+              <p>
+                <q>
+                  Stay in the center, and you will be ready to move in any direction.
+                </q>
+              </p>
+              <attribution>Alan Watts</attribution></blockquote>
+      
+            <definition xml:id="def-group-center"><title>Center of a Group</title>
+              <statement>
+                <p>
+                  The <em>center</em> of a group <m>G</m>, often written <m>Z(G)</m>, is the set of elements of <m>G</m> that commute with every element of <m>G</m>. 
+                  That is, 
+                  <me>
+                    Z(G)=\{x \in G \, | \, xy = yx\,\text{ for all }y \in G\}.
+                  </me>
+                  <idx><h><m>Z(G)</m></h></idx>
+                  <idx><h>center (of a group)</h></idx>        
+                </p>
+              </statement>
+            </definition>
+      
+            <proposition xml:id="prop-center-is-subgroup"><title>Center is a Subgroup</title>
+              <statement>
+                <p>
+                  <ol>
+                    <li>
+                      <p>
+                        <m>Z(G)\leq G</m>
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>Z(G)</m> is abelian
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>H\leq G</m>, then <m>Z(H)\leq Z(G)</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+
+              <proof>
+                <p>
+                  Let <m>G</m> be a group.                    
+                  First, notice that since <m>xe = x = ex</m> for all <m>x\in G</m>, we have <m>e\in Z(G)</m>, and thus <m>Z(G)\ne\emptyset</m>.
+                </p>
+                <p>
+                  Let <m>x,y\in Z(G)</m>.
+                  I claim <m>xy\inv\in Z(G)</m>.
+                </p>
+                <p>
+                  Let <m>g\in G</m>, and observe:
+                  <md>
+                    <mrow>(xy\inv) g &amp;= x(y\inv g) &amp;&amp; </mrow>
+                    <mrow>           &amp;= x\left(g\inv (y\inv)\inv\right)\inv &amp;&amp; <xref ref="thm-group-inverses"/> (2)</mrow>
+                    <mrow>           &amp;= x(g\inv y)\inv &amp;&amp; <xref ref="thm-group-inverses"/> (1) </mrow>
+                    <mrow>           &amp;= x(yg\inv)\inv &amp;&amp; y\in Z(G)</mrow>
+                    <mrow>           &amp;= x(gy\inv) &amp;&amp; <xref ref="thm-group-inverses"/> (2)</mrow>
+                    <mrow>           &amp;= (gy\inv)x &amp;&amp; x\in Z(G)</mrow>
+                    <mrow>           &amp;= g(y\inv x) &amp;&amp; </mrow>
+                  </md>
+                  Thus <m>Z(G)\leq G</m> by the <xref ref="thm-one-step" text="custom"> one-step subgroup test</xref>.
+                </p>
+              </proof>
+            </proposition>
+
+            <exercise xml:id="exe-center-props"><title>Properties of <m>Z(G)</m></title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group.
+                  <ol>
+                    <li>
+                      <p>
+                        <m>Z(G)</m> is abelian.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If <m>H\leq G</m>, then <m>Z(H)\leq Z(G)</m>
+                      </p>
+                    </li>
+                  </ol>
+                </p>
+              </statement>
+            </exercise>
+
+            <exercise xml:id="exe-only-element-of-order-2"><title>Only Element of Order <m>2</m></title>
+              <statement>
+                <p>
+                  Let <m>G</m> be a group and <m>g\in G</m>. 
+                  If <m>g</m> is the only element of order <m>2</m> in <m>G</m>, then <m>g\in Z(G)</m>.
+                </p>
+              </statement>
+            </exercise>
+
+            <exercise xml:id="exe-even-groups-order-2"><title>Even Order Groups</title>
+              <statement>
+                <p>
+                  Every group of even order contains an element of order <m>2</m>.
+                  <fn>This is a direct result of <xref ref="thm-cauchy"/>, but proving it is possible with the tools we have.</fn>
+                </p>
+              </statement>
+            </exercise>
+
+          </subsection>
+
+          <outcomes>
+            <ul>
+              <li>
+                <p>
+                  A <xref text="title" ref="def-subgroup"/> is a subset of a group that is also a group under the same operation.
+                  The fastest way to show something is a subgroup is with one of the <xref text="title" ref="thm-subgroup-test"/>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  The <xref text="title" ref="def-group-center"/> is the subgroup of elements of a group that commute with every other element.
+                  <fn>See: <xref ref="prop-center-is-subgroup"/>.</fn>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  The <xref text="title" ref="def-group-kernel"/> and image of a group homomorphism are subgroups.
+                  <fn>See: <xref ref="thm-properties-of-group-homoms"/></fn> 
+                </p>
+              </li>
+            </ul>
+          </outcomes>  
+        
+        </section>
+      
+      </chapter> 
+
+    
+    </part>
 
     <!-- Include chapters -->
     <xi:include href="./ch-chapter-title.ptx" />
