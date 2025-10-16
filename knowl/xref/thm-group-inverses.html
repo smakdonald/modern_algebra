@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Inverses.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(G\)</span> is a group and <span class="process-math">\(x,y\in G\text{,}\)</span> then</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\((x^{-1})^{-1} = x\)</span> and</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle (xy)\inv=y\inv x\inv\)</span></div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para">The element <span class="process-math">\((x\inv)\inv\)</span> is defined to be the inverse of the element <span class="process-math">\(x\inv\text{.}\)</span> I claim that <span class="process-math">\(x\)</span> is also the inverse of <span class="process-math">\(x\inv\text{.}\)</span>
+</div>
+<div class="para">As <span class="process-math">\(x\inv\)</span> is the inverse of <span class="process-math">\(x\text{,}\)</span> by the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> we have <span class="process-math">\(xx\inv=e\)</span> and <span class="process-math">\(x\inv x=e\text{,}\)</span> making <span class="process-math">\(x\)</span> the inverse of <span class="process-math">\(x\inv\text{.}\)</span> Thus both <span class="process-math">\(x\)</span> and <span class="process-math">\((x\inv)\inv\)</span> are inverses of the element <span class="process-math">\(x\inv\text{.}\)</span> As <a href="sec-group-basics.html#list-unique-group-inverse" class="xref" data-knowl="./knowl/xref/list-unique-group-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: Unique Inverses">inverses are unique</a>, we see <span class="process-math">\((x^{-1})^{-1} = x\text{.}\)</span>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">The element <span class="process-math">\((xy)\inv\)</span> is defined to be the inverse of the element <span class="process-math">\(xy\text{.}\)</span> I claim that <span class="process-math">\(y\inv x\inv\)</span> is also the inverse of <span class="process-math">\(xy\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/list-unique-group-inverse.html">
+\begin{align*}
+(xy)(y\inv x\inv) &amp;= x(yy\inv)x\inv &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= x(e)x\inv &amp;&amp; y\inv \text{ is the inverse of } y \\
+&amp;= (xe)x\inv &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= xx\inv &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= e &amp;&amp; x\inv \text{ is the inverse of } x.
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/list-unique-group-inverse.html">
+\begin{align*}
+(y\inv x\inv)(xy) &amp;= y\inv(x\inv x)y &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= y\inv(e)y &amp;&amp; x\inv \text{ is the inverse of } x \\
+&amp;= (y\inv e)y &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= y\inv y &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= e &amp;&amp; y\inv \text{ is the inverse of } y.
+\end{align*}
+</div>
+<div class="para">Thus both <span class="process-math">\((xy)\inv\)</span> and <span class="process-math">\(y\inv x\inv\)</span> are inverses of <span class="process-math">\((xy)\text{,}\)</span> making them equal as <a href="sec-group-basics.html#list-unique-group-inverse" class="xref" data-knowl="./knowl/xref/list-unique-group-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: Unique Inverses">inverses are unique</a>.</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-group-basics.html#thm-group-inverses">in-context</a></span>
+</body>
+</html>

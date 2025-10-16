@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Group Basics</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="My Great Book">
+<meta property="book:author" content="Sam Macdonald">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_bluegreen_grey.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">My Great Book:</span> <span class="subtitle">An example to get you started</span></a></h1>
+<p class="byline">Sam Macdonald</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-intro-groups.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro-groups.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-order-power.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\can}{can}
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\char}{char}
+\DeclareMathOperator{\cp}{CharPoly}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dim}{dim}
+\DeclareMathOperator{\edim}{embdim} 
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\eval}{eval}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\gcd}{gcd}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\max}{max}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\mp}{MinPoly}
+\DeclareMathOperator{\mSpec}{mSpec}
+\DeclareMathOperator{\Nul}{Nul}
+\DeclareMathOperator{\ns}{nullspace}
+\DeclareMathOperator{\opp}{opp}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\pdim}{pdim}
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\PtStab}{pStab}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\sStab}{SetStab}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\trdeg}{trdeg}
+
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Sgrp}{\mathbf{Sgrp}}
+\newcommand{\Ring}{\mathbf{Ring}} 
+\newcommand{\Fld}{\mathbf{Fld}}
+\newcommand{\cRing}{\mathbf{cRing}}
+\newcommand{\Mod}[1]{#1-\mathbf{Mod}} 
+\newcommand{\Cx}[1]{#1-\mathbf{Comp}} 
+\newcommand{\vs}[1]{#1-\mathbf{vect}}
+\newcommand{\Vs}[1]{#1-\mathbf{Vect}}
+\newcommand{\vsp}[1]{#1-\mathbf{vect}^+} 
+\newcommand{\Top}{\mathbf{Top}} 
+\newcommand{\Setp}{\mathbf{Set}_*} 
+\newcommand{\Alg}[1]{#1-\mathbf{Alg}} 
+\newcommand{\cAlg}[1]{#1-\mathbf{cAlg}} 
+\newcommand{\PO}{\mathbf{PO}}
+\newcommand{\Cont}{\mathrm{Cont}}
+\newcommand{\MaT}[1]{\mathbf{Mat}_{#1}}
+\newcommand{\Rep}[2]{\mathbf{Rep}_{#1}(#2)}
+
+\def\l{\lambda}
+\def\a{\alpha}
+\def\b{\beta}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\t{\theta}
+\def\s{\sigma}
+\def\z{\zeta}
+\def\vp{\varphi}
+
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\L}{\mathbb{L}} 
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\O}{\mathbb{O}}
+\newcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ON}{\mathbb{ON}}
+
+\def\cA{\mathcal A} 
+\def\cB{\mathcal B} 
+\def\cC{\mathcal C} 
+\def\cD{\mathcal D} 
+\def\cE{\mathcal E} 
+\def\cF{\mathcal F} 
+\def\cG{\mathcal G} 
+\def\cH{\mathcal H} 
+\def\cI{\mathcal I} 
+\def\cJ{\mathcal J} 
+\def\cK{\mathcal K} 
+\def\cL{\mathcal L}
+\def\cM{\mathcal M} 
+\def\cN{\mathcal N} 
+\def\cO{\mathcal O} 
+\def\cP{\mathcal P} 
+\def\cQ{\mathcal Q} 
+\def\cR{\mathcal R} 
+\def\cS{\mathcal S} 
+\def\cT{\mathcal T} 
+\def\cU{\mathcal U} 
+\def\cV{\mathcal V} 
+\def\cW{\mathcal W} 
+\def\cX{\mathcal X} 
+\def\cY{\mathcal Y} 
+\def\cZ{\mathcal Z} 
+
+\newcommand{\fa}{{\mathfrak a}} 
+\newcommand{\fb}{{\mathfrak b}} 
+\newcommand{\fc}{{\mathfrak c}} 
+\newcommand{\fd}{{\mathfrak d}} 
+\newcommand{\fe}{{\mathfrak e}}
+\newcommand{\ff}{{\mathfrak f}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fh}{{\mathfrak h}}
+\newcommand{\fi}{{\mathfrak i}}
+\newcommand{\fj}{{\mathfrak j}}
+\newcommand{\fk}{{\mathfrak k}}
+\newcommand{\fl}{{\mathfrak l}}
+\newcommand{\fm}{{\mathfrak m}} 
+\newcommand{\fn}{{\mathfrak n}}
+\newcommand{\fo}{{\mathfrak o}}
+\newcommand{\fp}{{\mathfrak p}} 
+\newcommand{\fq}{{\mathfrak q}} 
+\newcommand{\fr}{{\mathfrak r}}
+\newcommand{\fs}{{\mathfrak s}}
+\newcommand{\ft}{{\mathfrak t}}
+\newcommand{\fu}{{\mathfrak u}}
+\newcommand{\fv}{{\mathfrak v}}
+\newcommand{\fw}{{\mathfrak w}}
+\newcommand{\fx}{{\mathfrak x}}
+\newcommand{\fy}{{\mathfrak y}}
+\newcommand{\fz}{{\mathfrak z}}
+\newcommand{\fK}{{\mathfrak K}} 
+\newcommand{\fR}{{\mathfrak R}} 
+
+\def\sA{\mathscr A} 
+\def\sB{\mathscr B} 
+\def\sC{\mathscr C} 
+\def\sD{\mathscr D} 
+\def\sE{\mathscr E} 
+\def\sF{\mathscr F} 
+\def\sG{\mathscr G} 
+\def\sH{\mathscr H} 
+\def\sI{\mathscr I} 
+\def\sJ{\mathscr J} 
+\def\sK{\mathscr K} 
+\def\sL{\mathscr L}
+\def\sM{\mathscr M}
+\def\sN{\mathscr N}
+\def\sO{\mathscr O}
+\def\sP{\mathscr P}
+\def\sQ{\mathscr Q}
+\def\sR{\mathscr R}
+\def\sS{\mathscr S}
+\def\sT{\mathscr T}
+\def\sU{\mathscr U}
+\def\sV{\mathscr V}
+\def\sW{\mathscr W}
+\def\sX{\mathscr X}
+\def\sY{\mathscr Y}
+\def\sZ{\mathscr Z}
+
+
+\def\adots{a_1, \dots, a_n} 
+\def\bdots{b_1, \dots, b_n} 
+\def\ddots{d_1, \dots, d_n} 
+\def\edots{e_1, \dots, e_n} 
+\def\fdots{f_1, \dots, f_n} 
+\def\gdots{g_1, \dots, g_n} 
+\def\udots{u_1, \dots, u_n} 
+\def\xdots{x_1, \dots, x_n} 
+
+
+\def\tS{\tilde{S}}
+
+\def\sdp{\rtimes}
+\newcommand{\tensor}{\otimes} 
+\newcommand{\igen}[1]{\langle #1 \rangle} 
+\def\nsg{\unlhd}
+\def\kval{{k-\mathrm{valued}}} 
+\def\kalg{{k-\mathrm{alg}}}
+\newcommand\GG[2]{\Gal(#1/#2)}
+
+\newcommand{\MF}[3]{\Mat_{#1\times #2}(#3)}
+\newcommand{\vectwo}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} 
+\newcommand{\vecthree}[3]{\begin{bmatrix} #1 \\ #2 \\ #3\end{bmatrix}} 
+\def\ob{{\mathfrak{ob}} }
+
+\def\qed{\square}
+\def\sse{\subseteq}
+\def\ss{\subset} 
+\def\ssne{\subsetneq}
+\def\sm{\setminus}
+\def\inv{^{-1}} 
+\newcommand{\es}{\emptyset} 
+\newcommand{\Zm}[1]{\Z/({#1})} 
+\def\ov#1{\overline{#1}} 
+\newcommand{\leg}[2]{\left(\frac{{#1}}{{#2}}\right)} 
+\def\th{^{th}} 
+\def\htpy{\simeq_{\mathrm{htpc}}} 
+
+\def\textand{ \, \text{and} \, } 
+\def\textor{ \, \text{or} \, } 
+\def\textfor{ \, \text{for} \, } 
+\def\textfa{ \, \text{for all} \, } 
+\def\textst{ \, \text{such that} \, } 
+\def\textin{ \, \text{in} \, } 
+\def\fg{ \, \text{finitely generated} \, }
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\xra}[1]{\xrightarrow{#1}} 
+\newcommand{\xora}[1]{\xtwoheadrightarrow{#1}} 
+\newcommand{\xira}[1]{\xhookrightarrow{#1}} 
+\newcommand{\xla}[1]{\xleftarrow{#1}} 
+\def\lra{\longrightarrow}
+\def\into{\hookrightarrow}
+\def\onto{\twoheadrightarrow}
+
+\newcommand{\vv}[1]{\mathbf{#1}}
+\newcommand{\lm}[2]{{#1}\,\l + {#2}\,\mu} 
+\renewcommand{\v}{\vv{v}}
+\renewcommand{\u}{\vv{u}}
+\newcommand{\w}{\vv{w}}
+\newcommand{\x}{\vv{x}}
+\renewcommand{\k}{\vv{k}}
+\newcommand{\0}{\vv{0}}
+\newcommand{\1}{\vv{1}}
+\newcommand{\vecs}[2]{#1_1,#1_2,\dots,#1_{#2}}
+\newcommand{\us}[1][n]{\vecs{\u}{#1}}
+\newcommand{\vs}[1][n]{\vecs{\v}{#1}}
+\newcommand{\ws}[1][n]{\vecs{\w}{#1}}
+\newcommand{\vps}[1][n']{\vecs{\v'}{#1}}
+\newcommand{\ls}[1][n]{\vecs{\l}{#1}}
+\newcommand{\mus}[1][n]{\vecs{\mu}{#1}} 
+\newcommand{\lps}[1][n]{\vecs{\l'}{#1}}
+\def\td{\tilde{\delta}}
+\def\oo{\overline{\omega}}
+\def\ctJ{\tilde{\mathcal J}}
+\def\tPhi{\tilde{\Phi}}
+\def\te{\tilde{e}}
+\def\M{\operatorname{M}}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+\newcommand{\dual}{\vee} 
+\DeclarePairedDelimiter{\abs}{|}{|}
+\newcommand{\bv}{{\bar{v}}}
+\newcommand{\bu}{{\bar{u}}}
+\newcommand{\bw}{{\bar{w}}}
+\newcommand{\by}{{\bar{y}}}
+\newcommand{\ba}{{\bar{a}}}
+\newcommand{\bb}{{\bar{b}}}
+\newcommand{\bx}{{\bar{x}}}
+\DeclarePairedDelimiterX\setof[2]{\{}{\}}{#1\,|\,#2}
+\newcommand{\vx}{\underline{x}}
+\renewcommand{mod}[1]{\text{(mod }{#1})}
+\newcommand{\Slv}[3]{\sum_{{#2}=1}^{{#3}} {#1}_{{#2}} \v_{{#2}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-groups.html" class="internal"><span class="codenumber">I</span> <span class="title">Group Theory</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-intro-groups.html" class="internal"><span class="codenumber">1</span> <span class="title">Intro to Groups</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-group-basics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Group Basics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Binary Operations and the Definition of a Group</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-props" class="internal"><span class="codenumber">1.1.2</span> <span class="title">First Properties of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-abelian" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Abelian Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">First Examples of Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-groups-units" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Groups of Units</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-group-basics.html#subsec-group-misc" class="internal"><span class="codenumber">1.1.6</span> <span class="title">Other Initial Examples and Properties</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-order-power.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Order and Power</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-power" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Power</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-order-power.html#subsec-order" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Order</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-symmetric.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutations and Symmetric Groups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-symmetric" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Symmetric Groups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-cycles-transpositions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Cycles and Transpositions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-symmetric.html#subsec-even-odd" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Even and Odd Permutations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-d2n.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Dihedral Groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-d2n.html#subsec-d2n" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Dihedral Groups</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gphoms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Group Homomorphisms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-homom" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Homomorphism? I Barely Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-isomorphisms" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Isomorphism? I Know ’em!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-gphoms.html#subsec-automorphisms" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Automorphism? I’m <em class="emphasis">Am</em> ’em!</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-subgroups.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subgroups</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-basics" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Subgroups</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-subgroup-lattice" class="internal"><span class="codenumber">1.6.2</span> <span class="title">The Subgroup Lattice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-subgroups.html#subsec-center" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Stuck in the Middle</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">2</span> <span class="title">Chapter Title</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Section Title</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-group-basics"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Group Basics</span>
+</h2>
+<section class="introduction" id="sec-group-basics-2"><blockquote class="blockquote" id="sec-group-basics-2-1">
+<div class="para" id="sec-group-basics-2-1-1">“Most great learning happens in groups.”</div> <cite class="attribution">―Ken Robinson</cite>
+</blockquote></section><section class="subsection" id="subsec-groups"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Binary Operations and the Definition of a Group</span>
+</h3>
+<div class="para" id="subsec-groups-2"><a href="sec-group-basics.html#def-binop" class="xref" data-knowl="./knowl/xref/def-binop.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.4: Binary Operation"></a></div>
+<aside class="aside aside-like" id="subsec-groups-3"><h4 class="heading"><span class="title">A Brief Notational Aside.</span></h4>
+<div class="para" id="subsec-groups-3-2">At various points throughout this text, the author may use "mathcal" notation for definitions that do not normally require it (such as <span class="process-math">\(\G\)</span> for a group, <span class="process-math">\(\R\)</span> for a ring, etc.). In the realm of higher mathematics, this is what is known as a <dfn class="terminology">typo</dfn>, and should be reported to the proper authorities as soon as possible.</div></aside><div class="para" id="subsec-groups-4">We begin, as all great volumes of mathematics are like to do, somewhere in the middle. <details class="ptx-footnote" aria-live="polite" id="subsec-groups-4-1"><summary class="ptx-footnote__number" title="Footnote 1.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="subsec-groups-4-1">Though everything that you need from the beginning can be found in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "app-foundations" missing or not unique]</code>.</div></details>
+</div>
+<article class="definition definition-like" id="def-binop"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Binary Operation.</span>
+</h4> <div class="para logical" id="def-binop-2-1">
+<div class="para">A <em class="emphasis">binary operation</em> on a set <span class="process-math">\(S\)</span> is a <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-function" missing or not unique]</code>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-*-:S\times S\to S,\text{ given by } (x,y)\mapsto x * y.
+\end{equation*}
+</div>
+</div></article><div class="para" id="subsec-groups-6">One of the nice things about binary operations is that they have <em class="emphasis">properties.</em>
+</div>
+<article class="definition definition-like" id="def-binary-properties"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Binary Operations.</span>
+</h4> <div class="para logical" id="def-binary-properties-2-1">
+<div class="para">Let <span class="process-math">\(-*-\)</span> be a binary operation on a set <span class="process-math">\(S\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="associative-property"><div class="para" id="associative-property-1">An operation satisfies the <em class="emphasis">associative property</em> if, for all <span class="process-math">\(x,y,z\in S\text{,}\)</span> we have <span class="process-math">\((x*y)*z=x*(y*z)\text{.}\)</span> </div></li>
+<li id="identity-property"><div class="para" id="identity-property-1">An operation satisfies the <em class="emphasis">identity property</em> if there exists <span class="process-math">\(e\in G\)</span> such that <span class="process-math">\(e*g=g*e=g\)</span> for all <span class="process-math">\(g\in G\text{.}\)</span> Such an element <span class="process-math">\(e\)</span> is called an <em class="emphasis">identity element</em>. </div></li>
+<li id="inverse-property"><div class="para" id="inverse-property-1">An operation satisfies the <em class="emphasis">inverse property</em> if, for each <span class="process-math">\(x\in S\text{,}\)</span> there exists an element <span class="process-math">\(y\in S\)</span> such that <span class="process-math">\(x * y=e=y * x\text{,}\)</span> where <span class="process-math">\(e\)</span> is an identity element of <span class="process-math">\(S\text{.}\)</span> The element <span class="process-math">\(y\)</span> is called an <em class="emphasis">inverse</em> of the element <span class="process-math">\(x\text{.}\)</span> </div></li>
+</ol>
+</div></article><article class="definition definition-like" id="def-group"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Group.</span>
+</h4> <div class="para" id="def-group-2-1">A <em class="emphasis">group</em> is a pair <span class="process-math">\((G, *)\text{,}\)</span> where <span class="process-math">\(G\)</span> is a set and <span class="process-math">\(*\)</span> is a binary operation on <span class="process-math">\(G\)</span> satisfying the <a href="sec-group-basics.html#associative-property" class="xref" data-knowl="./knowl/xref/associative-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">associative</a>, <a href="sec-group-basics.html#identity-property" class="xref" data-knowl="./knowl/xref/identity-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">identity</a>, and <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse</a> properties. </div></article><aside class="aside aside-like" id="subsec-groups-9"><div class="para" id="subsec-groups-9-1">Though a group is a pair, we will usually refer to the group by only naming the underlying set, <span class="process-math">\(G\text{.}\)</span>
+</div></aside><article class="observation remark-like" id="subsec-groups-10"><h4 class="heading">
+<span class="type">Mark</span><span class="space"> </span><span class="codenumber">1.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-groups-10-1">We say that “<span class="process-math">\(S\)</span> is closed under the operation <span class="process-math">\(*\)</span>” when we want to emphasize that for any <span class="process-math">\(x,y\in S\)</span> the result of the operation, <span class="process-math">\(x*y\text{,}\)</span> is an element of <span class="process-math">\(S\text{.}\)</span> However note that closure is really part of the definition of a binary operation on a set, and it is implicitly assumed whenever we consider such an operation. <details class="ptx-footnote" aria-live="polite" id="subsec-groups-10-1-5"><summary class="ptx-footnote__number" title="Footnote 1.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="subsec-groups-10-1-5">This is the one and only "Mark". All following "Marks" will be "Remarks".</div></details>
+</div></article></section><section class="subsection" id="subsec-group-props"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">First Properties of Groups</span>
+</h3>
+<article class="theorem theorem-like" id="thm-properties-of-groups"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Groups.</span>
+</h4>
+<div class="para logical" id="thm-properties-of-groups-2-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group.</div>
+<ol class="decimal">
+<li id="list-unique-group-identity">
+<span class="heading"><span class="title">Unique Identity.</span></span><div class="para" id="list-unique-group-identity-2">The element <span class="process-math">\(e\in G\)</span> satisfying the <a href="sec-group-basics.html#identity-property" class="xref" data-knowl="./knowl/xref/identity-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">identity property</a> is unique, and we thus refer to it as the <em class="emphasis">identity element</em> of <span class="process-math">\(G\text{.}\)</span> </div>
+</li>
+<li id="list-unique-group-inverse">
+<span class="heading"><span class="title">Unique Inverses.</span></span><div class="para" id="list-unique-group-inverse-2">For each <span class="process-math">\(x\in G\text{,}\)</span> the element satisfying <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> is unique, and we thus refer to it as <em class="emphasis">the inverse</em> of <span class="process-math">\(x\text{.}\)</span> </div>
+</li>
+<li id="list-cancellation">
+<span class="heading"><span class="title">Cancellation.</span></span><div class="para" id="list-cancellation-2">Suppose <span class="process-math">\(x,y,z\in G\text{.}\)</span> If <span class="process-math">\(xy = xz\text{,}\)</span> then <span class="process-math">\(y=z\text{.}\)</span>
+</div>
+<div class="para" id="list-cancellation-3">Similarly, if <span class="process-math">\(yx = zx\text{,}\)</span> then <span class="process-math">\(y = z\)</span> </div>
+</li>
+</ol>
+</div></article><details id="thm-properties-of-groups-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-properties-of-groups-3-1"><ol class="decimal">
+<li id="thm-properties-of-groups-3-1-1-1"><div class="para logical" id="thm-properties-of-groups-3-1-1-1-1">
+<div class="para">Suppose there exist two elements, <span class="process-math">\(e\)</span> and <span class="process-math">\(e'\text{,}\)</span> such that, for all <span class="process-math">\(x\in G\text{,}\)</span> we have <span class="process-math">\(ex = x = xe\)</span> and <span class="process-math">\(e'x = x = xe'\text{.}\)</span> As <span class="process-math">\(e\)</span> is an identity element, by definition we have <span class="process-math">\(e'e=e'\text{.}\)</span> Similarly, as <span class="process-math">\(e'\)</span> is an identity element, we have <span class="process-math">\(e'e=e\text{.}\)</span> Combining these two equations, we see</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e = ee' = e'.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(e=e'\text{,}\)</span> making the identity element unique.</div>
+</div></li>
+<li id="thm-properties-of-groups-3-1-1-2"><div class="para logical" id="thm-properties-of-groups-3-1-1-2-1">
+<div class="para">Suppose an element <span class="process-math">\(x\)</span> has two inverses: <span class="process-math">\(y\)</span> and <span class="process-math">\(z\text{.}\)</span> Thus <span class="process-math">\(yx = xy = e\)</span> and <span class="process-math">\(zx = xz = e\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html" id="thm-properties-of-groups-3-1-1-2-1-6">
+\begin{align*}
+z &amp;= ez &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= (yx)z &amp; &amp; \text{substituting } yx = e \\
+&amp;= y(xz) &amp; &amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}}\\
+&amp;= ye &amp; &amp; \text{substituting } xz = e\\
+&amp;= y &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(y=z\text{,}\)</span> making inverses unique.</div>
+</div></li>
+<li id="thm-properties-of-groups-3-1-1-3"><div class="para logical" id="thm-properties-of-groups-3-1-1-3-1">
+<div class="para">Suppose <span class="process-math">\(xy = xz\)</span> for some <span class="process-math">\(x,y,z\in G\text{.}\)</span> By the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a>, <span class="process-math">\(x\)</span> has an inverse, <span class="process-math">\(x\inv\in G\)</span> such that <span class="process-math">\(xx\inv=e=x\inv x\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html" id="thm-properties-of-groups-3-1-1-3-1-7">
+\begin{align*}
+xy &amp;= xz \\
+x\inv(xy) &amp;= x\inv(xz) &amp;&amp; \text{multiply on the left by }x\inv \\
+(x\inv x)y &amp;= (x\inv x)z &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+(e)y &amp;= (e)z &amp;&amp; \text{substituting } x\inv x = e\\
+y &amp;= z &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}.
+\end{align*}
+</div>
+</div></li>
+</ol></div></article></details><aside class="aside aside-like" id="subsec-group-props-3"><div class="para" id="subsec-group-props-3-1">The inverse of an element <span class="process-math">\(x\)</span> is often written <span class="process-math">\(x\inv\text{,}\)</span> for reasons we will see in the next section.</div></aside></section><section class="subsection" id="subsec-abelian"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Abelian Groups</span>
+</h3>
+<div class="para" id="subsec-abelian-2">Additionally, a binary operation can be <em class="emphasis">commutative</em>.</div>
+<article class="definition definition-like" id="commutative-property"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Commutative Property.</span>
+</h4> <div class="para" id="commutative-property-2-1">An operation satisfies the <em class="emphasis">commutative property</em> if <span class="process-math">\(x * y = y * x\)</span> for all <span class="process-math">\(x,y \in S\text{.}\)</span> </div></article><div class="para" id="subsec-abelian-4">It is perhaps natural at this stage to wonder about groups whose binary operation satisfies the commutative property. Some sort of <em class="emphasis">commutative group</em>, if you will. Surely such groups will be named accordingly. Right?</div>
+<article class="definition definition-like" id="def-abelian"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Abelian Group.</span>
+</h4> <div class="para" id="def-abelian-2-1">An <em class="emphasis">abelian group</em> is a group that also satisfies commutative property. </div></article><article class="convention remark-like" id="subsec-abelian-6"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Additive vs. Multiplicative Notation.</span>
+</h4> <div class="para" id="subsec-abelian-6-2">When working with arbitrary groups, multiplicative notation is often used as the operation. Thus, groups are commonly written as <span class="process-math">\((G,\cdot)\)</span> and referred to as <em class="emphasis">multiplicative groups</em>. However, when working with abelian groups, it is customary to use additive notation, writing the group as <span class="process-math">\((G,+)\text{.}\)</span> Often, the letter <span class="process-math">\(A\)</span> is used in place of <span class="process-math">\(G\)</span> when referring to abelian groups.</div></article></section><section class="subsection" id="subsec-group-ex"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">First Examples of Groups</span>
+</h3>
+<div class="para" id="subsec-group-ex-2">All right. We’ve spent enough time wading around in the vagaries of abstraction. It’s time to get our hands on some of these groups and see what all the fuss is about.</div>
+<article class="example example-like" id="ex-group-examples"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Group Examples.</span>
+</h4>
+<div class="para logical" id="ex-group-examples-2-1"><ol class="decimal">
+<li id="trivial-group"><div class="para" id="trivial-group-1">The <dfn class="terminology">trivial group</dfn> is the group with a single element <span class="process-math">\(\{e\}\text{.}\)</span> </div></li>
+<li id="ex-group-examples-2-1-1-2"><div class="para" id="ex-group-examples-2-1-1-2-1">
+<span class="process-math">\((\Z,+), (\Q,+), (\R,+),\)</span> and <span class="process-math">\((\C,+)\)</span> each form an abelian group, where <span class="process-math">\(+\)</span> denotes traditional addition. The axioms of arithmetic guarantee the validity of the group axioms as well as the commutativity of the group operation. Thus all four groups are abelian.</div></li>
+<li id="ex-group-examples-2-1-1-3"><div class="para logical" id="ex-group-examples-2-1-1-3-1">
+<div class="para">For any positive integer <span class="process-math">\(n\text{,}\)</span> let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\operatorname{GL}_n(\C)=\{ \text{invertible } n \times n \;\text{matrices with entries in}\; \C\}.
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\operatorname{GL}_n(\C)\)</span> is a non-abelian group under matrix multiplication known as the <dfn class="terminology">general linear group</dfn>. </div>
+</div></li>
+<li id="modular-integer-group"><div class="para" id="modular-integer-group-1">For any <span class="process-math">\(n\in\N\text{,}\)</span> let <span class="process-math">\(\Z/n\)</span> denote the <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-integers-modulo" missing or not unique]</code>. Then <span class="process-math">\((\Z/n,+)\)</span> forms an abelian group where <span class="process-math">\(+\)</span> denotes addition modulo <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+<li id="def-quaternions"><div class="para logical" id="def-quaternions-1">
+<div class="para">The <dfn class="terminology">quaternion group</dfn> <span class="process-math">\(Q_8\)</span> is a set with <span class="process-math">\(8\)</span> elements</div>
+<div class="displaymath process-math">
+\begin{equation*}
+Q_8=\{ 1, -1, i, -i, j, -j, k, -k \}
+\end{equation*}
+</div>
+<div class="para">satisfying the following relations: <span class="process-math">\(1\)</span> is the identity element,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+i^2 = -1, j^2 = -1, k^2 =-1, ij = k, jk = i, ki = j, \text{and}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(-1)i = -i, (-1)j = -j, (-1)k = -k, (-1)(-1) = 1.
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><article class="remark remark-like" id="subsec-group-ex-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Specific General Linear Groups.</span>
+</h4> <div class="para" id="subsec-group-ex-4-2">In general, <span class="process-math">\(\GL_n(F)\)</span> is a group for any field <span class="process-math">\(F\)</span> (whatever those are). <details class="ptx-footnote" aria-live="polite" id="subsec-group-ex-4-2-3"><summary class="ptx-footnote__number" title="Footnote 1.1.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="subsec-group-ex-4-2-3">To jump ahead and discover what those are, see: <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-ring" missing or not unique]</code>.</div></details>
+</div></article><article class="convention remark-like" id="subsec-group-ex-5"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Identity Theft.</span>
+</h4> <div class="para" id="subsec-group-ex-5-2">In familiar groups of numbers, “<span class="process-math">\(1\)</span>” is used for the identity element of a multiplicative group (and likewise “<span class="process-math">\(0\)</span>” in additive groups). Often, “<span class="process-math">\(1\)</span>” is used for the identity element <span class="process-math">\(e\)</span> in arbitrary groups, though we will not do so here.</div></article><details id="subsec-group-ex-6" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Not Quite Groups.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="subsec-group-ex-6-2-1"><ol class="decimal">
+<li id="subsec-group-ex-6-2-1-1-1"><div class="para" id="subsec-group-ex-6-2-1-1-1-1">The natural numbers <span class="process-math">\(\N\)</span> do <em class="emphasis">not</em> form a group with respect to addition (as its underlying operation).</div></li>
+<li id="subsec-group-ex-6-2-1-1-2"><div class="para" id="subsec-group-ex-6-2-1-1-2-1">The rational numbers <span class="process-math">\(\Q\)</span> do <em class="emphasis">not</em> form a group with respect to multiplication.</div></li>
+</ol></div></article></details></section><section class="subsection" id="subsec-groups-units"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="space"> </span><span class="title">Groups of Units</span>
+</h3>
+<div class="para" id="subsec-groups-units-2">The following example illustrates a few important examples of something called a <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-group-of-units" missing or not unique]</code>, which is defined explicitely in terms of rings (whatever those are) in the aptly named <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "part-rings" missing or not unique]</code>.</div>
+<article class="example example-like" id="ex-group-of-units"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Groups of Units.</span>
+</h4>
+<div class="para logical" id="ex-group-of-units-4-1">
+<div class="para">Each of the following subsets form an abelian group under multiplication.</div>
+<ol class="decimal">
+<li id="ex-group-of-units-4-1-1-1"><div class="para" id="ex-group-of-units-4-1-1-1-1">The subset <span class="process-math">\(\Z^\times=\{-1,1\}\)</span> of <span class="process-math">\(\Z\text{.}\)</span>
+</div></li>
+<li id="ex-group-of-units-4-1-1-2"><div class="para" id="ex-group-of-units-4-1-1-2-1">
+<span class="process-math">\(\Q^\times=\Q\setminus\{0\}\text{,}\)</span> <span class="process-math">\(\R^\times=\R\setminus\{0\}\text{,}\)</span> and <span class="process-math">\(\C^\times=\C\setminus\{0\}\text{.}\)</span>
+</div></li>
+<li id="ex-group-of-units-4-1-1-3"><div class="para" id="ex-group-of-units-4-1-1-3-1">For each <span class="process-math">\(n\in\N\text{,}\)</span> the subset <span class="process-math">\(\Z/n^\times=\{k\in\Z/n|\gcd(k,n)=1\}\)</span> of <span class="process-math">\(\Z/n\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><aside class="aside aside-like" id="subsec-groups-units-4"><div class="para" id="subsec-groups-units-4-1">In <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span>, <span class="process-math">\(\times\)</span> is written using <code class="code-inline tex2jax_ignore">\times</code>.</div></aside><article class="convention remark-like" id="subsec-groups-units-5"><h4 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.17</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-groups-units-5-1">Some texts use the notation “<span class="process-math">\(^*\)</span>” to denote groups of units. For example, <span class="process-math">\(\Q^\times\)</span> would be written <span class="process-math">\(\Q^*\text{.}\)</span>
+</div></article><article class="remark remark-like" id="subsec-groups-units-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.18</span><span class="period">.</span>
+</h4>
+<div class="para" id="subsec-groups-units-6-1">
+<span class="process-math">\(\Z/n^\times\)</span> will be integral to our constructions of semidirect products in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec-spds" missing or not unique]</code> and our classifications of certain groups up to isomorphism (whatever that means). Though not strictly required for this text, knowing the structure of <span class="process-math">\(\Z/n^\times\)</span> for various <span class="process-math">\(n\)</span> can prove helpful in some niche situations (read: certain qualifying exam problems).</div></article><details id="exe-group-of-units-in-zp" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.19</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Z/p^\times\)</span>.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exe-group-of-units-in-zp-2-1">Prove that <span class="process-math">\(\Z/p^\times=\mathbb{Z}/p\setminus\{0\}\text{.}\)</span>
+</div></article></details></section><section class="subsection" id="subsec-group-misc"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="space"> </span><span class="title">Other Initial Examples and Properties</span>
+</h3>
+<details id="exe-extra-groups" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Some Extra Groups.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exe-extra-groups-2-1"><ol class="decimal">
+<li id="exe-opposite-group"><div class="para" id="exe-opposite-group-1">Let <span class="process-math">\((G,*)\)</span> be a multiplicative group, and define the <em class="emphasis">opposite group</em>, <span class="process-math">\(G^{op}\text{,}\)</span> to be the set <span class="process-math">\(G\)</span> equipped with the operation <span class="process-math">\(*^{op}\text{,}\)</span> where <span class="process-math">\(x*^{op}y=y*x\text{.}\)</span> Then <span class="process-math">\(G^{op}\)</span> is a group. <details class="ptx-footnote" aria-live="polite" id="exe-opposite-group-1-8"><summary class="ptx-footnote__number" title="Footnote 1.1.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="exe-opposite-group-1-8">Opposite groups are used in category theory to describe something called “duality” between algebraic structures.</div></details> </div></li>
+<li id="ex-even-odd-groups"><div class="para" id="ex-even-odd-groups-1">Let <span class="process-math">\(\E\)</span> denote the set of even integers and <span class="process-math">\(\O\)</span> denote the set of odd integers. Then <span class="process-math">\((\E,+)\)</span> is a group, whereas <span class="process-math">\((\O,+)\)</span> is not. </div></li>
+</ol></div>
+<div class="solutions"><details id="exe-extra-groups-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="exe-extra-groups-3-1"><ol class="decimal">
+<li id="exe-extra-groups-3-1-1-1"><div class="para logical" id="exe-extra-groups-3-1-1-1-1">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group.</div>
+<ul class="disc">
+<li id="exe-extra-groups-3-1-1-1-1-2-1">
+<span class="heading"><span class="title">Associativity of <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical" id="exe-extra-groups-3-1-1-1-1-2-1-2">
+<div class="para">Let <span class="process-math">\(x, y, z\)</span> be any elements <span class="process-math">\(G^{op}\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html" id="exe-extra-groups-3-1-1-1-1-2-1-2-3">
+\begin{align*}
+(x*^{op}y)*^{op}z &amp;= (y*x)*^{op}z &amp; &amp; \text{substituting }x*^{op}y=y*x\\
+&amp;= z*(y*x) &amp; &amp; \text{substituting again} \\
+&amp;= (z*y)*x &amp; &amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property of \(G\)}}\\
+&amp;= (y*^{op}z)*x &amp; &amp; \text{substituting }z*y = y*^{op}z\\
+&amp;= x*^{op}(y*^{op}z) &amp; &amp; \text{substituting again}
+\end{align*}
+</div>
+<div class="para">Thus, associativity is satisfied in <span class="process-math">\(G^{op}\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="g-op-identity">
+<span class="heading"><span class="title">Identity Element of <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical" id="g-op-identity-2">
+<div class="para">As <span class="process-math">\(G\)</span> is a group, it contains an identity element, <span class="process-math">\(e\text{.}\)</span> I claim that <span class="process-math">\(e\)</span> is also the identity element of <span class="process-math">\(G^{op}\text{.}\)</span> Let <span class="process-math">\(x\in G^{op}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/identity-property.html ./knowl/xref/identity-property.html" id="g-op-identity-2-6">
+\begin{align*}
+e*^{op}x &amp;= x*e &amp; &amp; \text{substituting }e*^{op}x=x*e\\
+&amp;= x &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element of \(G\)}} \\
+&amp;= e*x &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element of \(G\)}}\\
+&amp;= x*^{op}e&amp; &amp; \text{substituting }x*^{op}e=e*x
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(e*^{op}x = x*^{op}e = x\)</span> for all <span class="process-math">\(x\in G^{op}\)</span> Therefore, <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G^{op}\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="exe-extra-groups-3-1-1-1-1-2-3">
+<span class="heading"><span class="title">Inverses in <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical" id="exe-extra-groups-3-1-1-1-1-2-3-2">
+<div class="para">Let <span class="process-math">\(x\)</span> be an element in <span class="process-math">\(G^{op}\text{.}\)</span> Since <span class="process-math">\(x\)</span> is also an element of the group <span class="process-math">\(G\text{,}\)</span> by the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> there exists an inverse element <span class="process-math">\(x\inv\)</span> in <span class="process-math">\(G\)</span> such that <span class="process-math">\(x*x\inv = x\inv*x = e\text{,}\)</span> where <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G\text{.}\)</span> Consider <span class="process-math">\(x\inv*^{op}x\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/g-op-identity.html" id="exe-extra-groups-3-1-1-1-1-2-3-2-12">
+\begin{align*}
+x\inv*^{op}x &amp;= x*x\inv &amp; &amp; \text{substituting }x\inv*^{op}x=x*x\inv\\
+&amp;= e &amp; &amp; \text{substituting }x\inv*x=e 
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(x*^{op}x\inv\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/g-op-identity.html" id="exe-extra-groups-3-1-1-1-1-2-3-2-14">
+\begin{align*}
+x*^{op}x\inv &amp;= x\inv*x &amp; &amp; \text{substituting }x*^{op}x\inv=x\inv*x\\
+&amp;= e &amp; &amp; \text{substituting }x*x\inv=e 
+\end{align*}
+</div>
+<div class="para">From the <a href="sec-group-basics.html#g-op-identity" class="xref" data-knowl="./knowl/xref/g-op-identity.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Identity Element of G^{op}">previous part</a> we see that <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G^{op}\text{,}\)</span> making <span class="process-math">\(x\inv\)</span> the inverse of <span class="process-math">\(x\)</span> in <span class="process-math">\(G^{op}\text{.}\)</span> Thus every element in <span class="process-math">\(G^{op}\)</span> has an inverse in <span class="process-math">\(G^{op}\text{,}\)</span> satisfying the inverse element property.</div>
+</div>
+</li>
+</ul>
+</div></li>
+<li id="exe-extra-groups-3-1-1-2">
+<div class="para" id="exe-extra-groups-3-1-1-2-1">Integer addition is associative, which means that for any three integers <span class="process-math">\(a, b\text{,}\)</span> and <span class="process-math">\(c\text{,}\)</span> the expression <span class="process-math">\((a + b) + c\)</span> is equal to <span class="process-math">\(a + (b + c)\text{.}\)</span> Thus, associativity is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para" id="exe-extra-groups-3-1-1-2-2">The identity element for addition is <span class="process-math">\(0\text{.}\)</span> For any even integer <span class="process-math">\(a\text{,}\)</span> adding <span class="process-math">\(0\)</span> to it does not change its parity (evenness). Hence, the identity element property is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para" id="exe-extra-groups-3-1-1-2-3">For every even integer <span class="process-math">\(a\text{,}\)</span> there exists an inverse element denoted as <span class="process-math">\(-a\)</span> such that <span class="process-math">\(a + (-a) = (-a) + a = 0\text{.}\)</span> The negative of an even integer is also an even integer. Adding an even integer to its negative results in <span class="process-math">\(0\text{,}\)</span> which is the identity element. Therefore, the inverse element property is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para" id="exe-extra-groups-3-1-1-2-4">The identity element for addition is <span class="process-math">\(0\text{.}\)</span> However, <span class="process-math">\(0\)</span> is not an odd integer, so the identity element property is not satisfied for <span class="process-math">\(\O\text{.}\)</span>
+</div>
+</li>
+</ol></div></div></details></div></article></details><article class="theorem theorem-like" id="thm-group-inverses"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Inverses.</span>
+</h4>
+<div class="para logical" id="thm-group-inverses-2-1">
+<div class="para">If <span class="process-math">\(G\)</span> is a group and <span class="process-math">\(x,y\in G\text{,}\)</span> then</div>
+<ol class="decimal">
+<li id="thm-group-inverses-2-1-3-1"><div class="para" id="thm-group-inverses-2-1-3-1-1">
+<span class="process-math">\((x^{-1})^{-1} = x\)</span> and</div></li>
+<li id="thm-group-inverses-2-1-3-2"><div class="para" id="thm-group-inverses-2-1-3-2-1"><span class="process-math">\(\displaystyle (xy)\inv=y\inv x\inv\)</span></div></li>
+</ol>
+</div></article><details id="thm-group-inverses-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="thm-group-inverses-3-1"><ol class="decimal">
+<li id="thm-group-inverses-3-1-1-1">
+<div class="para" id="thm-group-inverses-3-1-1-1-1">The element <span class="process-math">\((x\inv)\inv\)</span> is defined to be the inverse of the element <span class="process-math">\(x\inv\text{.}\)</span> I claim that <span class="process-math">\(x\)</span> is also the inverse of <span class="process-math">\(x\inv\text{.}\)</span>
+</div>
+<div class="para" id="thm-group-inverses-3-1-1-1-2">As <span class="process-math">\(x\inv\)</span> is the inverse of <span class="process-math">\(x\text{,}\)</span> by the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> we have <span class="process-math">\(xx\inv=e\)</span> and <span class="process-math">\(x\inv x=e\text{,}\)</span> making <span class="process-math">\(x\)</span> the inverse of <span class="process-math">\(x\inv\text{.}\)</span> Thus both <span class="process-math">\(x\)</span> and <span class="process-math">\((x\inv)\inv\)</span> are inverses of the element <span class="process-math">\(x\inv\text{.}\)</span> As <a href="sec-group-basics.html#list-unique-group-inverse" class="xref" data-knowl="./knowl/xref/list-unique-group-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: Unique Inverses">inverses are unique</a>, we see <span class="process-math">\((x^{-1})^{-1} = x\text{.}\)</span>
+</div>
+</li>
+<li id="thm-group-inverses-3-1-1-2"><div class="para logical" id="thm-group-inverses-3-1-1-2-1">
+<div class="para">The element <span class="process-math">\((xy)\inv\)</span> is defined to be the inverse of the element <span class="process-math">\(xy\text{.}\)</span> I claim that <span class="process-math">\(y\inv x\inv\)</span> is also the inverse of <span class="process-math">\(xy\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/list-unique-group-inverse.html" id="thm-group-inverses-3-1-1-2-1-5">
+\begin{align*}
+(xy)(y\inv x\inv) &amp;= x(yy\inv)x\inv &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= x(e)x\inv &amp;&amp; y\inv \text{ is the inverse of } y \\
+&amp;= (xe)x\inv &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= xx\inv &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= e &amp;&amp; x\inv \text{ is the inverse of } x.
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html ./knowl/xref/list-unique-group-inverse.html" id="thm-group-inverses-3-1-1-2-1-6">
+\begin{align*}
+(y\inv x\inv)(xy) &amp;= y\inv(x\inv x)y &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= y\inv(e)y &amp;&amp; x\inv \text{ is the inverse of } x \\
+&amp;= (y\inv e)y &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+&amp;= y\inv y &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= e &amp;&amp; y\inv \text{ is the inverse of } y.
+\end{align*}
+</div>
+<div class="para">Thus both <span class="process-math">\((xy)\inv\)</span> and <span class="process-math">\(y\inv x\inv\)</span> are inverses of <span class="process-math">\((xy)\text{,}\)</span> making them equal as <a href="sec-group-basics.html#list-unique-group-inverse" class="xref" data-knowl="./knowl/xref/list-unique-group-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: Unique Inverses">inverses are unique</a>.</div>
+</div></li>
+</ol></div></article></details><div class="para" id="subsec-group-misc-4">The second portion of <a href="sec-group-basics.html#thm-group-inverses" class="xref" data-knowl="./knowl/xref/thm-group-inverses.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21: Properties of Inverses">Theorem 1.21</a> can be generalized.</div>
+<details id="exe-big-inverses" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Big ’Ole Inverses.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="exe-big-inverses-2-1">If <span class="process-math">\(G\)</span> is a group and <span class="process-math">\(x_1,\ldots,x_n \in G\text{,}\)</span> then <span class="process-math">\((x_1 \dots x_n)^{-1} = x_n^{-1} \dots x_1^{-1}\text{.}\)</span>
+</div></article></details><details id="exe-general-associativity" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.23</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Associative Law.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exe-general-associativity-3-1">
+<div class="para">If an element of a group is contructed from a sequence of elements <span class="process-math">\(x_1,\dots,x_n\)</span> in this order by repeatedly inserting parenthesis and applying the operation, the element must equal</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\cdots((x_1x_2)x_3)\cdots)x_n
+\end{equation*}
+</div>
+<div class="para">and so is independent of the mode of bracketing.</div>
+</div></article></details><div class="para" id="subsec-group-misc-7">As a result of <a href="sec-group-basics.html#exe-general-associativity" class="xref" data-knowl="./knowl/xref/exe-general-associativity.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.23: Generalized Associative Law">Exercise 1.23</a> any expression formed from the elements <span class="process-math">\(x_1\dots,x_n\)</span> in that order can be written without parenthesis, which will save us oodles of time down the line. <details class="ptx-footnote" aria-live="polite" id="subsec-group-misc-7-3"><summary class="ptx-footnote__number" title="Footnote 1.1.5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="subsec-group-misc-7-3">This is usually a result that is simply taken for granted and left unstated; we include it here for the sake of completenes - and ~rigor~. Yes, oodles is the best word to go here and no, I will not be changing it.</div></details>
+</div></section><article class="outcomes goal-like" id="sec-group-basics-9"><h3 class="heading"><span class="type">Summary</span></h3>
+<ul class="disc">
+<li id="sec-group-basics-9-1-1"><div class="para" id="sec-group-basics-9-1-1-1">A <a href="sec-group-basics.html#def-group" class="xref" data-knowl="./knowl/xref/def-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.6: Group">Group</a> is a set equipped with a <a href="sec-group-basics.html#def-binop" class="xref" data-knowl="./knowl/xref/def-binop.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.4: Binary Operation">Binary Operation</a> that satisfies the <a href="sec-group-basics.html#associative-property" class="xref" data-knowl="./knowl/xref/associative-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1">associative</a>, <a href="sec-group-basics.html#identity-property" class="xref" data-knowl="./knowl/xref/identity-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">identity</a>, and <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse</a> properties. An <a href="sec-group-basics.html#def-abelian" class="xref" data-knowl="./knowl/xref/def-abelian.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.10: Abelian Group">abelian group</a> is a group that also satisfies the <a href="sec-group-basics.html#commutative-property" class="xref" data-knowl="./knowl/xref/commutative-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.9: Commutative Property">Commutative Property</a>.</div></li>
+<li id="sec-group-basics-9-1-2"><div class="para" id="sec-group-basics-9-1-2-1">The identity and inverse elements described in <a href="sec-group-basics.html#def-binary-properties" class="xref" data-knowl="./knowl/xref/def-binary-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5: Properties of Binary Operations">Definition 1.5</a> are <a href="sec-group-basics.html#thm-properties-of-groups" class="xref" data-knowl="./knowl/xref/thm-properties-of-groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8: Properties of Groups">unique</a>. For inverses, we have <span class="process-math">\((x^{-1})^{-1} = x\)</span> and <span class="process-math">\((xy)\inv=y\inv x\inv\text{.}\)</span> <details class="ptx-footnote" aria-live="polite" id="sec-group-basics-9-1-2-1-5"><summary class="ptx-footnote__number" title="Footnote 1.1.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="sec-group-basics-9-1-2-1-5">See: <a href="sec-group-basics.html#thm-group-inverses" class="xref" data-knowl="./knowl/xref/thm-group-inverses.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21: Properties of Inverses">Theorem 1.21</a>
+</div></details>
+</div></li>
+<li id="sec-group-basics-9-1-3"><div class="para" id="sec-group-basics-9-1-3-1">
+<span class="process-math">\((\Z,+), (\Q,+), (\R,+),(\C,+)\)</span> and <span class="process-math">\((\Z/n,+)\)</span> are all additive abelian groups, and <a href="sec-group-basics.html#ex-group-of-units" class="xref" data-knowl="./knowl/xref/ex-group-of-units.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.16: Groups of Units">Groups of Units</a> form multiplicative abelian groups.</div></li>
+</ul></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-intro-groups.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-order-power.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Front Matter</title>
+<title>Intro to Groups</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -86,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -123,7 +135,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="frontmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\ann}{ann}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="part-groups.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="part-groups.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-group-basics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\DeclareMathOperator{\ann}{ann}
 \DeclareMathOperator{\Ass}{Ass}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\can}{can}
@@ -431,10 +443,10 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 parts"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter active"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-part">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-part contains-active">
 <div class="toc-title-box"><a href="part-groups.html" class="internal"><span class="codenumber">I</span> <span class="title">Group Theory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-chapter">
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-chapter active">
 <div class="toc-title-box"><a href="ch-intro-groups.html" class="internal"><span class="codenumber">1</span> <span class="title">Intro to Groups</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
@@ -492,17 +504,89 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="frontmatter" id="frontmatter"><h2 class="heading">
-<span class="title">My Great Book:</span> <span class="subtitle">An example to get you started</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-intro-groups"><h2 class="heading">
+<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Intro to Groups</span>
 </h2>
-<div class="author">
-<div class="author-name">Sam Macdonald</div>
-<div class="author-info">Department of Mathematics<br>Univeristy of Nebraska—Lincoln</div>
+<section class="introduction" id="ch-intro-groups-2"><h2 class="heading">Motivation: The What, Where, and Why of Groups.<span></span>
+</h2> <div class="para" id="ch-intro-groups-2-2">Group theory is the branch of mathematics that answers the question, "What is symmetry?"</div> <article class="insight remark-like" id="ch-intro-groups-2-3"><h3 class="heading">
+<span class="type">Insight</span><span class="space"> </span><span class="codenumber">1.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="ch-intro-groups-2-3-1">
+<div class="para">There are several ways of thinking about groups, all relying or various levels of rigor and assumptions of prior experience. Here are several:</div>
+<ol class="decimal">
+<li id="ch-intro-groups-2-3-1-1-1">
+<span class="heading"><span class="title">Symmetric.</span></span><div class="para" id="ch-intro-groups-2-3-1-1-1-2">A group can be thought of as a collection of symmetries or transformations that can be combined in a consistent way. Common examples of symmetries include moves on a Rubik’s Cube, addition and subtraction of integers, and rotations and flips of polygons.</div>
+</li>
+<li id="ch-intro-groups-2-3-1-1-2">
+<span class="heading"><span class="title">Set Theoretical.</span></span><div class="para" id="ch-intro-groups-2-3-1-1-2-2">A group is a set of elements together with a rule (function) for combining any two elements to get a third element in the set.</div>
+</li>
+<li id="ch-intro-groups-2-3-1-1-3">
+<span class="heading"><span class="title">Abstractions of Abstractions.</span></span><div class="para" id="ch-intro-groups-2-3-1-1-3-2">Groups can also be thought of as abstractions of rings, which can in turn be thought of as abstractions of common number systems, such as the integers. Rings are algebraic objects with two operations (commonly addition and multiplication), whereas groups only require one operation. Thus all rings can be thought of as containing groups inside them.</div>
+</li>
+</ol>
+</div></article> <div class="para" id="ch-intro-groups-2-4">Common first questions in most math settings are the staples <dfn class="terminology">"Why are these useful?"</dfn> and <dfn class="terminology">"Where are these found?"</dfn>. Despite what some mathematicians might insist, these are reasonable and often essential questions to ask when encountering a new mathematical concept. Questions should always be encouraged; anyone who tells you differently is either unprepared or underpaid.</div> <article class="question example-like" id="ch-intro-groups-2-5"><h3 class="heading">
+<span class="type">Question</span><span class="space"> </span><span class="codenumber">1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="ch-intro-groups-2-5-1-1">Why are groups important? Where are they found?</div>
+<div class="solutions"><details id="ch-intro-groups-2-5-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para logical" id="ch-intro-groups-2-5-2-1">
+<div class="para">The short answer is almost everywhere. In many fields of mathematics, groups provide the abstract framework upon which large portions of the discipline are built. Listed below is a thorough but nowhere near comprehensive list of fields of mathematics (and beyond) where groups make an appearence.</div>
+<ol class="decimal">
+<li id="ch-intro-groups-2-5-2-1-1-1">
+<span class="heading"><span class="title">Number Theory and Cryptography.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-1-2">As it turns out, much of elementary group theory is actually group theory in disguise: specifically, the study of <a href="sec-group-basics.html#modular-integer-group" class="xref" data-knowl="./knowl/xref/modular-integer-group.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 4">modular arithmetic groups</a> and <a href="sec-group-basics.html#subsec-groups-units" class="internal" title="Subsection 1.1.5: Groups of Units">multiplicative groups of units</a>. Thus many cryptographic protocols, such as RSA and elliptic curve cryptography, rely on the structure of groups for their security.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-2">
+<span class="heading"><span class="title">Linear Algebra.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-2-2">A vector space is essentially a field and a group working together, with elements of the group acting as vectors and elements of the field acting as scalers. Additionally, the concept of eigenvalues and eigenvectors is deeply connected to group theory: the action of a linear transformation can be studied using its eigenvalues and eigenvectors, which form cyclic subgroups under repeated application of the transformation.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-3">
+<span class="heading"><span class="title">Commutative Algebra.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-3-2">In many ways commutative algebra is the study of modules, which are essentially abstractions of vector spaces: where a field is required for a vector space, only a ring is needed for a module. Thus groups are once again omnipresent, though they remain mostly hidden in the machinery of the module structure. <details class="ptx-footnote" aria-live="polite" id="ch-intro-groups-2-5-2-1-1-3-2-1"><summary class="ptx-footnote__number" title="Footnote 1.0.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="ch-intro-groups-2-5-2-1-1-3-2-1">This author can personally attest to the importance of this connection. As someone who struggled with modules for quite some time, it was expanding my understanding of groups that finally enabled me to grasp the inner workings of modules.</div></details>
 </div>
-<div class="date">October 16, 2025</div>
-<nav class="summary-links"><ul><li><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></li></ul></nav></section></div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-4">
+<span class="heading"><span class="title">Topology.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-4-2">An essential concept in topology is that of the fundamental group, which describes the set of loops in a topological space up to continuous deformation, providing insight into the space’s structure.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-5">
+<span class="heading"><span class="title">Algebraic Geometry.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-5-2">The set of points on an elliptic curve forms an abelian group, which is essential in number theory and cryptography.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-6">
+<span class="heading"><span class="title">Representation Theory.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-6-2">Group representations are ways in which a group can act on vector spaces, providing yet another bridge between group theory and linear algebra.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-7">
+<span class="heading"><span class="title">Physics.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-7-2">Groups describe symmetries in physical systems, such as the Lorentz group in special relativity and gauge groups in quantum field theory. In the realm of quantum mechanics, quantization of a classical system crucially involves understanding the Lie groups that act on the classical phase space and the unitary representations of these groups.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-8">
+<span class="heading"><span class="title">Analysis.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-8-2">In functional analysis, groups of unitary or orthogonal matrices are crucial in studying linear operators on Hilbert spaces. In complex analysis, automorphism groups of Riemann surfaces are essential in studying the geometry of complex manifolds. Additionally, Möbius Transformations, the group of transformations of the complex plane that preserve angles and are used in the study of complex functions.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-9">
+<span class="heading"><span class="title">Knot Theory.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-9-2">A fundamental concept in knot theory is the knot group, which is an invariant that can distinguish between different knots. The knot group is defined as the fundamental group of the knot complement, and is used to derive powerful knot invariants, such as the Alexander Polynomial, the Jones Polynomial, and linking number.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-10">
+<span class="heading"><span class="title">Algebraic Topology.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-10-2">Homology groups are used to study the topological features of a space, such as holes and voids, in a more algebraic manner.</div>
+</li>
+<li id="ch-intro-groups-2-5-2-1-1-11">
+<span class="heading"><span class="title">Chemistry.</span></span><div class="para" id="ch-intro-groups-2-5-2-1-1-11-2">The set of operations associated with the symmetry elements of a molecule constitute a group. Indeed, the majority of all knowledge concerning atoms, molecules, and solids has been derived from applications of group theory.</div>
+</li>
+</ol>
+</div></div></details></div></article> <figure class="list table-like" id="ch-intro-groups-2-6"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">1.3<span class="period">.</span></span><span class="space"> </span>Supplemental Group Theory Resources</figcaption><div class="named-list-content">
+<div class="introduction" id="ch-intro-groups-2-6-2"><div class="para" id="ch-intro-groups-2-6-2-1">If you find yourself looking for additional material for learning group theory, I strongly recommend the following excellent resources:</div></div>
+<ul class="disc">
+<li id="ch-intro-groups-2-6-3-1"><div class="para" id="ch-intro-groups-2-6-3-1-1">Alexandra Seceleanu’s <a class="external" href="https://github.com/aseceleanu/aseceleanu2.github.io/blob/main/teaching/817-818Notes.pdf" target="_blank">course notes</a>.</div></li>
+<li id="ch-intro-groups-2-6-3-2"><div class="para" id="ch-intro-groups-2-6-3-2-1">
+<a class="external" href="https://web.osu.cz/~Zusmanovich/teach/books/visual-group-theory.pdf" target="_blank"><span class="booktitle">Visual Group Theory</span></a> by Nathan Carter.</div></li>
+<li id="ch-intro-groups-2-6-3-3"><div class="para" id="ch-intro-groups-2-6-3-3-1">
+<span class="booktitle">Abstract Algebra, 3rd Edition</span> by David S. Dummit and Richard M. Foote.</div></li>
+<li id="ch-intro-groups-2-6-3-4"><div class="para" id="ch-intro-groups-2-6-3-4-1">
+<span class="booktitle">Algebra: Chapter 0</span> by Paolo Aluffi.</div></li>
+</ul>
+</div></figure></section><nav class="summary-links"><ul>
+<li><a href="sec-group-basics.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Group Basics</span></a></li>
+<li><a href="sec-order-power.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Order and Power</span></a></li>
+<li><a href="sec-symmetric.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Permutations and Symmetric Groups</span></a></li>
+<li><a href="sec-d2n.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Dihedral Groups</span></a></li>
+<li><a href="sec-gphoms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Group Homomorphisms</span></a></li>
+<li><a href="sec-subgroups.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Subgroups</span></a></li>
+</ul></nav></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="my-great-book.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="part-groups.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-group-basics.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.106</span><span class="period">.</span><span class="space"> </span><span class="title">Center is a Subgroup.</span>
+</h4>
+<div class="para logical"><ol class="decimal">
+<li><div class="para"><span class="process-math">\(\displaystyle Z(G)\leq G\)</span></div></li>
+<li><div class="para">
+<span class="process-math">\(Z(G)\)</span> is abelian</div></li>
+<li><div class="para">If <span class="process-math">\(H\leq G\text{,}\)</span> then <span class="process-math">\(Z(H)\leq Z(G)\)</span>
+</div></li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Let <span class="process-math">\(G\)</span> be a group. First, notice that since <span class="process-math">\(xe = x = ex\)</span> for all <span class="process-math">\(x\in G\text{,}\)</span> we have <span class="process-math">\(e\in Z(G)\text{,}\)</span> and thus <span class="process-math">\(Z(G)\ne\emptyset\text{.}\)</span>
+</div> <div class="para">Let <span class="process-math">\(x,y\in Z(G)\text{.}\)</span> I claim <span class="process-math">\(xy\inv\in Z(G)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(g\in G\text{,}\)</span> and observe:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-group-inverses.html ./knowl/xref/thm-group-inverses.html ./knowl/xref/thm-group-inverses.html ./knowl/xref/thm-one-step.html">
+\begin{align*}
+(xy\inv) g &amp;= x(y\inv g) &amp;&amp; \\
+&amp;= x\left(g\inv (y\inv)\inv\right)\inv &amp;&amp; \knowl{./knowl/xref/thm-group-inverses.html}{\text{Theorem 1.21}} (2)\\
+&amp;= x(g\inv y)\inv &amp;&amp; \knowl{./knowl/xref/thm-group-inverses.html}{\text{Theorem 1.21}} (1) \\
+&amp;= x(yg\inv)\inv &amp;&amp; y\in Z(G)\\
+&amp;= x(gy\inv) &amp;&amp; \knowl{./knowl/xref/thm-group-inverses.html}{\text{Theorem 1.21}} (2)\\
+&amp;= (gy\inv)x &amp;&amp; x\in Z(G)\\
+&amp;= g(y\inv x) &amp;&amp; 
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(Z(G)\leq G\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>.</div>
+</div></article></details><span class="incontext"><a class="internal" href="sec-subgroups.html#prop-center-is-subgroup">in-context</a></span>
+</body>
+</html>

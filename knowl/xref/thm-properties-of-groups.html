@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of Groups.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group.</div>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">Unique Identity.</span></span><div class="para">The element <span class="process-math">\(e\in G\)</span> satisfying the <a href="sec-group-basics.html#identity-property" class="xref" data-knowl="./knowl/xref/identity-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2">identity property</a> is unique, and we thus refer to it as the <em class="emphasis">identity element</em> of <span class="process-math">\(G\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">Unique Inverses.</span></span><div class="para">For each <span class="process-math">\(x\in G\text{,}\)</span> the element satisfying <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> is unique, and we thus refer to it as <em class="emphasis">the inverse</em> of <span class="process-math">\(x\text{.}\)</span> </div>
+</li>
+<li>
+<span class="heading"><span class="title">Cancellation.</span></span><div class="para">Suppose <span class="process-math">\(x,y,z\in G\text{.}\)</span> If <span class="process-math">\(xy = xz\text{,}\)</span> then <span class="process-math">\(y=z\text{.}\)</span>
+</div>
+<div class="para">Similarly, if <span class="process-math">\(yx = zx\text{,}\)</span> then <span class="process-math">\(y = z\)</span> </div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Suppose there exist two elements, <span class="process-math">\(e\)</span> and <span class="process-math">\(e'\text{,}\)</span> such that, for all <span class="process-math">\(x\in G\text{,}\)</span> we have <span class="process-math">\(ex = x = xe\)</span> and <span class="process-math">\(e'x = x = xe'\text{.}\)</span> As <span class="process-math">\(e\)</span> is an identity element, by definition we have <span class="process-math">\(e'e=e'\text{.}\)</span> Similarly, as <span class="process-math">\(e'\)</span> is an identity element, we have <span class="process-math">\(e'e=e\text{.}\)</span> Combining these two equations, we see</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e = ee' = e'.
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(e=e'\text{,}\)</span> making the identity element unique.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Suppose an element <span class="process-math">\(x\)</span> has two inverses: <span class="process-math">\(y\)</span> and <span class="process-math">\(z\text{.}\)</span> Thus <span class="process-math">\(yx = xy = e\)</span> and <span class="process-math">\(zx = xz = e\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/identity-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html">
+\begin{align*}
+z &amp;= ez &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}\\
+&amp;= (yx)z &amp; &amp; \text{substituting } yx = e \\
+&amp;= y(xz) &amp; &amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}}\\
+&amp;= ye &amp; &amp; \text{substituting } xz = e\\
+&amp;= y &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(y=z\text{,}\)</span> making inverses unique.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Suppose <span class="process-math">\(xy = xz\)</span> for some <span class="process-math">\(x,y,z\in G\text{.}\)</span> By the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a>, <span class="process-math">\(x\)</span> has an inverse, <span class="process-math">\(x\inv\in G\)</span> such that <span class="process-math">\(xx\inv=e=x\inv x\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/associative-property.html ./knowl/xref/identity-property.html">
+\begin{align*}
+xy &amp;= xz \\
+x\inv(xy) &amp;= x\inv(xz) &amp;&amp; \text{multiply on the left by }x\inv \\
+(x\inv x)y &amp;= (x\inv x)z &amp;&amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property}} \\
+(e)y &amp;= (e)z &amp;&amp; \text{substituting } x\inv x = e\\
+y &amp;= z &amp;&amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element}}.
+\end{align*}
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-group-basics.html#thm-properties-of-groups">in-context</a></span>
+</body>
+</html>

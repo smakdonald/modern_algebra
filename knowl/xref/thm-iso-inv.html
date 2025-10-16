@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.75</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphism Invariants.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(G\)</span> and <span class="process-math">\(H\)</span> be groups. If <span class="process-math">\(\varphi:G\to H\)</span> is an isomorphism, then the following hold: </div> <div class="para logical"><ol class="decimal">
+<li><div class="para"><span class="process-math">\(|G|=|H|\text{.}\)</span></div></li>
+<li><div class="para">
+<span class="process-math">\(|g|=|\varphi(g)|\)</span> for all <span class="process-math">\(g\in G\)</span> and <span class="process-math">\(|h|=|\varphi\inv(h)|\)</span> for all <span class="process-math">\(h\in H\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(G\)</span> is abelian if and only if <span class="process-math">\(H\)</span> is abelian.</div></li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi:G\to H\)</span> be an isomorphism of groups with inverse <span class="process-math">\(\varphi\inv\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">By <a href="sec-gphoms.html#thm-iso-def" class="xref" data-knowl="./knowl/xref/thm-iso-def.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.71: Equivalent Isomorphism Characterization">Theorem 1.71</a> <span class="process-math">\(\varphi\)</span> is a bijective function between <span class="process-math">\(G\)</span> and <span class="process-math">\(H\text{.}\)</span> Thus <span class="process-math">\(|G|=|H|\text{.}\)</span>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(g\in G\)</span> and <span class="process-math">\(h\in H\text{,}\)</span> and let <span class="process-math">\(m,n\)</span> denote the orders of <span class="process-math">\(g,h\text{,}\)</span> respectively. Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exe-grp-hom-order-split.html ./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/exe-grp-hom-order-split.html ./knowl/xref/thm-grphomom-preservations.html">
+\begin{align*}
+\varphi(g)^m &amp;= \varphi(g^m) &amp;&amp; \knowl{./knowl/xref/exe-grp-hom-order-split.html}{\text{Exercise 1.64}}\\
+&amp;= \varphi(e_G) &amp;&amp; m \text{ is the order of } g\\
+&amp;= e_H          &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exe-grp-hom-order-split.html ./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/exe-grp-hom-order-split.html ./knowl/xref/thm-grphomom-preservations.html">
+\begin{align*}
+\varphi\inv(h)^n &amp;= \varphi\inv(h^n) &amp;&amp; \knowl{./knowl/xref/exe-grp-hom-order-split.html}{\text{Exercise 1.64}}\\
+&amp;= \varphi\inv(e_H)     &amp;&amp; n \text{ is the order of } h\\
+&amp;= e_G                  &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\varphi(g)^m=e_H\)</span> and <span class="process-math">\(\varphi\inv(h)^n=e_G\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">I claim <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> are the smallest positive integers where this holds. Suppose by way of contradiction there exist <span class="process-math">\(m'&lt;m\)</span> and <span class="process-math">\(n'&lt;n\)</span> such that <span class="process-math">\(\varphi(g)^{m'}=e_H\)</span> and <span class="process-math">\(\varphi\inv(h)^{n'}=e_G\text{.}\)</span> But then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/thm-grphomom-preservations.html">
+\begin{align*}
+g^{m'} &amp;= \varphi\inv \varphi(g^{m'}) \\
+&amp;= \varphi\inv (e_H)         &amp;&amp; \varphi(g)^{m'}=e_H\\
+&amp;= e_G                      &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/thm-grphomom-preservations.html">
+\begin{align*}
+h^{n'} &amp;= \varphi\varphi\inv(h^{n'}) \\
+&amp;= \varphi(e_G)            &amp;&amp; \varphi\inv(h)^{n'}=e_G\\
+&amp;= e_H                     &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}
+\end{align*}
+</div>
+<div class="para">As <span class="process-math">\(m'&lt;m\)</span> and <span class="process-math">\(n'&lt;n\text{,}\)</span> this contradicts <span class="process-math">\(|g|=m\)</span> and <span class="process-math">\(|h|=n\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\((\Rightarrow)\)</span> Suppose <span class="process-math">\(G\)</span> is abelian, and let <span class="process-math">\(x,y\in H\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html ./knowl/xref/def-ghom.html">
+\begin{align*}
+xy &amp;= \varphi\varphi\inv(xy)\\
+&amp;= \varphi\varphi\inv(x)\varphi\inv(y) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}} \\
+&amp;= \varphi\varphi\inv(y)\varphi\inv(x) &amp;&amp; G \text{ abelian }, \varphi\inv(x), \varphi\inv(y)\in G, \\
+&amp;= \varphi\varphi\inv(yx) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}} \\
+&amp;= yx
+\end{align*}
+</div>
+<div class="para">Thus every element two elements in <span class="process-math">\(H\)</span> commute, making <span class="process-math">\(H\)</span> abelian.</div>
+</div>
+<div class="para logical">
+<div class="para">
+<span class="process-math">\((\Leftarrow)\)</span> Suppose <span class="process-math">\(H\)</span> is abelian, and let <span class="process-math">\(x,y\in G\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html ./knowl/xref/def-ghom.html">
+\begin{align*}
+xy &amp;= \varphi\varphi\inv(xy)\\
+&amp;= \varphi\varphi\inv(x)\varphi\inv(y) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}} \\
+&amp;= \varphi\varphi\inv(y)\varphi\inv(x) &amp;&amp; H \text{ abelian }, \varphi\inv(x), \varphi\inv(y)\in H, \\
+&amp;= \varphi\varphi\inv(yx) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}} \\
+&amp;= yx
+\end{align*}
+</div>
+<div class="para">Thus every element two elements in <span class="process-math">\(G\)</span> commute, making <span class="process-math">\(G\)</span> abelian.</div>
+</div>
+</li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-gphoms.html#thm-iso-inv">in-context</a></span>
+</body>
+</html>

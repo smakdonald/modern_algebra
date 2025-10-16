@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.96</span><span class="period">.</span><span class="space"> </span><span class="title">Group Homomorphisms and Subgroups.</span>
+</h4>
+<div class="para logical"><ol class="decimal">
+<li>
+<span class="heading"><span class="title">Images are Subgroups.</span></span><div class="para">If <span class="process-math">\(\varphi: G \to H\)</span> is a homomorphism of groups, then the <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-image-preimage" missing or not unique]</code> of <span class="process-math">\(\varphi\)</span> is a subgroup of <span class="process-math">\(H\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Kernels are Subgroups.</span></span><div class="para">If <span class="process-math">\(\varphi: G \to H\)</span> is a homomorphism of groups, then the kernel of <span class="process-math">\(\varphi\)</span> is a subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Preimages are Subgroups.</span></span><div class="para">If <span class="process-math">\(\varphi:G\to H\)</span> is a group homomorphism and <span class="process-math">\(K\leq H\)</span> then the <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "def-image-preimage" missing or not unique]</code> of <span class="process-math">\(K\)</span> is a subgroup of <span class="process-math">\(G\text{.}\)</span>
+</div>
+</li>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi: G \to H\)</span> be a homomorphism of groups.</div>
+<ol class="decimal">
+<li>
+<div class="para">First, note that since <span class="process-math">\(\varphi(e_G)=e_H\)</span> by <a href="sec-gphoms.html#thm-grphomom-preservations" class="xref" data-knowl="./knowl/xref/thm-grphomom-preservations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.63: Homomorphism Preservations">Theorem 1.63</a>, so we know <span class="process-math">\(\im(\varphi) \ne \emptyset\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(x,y\in \im(\varphi)\text{.}\)</span> Thus <span class="process-math">\(x = \varphi(a)\)</span> and <span class="process-math">\(y = \varphi(b)\)</span> for some <span class="process-math">\(a,b \in G\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/thm-one-step.html">
+\begin{align*}
+xy^{-1} &amp;= \varphi(a)\varphi(b)^{-1} &amp;&amp; \text{Substitution}\\
+&amp;= \varphi(ab^{-1}) &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}
+\end{align*}
+</div>
+<div class="para">As <span class="process-math">\(xy^{-1}=\varphi(ab^{-1}) \in \im(\varphi)\text{,}\)</span> we see <span class="process-math">\(\im(\varphi)\leq H\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>.</div>
+</div>
+</li>
+<li>
+<div class="para">First, note that since <span class="process-math">\(\varphi(e_G)=e_H\)</span> by <a href="sec-gphoms.html#thm-grphomom-preservations" class="xref" data-knowl="./knowl/xref/thm-grphomom-preservations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.63: Homomorphism Preservations">Theorem 1.63</a>, so we know <span class="process-math">\(\ker(\varphi) \ne \emptyset\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(x,y\in \ker(\varphi)\text{.}\)</span> Then <span class="process-math">\(\varphi(x)=\varphi(y)=e_G\text{,}\)</span> and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html ./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/thm-one-step.html">
+\begin{align*}
+\varphi(xy^{-1}) &amp;= \varphi(x)\varphi(y^{-1}) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}}\\
+&amp;= \varphi(x)\varphi(y)^{-1} &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}\\
+&amp;= \varphi(y)\varphi(y)^{-1} &amp;&amp; \text{Substitution}\\
+&amp;= e_H &amp;&amp;
+\end{align*}
+</div>
+<div class="para">Thus, if <span class="process-math">\(x,y\in \ker(\varphi)\)</span> then <span class="process-math">\(xy^{-1}\in \ker(\varphi)\text{,}\)</span> making <span class="process-math">\(\ker(\varphi)\leq H\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>.</div>
+</div>
+</li>
+<li>
+<div class="para">First notice that <span class="process-math">\(ke_H = k = e_Hk\)</span> for all <span class="process-math">\(x\in K\text{,}\)</span> and thus <span class="process-math">\(e_K = e_H\text{,}\)</span> as and identity elements are unique. As <span class="process-math">\(e_H=\varphi(e_G)\)</span> by <a href="sec-gphoms.html#thm-grphomom-preservations" class="xref" data-knowl="./knowl/xref/thm-grphomom-preservations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.63: Homomorphism Preservations">Theorem 1.63</a>, we see <span class="process-math">\(\varphi\inv(K) \ne \emptyset\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(x,y\in \varphi\inv(K)\text{.}\)</span> Thus <span class="process-math">\(x,y\in G\)</span> and there exist <span class="process-math">\(a,b\in K\)</span> such that <span class="process-math">\(\varphi(x) = a\)</span> and <span class="process-math">\(\varphi(y) = b\text{.}\)</span> Observe:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html ./knowl/xref/thm-grphomom-preservations.html ./knowl/xref/thm-one-step.html ./knowl/xref/thm-one-step.html">
+\begin{align*}
+\varphi(xy\inv) &amp;= \varphi(x)\varphi(y\inv) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}}\\
+&amp;= \varphi(x)\varphi(y)\inv &amp;&amp; \knowl{./knowl/xref/thm-grphomom-preservations.html}{\text{Theorem 1.63}}\\
+&amp;= ab\inv &amp;&amp; \text{Substitution}
+\end{align*}
+</div>
+<div class="para">As <span class="process-math">\(K\leq H\text{,}\)</span> we know <span class="process-math">\(ab\inv\in K\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>. Thus <span class="process-math">\(\varphi(xy\inv)=ab\inv\in K\text{,}\)</span> and so <span class="process-math">\(xy\inv\in\varphi\inv(K)\text{.}\)</span> Hence <span class="process-math">\(\varphi\inv(K)\leq G\)</span> by the <a href="sec-subgroups.html#thm-one-step" class="xref" data-knowl="./knowl/xref/thm-one-step.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: One Step Subgroup Test">one-step subgroup test</a>.</div>
+</div>
+</li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-subgroups.html#thm-properties-of-group-homoms">in-context</a></span>
+</body>
+</html>

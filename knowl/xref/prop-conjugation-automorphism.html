@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">1.88</span><span class="period">.</span><span class="space"> </span><span class="title">Conjugation Automorphism.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(x\in G\text{.}\)</span> Then <span class="process-math">\(\psi_g\in \operatorname{Aut}(G)\)</span> for all <span class="process-math">\(g\in G\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group and <span class="process-math">\(g\in G\text{.}\)</span> For any <span class="process-math">\(x,y\in G\text{,}\)</span> observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-inner-automorphisms.html ./knowl/xref/def-inner-automorphisms.html">
+\begin{align*}
+\psi_g(xy) &amp;= g(xy)g^{-1} &amp;&amp; \knowl{./knowl/xref/def-inner-automorphisms.html}{\text{Definition 1.87}}\\
+&amp;= gx(g^{-1} g)yg^{-1} \\
+&amp;=  \psi_g(x) \psi_g(y) &amp;&amp; \knowl{./knowl/xref/def-inner-automorphisms.html}{\text{Definition 1.87}}
+\end{align*}
+</div>
+<div class="para">proving that <span class="process-math">\(\psi_g\)</span> is a homomorhism from <span class="process-math">\(G\)</span> to itself.</div>
+</div> <div class="para logical">
+<div class="para">I claim <span class="process-math">\(\psi_g \circ \psi_h = \psi_{gh}\)</span> holds for any <span class="process-math">\(g, h \in G\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-inner-automorphisms.html ./knowl/xref/def-inner-automorphisms.html ./knowl/xref/thm-group-inverses.html ./knowl/xref/def-inner-automorphisms.html">
+\begin{align*}
+\psi_g(\psi_h(x)) &amp;= \psi_g(hxh^{-1}) &amp;&amp; \text{apply }\knowl{./knowl/xref/def-inner-automorphisms.html}{\text{Definition 1.87}} \text{ for } \psi_h \\
+&amp;= ghxh^{-1} g^{-1} &amp;&amp; \text{apply } \knowl{./knowl/xref/def-inner-automorphisms.html}{\text{Definition 1.87}} \text{ for } \psi_g \\
+&amp;= ghx(gh)^{-1} &amp;&amp; \knowl{./knowl/xref/thm-group-inverses.html}{\text{Theorem 1.21}}\\
+&amp;= \psi_{gh}(x) &amp;&amp; \text{apply }\knowl{./knowl/xref/def-inner-automorphisms.html}{\text{Definition 1.87}} \text{ for } \psi_{gh}
+\end{align*}
+</div>
+<div class="para">Additionally, notice that <span class="process-math">\(\psi_e(x) = exe = x\)</span> for all <span class="process-math">\(x\in G\text{,}\)</span> and thus <span class="process-math">\(\psi_e = \operatorname{id}_G\text{.}\)</span>
+</div>
+</div> <div class="para">As <span class="process-math">\(\psi_g \circ \psi_h = \psi_{gh}\text{,}\)</span> it follows <span class="process-math">\(\psi_g \circ \psi_{g^{-1}} = \operatorname{id}_G\)</span> and <span class="process-math">\(\psi_{g^{-1}} \circ \psi_g = \operatorname{id}_G\text{.}\)</span> This proves <span class="process-math">\(\psi_g\)</span> has a two-sided inverse and hence is an isomorphism. <details class="ptx-footnote" aria-live="polite" id="prop-conjugation-automorphism-3-3-5"><summary class="ptx-footnote__number" title="Footnote 1.5.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="prop-conjugation-automorphism-3-3-5">In fact, it shows that <span class="process-math">\((\psi_g)^{-1} = \psi_{g^{-1}}\text{.}\)</span>
+</div></details> Thus <span class="process-math">\(\psi_g\in \operatorname{Aut}(G)\)</span> for all <span class="process-math">\(g\in G\text{.}\)</span>
+</div></article></details><span class="incontext"><a class="internal" href="sec-gphoms.html#prop-conjugation-automorphism">in-context</a></span>
+</body>
+</html>

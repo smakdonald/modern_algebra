@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Laws of Exponents.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(n,m\in\Z\)</span> and <span class="process-math">\(x\)</span> be an element of a group <span class="process-math">\(G\text{.}\)</span> Then</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(x^nx^m=x^{n+m}=x^mx^n\)</span> and</div></li>
+<li><div class="para"><span class="process-math">\((x^n)^m=x^{nm}=(x^m)^n\text{.}\)</span></div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para logical">
+<div class="para">We proceed via cases: First, let <span class="process-math">\(n &gt; 0\)</span> and <span class="process-math">\(m &gt; 0\text{.}\)</span> We induct on <span class="process-math">\(m\text{.}\)</span> For the base case, let <span class="process-math">\(m=1\text{.}\)</span> Thus we have <span class="process-math">\(x^nx^1=x^{n+1}\)</span> by <a href="sec-order-power.html#power-plus-1" class="xref" data-knowl="./knowl/xref/power-plus-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Item">definition</a>. Additionally, using the <a href="sec-group-basics.html#exe-general-associativity" class="xref" data-knowl="./knowl/xref/exe-general-associativity.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.23: Generalized Associative Law">Exercise 1.23</a> we see</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/power-plus-1.html ./knowl/xref/exe-general-associativity.html">
+\begin{equation*}
+x^1x^n = x(\underbrace{x\cdots x}{n}) = (\underbrace{x\cdots x}{n})x = x^nx^1,
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(x^nx^1=x^1x^n\text{.}\)</span> Hence <span class="process-math">\(x^nx^1=x^{n+1}=x^1x^n\text{,}\)</span> satisfying the base case.</div>
+</div>
+<div class="para">Now we inductively assume <span class="process-math">\(x^nx^m=x^{n+m}=x^mx^n\)</span> and consider <span class="process-math">\(x^nx^{m+1}\)</span> Using <a href="sec-order-power.html#def-power" class="xref" data-knowl="./knowl/xref/def-power.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.24: n\th power">Definition 1.24</a> we see <span class="process-math">\(x^{m+1}=x^mx\text{.}\)</span> Substituting, we have <span class="process-math">\(x^nx^mx^1\text{.}\)</span> By the inductive hypothesis, we have <span class="process-math">\(x^nx^mx^1 = x^{n+m}x = x^{n+m+1}\)</span> and <span class="process-math">\(x^nx^mx^1 = x^mx^nx\text{.}\)</span> Using the <a href="sec-group-basics.html#exe-general-associativity" class="xref" data-knowl="./knowl/xref/exe-general-associativity.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 1.23: Generalized Associative Law">Exercise 1.23</a> again, we have <span class="process-math">\(x^{m+1}x^n\text{.}\)</span> Thus <span class="process-math">\(x^nx^{m+1}=x^{n+m+1}=x^{m+1}x^n\text{,}\)</span> completing the induction. Hence, when <span class="process-math">\(n &gt; 0\)</span> and <span class="process-math">\(m &gt; 0\)</span> we have <span class="process-math">\(x^nx^m=x^{n+m}=x^mx^n\text{.}\)</span>
+</div>
+<div class="para">Now suppose <span class="process-math">\(n &gt; 0\)</span> and <span class="process-math">\(m &lt; 0\text{.}\)</span> Thus <span class="process-math">\(x^m = (x^{-m})\inv\text{,}\)</span> where <span class="process-math">\(-m &gt; 0\text{.}\)</span> So <span class="process-math">\(x^nx^{-m}=x^{n+(-m)}\)</span>
+</div>
+<div class="para"><span class="process-math">\(x^nx^m = (x^{-n})\inv(x^{-m})\inv = (x^{-m}x^{-n})\inv\)</span></div>
+<div class="para">Multiplying on both sides by <span class="process-math">\(x^{-m}\)</span> we deduce that <span class="process-math">\(x^n =x^{-m}x^{m+n}\)</span> and <span class="process-math">\(x^m = x^{m + n} x^{-n}\text{.}\)</span> Finally inversion of the equation <span class="process-math">\(x^mx^n =x^{m + n}\)</span> yields <span class="process-math">\(x^{-n}x^{-m} = x^{-m + (-n)}\text{.}\)</span> Hence the law is established in all cases.</div>
+</li>
+<li><div class="para">If <span class="process-math">\(n &gt; 0\text{,}\)</span> it follows from (1) that <span class="process-math">\((x^m)^n =x^{mn}\text{.}\)</span> Now assume that <span class="process-math">\(n &lt; 0\text{;}\)</span> then <span class="process-math">\((x^m)^n =((x^m)^{-n})\inv =(x^{-mn})\inv =x^{mn}\)</span> since <span class="process-math">\(x^{-mn}x^{mn}=e\text{.}\)</span>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="sec-order-power.html#thm-exponent-laws">in-context</a></span>
+</body>
+</html>

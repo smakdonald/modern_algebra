@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.63</span><span class="period">.</span><span class="space"> </span><span class="title">Homomorphism Preservations.</span>
+</h4>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(\varphi: G \to H\)</span> is a homomorphism of groups, then the following hold:</div>
+<ol class="decimal">
+<li><div class="para"><span class="process-math">\(\displaystyle \varphi(e_G) = e_H\)</span></div></li>
+<li><div class="para"><span class="process-math">\(\varphi(x^{-1}) = \varphi(x)^{-1}\text{.}\)</span></div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(\varphi: G \to H\)</span> be a homomorphism of groups.</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">Observe:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html">
+\begin{align*}
+\varphi(e_G)                 &amp;= \varphi(e_Ge_G)\\
+&amp;= \varphi(e_G)\varphi(e_G) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}}\\
+\varphi(e_G)\varphi(e_G)\inv &amp;= \varphi(e_G)\varphi(e_G)\varphi(e_G)\inv &amp;&amp;\text{multiply by }\varphi(e_G)\inv\\
+e_H                          &amp;= \varphi(e_G) 
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(x\in G\text{.}\)</span> I claim that <span class="process-math">\(\varphi(x\inv)\)</span> is the inverse of <span class="process-math">\(\varphi(x)\)</span> in <span class="process-math">\(H\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-ghom.html ./knowl/xref/gp-ident-pres.html ./knowl/xref/list-unique-group-inverse.html">
+\begin{align*}
+\varphi(x)\varphi(x\inv) &amp;= \varphi(xx\inv) &amp;&amp; \knowl{./knowl/xref/def-ghom.html}{\text{Definition 1.59}}\\
+&amp;= \varphi(e_G)\\
+&amp;= e_H &amp;&amp; \knowl{./knowl/xref/gp-ident-pres.html}{\text{Part 1}}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\varphi(x\inv)\)</span> and <span class="process-math">\(\varphi(x)\inv\)</span> are both inverses of <span class="process-math">\(\varphi(x)\)</span> in <span class="process-math">\(H\text{,}\)</span> and so <span class="process-math">\(\varphi(x^{-1}) = \varphi(x)\inv\text{,}\)</span> since <a href="sec-group-basics.html#list-unique-group-inverse" class="xref" data-knowl="./knowl/xref/list-unique-group-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 2: Unique Inverses">inverses are unique</a>.</div>
+</div></li>
+</ol>
+</div></article></details><span class="incontext"><a class="internal" href="sec-gphoms.html#thm-grphomom-preservations">in-context</a></span>
+</body>
+</html>

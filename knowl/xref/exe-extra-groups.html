@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1.20</span><span class="period">.</span><span class="space"> </span><span class="title">Some Extra Groups.</span>
+</h4>
+<div class="para logical"><ol class="decimal">
+<li><div class="para">Let <span class="process-math">\((G,*)\)</span> be a multiplicative group, and define the <em class="emphasis">opposite group</em>, <span class="process-math">\(G^{op}\text{,}\)</span> to be the set <span class="process-math">\(G\)</span> equipped with the operation <span class="process-math">\(*^{op}\text{,}\)</span> where <span class="process-math">\(x*^{op}y=y*x\text{.}\)</span> Then <span class="process-math">\(G^{op}\)</span> is a group. <details class="ptx-footnote" aria-live="polite" id="exe-opposite-group-1-8"><summary class="ptx-footnote__number" title="Footnote 1.1.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="exe-opposite-group-1-8">Opposite groups are used in category theory to describe something called “duality” between algebraic structures.</div></details> </div></li>
+<li><div class="para">Let <span class="process-math">\(\E\)</span> denote the set of even integers and <span class="process-math">\(\O\)</span> denote the set of odd integers. Then <span class="process-math">\((\E,+)\)</span> is a group, whereas <span class="process-math">\((\O,+)\)</span> is not. </div></li>
+</ol></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(G\)</span> be a group.</div>
+<ul class="disc">
+<li>
+<span class="heading"><span class="title">Associativity of <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(x, y, z\)</span> be any elements <span class="process-math">\(G^{op}\text{.}\)</span> Observe</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/associative-property.html">
+\begin{align*}
+(x*^{op}y)*^{op}z &amp;= (y*x)*^{op}z &amp; &amp; \text{substituting }x*^{op}y=y*x\\
+&amp;= z*(y*x) &amp; &amp; \text{substituting again} \\
+&amp;= (z*y)*x &amp; &amp; \knowl{./knowl/xref/associative-property.html}{\text{Associative Property of \(G\)}}\\
+&amp;= (y*^{op}z)*x &amp; &amp; \text{substituting }z*y = y*^{op}z\\
+&amp;= x*^{op}(y*^{op}z) &amp; &amp; \text{substituting again}
+\end{align*}
+</div>
+<div class="para">Thus, associativity is satisfied in <span class="process-math">\(G^{op}\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Identity Element of <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical">
+<div class="para">As <span class="process-math">\(G\)</span> is a group, it contains an identity element, <span class="process-math">\(e\text{.}\)</span> I claim that <span class="process-math">\(e\)</span> is also the identity element of <span class="process-math">\(G^{op}\text{.}\)</span> Let <span class="process-math">\(x\in G^{op}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/identity-property.html ./knowl/xref/identity-property.html">
+\begin{align*}
+e*^{op}x &amp;= x*e &amp; &amp; \text{substituting }e*^{op}x=x*e\\
+&amp;= x &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element of \(G\)}} \\
+&amp;= e*x &amp; &amp; \knowl{./knowl/xref/identity-property.html}{\text{\(e\) is the identity element of \(G\)}}\\
+&amp;= x*^{op}e&amp; &amp; \text{substituting }x*^{op}e=e*x
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(e*^{op}x = x*^{op}e = x\)</span> for all <span class="process-math">\(x\in G^{op}\)</span> Therefore, <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G^{op}\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Inverses in <span class="process-math">\(G^{op}\)</span>.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(x\)</span> be an element in <span class="process-math">\(G^{op}\text{.}\)</span> Since <span class="process-math">\(x\)</span> is also an element of the group <span class="process-math">\(G\text{,}\)</span> by the <a href="sec-group-basics.html#inverse-property" class="xref" data-knowl="./knowl/xref/inverse-property.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">inverse property</a> there exists an inverse element <span class="process-math">\(x\inv\)</span> in <span class="process-math">\(G\)</span> such that <span class="process-math">\(x*x\inv = x\inv*x = e\text{,}\)</span> where <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G\text{.}\)</span> Consider <span class="process-math">\(x\inv*^{op}x\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/g-op-identity.html">
+\begin{align*}
+x\inv*^{op}x &amp;= x*x\inv &amp; &amp; \text{substituting }x\inv*^{op}x=x*x\inv\\
+&amp;= e &amp; &amp; \text{substituting }x\inv*x=e 
+\end{align*}
+</div>
+<div class="para">and <span class="process-math">\(x*^{op}x\inv\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/inverse-property.html ./knowl/xref/g-op-identity.html">
+\begin{align*}
+x*^{op}x\inv &amp;= x\inv*x &amp; &amp; \text{substituting }x*^{op}x\inv=x\inv*x\\
+&amp;= e &amp; &amp; \text{substituting }x*x\inv=e 
+\end{align*}
+</div>
+<div class="para">From the <a href="sec-group-basics.html#g-op-identity" class="xref" data-knowl="./knowl/xref/g-op-identity.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Identity Element of G^{op}">previous part</a> we see that <span class="process-math">\(e\)</span> is the identity element of <span class="process-math">\(G^{op}\text{,}\)</span> making <span class="process-math">\(x\inv\)</span> the inverse of <span class="process-math">\(x\)</span> in <span class="process-math">\(G^{op}\text{.}\)</span> Thus every element in <span class="process-math">\(G^{op}\)</span> has an inverse in <span class="process-math">\(G^{op}\text{,}\)</span> satisfying the inverse element property.</div>
+</div>
+</li>
+</ul>
+</div></li>
+<li>
+<div class="para">Integer addition is associative, which means that for any three integers <span class="process-math">\(a, b\text{,}\)</span> and <span class="process-math">\(c\text{,}\)</span> the expression <span class="process-math">\((a + b) + c\)</span> is equal to <span class="process-math">\(a + (b + c)\text{.}\)</span> Thus, associativity is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para">The identity element for addition is <span class="process-math">\(0\text{.}\)</span> For any even integer <span class="process-math">\(a\text{,}\)</span> adding <span class="process-math">\(0\)</span> to it does not change its parity (evenness). Hence, the identity element property is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para">For every even integer <span class="process-math">\(a\text{,}\)</span> there exists an inverse element denoted as <span class="process-math">\(-a\)</span> such that <span class="process-math">\(a + (-a) = (-a) + a = 0\text{.}\)</span> The negative of an even integer is also an even integer. Adding an even integer to its negative results in <span class="process-math">\(0\text{,}\)</span> which is the identity element. Therefore, the inverse element property is satisfied for <span class="process-math">\(\E\text{.}\)</span>
+</div>
+<div class="para">The identity element for addition is <span class="process-math">\(0\text{.}\)</span> However, <span class="process-math">\(0\)</span> is not an odd integer, so the identity element property is not satisfied for <span class="process-math">\(\O\text{.}\)</span>
+</div>
+</li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="sec-group-basics.html#exe-extra-groups">in-context</a></span>
+</body>
+</html>
